@@ -26,7 +26,7 @@ Take into account that this script is supposed to work under certain conditions 
 Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer, and Happy Smart 3D Printing...
 
 # Installation and Use
-Note that there is no official version yet, you can temporarily download the Bin folder which contains the necessary files
+Note that there is no official Release yet, you can temporarily download the Bin folder which contains the necessary files
 # About the Developer :
 By Salim BELAYEL.
 
