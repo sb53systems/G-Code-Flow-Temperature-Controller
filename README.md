@@ -32,4 +32,6 @@ By Salim BELAYEL.
 
 ![SB53-Systems~1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/b94703a1-cf21-4109-bfa6-b9bcff438a1d)
 
-Offer me a coffee if you find my work worthy. PayPal account : sb53systems@gmail.com
+If you find my work worthy, Offer me a coffee with PayPal using my Professional Email below.
+
+Email me to : sb53systems@gmail.com
