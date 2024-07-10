@@ -28,8 +28,8 @@ Be responsible and careful with this Script by using reasonable values ​​and
 # Installation and Use
 Note that there is no official Release yet, you can temporarily download the Bin folder which contains the necessary files
 # About the Developer :
-By Salim BELAYEL.
-Developed in June 2024 with (delphi 7 !!!!)
+By Salim BELAYEL. 
+Developed in June 2024 with (delphi 7 !!!!) 
 Email : sb53systems@gmail.com
 -----SB53-Systems---
 
