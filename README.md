@@ -1,7 +1,7 @@
 # G-Code-Flow-Temperature-Controller
 A Post Processing Script for Slic3r based Slicers and Klipper Printers. It can be run separately and open G-Code file manually
 
-Note that Klipper_Estimator Script is required for time estimation using Klipper Look-Ahead mechanism, and must be in the same Folder with this Script.  
+Note that Klipper_Estimator Script is required for time estimation using Klipper Look-Ahead kinematics, and must be in the same Folder with this Script.  
 Klipper_estimator repositorie : https://github.com/Annex-Engineering/klipper_estimator
 
 This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.
@@ -16,7 +16,7 @@ Note that current Script version (bin/SB53-Systems.exe) is still under developme
 
 Take into account that this script is supposed to work under certain conditions :
 - Does not accept G2 and G3 in G-Code.
-- Time Estimation is based in Klipper Look-ahead mechanism (may not be compatible with Marlin or Others).
+- Time Estimation is based in Klipper Look-ahead kinematics (may not be compatible with Marlin or Others).
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
 - Generated G-Code are 30% to 80% larger than the original one due to Temp and Speed adjustment (can be optimized).
 - This Script is not tested with Print Start Moves in G-Code (My Print Start moves are in klipper Macro).
