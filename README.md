@@ -5,7 +5,7 @@ For its operation it requires another script (Klipper Estimator) for time estima
 
 This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.
 
-This program is free and open source,  created to prove the effectiveness of automatic nozzle temperature change during 3D printing, and it is not intended to be a definitive solution, as I believe that integrating this concept in slisers will be more effective, and I encourage its development.
+This program is free and open source,  created to prove the effectiveness of automatic nozzle temperature change during 3D printing to get the best Quality/Speed Optimization, and it is not intended to be a definitive solution, as I believe that integrating this concept in slisers will be more effective, and I encourage its development.
 
 
 
