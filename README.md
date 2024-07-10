@@ -17,6 +17,7 @@ The source code will be shared soon.
 
 
 The current version is still under development and will be updated daily.
+
 Take into account that this script is supposed to work under certain conditions :
 - Does not accept G2 and G3 in G-Code.
 - Time Estimation is based in Klipper Look-ahead mechanism (may not be compatible with Marlin or Others).
