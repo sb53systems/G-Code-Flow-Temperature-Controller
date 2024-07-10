@@ -3,7 +3,7 @@ A post processing script for slic3r based Slicers and Klipper Printers. It can b
 
 For its operation it requires another script (Klipper Estimator) for time estimation using Klipper Look-Ehead mechanism. https://github.com/Annex-Engineering/klipper_estimator
 
-This 3D Printing Concept is Based on my personal approach and with a minimum of knowledge in Delphi programming.
+This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.
 
 This program is free and open source,  created to prove the effectiveness of automatic nozzle temperature change during 3D printing, and it is not intended to be a definitive solution, as I believe that integrating this concept in slisers will be more effective, and I encourage its development.
 
