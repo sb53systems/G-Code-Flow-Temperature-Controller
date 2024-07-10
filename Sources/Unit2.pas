@@ -64,7 +64,7 @@ procedure TForm2.BitBtn1Click(Sender: TObject);
 var
   klipperEstCom: string;
 begin
-  klipperEstCom:='C:\Windows\System32\cmd.exe /C '+ExtractFileDir(Application.ExeName)+'\klipper_estimator.exe --config_moonraker_url http://'+edit1.Text+' dump-config > '+ExtractFileDir(Application.ExeName)+'\config.json';
+  klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+ExtractFileDir(Application.ExeName)+'\klipper_estimator.exe --config_moonraker_url http://'+edit1.Text+' dump-config > '+ExtractFileDir(Application.ExeName)+'\config.json';
   ExecNewProcess(klipperEstCom,true);
   if FileExists(ExtractFileDir(Application.ExeName)+'\config.json')=true then
     showmessage('Printer File Saved !') else

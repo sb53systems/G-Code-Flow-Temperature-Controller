@@ -141,6 +141,8 @@ uses Unit2, Unit3, Unit4;
 
 {$R *.dfm}
 
+
+
 procedure SmoothSeries(Series: TLineSeries; WindowSize: Integer);
 var
   i, j: Integer;
@@ -227,7 +229,7 @@ begin
   if canProcess=false then Exit;
   form1.BitBtn4.Enabled:=false;
   IF FileExists (file_path) <> True THEN Exit else begin
-    klipperEstCom:='C:\Windows\System32\cmd.exe /C '+ExtractFileDir(Application.ExeName)+'\klipper_estimator.exe --config_file '+ExtractFileDir(Application.ExeName)+'\config.json dump-moves '+file_path+' > '+ExtractFileDir(Application.ExeName)+'\gcode.txt';
+    klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+ExtractFileDir(Application.ExeName)+'\klipper_estimator.exe --config_file '+ExtractFileDir(Application.ExeName)+'\config.json dump-moves '+file_path+' > '+ExtractFileDir(Application.ExeName)+'\gcode.txt';
     ExecNewProcess(klipperEstCom,true);
     Assignfile (GCode_IN, ExtractFileDir(Application.ExeName)+'\gcode.txt');
     Reset (GCode_IN);
@@ -602,14 +604,14 @@ Var
   hnd: integer;
 begin
   if timerCount=0 then begin
-    klipperEstCom:='C:\Windows\System32\cmd.exe /C '+ExtractFileDir(Application.ExeName)+'\klipper_estimator.exe --config_file '+ExtractFileDir(Application.ExeName)+'\config.json estimate '+ExtractFileDir(Application.ExeName)+'\tempOut.gcode'+' > '+ExtractFileDir(Application.ExeName)+'\gcode.txt';
+    klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+ExtractFileDir(Application.ExeName)+'\klipper_estimator.exe --config_file '+ExtractFileDir(Application.ExeName)+'\config.json estimate '+ExtractFileDir(Application.ExeName)+'\tempOut.gcode'+' > '+ExtractFileDir(Application.ExeName)+'\gcode.txt';
     ExecNewProcess(klipperEstCom,false);
     timerCount:=1;
   end else if timerCount=1 then begin
     timerCount:=2;
   end else if timerCount=2 then begin
     // Close 'c:\windows\system32\cmd.exe' estimate process of klipper estimator After 2 Second
-    hnd:=FindWindow(nil, PChar('c:\windows\system32\cmd.exe'));
+    hnd:=FindWindow(nil, PChar(GetEnvironmentVariable('WINDIR')+'\system32\cmd.exe'));
     //if hnd = 0 then Application.messageBox('Warning! Sender application not found.', 'Sender not found', idok);
     try
     if not postmessage(hnd, WM_CLOSE, 0, 0) then
