@@ -2,7 +2,6 @@
 A Post Processing Script for Slic3r based Slicers and Klipper Printers. It can be run separately and open G-Code file manually
 
 Note that Klipper_Estimator Script is required for time estimation using Klipper Look-Ahead mechanism, and must be in the same Folder with this Script.  
-
 Klipper_estimator repositorie : https://github.com/Annex-Engineering/klipper_estimator
 
 This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.
