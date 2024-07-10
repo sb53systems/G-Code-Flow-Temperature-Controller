@@ -12,7 +12,7 @@ Hoping to soon find this concept in current slicers, because I think this will b
 
 # Operation and Instructions
 
-Note that current Script version (bin/SB53-Systems.exe) is still under development and will be updated daily. The source code will be shared soon.
+Note that current Script version (bin/SB53-Systems.exe) is still under development and will be updated daily.
 
 Take into account that this script is supposed to work under certain conditions :
 - Does not accept G2 and G3 in G-Code.
