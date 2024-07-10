@@ -3,7 +3,7 @@ A post processing script for slic3r based Slicers and Klipper Printers. It can b
 
 This 3D Printing Concept is Based on my personal approach and with a minimum of knowledge in Delphi programming.
 
-This Program is Free and Open Source, Created to prove the effectiveness of Automatic Nozzle Temperature change during 3D printing, and it is not meant to be a definitive solution, because I think that the integration of this concept in the slisers will be more effective, and I encourage the development of this Concept.
+This program is free and open source, created to prove the effectiveness of automatic nozzle temperature change during 3D printing, and it is not intended to be a definitive solution, as I believe that integrating this concept in slisers will be more effective, and I encourage its development.
 
 The source code will be shared soon.
 
