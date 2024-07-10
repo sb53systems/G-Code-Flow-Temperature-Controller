@@ -29,6 +29,7 @@ Be responsible and careful with this Script by using reasonable values ​​and
 Note that there is no official Release yet, you can temporarily download the Bin folder which contains the necessary files
 # About the Developer :
 By Salim BELAYEL.
+Developed in June 2024 with (delphi 7 !!!!)
 
 -----SB53-Systems---
 
