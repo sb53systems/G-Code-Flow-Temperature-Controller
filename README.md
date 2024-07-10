@@ -1,11 +1,11 @@
 # G-Code-Flow-Temperature-Controller
-A post processing script for slic3r based Slicers and Klipper Printers. It can be run separately and open G-Code file manually
+A Post Processing Script for Slic3r based Slicers and Klipper Printers. It can be run separately and open G-Code file manually
 
-Klipper Estimator Script is required for time estimation using Klipper Look-Ahead mechanism, the  https://github.com/Annex-Engineering/klipper_estimator
+Klipper Estimator Script is required for time estimation using Klipper Look-Ahead mechanism, and must be in the same Path with the Script.  https://github.com/Annex-Engineering/klipper_estimator
 
 This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.
 
-This program is free and open source,  created to prove the effectiveness of automatic nozzle temperature change during 3D printing to get the best Quality/Speed Optimization, and it is not intended to be a definitive solution, as I believe that integrating this concept in slisers will be more effective, and I encourage its development.
+This Script is free and open source,  created to prove the effectiveness of automatic nozzle temperature change during 3D printing to get the best Quality/Speed Optimization, and it is not intended to be a definitive solution, as I believe that integrating this concept in slisers will be more effective, and I encourage its development.
 
 
 
@@ -20,10 +20,10 @@ Take into account that this script is supposed to work under certain conditions 
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
 - Generated G-Code are 30% to 80% larger than the original one due to Temp and Speed adjustment (can be optimized).
 - This Script is not tested with Print Start Moves in G-Code (My Print Start moves are in klipper Macro).
-- This program is currently only available for windows os
+- This program is currently only available for windows os.
 
 
-Be responsible and careful with this script by using reasonable values ​​and controlling the behavior of your printer.
+Be responsible and careful with this Script by using reasonable values ​​and controlling the behavior of your printer.
 
 By Salim BELAYEL.
 
