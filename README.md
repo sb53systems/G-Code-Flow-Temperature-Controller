@@ -34,11 +34,14 @@ Email : sb53systems@gmail.com
 
 ![SB53-Systems~1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/b94703a1-cf21-4109-bfa6-b9bcff438a1d)  
 ------SB53-Systems-------  
-If you find my work worthy, Bay me a coffee  
+
+  
+If you find my work worthy, Bay me a coffee. Thank you.  
 ![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/5cfe2ac5-2944-471e-bf68-4f32bcb44923)
- sb53systems@gmail.com 
+ sb53systems@gmail.com
+
+ 
 ![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)
  ko-fi.com/sb53systems  
--------Thank you--------
 
 
