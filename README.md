@@ -10,7 +10,7 @@ This Script is free and open source,  created to prove the effectiveness of auto
 Hoping to soon find this concept in current slicers because I think it is probably the future of 3D printing.
 
 
-The current version is still under development and will be updated daily. The source code will be shared soon.
+Note that current Script version (bin/SB53-Systems.exe) is still under development and will be updated daily. The source code will be shared soon.
 
 Take into account that this script is supposed to work under certain conditions :
 - Does not accept G2 and G3 in G-Code.
