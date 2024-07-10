@@ -1,5 +1,6 @@
 # G-Code-Flow-Temperature-Controller
 A post processing script for slic3r based Slicers and Klipper Printers
+It can be run separately and choose G-Code manually.
 
 The source code will be shared soon.
 
