@@ -33,7 +33,6 @@ Developed in June 2024 with (delphi 7 !!!!)
 Email : sb53systems@gmail.com  
 
 ![SB53-Systems~1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/b94703a1-cf21-4109-bfa6-b9bcff438a1d)  
-------SB53-Systems-------  
 
   
 If you find my work worthy, Bay me a coffee. Thank you.  
