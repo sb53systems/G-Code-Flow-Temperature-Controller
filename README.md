@@ -1,5 +1,5 @@
 # G-Code-Flow-Temperature-Controller
-A post processing script for slic3r based Slicers and Klipper Printers. It can be run separately and choose G-Code manually.
+A post processing script for slic3r based Slicers and Klipper Printers. It can be run separately and open G-Code file manually.
 
 This 3D Printing Concept is Based on my personal approach and with a minimum of knowledge in Delphi programming.
 
