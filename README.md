@@ -20,7 +20,7 @@ Take into account that this script is supposed to work under certain conditions 
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
 - Generated G-Code are 30% to 80% larger than the original one due to Temp and Speed adjustment (can be optimized).
 - This Script is not tested with Print Start Moves in G-Code (My Print Start moves are in klipper Macro).
-- This program is currently only available for windows os.
+- This Script is currently only available for windows os.
 
 
 Be responsible and careful with this Script by using reasonable values ​​and controlling the behavior of your printer.
