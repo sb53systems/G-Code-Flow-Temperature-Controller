@@ -9,7 +9,7 @@ This Script is free and open source,  created to prove the effectiveness of auto
 
 Hoping to soon find this concept in current slicers because I think it is probably the future of 3D printing.
 
-# Instructions
+# Operation and Instructions
 Note that current Script version (bin/SB53-Systems.exe) is still under development and will be updated daily. The source code will be shared soon.
 
 Take into account that this script is supposed to work under certain conditions :
@@ -23,8 +23,8 @@ Take into account that this script is supposed to work under certain conditions 
 
 Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer, and Happy Smart 3D Printing...
 
-# How to use :
-Note that...
+# installation and use
+Note that there is no official version yet, you can temporarily download the Bin folder which contains the necessary files
 # About the Developer :
 By Salim BELAYEL.
 
