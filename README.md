@@ -24,7 +24,7 @@ Take into account that this script is supposed to work under certain conditions 
 - This Script is currently only available for windows os.
 
 
-Be responsible and careful with this Script by using reasonable values ​​and controlling the behavior of your printer.
+Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer.
 
 
 
