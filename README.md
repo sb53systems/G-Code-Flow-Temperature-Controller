@@ -20,8 +20,8 @@ Take into account that this script is supposed to work under certain conditions 
 
 Be responsible and careful with this script by using reasonable values ​​and controlling the behavior of your printer.
 
-Offer me a coffee if you find my work worthy. PayPal account : sb53systems@gmail.com
-
 By Salim BELAYEL.
 
 Happy Smart 3D Printing...
+
+Offer me a coffee if you find my work worthy. PayPal account : sb53systems@gmail.com
