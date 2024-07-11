@@ -11,7 +11,7 @@ This Script is free and open source, created to prove the effectiveness of autom
 Hoping to soon find this concept in current slicers, because I think this will be the future of 3D printing.
 
 # Operation and Instructions
-The script operation consists of varying the temperature according to the average flow rate during printing time, then limiting the speed of moves in the G-Code to the flow rate recommended for the temperature reached.  
+The script operation consists of varying the temperature according to the average flow rate during printing time, then limit the speed in the G-Code to feat the recommended flow rate for the temperature reached.  
   
 Note that current Script version (bin/SB53-Systems.exe) is a Beta Version tested with OrcaSlicer.
 
