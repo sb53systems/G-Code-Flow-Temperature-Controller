@@ -12,10 +12,8 @@ Hoping to soon find this concept in current slicers, because I think this will b
 
 # Operation and Instructions
 The script operation consists of varying the temperature according to the average flow rate during printing time, then limiting the speed of moves in the G-Code to the flow rate recommended for the temperature reached.  
-
-
   
-Note that current Script version (bin/SB53-Systems.exe) is still under development and will be updated daily.
+Note that current Script version (bin/SB53-Systems.exe) is a Beta Version tested with OrcaSlicer.
 
 Take into account that this script is supposed to work under certain conditions :
 - Does not accept G2 and G3 in G-Code.
