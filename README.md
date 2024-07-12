@@ -1,5 +1,5 @@
 # G-Code-Flow-Temperature-Controller
-A Post Processing Script for Slic3r based Slicers and Klipper Printers. It can be run separately and open G-Code file manually
+A Post Processing Script for Slic3r based Slicers and Klipper Printers.  
 
 Note that [Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required for time estimation using Klipper Look-Ahead kinematics, and must be in the same Folder with this Script.  
 
