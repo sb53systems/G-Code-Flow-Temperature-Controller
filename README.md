@@ -15,7 +15,13 @@ The script operation consists of varying the temperature according to the averag
 
 The script is located in the Bin folder and can be used as a normal program by opening the SB53-Systems.exe file and opening a GCode manually, or by adding it as a post-processing script in a Slicer.  
 It is also recommended to add the Klipper Estimator script after this script in the slicer to rewrite the new estimated time into the G-Code.  
-![image](https://github.com/user-attachments/assets/3037bf1e-038a-4677-a82f-5772f64268cb)
+![image](https://github.com/user-attachments/assets/3037bf1e-038a-4677-a82f-5772f64268cb)  
+  
+Slicer Profil must be set for Max Speed, Max temperature and Flow Rate, to have a best Speed/Quality Optemization.  
+the Script will open after the slicer generates the G-Code.  
+![image](https://github.com/user-attachments/assets/18cf9c84-7255-4cd0-8e8b-ee8856020eae)  
+The User is asked whether the script will be applied or not, if yes:  
+![Capture](https://github.com/user-attachments/assets/49a49671-055b-42e0-84ea-e4ee3b1a5d80)  
   
 Note that current Script version (bin/SB53-Systems.exe) is a Beta Version tested with OrcaSlicer.
 
