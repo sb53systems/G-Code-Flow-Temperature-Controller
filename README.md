@@ -33,12 +33,10 @@ Take into account that this script is supposed to work under certain conditions 
 - Generated G-Code are 30% to 80% larger than the original one due to Temp and Speed adjustment (can be optimized).
 - This Script is not tested with Print Start Moves in G-Code (My Print Start moves are in klipper Macro).
 - This Script is currently only available for windows os.
-
-
-Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer, and Happy Smart 3D Printing...
-
-# Installation and Use
-Note that there is no official Release yet, you can temporarily download the Bin folder which contains the necessary files
+  
+Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer, and Happy Smart 3D Printing...  
+  
+Note that there is no official Release yet, you can temporarily download the Bin folder which contains the necessary files.  
 # About the Developer :
 By Salim BELAYEL.  
 Developed in June 2024 with (delphi 7 !!!!)  
