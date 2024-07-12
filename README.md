@@ -12,6 +12,10 @@ Hoping to soon find this concept in current slicers, because I think this will b
 
 # Operation and Instructions
 The script operation consists of varying the temperature according to the average flow rate during printing time, then limit the speed in the G-Code to feat the recommended flow rate for the temperature reached.  
+
+The script is located in the Bin folder and can be used as a normal program by opening the SB53-Systems.exe file and opening a GCode manually, or by adding it as a post-processing script in a Slicer.  
+It is also recommended to add the Klipper Estimator script after this script in the slicer to rewrite the new estimated time into the G-Code.  
+![image](https://github.com/user-attachments/assets/3037bf1e-038a-4677-a82f-5772f64268cb)
   
 Note that current Script version (bin/SB53-Systems.exe) is a Beta Version tested with OrcaSlicer.
 
