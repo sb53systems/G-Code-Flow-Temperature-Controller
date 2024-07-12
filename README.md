@@ -8,11 +8,11 @@ Hoping to soon find this concept in current slicers, because I think this will b
 # Operation and Instructions
 Note that [Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required for time estimation using Klipper Look-Ahead kinematics, and must be in the same Folder with this Script.  
   
-The script operation consists of varying the temperature according to the average flow rate during printing time, then limit the speed in the G-Code to feat the recommended flow rate for the temperature reached.  
+The script operation consists of varying the temperature according to the average flow rate during printing time, then limit the speed in the G-Code to feat the recommended flow rate for the reached temperature.  
 
 The script is located in the Bin folder and can be used as a normal program by opening the SB53-Systems.exe file and opening a GCode manually, or by adding it as a post-processing script in the Slicer.  
   
-It is also recommended to add the Klipper Estimator script after this script in the slicer to rewrite the new estimated time into the G-Code (already added by default).  
+It is also recommended to add the Klipper Estimator script after this script in the slicer to rewrite the new estimated time into the G-Code (Klipper_Estimator.exe V 3.7.3 already added in Bin Folder).  
   
 ![image](https://github.com/user-attachments/assets/3037bf1e-038a-4677-a82f-5772f64268cb)  
   
