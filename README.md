@@ -1,16 +1,13 @@
 # G-Code-Flow-Temperature-Controller
 A Post Processing Script for Slic3r based Slicers and Klipper Printers.  
-
-Note that [Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required for time estimation using Klipper Look-Ahead kinematics, and must be in the same Folder with this Script.  
-
-
+  
 This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.
 
-This Script is free and open source, created to prove the effectiveness of automatic nozzle temperature change during 3D printing in order to get the best Quality/Speed Optimization, but it is not intended to be a definitive solution as I believe that integrating this concept in slicers will be more effective.
-
-Hoping to soon find this concept in current slicers, because I think this will be the future of 3D printing.
-
+This Script is free and open source, created to prove the effectiveness of automatic nozzle temperature change during 3D printing in order to get the best Quality/Speed Optimization, but it is not intended to be a definitive solution as I believe that integrating this concept in slicers will be more effective.  
+Hoping to soon find this concept in current slicers, because I think this will be the future of 3D printing.  
 # Operation and Instructions
+Note that [Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required for time estimation using Klipper Look-Ahead kinematics, and must be in the same Folder with this Script.  
+  
 The script operation consists of varying the temperature according to the average flow rate during printing time, then limit the speed in the G-Code to feat the recommended flow rate for the temperature reached.  
 
 The script is located in the Bin folder and can be used as a normal program by opening the SB53-Systems.exe file and opening a GCode manually, or by adding it as a post-processing script in the Slicer.  
