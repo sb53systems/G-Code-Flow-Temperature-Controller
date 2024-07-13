@@ -130,10 +130,11 @@ type
 var
   Form1: TForm1;
   GCode_IN, GCode_OUT, ConfigFile : textfile;
-  file_path, Lines : string;
+  file_path, appPath, Lines : string;
   Filament_count, print_time : single;
   averageTime, timerCount: integer;
   gcodeProcces, gcodeGenerate, canProcess: bool;
+  sl : TStringlist;
 
 implementation
 
@@ -222,16 +223,18 @@ begin
   if FileExists(file_path)=false then begin
     canProcess:= false;
     showmessage('GCODE File not found !');
-  end else if FileExists(ExtractFileDir(Application.ExeName)+'\config.json')=false then begin
+  end else if FileExists(appPath+'\config.json')=false then begin
     canProcess:= false;
     Form2.ShowModal;
+    if FileExists(appPath+'\config.json')=true then
+      canProcess:= true else showmessage('Config.json File not found !');
   end;
   if canProcess=false then Exit;
   form1.BitBtn4.Enabled:=false;
   IF FileExists (file_path) <> True THEN Exit else begin
-    klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+ExtractFileDir(Application.ExeName)+'\klipper_estimator.exe --config_file '+ExtractFileDir(Application.ExeName)+'\config.json dump-moves '+file_path+' > '+ExtractFileDir(Application.ExeName)+'\gcode.txt';
+    klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+appPath+'\klipper_estimator.exe --config_file '+appPath+'\config.json dump-moves '+file_path+' > '+appPath+'\gcode.txt';
     ExecNewProcess(klipperEstCom,true);
-    Assignfile (GCode_IN, ExtractFileDir(Application.ExeName)+'\gcode.txt');
+    Assignfile (GCode_IN, appPath+'\gcode.txt');
     Reset (GCode_IN);
     tTime:=0;
     flow:=0;
@@ -318,7 +321,12 @@ begin
           else if Lines='ABS' then form1.ComboBox1.ItemIndex:=1
           else if Lines='PLA' then form1.ComboBox1.ItemIndex:=2
           else if Lines='TPU' then form1.ComboBox1.ItemIndex:=3
-          else showmessage('Filament Type Not Found !');
+          else if Lines='ASA' then form1.ComboBox1.ItemIndex:=4
+          else if Lines='HIPS' then form1.ComboBox1.ItemIndex:=5
+          else begin
+            form1.ComboBox1.ItemIndex:=6;
+            showmessage('The filament type in this G-Code is not recognized! You have to choose it manually!');
+          end;
         ComboBox1Change(Self);
       end;
     end;
@@ -343,7 +351,7 @@ var
   i:integer;
   actTemp, edialTemp, calcValue, tempByflow, tempByTime, maxCount, minCount : double;
 begin
-  if gcodeProcces=false then Exit;
+  if ((gcodeProcces=false)or(form1.ComboBox1.ItemIndex=6)) then Exit;
   maxCount:=0;
   minCount:=0;
   Series4.Clear;
@@ -455,7 +463,7 @@ begin
   curPA:=0;
   gcodeMovesCount:=0;
   retract:=false;
-  AssignFile(tempOutFile,ExtractFileDir(Application.ExeName)+'\tempOut.gcode');
+  AssignFile(tempOutFile,appPath+'\tempOut.gcode');
   Rewrite(tempOutFile);
   Reset (GCode_IN);
   WHILE NOT EOF(GCode_IN) DO BEGIN
@@ -547,6 +555,10 @@ begin
   END;
   CloseFile(GCode_IN);
   CloseFile(tempOutFile);
+  try
+    DeleteFile(appPath+'\gcode.txt');
+  Except
+  end;
   Timer1.Enabled:=true;
   gcodeGenerate:=true;
 end;
@@ -555,11 +567,11 @@ procedure TForm1.BitBtn2Click(Sender: TObject);
 begin
   if gcodeGenerate=false then Exit;
   if ParamStr(1)<>'' then begin
-    CopyFile(PChar(ExtractFileDir(Application.ExeName)+'\tempOut.gcode'), PChar(ParamStr(1)), False);
+    CopyFile(PChar(appPath+'\tempOut.gcode'), PChar(ParamStr(1)), False);
     Application.Terminate;
   end else if saveDialog1.Execute then begin
     try
-      CopyFile(PChar(ExtractFileDir(Application.ExeName)+'\tempOut.gcode'), PChar(saveDialog1.FileName), False);
+      CopyFile(PChar(appPath+'\tempOut.gcode'), PChar(saveDialog1.FileName), False);
       ShowMessage('File Save : '+saveDialog1.FileName);
       Application.Terminate;
     Except
@@ -570,16 +582,17 @@ end;
 
 procedure TForm1.FormActivate(Sender: TObject);
 begin
+  appPath:=ExtractFileDir(Application.ExeName);
   gcodeProcces:=false;
   gcodeGenerate:=false;
   file_path:='';
   timerCount:=0;
   // Read basic Configs in config.txt file
-  IF FileExists (ExtractFileDir(Application.ExeName)+'\config.txt') <> True THEN begin
+  IF FileExists (appPath+'\config.txt') <> True THEN begin
     showmessage('Config File Not Found in main directory ! This Application will be Closed !');
     Application.Terminate;
   end else begin
-    Assignfile (ConfigFile, ExtractFileDir(Application.ExeName)+'\config.txt');
+    Assignfile (ConfigFile, appPath+'\config.txt');
     Reset (ConfigFile);
     WHILE NOT EOF(ConfigFile) DO BEGIN
       Readln (ConfigFile, Lines);
@@ -601,41 +614,51 @@ end;
 procedure TForm1.Timer1Timer(Sender: TObject);
 Var
   klipperEstCom: string;
-  hnd: integer;
+  hnd, numLines: integer;
+  S: TFileStream;
 begin
   if timerCount=0 then begin
-    klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+ExtractFileDir(Application.ExeName)+'\klipper_estimator.exe --config_file '+ExtractFileDir(Application.ExeName)+'\config.json estimate '+ExtractFileDir(Application.ExeName)+'\tempOut.gcode'+' > '+ExtractFileDir(Application.ExeName)+'\gcode.txt';
+    klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+appPath+'\klipper_estimator.exe --config_file '+appPath+'\config.json estimate '+appPath+'\tempOut.gcode'+' > '+appPath+'\gcode.txt';
     ExecNewProcess(klipperEstCom,false);
     timerCount:=1;
+    numLines:=0;
   end else if timerCount=1 then begin
-    timerCount:=2;
-  end else if timerCount=2 then begin
-    // Close 'c:\windows\system32\cmd.exe' estimate process of klipper estimator After 2 Second
-    hnd:=FindWindow(nil, PChar(GetEnvironmentVariable('WINDIR')+'\system32\cmd.exe'));
-    //if hnd = 0 then Application.messageBox('Warning! Sender application not found.', 'Sender not found', idok);
-    try
-    if not postmessage(hnd, WM_CLOSE, 0, 0) then
-      Application.messageBox('Warning! Sender application did not close.', 'Sender did not close', idok);
-    except
-    end;
-    timerCount:=3;
-  end else if timerCount=3 then begin
-    // Open TempOut.txt and read the estimated time
-    Assignfile (GCode_IN, ExtractFileDir(Application.ExeName)+'\gcode.txt');
-    Reset (GCode_IN);
-    WHILE NOT EOF(GCode_IN) DO BEGIN
-      Readln (GCode_IN, Lines);
-      if copy(Lines,1,9)='  Minimal' then begin
-        Lines:=copy(Lines,32,length(Lines));
-        Form1.Label1.Caption:=copy(Lines,1,Pos('(',Lines)-2);
-        Form1.Label1.Font.Color:=clBlue ;
+    S:= TfileStream.Create(appPath+'\gcode.txt',fmOpenRead + fmShareDenyNone);
+    sl:= TStringList.Create;
+    if FileExists(appPath+'\gcode.txt') then
+      try
+        sl.LoadFromStream(S);
+        S.Free;
+      Except
       end;
-    END;
-    CloseFile(GCode_IN);
-    timerCount:=0;
-    Timer1.Enabled:=false;
-    Form1.BitBtn2.Enabled:=true;
-    Form1.BitBtn8.Enabled:=true;
+
+    if sl.Count>1 then begin
+      sl.Free;
+      // Close 'c:\windows\system32\cmd.exe' estimate process of klipper estimator After 2 Second
+      hnd:=FindWindow(nil, PChar(GetEnvironmentVariable('WINDIR')+'\system32\cmd.exe'));
+      try
+      if not postmessage(hnd, WM_CLOSE, 0, 0) then
+        Application.messageBox('Warning! Sender application did not close.', 'Sender did not close', idok);
+      except
+      end;
+      sleep(500);
+      // Open TempOut.txt and read the estimated time
+      Assignfile (GCode_IN, appPath+'\gcode.txt');
+      Reset (GCode_IN);
+      WHILE NOT EOF(GCode_IN) DO BEGIN
+       Readln (GCode_IN, Lines);
+        if copy(Lines,1,9)='  Minimal' then begin
+          Lines:=copy(Lines,32,length(Lines));
+          Form1.Label1.Caption:=copy(Lines,1,Pos('(',Lines)-2);
+          Form1.Label1.Font.Color:=clBlue ;
+        end;
+      END;
+      CloseFile(GCode_IN);
+      timerCount:=0;
+      Timer1.Enabled:=false;
+      Form1.BitBtn2.Enabled:=true;
+      Form1.BitBtn8.Enabled:=true;
+    end;
   end;
 end;
 
@@ -655,7 +678,7 @@ var
   typeFound : bool;
   FilType : string;
 begin
-  IF FileExists (ExtractFileDir(Application.ExeName)+'\config.txt') <> True THEN begin
+  IF FileExists (appPath+'\config.txt') <> True THEN begin
     showmessage('Config File Not Found in main directory ! This Application will be Closed !');
     Application.Terminate;
   end else begin
@@ -668,6 +691,20 @@ begin
         1 : FilType := 'ABS';
         2 : FilType := 'PLA';
         3 : FilType := 'TPU';
+        4 : FilType := 'ASA';
+        5 : FilType := 'HIPS';
+        6 : FilType := 'None';
+      end;
+      if FilType='None' then begin
+        Form1.Edit2.Text:='200';
+        Form1.Edit3.Text:='200';
+        Form1.Edit4.Text:='200';
+        Form1.Edit5.Text:='1';
+        Form1.Edit6.Text:='1';
+        Form1.Edit7.Text:='1';
+        Form1.Edit10.Text:='0';
+        Form1.Edit12.Text:='0';
+        Form1.Edit13.Text:='0';
       end;
       if Lines=('Filament_Type:'+FilType) then typeFound:=true;
       if ((copy(Lines,1,9)='Low_Temp:')and(typeFound=true)) then
@@ -699,10 +736,9 @@ procedure TForm1.BitBtn5Click(Sender: TObject);
 var
   typeFound : bool;
   FilType : string;
-  sl: TStringList;
   i: Integer;
 begin
-  IF FileExists (ExtractFileDir(Application.ExeName)+'\config.txt') <> True THEN begin
+  IF FileExists (appPath+'\config.txt') <> True THEN begin
     showmessage('Config File Not Found in main directory !');
   end else begin
     typeFound:=false;
@@ -711,12 +747,14 @@ begin
       1 : FilType := 'ABS';
       2 : FilType := 'PLA';
       3 : FilType := 'TPU';
+      4 : FilType := 'ASA';
+      5 : FilType := 'HIPS';
     else
       FilType := 'None';
     end;
     sl := TStringList.Create;
     try
-      sl.LoadFromFile(ExtractFileDir(Application.ExeName)+'\config.txt');
+      sl.LoadFromFile(appPath+'\config.txt');
       for i := 0 to sl.Count-1 do begin
         if Pos('Temp_Change:', sl[i])<>0 then
           sl[i]:='Temp_Change:'+Form1.Edit8.Text;
@@ -748,7 +786,7 @@ begin
           sl[i]:='Hight_PA:'+Form1.Edit13.Text;
           typeFound:=false;
         end;
-        sl.SaveToFile(ExtractFileDir(Application.ExeName)+'\config.txt');
+        sl.SaveToFile(appPath+'\config.txt');
       end;
     finally
       sl.Free;

@@ -3184,7 +3184,6 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ItemHeight = 13
-    ItemIndex = 4
     ParentFont = False
     TabOrder = 47
     Text = 'None'
@@ -3194,6 +3193,8 @@ object Form1: TForm1
       'ABS'
       'PLA'
       'TPU'
+      'ASA'
+      'HIPS'
       'None')
   end
   object StaticText10: TStaticText
