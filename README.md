@@ -26,8 +26,8 @@ If yes:
   
 ![Capture](https://github.com/user-attachments/assets/49a49671-055b-42e0-84ea-e4ee3b1a5d80)  
   
-The Filament Type and these specific parameters are chosen automatically by the script if (PLA, PETG, ABS, TPU, ASA, HIPS), everyone must set the appropriate values ​​according to their extruder limits, then save the changes for next uses.  
-it is necessary to refresh the view if modifications are made to the script before generating the G-Code.  
+The Filament Type and these specific parameters are chosen automatically by the script if (PLA, PETG, ABS, TPU, ASA, HIPS), You need to set the appropriate values ​​according to your extruder limit, then save the changes for next uses.  
+You need to refresh the view if you make changes in the the script before generating the G-Code, then Save and Close.  
   
 Take into account that this script is supposed to work under certain conditions :
 - Does not accept G2 and G3 in G-Code.
