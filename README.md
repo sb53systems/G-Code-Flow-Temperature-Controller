@@ -34,6 +34,10 @@ Below Generated G-Code
 ![Capture2](https://github.com/user-attachments/assets/c99558b2-5850-4dbd-9020-52db96d0374a)  
 ![image](https://github.com/user-attachments/assets/83b86611-f5b0-4b45-83f4-ee04094a3d15)  
 
+Next one with Rectilinear sparse infill  
+
+![image](https://github.com/user-attachments/assets/12873165-02f5-4947-a7f0-dc3ffef35d78)  
+![image_2024-07-26_213501577](https://github.com/user-attachments/assets/500b3ed9-0976-4d1a-a146-204849d6f74c)  
   
 Take into account that this script is supposed to work under certain conditions :
 - Does not accept G2 and G3 in G-Code.
