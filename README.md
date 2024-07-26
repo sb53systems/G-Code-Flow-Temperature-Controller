@@ -36,7 +36,7 @@ Take into account that this script is supposed to work under certain conditions 
 - Generated G-Code are 30% to 80% larger than the original one due to Temp and Speed adjustment (can be optimized).
 - Changing the initial layer temperature is important, and cannot be done in different print start macro, this macro must be in the form below  
   PRINT_START instructions EXTRUDER_TEMP=!!! ... next instructions  
-  ![image](https://github.com/user-attachments/assets/5e462ac4-0c8b-4537-a21a-f2a1f85b4126)
+  ![image](https://github.com/user-attachments/assets/5e462ac4-0c8b-4537-a21a-f2a1f85b4126)  
   Or
   ![image](https://github.com/user-attachments/assets/9e6ce605-e440-43f7-b222-e4b80bbe9e1c)  
 - This Script is currently only available for windows os.
