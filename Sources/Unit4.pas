@@ -17,7 +17,6 @@ type
     StaticText6: TStaticText;
     StaticText7: TStaticText;
     StaticText8: TStaticText;
-    StaticText9: TStaticText;
     StaticText10: TStaticText;
     StaticText11: TStaticText;
     StaticText12: TStaticText;
@@ -53,13 +52,19 @@ begin
 end;
 
 procedure TForm4.Label2Click(Sender: TObject);
+var
+  URL: string;
 begin
-  showmessage('Use my Email to Manualy Tip me in PayPal. Thank You !');
+  URL := 'https://ko-fi.com/sb53systems';
+  ShellExecute(0, 'open', PChar(URL), nil, nil, SW_SHOWNORMAL);
 end;
 
 procedure TForm4.Image2Click(Sender: TObject);
+var
+  URL: string;
 begin
-  showmessage('Use my Email to Manualy Tip me in PayPal. Thank You !');
+  URL := 'https://ko-fi.com/sb53systems';
+  ShellExecute(0, 'open', PChar(URL), nil, nil, SW_SHOWNORMAL);
 end;
 
 end.
