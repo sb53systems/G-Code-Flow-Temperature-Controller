@@ -82,7 +82,6 @@ type
     Timer1: TTimer;
     Image1: TImage;
     Label5: TLabel;
-    Label13: TLabel;
     BitBtn5: TBitBtn;
     ComboBox1: TComboBox;
     Bevel2: TBevel;
@@ -102,6 +101,13 @@ type
     Bevel6: TBevel;
     Bevel7: TBevel;
     Bevel8: TBevel;
+    CheckBox7: TCheckBox;
+    StaticText17: TStaticText;
+    StaticText18: TStaticText;
+    Edit14: TEdit;
+    Edit15: TEdit;
+    UpDown9: TUpDown;
+    UpDown11: TUpDown;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
@@ -130,11 +136,12 @@ type
 var
   Form1: TForm1;
   GCode_IN, GCode_OUT, ConfigFile : textfile;
-  file_path, appPath, Lines : string;
+  file_path, appPath, Lines, floatLocalFormat : string;
   Filament_count, print_time : single;
   averageTime, timerCount: integer;
   gcodeProcces, gcodeGenerate, canProcess: bool;
   sl : TStringlist;
+  formatSettings : TFormatSettings;
 
 implementation
 
@@ -267,14 +274,14 @@ begin
               retract:=false;
               flow:=0;
             end else begin
-              Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
+              if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
               flow:=StrToFloat(Lines);
             end;
           end;
         end else flow:=0;
       end else if copy(Lines,1,8)='    Time' then begin
         Lines:=copy(Lines, pos('=',Lines)+2, length(Lines));
-        Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
+        if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
         moveTime:=StrToFloat(Lines);
         if tTime>0 then Series8.AddXY(tTime, flow);
         tTime:=tTime+moveTime;
@@ -377,10 +384,11 @@ begin
       minCount:=actTemp;
       maxCount:=actTemp;
     end;
-    tempByTime:=strtofloat(edit8.Text)/strtofloat(edit9.Text);
     if edialTemp>actTemp then begin
+      tempByTime:=strtofloat(edit8.Text)/strtofloat(edit9.Text);
       if edialTemp>(actTemp+tempByTime) then actTemp:=actTemp+tempByTime else actTemp:=edialTemp;
     end else if edialTemp<actTemp then begin
+      tempByTime:=strtofloat(edit14.Text)/strtofloat(edit15.Text);
       if edialTemp<(actTemp-tempByTime) then actTemp:=actTemp-tempByTime else actTemp:=edialTemp;
     end else actTemp:=edialTemp;
     Series4.AddXY(i*averageTime, actTemp );
@@ -447,16 +455,19 @@ function FindClosestIndex(const Value: Double; A: TChartSeries): Integer;
 procedure TForm1.BitBtn8Click(Sender: TObject);
 Var
   totFilCount, gcodeFreq, curFreq, recFreq, tempByPA, curPA, recPA, recFlow, tempByflow, moveFlowRate, sectionArea, layerHeight, lineWidth : double;
-  curTemp, getTemp, moveFilCount : string;
+  curTemp, getTemp, moveFilCount, lineType : string;
   tempOutFile :textfile;
   retract : bool;
   gcodeMovesCount: integer;
 begin
   if gcodeProcces=false then Exit;
+  Form1.BitBtn8.Caption:='Generating';
   Form1.BitBtn8.Enabled:=false;
   Form1.Label1.Font.Color:=clRed ;
-  Form1.Label1.Caption:='Estimating';
+  Form1.Label1.Caption:='Generating';
+  Form1.Label1.Repaint;
   Assignfile (GCode_IN, file_path);
+  lineType:='';
   totFilCount:=0;
   gcodeFreq:=0;
   curFreq:=0;
@@ -467,26 +478,33 @@ begin
   Rewrite(tempOutFile);
   Reset (GCode_IN);
   WHILE NOT EOF(GCode_IN) DO BEGIN
+    if gcodeProcces=false then Exit;
     Readln (GCode_IN, Lines);
     if copy(Lines,1,12)='PRINT_START ' then begin
       curTemp:=floattostr((round(Series4.YValues[0]*10))/10);
       curTemp:=StringReplace(curTemp, ',', '.', [rfReplaceAll]);
-      WriteLn (tempOutFile , (copy(Lines,1,pos('extruder=',Lines)+8))+curTemp+copy(Lines,pos('extruder=',Lines)+12,Length(Lines)) );
+      WriteLn (tempOutFile , (copy(Lines,1,pos('EXTRUDER_TEMP=',Lines)+13))+curTemp+copy(Lines,pos('EXTRUDER_TEMP=',Lines)+17,Length(Lines)) );
     end else if copy(Lines,1,4)='G1 F' then begin
       WriteLn (tempOutFile , Lines);
       Lines:=copy(Lines,5,length(Lines));
-      Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
+      if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
       gcodeFreq:=strtofloat(Lines);
+    end else if copy(Lines,1,6)=';TYPE:' then begin
+      WriteLn (tempOutFile , Lines);
+      lineType:=copy(Lines,7,length(Lines));
     end else if copy(Lines,1,7)=';WIDTH:' then begin
       WriteLn (tempOutFile , Lines);
       Lines:=copy(Lines,8,length(Lines));
-      Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
+      if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
       lineWidth:=strtofloat(Lines);
     end else if copy(Lines,1,8)=';HEIGHT:' then begin
       WriteLn (tempOutFile , Lines);
       Lines:=copy(Lines,9,length(Lines));
-      Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
+      if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
       layerHeight:=strtofloat(Lines);
+    end else if ((copy(Lines,1,3)='G2 ')or(copy(Lines,1,3)='G3 ')) then begin
+      showmessage('Cannot be processed ! This G-code contains G2 or G3 commands !');
+      gcodeProcces:=false;
     end else if copy(Lines,1,3)='G1 ' then begin
       if (copy(Lines,1,4)<>'G1 F') then gcodeMovesCount:=gcodeMovesCount+1;
 
@@ -494,33 +512,43 @@ begin
       if totFilCount>0 then
         Try
           getTemp:=floattostr(round(Series4.YValues[FindClosestIndex(totFilCount,series7)]*10)/10);
-          getTemp:=StringReplace(getTemp, ',', '.', [rfReplaceAll]);
+          if floatLocalFormat=',' then getTemp:=StringReplace(getTemp, ',', '.', [rfReplaceAll]);
           if getTemp<>curTemp then begin
             curTemp:=getTemp;
-            WriteLn (tempOutFile , 'M104 S'+curTemp);
+            getTemp:=floattostr(round(Series4.YValues[FindClosestIndex(totFilCount,series7)+1]*10)/10);
+            if floatLocalFormat=',' then getTemp:=StringReplace(getTemp, ',', '.', [rfReplaceAll]);
+            WriteLn (tempOutFile , 'M104 S'+getTemp);
           end;
         Except
           //Esception
         end;
 
       // Calculate requested Flow and PA / Temperature
-      curTemp:=StringReplace(curTemp, '.', ',', [rfReplaceAll]);
+      if floatLocalFormat=',' then curTemp:=StringReplace(curTemp, '.', ',', [rfReplaceAll]);
       if strtofloat(curTemp)>strtofloat(edit3.text) then begin
         tempByflow:=((strtofloat(edit4.Text)-strtofloat(edit3.Text))/(strtofloat(edit7.Text)-strtofloat(edit6.Text)));
         recFlow:=strtofloat(edit6.Text)+((strtofloat(curTemp)-strtofloat(edit3.Text))/tempByflow);
-        tempByPA:=((strtofloat(edit4.Text)-strtofloat(edit3.Text))/(strtofloat(StringReplace(edit13.Text, '.', ',', [rfReplaceAll]))-strtofloat(StringReplace(edit12.Text, '.', ',', [rfReplaceAll]))));
-        recPA:=strtofloat(StringReplace(edit12.Text, '.', ',', [rfReplaceAll]))+((strtofloat(curTemp)-strtofloat(edit3.Text))/tempByPA);
+        if floatLocalFormat=',' then begin
+          Form1.Edit13.Text:=StringReplace(edit13.Text, '.', ',', [rfReplaceAll]);
+          Form1.Edit12.Text:=StringReplace(edit12.Text, '.', ',', [rfReplaceAll]);
+        end;
+        tempByPA:=((strtofloat(edit4.Text)-strtofloat(edit3.Text))/(strtofloat(edit13.Text)-strtofloat(edit12.Text)));
+        recPA:=strtofloat(edit12.Text)+((strtofloat(curTemp)-strtofloat(edit3.Text))/tempByPA);
       end else begin
         tempByflow:=((strtofloat(edit3.Text)-strtofloat(edit2.Text))/(strtofloat(edit6.Text)-strtofloat(edit5.Text)));
         recFlow:=strtofloat(edit6.Text)-((strtofloat(edit3.Text)-strtofloat(curTemp))/tempByflow);
-        tempByPA:=((strtofloat(edit3.Text)-strtofloat(edit2.Text))/(strtofloat(StringReplace(edit12.Text, '.', ',', [rfReplaceAll]))-strtofloat(StringReplace(edit10.Text, '.', ',', [rfReplaceAll]))));
-        recPA:=strtofloat(StringReplace(edit12.Text, '.', ',', [rfReplaceAll]))-((strtofloat(edit3.Text)-strtofloat(curTemp))/tempByPA);
+        if floatLocalFormat=',' then begin
+          Form1.Edit10.Text:=StringReplace(edit10.Text, '.', ',', [rfReplaceAll]);
+          Form1.Edit12.Text:=StringReplace(edit12.Text, '.', ',', [rfReplaceAll]);
+        end;
+        tempByPA:=((strtofloat(edit3.Text)-strtofloat(edit2.Text))/(strtofloat(edit12.Text)-strtofloat(edit10.Text)));
+        recPA:=strtofloat(edit12.Text)-((strtofloat(edit3.Text)-strtofloat(curTemp))/tempByPA);
       end;
       recPA:=round(recPA*1000)/1000;
-      curTemp:=StringReplace(curTemp, ',', '.', [rfReplaceAll]);
+      if floatLocalFormat=',' then curTemp:=StringReplace(curTemp, ',', '.', [rfReplaceAll]);
 
       // Set new PA Value
-      if curPA<>recPA then begin
+      if ((curPA<>recPA)and(Form1.CheckBox7.Checked)and((lineType='Sparse infill')or(lineType='Internal solid infill')or(lineType='Internal Bridge'))) then begin
         curPA:=recPA;
         WriteLn (tempOutFile , 'SET_PRESSURE_ADVANCE ADVANCE='+StringReplace(floattostr(curPA), ',', '.', [rfReplaceAll]));
       end;
@@ -529,7 +557,7 @@ begin
       if (pos('E', Lines)<>0) and form1.CheckBox6.Checked then begin
         moveFilCount:=copy(Lines, pos('E',Lines)+1, length(Lines));
         if pos(' ', moveFilCount)<>0 then moveFilCount:=copy(moveFilCount,1,pos(' ', moveFilCount)-1);
-        moveFilCount:=StringReplace(moveFilCount, '.', ',', [rfReplaceAll]);
+        if floatLocalFormat=',' then moveFilCount:=StringReplace(moveFilCount, '.', ',', [rfReplaceAll]);
         if moveFilCount[1]='-' then retract:=true else
           if retract=true then retract:=false else begin
             try
@@ -555,12 +583,15 @@ begin
   END;
   CloseFile(GCode_IN);
   CloseFile(tempOutFile);
-  try
-    DeleteFile(appPath+'\gcode.txt');
-  Except
+  if gcodeProcces then begin
+    try
+      DeleteFile(appPath+'\gcode.txt');
+    Except
+    end;
+    Form1.Label1.Caption:='Estimating';
+    Timer1.Enabled:=true;
+    gcodeGenerate:=true;
   end;
-  Timer1.Enabled:=true;
-  gcodeGenerate:=true;
 end;
 
 procedure TForm1.BitBtn2Click(Sender: TObject);
@@ -596,8 +627,10 @@ begin
     Reset (ConfigFile);
     WHILE NOT EOF(ConfigFile) DO BEGIN
       Readln (ConfigFile, Lines);
-      if copy(Lines,1,12)='Temp_Change:' then Form1.Edit8.Text:=copy(Lines,13,length(Lines));
-      if copy(Lines,1,10)='Temp_Time:' then Form1.Edit9.Text:=copy(Lines,11,length(Lines));
+      if copy(Lines,1,10)='Temp_Rise:' then Form1.Edit8.Text:=copy(Lines,11,length(Lines));
+      if copy(Lines,1,15)='Temp_Rise_Time:' then Form1.Edit9.Text:=copy(Lines,16,length(Lines));
+      if copy(Lines,1,10)='Temp_Fall:' then Form1.Edit14.Text:=copy(Lines,11,length(Lines));
+      if copy(Lines,1,15)='Temp_Fall_Time:' then Form1.Edit15.Text:=copy(Lines,16,length(Lines));
       if copy(Lines,1,19)='Average_Max_Smooth:' then Form1.Edit11.Text:=copy(Lines,20,length(Lines));
       if copy(Lines,1,20)='Speed_Quality_Optem:' then Form1.TrackBar1.Position:=strtoint(copy(Lines,21,length(Lines)));
     end;
@@ -657,6 +690,7 @@ begin
       timerCount:=0;
       Timer1.Enabled:=false;
       Form1.BitBtn2.Enabled:=true;
+      Form1.BitBtn8.Caption:='Generate G-Code';
       Form1.BitBtn8.Enabled:=true;
     end;
   end;
@@ -668,8 +702,17 @@ begin
 end;
 
 procedure TForm1.FormShow(Sender: TObject);
+var
+  getLocFormat : string;
 begin
   canProcess:=true;
+  // Furnish the locale format settings record
+  GetLocaleFormatSettings(LOCALE_SYSTEM_DEFAULT, formatSettings);
+  getLocFormat:=CurrToStrF(1.1, ffCurrency, 1, formatSettings);
+  // And use it in the thread safe form of CurrToStrF
+  if pos(',', getLocFormat)<>0 then floatLocalFormat:=','
+  else if pos('.', getLocFormat)<>0 then floatLocalFormat:='.'
+  else ShowMessage('System Local Format not Found !');
   if ParamStr(1)<>'' then Form3.ShowModal;
 end;
 
@@ -756,10 +799,14 @@ begin
     try
       sl.LoadFromFile(appPath+'\config.txt');
       for i := 0 to sl.Count-1 do begin
-        if Pos('Temp_Change:', sl[i])<>0 then
-          sl[i]:='Temp_Change:'+Form1.Edit8.Text;
-        if Pos('Temp_Time:', sl[i])<>0 then
-          sl[i]:='Temp_Time:'+Form1.Edit9.Text;
+        if Pos('Temp_Rise:', sl[i])<>0 then
+          sl[i]:='Temp_Rise:'+Form1.Edit8.Text;
+        if Pos('Temp_Rise_Time:', sl[i])<>0 then
+          sl[i]:='Temp_Rise_Time:'+Form1.Edit9.Text;
+        if Pos('Temp_Fall:', sl[i])<>0 then
+          sl[i]:='Temp_Fall:'+Form1.Edit14.Text;
+        if Pos('Temp_Fall_Time:', sl[i])<>0 then
+          sl[i]:='Temp_Fall_Time:'+Form1.Edit15.Text;
         if Pos('Average_Max_Smooth:', sl[i])<>0 then
           sl[i]:='Average_Max_Smooth:'+Form1.Edit11.Text;
         if Pos('Speed_Quality_Optem:', sl[i])<>0 then
@@ -801,8 +848,10 @@ begin
 end;
 
 procedure TForm1.BitBtn7Click(Sender: TObject);
+var
+  URL: string;
 begin
-  showmessage('Use this Email sb53systems@gmail.com to Manualy Tip me in PayPal. Thank You !');
+  URL := 'https://ko-fi.com/sb53systems';
+  ShellExecute(0, 'open', PChar(URL), nil, nil, SW_SHOWNORMAL);
 end;
-
 end.
