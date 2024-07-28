@@ -3,7 +3,7 @@ object Form3: TForm3
   Top = 767
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'SB53 Flow/Temperature Controller'
+  Caption = 'SB53 G-Code Flow/Temperature Controller'
   ClientHeight = 127
   ClientWidth = 646
   Color = clGray
