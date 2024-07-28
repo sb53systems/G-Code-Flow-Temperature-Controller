@@ -11,7 +11,7 @@ uses
 
 begin
   Application.Initialize;
-  Application.Title := 'SB53 GCODE Flow/Temperature Controller';
+  Application.Title := 'SB53 G-CODE Flow/Temperature Controller';
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TForm2, Form2);
   Application.CreateForm(TForm3, Form3);
