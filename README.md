@@ -6,7 +6,7 @@ This 3D Printing Concept is Based on my personal approach and with a minimum of 
 This Script is free and open source, created to prove the effectiveness of automatic nozzle temperature change during 3D printing in order to get the best Quality/Speed Optimization, but it is not intended to be a definitive solution as I believe that integrating this concept in slicers will be more effective.  
 Hoping to soon find this concept in current slicers, because I think this will be the future of 3D printing.  
 # Operation and Instructions
-Note that [Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required for time estimation using Klipper Look-Ahead kinematics, and must be in the same Folder with this Script (Klipper_Estimator.exe V 3.7.3 already added in Bin Folder).  
+Note that [Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required for time estimation using Klipper Look-Ahead kinematics, and must be in the same Folder with this Script (Included Klipper_Estimator.exe V 3.7.3).  
   
 The script operation consists of varying the temperature according to the average flow rate during printing time, then limit the speed in the G-Code to feat the recommended flow rate for the reached temperature.  
 
@@ -52,8 +52,9 @@ Take into account that this script is supposed to work under certain conditions 
 - This Script is currently only available for windows os.
   
 Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer, and Happy Smart 3D Printing...  
+
+Latest Release : [SB53 G-Code Flow/Temperature Controller V1.0 (3 Aug 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.0)  
   
-Note that there is no official Release yet, you can temporarily download the Bin folder which contains the necessary files.  
 # About the Developer :
 By Salim BELAYEL.  
 Developed in June 2024 with Delphi 12 Community Edition.  
