@@ -53,7 +53,8 @@ Take into account that this script is supposed to work under certain conditions 
   
 Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer, and Happy Smart 3D Printing...  
 
-Latest Release : [SB53 G-Code Flow/Temperature Controller V1.0 (3 Aug 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.0)  
+# Latest Release : 
+[SB53 G-Code Flow/Temperature Controller V1.0 (3 Aug 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.0)  
   
 # About the Developer :
 By Salim BELAYEL.  
