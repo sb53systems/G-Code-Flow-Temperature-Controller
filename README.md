@@ -13,8 +13,13 @@ The script operation consists of varying the temperature according to the averag
 The script is located in the Bin folder and can be used as a normal program by opening the SB53-Systems.exe file and opening a GCode manually, or by adding it as a post-processing script in the Slicer.  
   
 It is also recommended to add in the slicer Klipper_Estimator.exe path after this script to rewrite the new estimated time into the G-Code.  
+```
+D:\SB53_G-Code_Flow_Temperature_Controller_V1.0\SB53-Systems.exe;
+D:\SB53_G-Code_Flow_Temperature_Controller_V1.0\Klipper_Estimator.exe --config_file D:\SB53_G-Code_Flow_Temperature_Controller_V1.0\config.json post-process;
+```
   
-![image](https://github.com/user-attachments/assets/3037bf1e-038a-4677-a82f-5772f64268cb)  
+![image](https://github.com/user-attachments/assets/a08ed4f5-a5f7-47dd-88eb-09a183e43a2d)  
+
   
 Note that the Slicer Profil must be set for Max Speed, Max temperature and Flow Rate, to have a best Speed/Quality Optemization.  
   
@@ -45,7 +50,10 @@ Take into account that this script is supposed to work under certain conditions 
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
 - Generated G-Code are 30% to 80% larger than the original one due to Temp and Speed adjustment (can be optimized).
 - Changing the initial layer temperature is important, and cannot be done in different print start macro, this macro must be in the form below  
-  PRINT_START instructions EXTRUDER_TEMP=!!! ... next instructions  
+  PRINT_START instructions EXTRUDER_TEMP=!!! ... next instructions
+  ```
+  PRINT_START EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]
+  ```
   ![image](https://github.com/user-attachments/assets/5e462ac4-0c8b-4537-a21a-f2a1f85b4126)  
   Or  
   ![image](https://github.com/user-attachments/assets/9e6ce605-e440-43f7-b222-e4b80bbe9e1c)  
