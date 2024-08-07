@@ -45,6 +45,7 @@ Next one with Rectilinear sparse infill
 ![image](https://github.com/user-attachments/assets/32a0c788-7bfe-4155-bcd3-e7fdd51d3a48)  
   
 Take into account that this script is supposed to work under certain conditions :
+- This Script is currently only available for windows os.
 - Does not accept G2 and G3 in G-Code.
 - Time Estimation is based in Klipper Look-ahead kinematics (may not be compatible with Marlin or Others).
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
@@ -60,7 +61,6 @@ Take into account that this script is supposed to work under certain conditions 
   ```
   PRINT_START BED_TEMP=[bed_temperature_initial_layer_single] EXTRUDER_TEMP=[nozzle_temperature_initial_layer]
   ```
-- This Script is currently only available for windows os.
   
 Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer, and Happy Smart 3D Printing...  
 
