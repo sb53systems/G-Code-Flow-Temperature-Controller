@@ -6,7 +6,7 @@ This 3D Printing Concept is Based on my personal approach and with a minimum of 
 This Script is free and open source, created to prove the effectiveness of automatic nozzle temperature change during 3D printing in order to get the best Quality/Speed Optimization, but it is not intended to be a definitive solution as I believe that integrating this concept in slicers will be more effective.  
 Hoping to soon find this concept in current slicers, because I think this will be the future of 3D printing.  
   
-# Latest Release : 
+# Latest Release
 [SB53 G-Code Flow/Temperature Controller V1.0 (3 Aug 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.0)  
   
 # Instructions and prerequisites  
@@ -68,10 +68,15 @@ The Filament Type and these specific parameters are chosen automatically by the 
   
 You need to refresh the view if you make changes in the the script before generating the G-Code, then Save and Close.  
 
-Below the Generated G-Code  
+Below the Generated G-Code for 0.2mm Layer Height  
   
 ![image](https://github.com/user-attachments/assets/d429f7a3-7a2b-4ee2-bf72-f8d0e1daca1b)  
 ![image](https://github.com/user-attachments/assets/9bfd7ebc-ecfe-4873-93a2-4b5da9b8561e)  
+  
+Next the Generated G-Code for 0.3mm Layer Height  
+  
+![image](https://github.com/user-attachments/assets/abd70604-c2e3-4a6d-81d9-8bc45fa03e47)  
+![image](https://github.com/user-attachments/assets/6c0cc21e-4f42-4756-98d4-9869bbed3a5d)  
   
 Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer.  
 I look forward to your feedback and remain open to new proposals.  
