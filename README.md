@@ -77,8 +77,14 @@ Next the Generated G-Code for 0.3mm Layer Height
 ![image](https://github.com/user-attachments/assets/abd70604-c2e3-4a6d-81d9-8bc45fa03e47)  
 ![image](https://github.com/user-attachments/assets/6c0cc21e-4f42-4756-98d4-9869bbed3a5d)  
   
+# Observations  
+- Printers with higher accelerations and lower heating/cooling time will have a better result with this approach because it allows for better flow stabilization.
+- The speed of the outer wall is always higher than the speed of the inner wall because of the deferent Line width.
+![image](https://github.com/user-attachments/assets/76acb2cf-f57e-4a38-b1c7-788689ed6470)![image](https://github.com/user-attachments/assets/52b5714b-5607-45f5-adc7-73b9782b6bcc)  
+- With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands, without any changes in the script.  
+  
 Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer.  
-I look forward to your feedback and remain open to new proposals.  
+I look forward to your feedback and remain available and open to new proposals.  
   
 Happy Smart 3D Printing :-)  
   
