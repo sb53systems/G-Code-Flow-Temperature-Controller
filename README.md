@@ -26,7 +26,7 @@ To have a best Speed/Quality Optemization, the Slicer Profil must be set for Max
 Example below with my max 200mm/s Printer speed :  
 ![image](https://github.com/user-attachments/assets/a4ca7c48-0c74-4015-809b-102f71577593)
 ![image](https://github.com/user-attachments/assets/2aa450c6-984d-432c-890e-d0d0ada0d7a4)
-![image](https://github.com/user-attachments/assets/5fe20af1-0578-4427-8b64-13d13cb48050)  
+![image](https://github.com/user-attachments/assets/c9675974-f4a9-475d-bb4e-c722ea14ce68)  
   
 Note that :  
 - The script only reduces the speeds above the recommended speed, lower speeds will be kept as in the G-Code.
