@@ -2,7 +2,7 @@ Temp_Rise:1
 Temp_Rise_Time:5
 Temp_Fall:1
 Temp_Fall_Time:5
-Average_Max_Smooth:60
+Average_Max_Smooth:20
 Speed_Quality_Optem:3
 
 Filament_Type:PLA
