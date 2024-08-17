@@ -87,6 +87,15 @@ Be responsible and careful with this Script by using reasonable values ​​and
 I look forward to your feedback and remain available and open to new proposals.  
   
 Happy Smart 3D Printing :-)  
+
+# Future Version :
+V1.1 will be released in few days :)  
+New features :  
+- Create custom filament profiles for different extruders/printers.
+- View the generated G-Code and the real Temperature changes during the new estimated Time.
+- Have the ability to use the M109 G-Code command to set the initial temperature instead of the Macro PRINT_START.
+- ...More.
+![image](https://github.com/user-attachments/assets/42b786ed-6b5b-4a4c-911b-45cf7ff2b877)
   
 # About the Developer :
 By Salim BELAYEL.  
@@ -98,7 +107,7 @@ Email : sb53systems@gmail.com
   
 If you find my work worthy, Bay me a coffee. Thank you.  
   
-[![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53systems)
- [Co-fi](https://ko-fi.com/sb53systems) 
+[![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system)
+ [Co-fi](https://ko-fi.com/sb53system) 
 
 
