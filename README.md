@@ -97,7 +97,7 @@ I look forward to your feedback and remain available and open to new proposals.
   
 Happy Smart 3D Printing :-)  
 
-# Future Version :
+# Future Version 
 V1.1 will be released in few days :)  
   
 New features :  
@@ -108,7 +108,7 @@ New features :
   
 ![image](https://github.com/user-attachments/assets/42b786ed-6b5b-4a4c-911b-45cf7ff2b877)
   
-# About the Developer :
+# About the Developer 
 By Salim BELAYEL.  
 Developed in June 2024 with Delphi 12 Community Edition.  
 Email : sb53systems@gmail.com  
