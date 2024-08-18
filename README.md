@@ -25,8 +25,16 @@ To have a best Speed/Quality Optemization, the Slicer Profil must be set for Max
   
 Example below with my max 200mm/s Printer speed :  
 ![image](https://github.com/user-attachments/assets/a4ca7c48-0c74-4015-809b-102f71577593)
-![image](https://github.com/user-attachments/assets/2aa450c6-984d-432c-890e-d0d0ada0d7a4)
+![image](https://github.com/user-attachments/assets/2aa450c6-984d-432c-890e-d0d0ada0d7a4)  
+
+For small internal/external bridges, the speed should be set to the maximum speed, and avoid sudden changes in flow rate and a non-necessary drop in temperature.   
 ![image](https://github.com/user-attachments/assets/c9675974-f4a9-475d-bb4e-c722ea14ce68)  
+  
+For larger bridges, I recommend using a modifier in the slicer that changes the speed of a few lower layers to the bridge, the Script will adapt the temperature and speed to the desired value. Example bellow for 50mm/s External Bridge speed.  
+![image1](https://github.com/user-attachments/assets/216766be-e662-4ea0-aef0-541cbd23287a)  
+  
+![image3](https://github.com/user-attachments/assets/2a5a083b-20a2-4c5d-91f1-e3d87d0cc62a)  
+  
   
 Note that :  
 - The script only reduces the speeds above the recommended speed, lower speeds will be kept as in the G-Code.
