@@ -60,11 +60,12 @@ Note that :
 - This Script is currently only available for Windows OS.  
   
 # Usage  
-The script will open once you Print or Export the G-Code from the Slicer and ask the user whether the script will be applied or not.   
+The script will popup once you Print or Export the G-Code from the Slicer, ask the user whether the script will be applied or not.   
   
 ![image](https://github.com/user-attachments/assets/bc99c01b-8b20-4b9d-93db-1dcb62fbf9b0)  
   
-If yes: the first execution, Klipper_Estimator script requires a file containing the maximum limits of the printer (config .json), can be obtained by specifying the IP address of the printer or by choosing a file locally. If the printer is not the same you must change this file, then click the PROCEED button again.  
+If yes:  
+the first execution, Klipper_Estimator script requires a file containing the maximum limits of the printer (config .json), can be obtained by specifying the IP address of the printer or by choosing a file locally. If the printer is not the same you must change this file, then click the PROCEED button again.  
 ![image](https://github.com/user-attachments/assets/556fa311-cc68-42a5-af34-4261462935a0)  
   
 ![image](https://github.com/user-attachments/assets/2a316ba8-124d-48d5-83b1-3a6184aa189e)  
