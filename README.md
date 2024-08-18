@@ -35,6 +35,8 @@ For larger bridges, I recommend using a modifier in the slicer that changes the 
   
 ![image3](https://github.com/user-attachments/assets/2a5a083b-20a2-4c5d-91f1-e3d87d0cc62a)  
   
+The initial temperature estimated by the Script depends on the speed of the first movements of the g-code, you can adjust it by fixing the speed of the purge line or the perimeters of the first layer.  
+  
   
 Note that :  
 - The script only reduces the speeds above the recommended speed, lower speeds will be kept as in the G-Code.
