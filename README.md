@@ -76,7 +76,7 @@ The Filament Type and these specific parameters are chosen automatically by the 
   
 ![image](https://github.com/user-attachments/assets/abbbcbaf-3396-487f-aa31-3f8dbe1ec0b1)  
   
-You need to refresh the view if you make changes in the the script before generating the G-Code, then Save and Close.  
+You need to refresh the view if you make changes in the script before generating the G-Code, then Save and Close.  
 
 Below the Generated G-Code for 0.2mm Layer Height  
   
