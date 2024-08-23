@@ -83,19 +83,16 @@ the first execution, Klipper_Estimator script requires a file containing the max
   
 The Filament Type and these specific parameters are chosen automatically by the script if (PLA, PETG, ABS, TPU, ASA, HIPS), You need to set the appropriate values ​​according to your extruder limits, then save the changes for next uses.  
   
-![image](https://github.com/user-attachments/assets/abbbcbaf-3396-487f-aa31-3f8dbe1ec0b1)  
+![image](https://github.com/user-attachments/assets/9a22f3d6-48f9-4ad8-88cf-367612a0f3e9)  
+  
   
 You need to refresh the view if you make changes in the script before generating the G-Code, then Save and Close.  
 
-Below the Generated G-Code for 0.2mm Layer Height  
+Below the Generated G-Code 
   
-![image](https://github.com/user-attachments/assets/d429f7a3-7a2b-4ee2-bf72-f8d0e1daca1b)  
-![image](https://github.com/user-attachments/assets/9bfd7ebc-ecfe-4873-93a2-4b5da9b8561e)  
+![image](https://github.com/user-attachments/assets/429905cd-ca65-460c-a007-34aeaac27f89)  
   
-Next the Generated G-Code for 0.3mm Layer Height  
-  
-![image](https://github.com/user-attachments/assets/abd70604-c2e3-4a6d-81d9-8bc45fa03e47)  
-![image](https://github.com/user-attachments/assets/6c0cc21e-4f42-4756-98d4-9869bbed3a5d)  
+![image](https://github.com/user-attachments/assets/1e2a2662-a90d-4907-9d88-2e990a25197e)  
   
 # Observations  
 - Printers with higher accelerations and lower heating/cooling time will have a better result with this approach because it allows for better flow stabilization.
