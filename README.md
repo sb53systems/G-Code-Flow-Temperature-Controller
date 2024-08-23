@@ -23,10 +23,9 @@ D:\SB53_G-Code_Flow_Temperature_Controller_V1.0\Klipper_Estimator.exe --config_f
   
 To have a best Speed/Quality Optemization, the Slicer Profil must be set for Max Speed and Max Flow Rate, the Nozzle temperature is not important because it will be reset in the script and the print speed will be regulated to the temperature.  
   
-Example below with my max 200mm/s Printer speed :  
-![image](https://github.com/user-attachments/assets/a4ca7c48-0c74-4015-809b-102f71577593)
-![image](https://github.com/user-attachments/assets/2aa450c6-984d-432c-890e-d0d0ada0d7a4)  
-
+Example below with my max 200mm/s Printer speed : (Same profil for PLA, PETG and ABS)  
+![image](https://github.com/user-attachments/assets/c0a30aed-046a-48ad-b819-93def3b28de5)  
+  
 The speed of overhangs and small internal/external bridges should be set to the maximum speed, this will ensure that the filament is extruded at the recommended flow rate and that it is not too hot and falls off, or too cold and shrinks, and will avoid sudden changes in flow rate and unnecessary temperature drop. (Experimental approach)  
 ![image](https://github.com/user-attachments/assets/5bdbf7f0-58ec-4877-93f1-a5bde20caa38)  
   
