@@ -100,8 +100,6 @@ I look forward to your feedback and remain available and open to new proposals.
 # Future Version 
 V1.1 will be released in few days :)  
   
-https://www.thingiverse.com/thing:1272741
-  
 ![image](https://github.com/user-attachments/assets/a1a34997-d915-4d9b-ae01-43555ed32e19)  
   
 New features :  
@@ -111,6 +109,8 @@ New features :
 - ...More.
   
 With this Script Concept, you could print any object with 0 Slicer Settings and have the best Speed/Quality Optimization, even in a 2018 Klipperized 3D printer and a nice inexpensive filament!  
+  
+https://www.thingiverse.com/thing:1272741. 
   
 ![image](https://github.com/user-attachments/assets/2ecd51bd-e556-4718-8752-9de2fd78ac69)  
   
