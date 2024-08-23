@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/1e3e16d0-b7d1-4714-8e30-9ed45430dc70
 # G-Code-Flow-Temperature-Controller
 A Post Processing Script for Slic3r based Slicers and Klipper 3D Printers.  
   
