@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/1e3e16d0-b7d1-4714-8e30-9ed45430dc70
 # G-Code-Flow-Temperature-Controller
 A Post Processing Script for Slic3r based Slicers and Klipper 3D Printers.  
   
@@ -97,10 +99,12 @@ Next the Generated G-Code for 0.3mm Layer Height
 Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer.  
 I look forward to your feedback and remain available and open to new proposals.  
   
-Happy Smart 3D Printing :-)  
-
 # Future Version 
 V1.1 will be released in few days :)  
+  
+https://www.thingiverse.com/thing:1272741
+  
+![image](https://github.com/user-attachments/assets/a1a34997-d915-4d9b-ae01-43555ed32e19)  
   
 New features :  
 - Create custom filament profiles for different extruders/printers.
@@ -108,15 +112,22 @@ New features :
 - Have the ability to use the M109 G-Code command to set the initial temperature instead of the Macro PRINT_START.
 - ...More.
   
-![image](https://github.com/user-attachments/assets/42b786ed-6b5b-4a4c-911b-45cf7ff2b877)
+With this Script Concept, you could print any object with 0 Slicer Settings and have the best Speed/Quality Optimization, even in a 2018 Klipperized 3D printer and a nice inexpensive filament!  
+  
+![image](https://github.com/user-attachments/assets/2ecd51bd-e556-4718-8752-9de2fd78ac69)  
+  
+https://github.com/user-attachments/assets/897c4a37-20b5-4e1e-a57e-ddd5e81f7877  
+  
+https://github.com/user-attachments/assets/ea2f2d75-cc8c-4dfc-b89d-0f82fd9bf17a  
   
 # About the Developer 
 By Salim BELAYEL.  
 Developed in June 2024 with Delphi 12 Community Edition.  
 Email : sb53systems@gmail.com  
-
+  
 ![SB53-Systems~1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/b94703a1-cf21-4109-bfa6-b9bcff438a1d)  
-
+  
+Happy Smart 3D Printing :-)  
   
 If you find my work worthy, Bay me a coffee. Thank you.  
 (Use the Co-Fi link bellow instead of the Script URL)
