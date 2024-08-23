@@ -28,7 +28,8 @@ Example below with my max 200mm/s Printer speed :
 ![image](https://github.com/user-attachments/assets/2aa450c6-984d-432c-890e-d0d0ada0d7a4)  
 
 The speed of overhangs and small internal/external bridges should be set to the maximum speed, this will ensure that the filament is extruded at the recommended rate and that it is not too hot and falls off, or too cold and shrinks, and will avoid sudden changes in flow rate and unnecessary temperature drop. (Experimental approach)  
-![image](https://github.com/user-attachments/assets/25919a05-8dd8-4a72-84bd-9e44da590ea0)  
+![image](https://github.com/user-attachments/assets/5bdbf7f0-58ec-4877-93f1-a5bde20caa38)  
+  
   
   
 For larger bridges, I recommend using a modifier in the slicer that changes the speed of a few lower layers to the bridge, the Script will adapt gradually the temperature and the speed to the desired value. Example bellow for 50mm/s External Bridge speed.  
