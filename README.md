@@ -27,7 +27,7 @@ Example below with my max 200mm/s Printer speed :
 ![image](https://github.com/user-attachments/assets/a4ca7c48-0c74-4015-809b-102f71577593)
 ![image](https://github.com/user-attachments/assets/2aa450c6-984d-432c-890e-d0d0ada0d7a4)  
 
-The speed of overhangs and small internal/external bridges should be set to the maximum speed, this will ensure that the filament is extruded at the recommended rate and that it is not too hot and falls off, or too cold and shrinks, and will avoid sudden changes in flow rate and unnecessary temperature drop. (Experimental approach)  
+The speed of overhangs and small internal/external bridges should be set to the maximum speed, this will ensure that the filament is extruded at the recommended flow rate and that it is not too hot and falls off, or too cold and shrinks, and will avoid sudden changes in flow rate and unnecessary temperature drop. (Experimental approach)  
 ![image](https://github.com/user-attachments/assets/5bdbf7f0-58ec-4877-93f1-a5bde20caa38)  
   
   
