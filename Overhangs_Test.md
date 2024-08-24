@@ -4,4 +4,6 @@
 ![IMG20240824140457](https://github.com/user-attachments/assets/e6093bdf-ddee-4b30-a13b-4ef878386160)  
 ![IMG20240824134941](https://github.com/user-attachments/assets/0adfaa9d-2cd2-4839-a343-767f8c63c0dd)  
 ![IMG20240824134904](https://github.com/user-attachments/assets/11e29429-b7ed-4473-8eb3-b872cb03aa44)  
-[![X10 Time Laps](https://i.ytimg.com/an_webp/OdbATlIXADM/mqdefault_6s.webp?du=3000&sqp=CMinp7YG&rs=AOn4CLDelMM4W_AxulhMExBtzFrYxUCv2A)]([https://www.youtube.com/watch?v=dQw4w9WgXcQ](https://www.youtube.com/watch?v=OdbATlIXADM))
+  
+X10 Time Laps :
+[![X10 Time Laps](https://i.ytimg.com/an_webp/OdbATlIXADM/mqdefault_6s.webp?du=3000&sqp=CMinp7YG&rs=AOn4CLDelMM4W_AxulhMExBtzFrYxUCv2A)](https://www.youtube.com/watch?v=dQw4w9WgXcQ](https://www.youtube.com/watch?v=OdbATlIXADM)](https://www.youtube.com/watch?v=OdbATlIXADM))
