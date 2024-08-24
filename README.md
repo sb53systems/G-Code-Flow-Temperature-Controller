@@ -32,7 +32,7 @@ You shoold only modify the filament settings and set :
   
 ![image](https://github.com/user-attachments/assets/5c6fc0f2-ddce-4203-954c-94dcd4862585)  
   
-Note that I prefer to heat my filament a little more to have a better layers addition.  
+Note that I prefer to heat my filament a little more to have a better Layer adhesion.  
   
 ![image](https://github.com/user-attachments/assets/ea4eee40-6a75-4d1d-a898-140ffa584db3)  
   
