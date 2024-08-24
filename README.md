@@ -30,10 +30,11 @@ You shoold only modify the filament settings and set :
 - The maximum recommended volumetric speed at the maximum temperature that your Hotend can handle.
 - The Fan Cooling perdiode and the Min print speed.
   
-![image](https://github.com/user-attachments/assets/5c6fc0f2-ddce-4203-954c-94dcd4862585)
-![image](https://github.com/user-attachments/assets/ea4eee40-6a75-4d1d-a898-140ffa584db3)  
+![image](https://github.com/user-attachments/assets/5c6fc0f2-ddce-4203-954c-94dcd4862585)  
   
 Note that I prefer to heat my filament a little more to have a better layers addition.  
+  
+![image](https://github.com/user-attachments/assets/ea4eee40-6a75-4d1d-a898-140ffa584db3)  
   
 The speed of overhangs and small internal/external bridges should be set to the maximum speed, this will ensure that the filament is extruded at the recommended flow rate and that it is not too hot and falls off, or too cold and shrinks, and will avoid sudden changes in flow rate and unnecessary temperature drop. (Experimental approach)  
 ![image](https://github.com/user-attachments/assets/5bdbf7f0-58ec-4877-93f1-a5bde20caa38)  
@@ -44,6 +45,8 @@ For larger bridges, I recommend using a modifier in the slicer that changes the 
 ![image1](https://github.com/user-attachments/assets/216766be-e662-4ea0-aef0-541cbd23287a)  
   
 ![image3](https://github.com/user-attachments/assets/2a5a083b-20a2-4c5d-91f1-e3d87d0cc62a)  
+  
+[See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
   
 The initial temperature estimated by the Script depends on the speed of the first movements of the g-code, you can adjust it by fixing the speed of the purge line or the speed of the first layer perimeters.  
   
