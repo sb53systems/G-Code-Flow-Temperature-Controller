@@ -9,7 +9,12 @@ to
 X10 Time Laps :  
 [![X10 Time Laps](https://i.ytimg.com/an_webp/OdbATlIXADM/mqdefault_6s.webp?du=3000&sqp=CMinp7YG&rs=AOn4CLDelMM4W_AxulhMExBtzFrYxUCv2A)](https://www.youtube.com/watch?v=OdbATlIXADM)
   
-# With larger prints :  
-![image](https://github.com/user-attachments/assets/23b21954-273f-466c-ba74-13ab91d55512)  
-to  
-![image](https://github.com/user-attachments/assets/604b3e30-7575-4e49-9071-11d3f8a10260)  
+# With larger prints : 
+[Swirly Oval Vase](https://www.thingiverse.com/thing:3424476)  
+![image](https://github.com/user-attachments/assets/e7f8bc25-d944-418b-97c1-9c417f618734)  
+![image](https://github.com/user-attachments/assets/ed797f79-5764-437d-adf8-11c46c9ef403)  
+  
+To  
+![image](https://github.com/user-attachments/assets/8886ae83-a779-47ad-8063-7f08dc578f22)  
+![image](https://github.com/user-attachments/assets/125a9eed-d094-4873-8b9e-129094e34252)  
+  
