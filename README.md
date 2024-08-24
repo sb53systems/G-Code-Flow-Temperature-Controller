@@ -33,6 +33,7 @@ You shoold only modify the filament settings and set :
 ![image](https://github.com/user-attachments/assets/5c6fc0f2-ddce-4203-954c-94dcd4862585)
 ![image](https://github.com/user-attachments/assets/ea4eee40-6a75-4d1d-a898-140ffa584db3)  
   
+Note that I prefer to heat my filament a little more to have a better layers addition.  
   
 The speed of overhangs and small internal/external bridges should be set to the maximum speed, this will ensure that the filament is extruded at the recommended flow rate and that it is not too hot and falls off, or too cold and shrinks, and will avoid sudden changes in flow rate and unnecessary temperature drop. (Experimental approach)  
 ![image](https://github.com/user-attachments/assets/5bdbf7f0-58ec-4877-93f1-a5bde20caa38)  
