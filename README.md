@@ -110,15 +110,17 @@ I look forward to your feedback and remain available and open to new proposals.
 # Future Version 
 V1.1 will be released in few days :)  
   
-![image](https://github.com/user-attachments/assets/a1a34997-d915-4d9b-ae01-43555ed32e19)  
-  
 New features :  
 - Create custom filament profiles for different extruders/printers.
 - View the generated G-Code and the real Temperature changes during the new estimated Time.
 - Have the ability to use the M109 G-Code command to set the initial temperature instead of the Macro PRINT_START.
 - ...More.
   
+![image](https://github.com/user-attachments/assets/a1a34997-d915-4d9b-ae01-43555ed32e19)  
+  
 With this Script Concept, you could print any object with 0 Slicer Settings and have the best Speed/Quality Optimization, even in a 2018 Klipperized 3D printer and a nice inexpensive filament!  
+  
+![346307110-8f27a797-6593-4679-9801-d587d88c093c](https://github.com/user-attachments/assets/449effb4-2b59-4a17-bbba-8f50f557fd6d)
   
 https://www.thingiverse.com/thing:1272741. 
   
