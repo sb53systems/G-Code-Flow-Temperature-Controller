@@ -132,7 +132,7 @@ https://github.com/user-attachments/assets/897c4a37-20b5-4e1e-a57e-ddd5e81f7877
   
 https://github.com/user-attachments/assets/ea2f2d75-cc8c-4dfc-b89d-0f82fd9bf17a  
   
-With this Script Concept, you could print any object with 0 Slicer Settings and have the best Speed/Quality Optimization, even in a 2018 Klipperized 3D printer and a nice inexpensive filament!  
+With this Script Concept, you could print any object with 0 Slicer Settings and have the best Speed/Quality Optimization, even with a 2018 Klipperized 3D printer and a nice inexpensive filament!  
   
 ![346307110-8f27a797-6593-4679-9801-d587d88c093c](https://github.com/user-attachments/assets/449effb4-2b59-4a17-bbba-8f50f557fd6d)  
   
