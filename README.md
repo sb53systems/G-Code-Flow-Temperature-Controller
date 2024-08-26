@@ -4,7 +4,9 @@ A Post Processing Script for Slic3r based Slicers and Klipper 3D Printers.
 This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.
 
 This Script is free and open source, created to prove the effectiveness of automatic Speeds/Flow and Nozzle temperature change during 3D printing in order to get the best Quality/Speed Optimization and reduce 3D Printing complexity.  
+  
 This Script it is not intended to be a definitive solution as I believe that integrating this concept in slicers will be more effective.  
+  
 I think this will be the future of 3D printing, i encourage you to test and develop it, with the hope that it will be integrated into the slicers.  
   
 # Latest Release
