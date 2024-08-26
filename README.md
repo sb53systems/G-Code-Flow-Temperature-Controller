@@ -14,10 +14,11 @@ I think this will be the future of 3D printing, i encourage you to test and deve
   
 # Instructions and prerequisites  
 The script operation consists of varying the temperature according to the average flow rate during printing time, then edit the speed in the G-Code to feat the recommended flow rate for the reached temperature.  
+  
 [Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required for time estimation using Klipper Look-Ahead kinematics, and must be in the same Folder with this Script (Included Klipper_Estimator.exe V 3.7.3).  
   
 The script can be used as a normal program by running the SB53-Systems.exe file and opening a GCode manually, or by adding it as a post-processing script in the Slicer.  
-It is also recommended to add in the slicer Klipper_Estimator.exe path after this script to rewrite the new estimated time into the G-Code.  
+It is recommended to add in the slicer (Klipper_Estimator.exe) path after this script to rewrite the new estimated time into the G-Code.  
 ![image](https://github.com/user-attachments/assets/a08ed4f5-a5f7-47dd-88eb-09a183e43a2d)  
 ```
 D:\SB53_G-Code_Flow_Temperature_Controller_V1.0\SB53-Systems.exe;
