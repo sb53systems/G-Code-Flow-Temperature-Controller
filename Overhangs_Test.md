@@ -20,6 +20,9 @@ To
 ![image](https://github.com/user-attachments/assets/8886ae83-a779-47ad-8063-7f08dc578f22)  
 ![image](https://github.com/user-attachments/assets/125a9eed-d094-4873-8b9e-129094e34252)  
   
+X60 Time Laps :  
+[![X60 Time Laps](https://github.com/user-attachments/assets/68da12b2-2377-4f65-9aef-c7d10f45e2e4)](https://www.youtube.com/watch?v=NIy9tVUifm8)  
+  
 ![IMG20240826140917](https://github.com/user-attachments/assets/f01126f5-6ed6-43df-9517-847485ebb6a0)
 ![IMG20240826140855](https://github.com/user-attachments/assets/bd876df4-2cf9-4fc0-9375-fd12c0189758)
 ![image](https://github.com/user-attachments/assets/89bf4c9b-8c67-489b-9b18-4c8be052a10e)  
