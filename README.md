@@ -1,8 +1,9 @@
 # G-Code-Flow-Temperature-Controller
 A Post Processing Script for Slic3r based Slicers and Klipper 3D Printers.  
   
-This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.
+This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.  
 The script operation consists of varying the temperature according to the average flow rate during printing time, then edit the speed in the G-Code to feat the recommended flow rate for the reached temperature.  
+  
 This Script is free and open source, created to prove the effectiveness of automatic Speeds/Flow and Nozzle temperature change during 3D printing in order to get the best Quality/Speed Optimization and reduce 3D Printing complexity.  
   
 This Script it is not intended to be a definitive solution as I believe that integrating this concept in slicers will be more effective.  
