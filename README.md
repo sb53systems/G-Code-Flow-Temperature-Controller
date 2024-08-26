@@ -2,7 +2,7 @@
 A Post Processing Script for Slic3r based Slicers and Klipper 3D Printers.  
   
 This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.
-
+The script operation consists of varying the temperature according to the average flow rate during printing time, then edit the speed in the G-Code to feat the recommended flow rate for the reached temperature.  
 This Script is free and open source, created to prove the effectiveness of automatic Speeds/Flow and Nozzle temperature change during 3D printing in order to get the best Quality/Speed Optimization and reduce 3D Printing complexity.  
   
 This Script it is not intended to be a definitive solution as I believe that integrating this concept in slicers will be more effective.  
@@ -13,26 +13,26 @@ I think this will be the future of 3D printing, i encourage you to test and deve
 [SB53 G-Code Flow/Temperature Controller V1.0 (3 Aug 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.0)  
   
 # Instructions and prerequisites  
-The script operation consists of varying the temperature according to the average flow rate during printing time, then edit the speed in the G-Code to feat the recommended flow rate for the reached temperature.  
-  
-[Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required for time estimation using Klipper Look-Ahead kinematics, and must be in the same Folder with this Script (Included Klipper_Estimator.exe V 3.7.3).  
-  
-The script can be used as a normal program by running the SB53-Systems.exe file and opening a GCode manually, or by adding it as a post-processing script in the Slicer.  
+1. [Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required for time estimation using Klipper Look-Ahead kinematics, and must be in the same Folder with this Script (Included Klipper_Estimator.exe V 3.7.3).  
+    
+2. The script can be used as a normal program by running the SB53-Systems.exe file and opening a GCode manually, or by adding it as a post-processing script in the Slicer.  
 It is recommended to add in the slicer (Klipper_Estimator.exe) path after this script to rewrite the new estimated time into the G-Code.  
-![image](https://github.com/user-attachments/assets/a08ed4f5-a5f7-47dd-88eb-09a183e43a2d)  
+  ![image](https://github.com/user-attachments/assets/a08ed4f5-a5f7-47dd-88eb-09a183e43a2d)  
 ```
 D:\SB53_G-Code_Flow_Temperature_Controller_V1.0\SB53-Systems.exe;
 D:\SB53_G-Code_Flow_Temperature_Controller_V1.0\Klipper_Estimator.exe --config_file D:\SB53_G-Code_Flow_Temperature_Controller_V1.0\config.json post-process;
 ```
   
-To have a best Speed/Quality Optemization, the Slicer Profil must be set for Max Speed and Max Flow Rate, the Nozzle temperature is not important because it will be reset in the script and the print speed will be regulated to the temperature.  
   
-Example below with my max 200mm/s Printer speed : (Same profil for PLA, PETG and ABS)  
-![image](https://github.com/user-attachments/assets/c0a30aed-046a-48ad-b819-93def3b28de5)  
+3. To have a best Speed/Quality Optemization, the Slicer Profil must be set for Max Speed and Max Flow Rate, the Nozzle temperature is not important because it will be reset in the script and the print speed will be regulated to the temperature.  
+  
+  Example below with my max 200mm/s Printer speed : (Same profil for PLA, PETG and ABS)  
+    
+  ![image](https://github.com/user-attachments/assets/c0a30aed-046a-48ad-b819-93def3b28de5)  
   
 You shoold only modify the filament settings and set :
-- The maximum recommended volumetric speed at the maximum temperature that your Hotend can handle.
-- The Fan Cooling perdiode and the Min print speed.
+  - The maximum recommended volumetric speed at the maximum temperature that your Hotend can handle.
+  - The Fan Cooling perdiode and the Min print speed.
   
 ![image](https://github.com/user-attachments/assets/5c6fc0f2-ddce-4203-954c-94dcd4862585)  
   
@@ -44,7 +44,6 @@ The speed of overhangs and small internal/external bridges should be set to the 
 ![image](https://github.com/user-attachments/assets/5bdbf7f0-58ec-4877-93f1-a5bde20caa38)  
   
   
-  
 For larger bridges, I recommend using a modifier in the slicer that changes the speed of a few lower layers to the bridge, the Script will adapt gradually the temperature and the speed to the desired value. Example bellow for 50mm/s External Bridge speed.  
 ![image1](https://github.com/user-attachments/assets/216766be-e662-4ea0-aef0-541cbd23287a)  
   
@@ -52,7 +51,8 @@ For larger bridges, I recommend using a modifier in the slicer that changes the 
   
 [See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
   
-The initial temperature estimated by the Script depends on the speed of the first movements of the g-code, you can adjust it by fixing the speed of the purge line or the speed of the first layer perimeters.  
+  
+4. The initial temperature estimated by the Script depends on the speed of the first movements of the g-code, you can adjust it by fixing the speed of the purge line or the speed of the first layer perimeters.  
   
   
 Note that :  
