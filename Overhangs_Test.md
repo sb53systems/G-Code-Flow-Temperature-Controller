@@ -11,7 +11,7 @@ X10 Time Laps :
   
 # With larger prints : 
 [Swirly Oval Vase](https://www.thingiverse.com/thing:3424476)  
-with one single wall (Vase Mode)
+with one single wall (Vase Mode)  
 ![image](https://github.com/user-attachments/assets/e7f8bc25-d944-418b-97c1-9c417f618734)  
 ![image](https://github.com/user-attachments/assets/ed797f79-5764-437d-adf8-11c46c9ef403)  
   
