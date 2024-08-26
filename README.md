@@ -122,9 +122,9 @@ New features :
 - Have the ability to use the M109 G-Code command to set the initial temperature instead of the Macro PRINT_START.
 - ...More.
   
-![image](https://github.com/user-attachments/assets/a1a34997-d915-4d9b-ae01-43555ed32e19)  
-  
 https://www.thingiverse.com/thing:1272741. 
+  
+![image](https://github.com/user-attachments/assets/a1a34997-d915-4d9b-ae01-43555ed32e19)  
   
 ![image](https://github.com/user-attachments/assets/2ecd51bd-e556-4718-8752-9de2fd78ac69)  
   
