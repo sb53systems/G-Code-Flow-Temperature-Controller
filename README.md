@@ -36,7 +36,7 @@ Or
 PRINT_START BED_TEMP=[bed_temperature_initial_layer_single] EXTRUDER_TEMP=[nozzle_temperature_initial_layer]
 ```
   
-4. To have a best Speed/Quality Optemization, the Slicer Profil must be set for Max Speed and Max Flow Rate, the Nozzle temperature is not important because it will be reset in the script and the print speed will be regulated to the temperature.  
+4. To have a best Speed/Quality Optemization, the Slicer Profil must be set for Max Moves and Max Volumetric Speed, the Nozzle temperature is not important because it will be reset in the script, and the speed will be reduced (not increased) to the Recommended Flow.  
   
   Example below with my max 200mm/s Printer speed : (Same profil for PLA, PETG and ABS)  
     
