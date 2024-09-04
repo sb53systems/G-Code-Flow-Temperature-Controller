@@ -1,14 +1,11 @@
 # With small prints (benchy or smaller):  
-![image](https://github.com/user-attachments/assets/e1ad0f36-0d4e-493a-8b49-e227e12fe120)  
+![image](https://github.com/user-attachments/assets/57b5b370-a0cd-4f34-9b22-b75d8b3fe80c)  
+![image](https://github.com/user-attachments/assets/671ff3c3-5a9d-4bfe-9e39-c5bcd9f2e83b)  
 to  
-![image](https://github.com/user-attachments/assets/c2db4929-e9f1-447b-a820-09a1c808d462)  
+![image](https://github.com/user-attachments/assets/c07ef050-c61d-4a9e-b494-6338cc09baf7)  
   
-X10 Time Laps :  
-[![X10 Time Laps](https://github.com/user-attachments/assets/bde50a15-cdec-4195-a85e-0b4f8a0572fb)](https://www.youtube.com/watch?v=OdbATlIXADM)  
-  
-![IMG20240824140457](https://github.com/user-attachments/assets/e6093bdf-ddee-4b30-a13b-4ef878386160)  
-![IMG20240824134941](https://github.com/user-attachments/assets/0adfaa9d-2cd2-4839-a343-767f8c63c0dd)  
-![IMG20240824134904](https://github.com/user-attachments/assets/11e29429-b7ed-4473-8eb3-b872cb03aa44)  
+![IMG20240902194630](https://github.com/user-attachments/assets/c27610e2-18b9-46a3-8ced-a1796b8752f3)  
+![IMG20240902194517](https://github.com/user-attachments/assets/311c4267-b6b8-472d-9c75-ffcb63c202c9)  
   
 # With larger prints : 
 [Swirly Oval Vase](https://www.thingiverse.com/thing:3424476)  
