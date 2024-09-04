@@ -93,8 +93,8 @@ Below the Generated G-Code
 ![image](https://github.com/user-attachments/assets/4a741c30-9c26-41f1-95e2-2f0070279949)  
   
 # Observations  
-- Printers with higher accelerations and lower heating/cooling time will have a better result with this approach because it allows for better flow stabilization.
-- The speed of the outer wall is always higher than the speed of the inner wall because of the deferent Line width.
+- Printers with higher accelerations and lower heating/cooling time will have a better result with this approach because it allows for better flow stabilization.  
+- The speed of the outer wall is higher than the speed of the inner wall because of the deferent Line width.  
 ![image](https://github.com/user-attachments/assets/76acb2cf-f57e-4a38-b1c7-788689ed6470)![image](https://github.com/user-attachments/assets/52b5714b-5607-45f5-adc7-73b9782b6bcc)  
 - With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands, without any changes in the script.  
   
