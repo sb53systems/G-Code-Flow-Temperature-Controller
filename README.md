@@ -74,7 +74,20 @@ The script will popup once you Print or Export the G-Code from the Slicer, ask t
   
 ![image](https://github.com/user-attachments/assets/f1589c73-8261-4171-89c9-ff0ca416f5fb)  
   
-
+If yes, the first execution:  
+- You have to set the appropriate Extruder values.
+- Klipper_Estimator script requires a file containing the maximum limits of the printer (config .json), can be obtained by specifying the IP address of the printer or by choosing a file locally (you have to change this file if the printer is not the same).
+  ![image](https://github.com/user-attachments/assets/2a316ba8-124d-48d5-83b1-3a6184aa189e)
+- Set the Filament values for each Extruder.  
+- if you make changes in the script, you have to refresh the Estimation before generating the G-Code, then Save/Print.  
+  
+![image](https://github.com/user-attachments/assets/86d50570-b77d-4f9c-8897-0421e7ca2b67)  
+![image](https://github.com/user-attachments/assets/394f024d-6dde-4e2f-aade-4836b72a122d)  
+  
+Below the Generated G-Code 
+  
+![image](https://github.com/user-attachments/assets/4a741c30-9c26-41f1-95e2-2f0070279949)  
+  
 # About the Developer 
 By Salim BELAYEL.  
 Developed in June 2024 with Delphi 12 Community Edition.  
