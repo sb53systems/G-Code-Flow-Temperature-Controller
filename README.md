@@ -13,6 +13,68 @@ I think this will be the future of 3D printing, i encourage you to test and deve
 # Latest Release
 [SB53 G-Code Flow/Temperature Controller V1.1 Beta (4 Sept 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
   
+# Instructions and prerequisites  
+1. [Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required for time estimation using Klipper Look-Ahead kinematics, and must be in the same Folder with this Script (Included Klipper_Estimator.exe V 3.7.3).  
+    
+2. The script can be used as a normal program by running the SB53-Systems.exe file and opening a GCode manually, or by adding it as a post-processing script in the Slicer.  
+  ![image](https://github.com/user-attachments/assets/3557a6ff-524f-4964-9cd2-044b01f46faa)
+ 
+```
+D:\SB53_G-Code_Flow_Temperature_Controller_V1.1Beta\SB53-Systems.exe;
+```
+  
+3. Changing the initial layer temperature is important, the script automatically modifies the G-Code (M109 S) command or can change the specified print start macro. Example Below : 
+![image](https://github.com/user-attachments/assets/26b1e09e-0750-43f6-995f-8671da5838e0)  
+![image](https://github.com/user-attachments/assets/a3c814af-4522-4177-907c-7aab631505f7)  
+  
+4. To have a best Speed/Quality Optemization, the Slicer Profil must be set for Max Moves and Max Volumetric Speed, the Nozzle temperature is not important because it will be reset in the script, and the speed will be reduced (not increased) to the Recommended Flow.  
+  
+  Example below with my max 200mm/s Printer speed : (Same profil for PLA, PETG and ABS)  
+    
+  ![image](https://github.com/user-attachments/assets/c0a30aed-046a-48ad-b819-93def3b28de5)  
+  
+You shoold only modify the filament settings and set :
+  - The maximum recommended volumetric speed at the maximum temperature that your Hotend can handle.
+  - The Fan Cooling perdiode and the Min print speed.
+  
+![image](https://github.com/user-attachments/assets/5dc1f64d-48dc-4d39-8290-ad8251267990)  
+![image](https://github.com/user-attachments/assets/c07c5e7c-b137-4af3-86b6-efeaecdc06cc)  
+  
+Note that I prefer to heat my filament a little more to have a better Layer adhesion, and my PTFE-Lined Hotend safe temperature is 240°.  
+    
+The speed of overhangs and small internal/external bridges should be set to the maximum speed, this will ensure that the filament is extruded at the recommended flow rate and that it is not too hot and falls off, or too cold and shrinks, and will avoid sudden changes in flow rate and unnecessary temperature drop. (Experimental approach)  
+![image](https://github.com/user-attachments/assets/5bdbf7f0-58ec-4877-93f1-a5bde20caa38)  
+  
+  
+For larger bridges, I recommend using a modifier in the slicer that changes the speed of a few lower layers to the bridge, the Script will adapt gradually the temperature and the speed to the desired value. Example bellow for 50mm/s External Bridge speed.  
+![image](https://github.com/user-attachments/assets/51f2cba4-d57d-4ea7-8ef7-d0c36dd61dc0)   
+![image](https://github.com/user-attachments/assets/1cee9879-389b-4117-9048-b96c76e51891)  
+  
+[See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
+  
+  
+5. The initial temperature estimated by the Script depends on the speed of the first movements of the g-code, you can adjust it by fixing the speed of the purge line or the speed of the first layer perimeters.  
+  
+  
+Note that :  
+- The script only reduces the speeds above the recommended speed, lower speeds will be kept as in the G-Code.
+- Hotend PID cannot be changed during print in Klipper, I recommend using PID values for a temperature between 70-90% of the maximum temperature.  
+- PA can be regulated in the script according to the temperature or not by unchecking the Adjust PA option befor generating the G-Code, and use the fixed PA from the Slicer or Klipper.  
+- Changing the PA during printing causes a delay in execution and forms bubbles in the walls, the Script is programed to change PA only in Sparse infill, Internal solid infill, Support and Internal Bridge.  
+![351913375-991fe2b8-3935-46ff-816e-5b0aee981b4d](https://github.com/user-attachments/assets/602b96a8-2666-44bd-b70f-aa5c06deadd4)  
+  
+- This Script does not accept G2 and G3 in G-Code.
+- Time Estimation is based in Klipper Look-ahead kinematics (may not be compatible with Marlin or Others).
+- Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
+- Generated G-Code are 30% to 50% larger than the original one due to Temp and Speed adjustment.
+- This Script is currently only available for Windows OS.  
+  
+# Usage  
+The script will popup once you Print or Export the G-Code from the Slicer, ask the user whether the script will be applied or not.   
+  
+![image](https://github.com/user-attachments/assets/f1589c73-8261-4171-89c9-ff0ca416f5fb)  
+  
+
 # About the Developer 
 By Salim BELAYEL.  
 Developed in June 2024 with Delphi 12 Community Edition.  
