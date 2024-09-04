@@ -10,6 +10,10 @@ This Script is not intended to be a definitive solution as I believe that integr
   
 I think this will be the future of 3D printing, i encourage you to test and develop it, with the hope that it will be integrated into the slicers.  
   
+With this Script Concept, you could print any object with 0 Slicer Settings and have the best Speed/Quality Optimization, even with a 2018 Klipperized 3D printer and a nice inexpensive filament!  
+  
+![346307110-8f27a797-6593-4679-9801-d587d88c093c](https://github.com/user-attachments/assets/449effb4-2b59-4a17-bbba-8f50f557fd6d)  
+  
 # Latest Release
 [SB53 G-Code Flow/Temperature Controller V1.1 Beta (4 Sept 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
   
@@ -87,6 +91,15 @@ If yes, the first execution:
 Below the Generated G-Code 
   
 ![image](https://github.com/user-attachments/assets/4a741c30-9c26-41f1-95e2-2f0070279949)  
+  
+# Observations  
+- Printers with higher accelerations and lower heating/cooling time will have a better result with this approach because it allows for better flow stabilization.
+- The speed of the outer wall is always higher than the speed of the inner wall because of the deferent Line width.
+![image](https://github.com/user-attachments/assets/76acb2cf-f57e-4a38-b1c7-788689ed6470)![image](https://github.com/user-attachments/assets/52b5714b-5607-45f5-adc7-73b9782b6bcc)  
+- With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands, without any changes in the script.  
+  
+Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer.  
+I look forward to your feedback and remain available and open to new proposals.  
   
 # About the Developer 
 By Salim BELAYEL.  
