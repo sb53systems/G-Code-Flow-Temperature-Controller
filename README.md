@@ -11,7 +11,7 @@ This Script is not intended to be a definitive solution as I believe that integr
 I think this will be the future of 3D printing, i encourage you to test and develop it, with the hope that it will be integrated into the slicers.  
   
 # Latest Release
-[SB53 G-Code Flow/Temperature Controller V1.0 (3 Aug 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.0)  
+[SB53 G-Code Flow/Temperature Controller V1.1 Beta (4 Sept 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
   
 # About the Developer 
 By Salim BELAYEL.  
