@@ -54,6 +54,9 @@ For larger bridges, I recommend using a modifier in the slicer that changes the 
 ![image](https://github.com/user-attachments/assets/51f2cba4-d57d-4ea7-8ef7-d0c36dd61dc0)   
 ![image](https://github.com/user-attachments/assets/1cee9879-389b-4117-9048-b96c76e51891)  
   
+For me there is not much deference between a bridge at 30mm/s and another at 100mm/s ! (using Thick Bridges in Orca Slicer).  
+[See my Bridge test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Bridges_Test.md)  
+  
 [See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
   
   
