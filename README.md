@@ -50,7 +50,7 @@ The speed of overhangs and small internal/external bridges should be set to the 
 ![image](https://github.com/user-attachments/assets/5bdbf7f0-58ec-4877-93f1-a5bde20caa38)  
   
   
-For larger bridges, I recommend using a modifier in the slicer that changes the speed of a few lower layers to the bridge, This Approach can only be optimized if it is included in the Slicer, the temperature and speed should gradually decrease to the desired bridge speed. Example bellow for 50mm/s External Bridge speed.  
+For larger bridges, you can use a modifier in the slicer that changes the speed of a few lower layers to the bridge, This Approach can only be optimized if it is included in the Slicer, the temperature and speed should gradually decrease to the desired bridge speed. Example bellow for 50mm/s External Bridge speed.  
 ![image](https://github.com/user-attachments/assets/51f2cba4-d57d-4ea7-8ef7-d0c36dd61dc0)   
 ![image](https://github.com/user-attachments/assets/1cee9879-389b-4117-9048-b96c76e51891)  
   
