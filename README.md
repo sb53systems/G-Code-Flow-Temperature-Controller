@@ -82,7 +82,7 @@ The script will popup once you Print or Export the G-Code from the Slicer, ask t
   
 If yes, the first execution:  
 - You have to set the appropriate Extruder values.
-- Klipper_Estimator script requires a file containing the maximum limits of the printer (config .json), can be obtained by specifying the IP address of the printer or by choosing a file locally (you have to change this file if the printer is not the same).
+- Klipper_Estimator script requires a file containing the maximum limits of the printer (config .json), can be obtained by specifying the IP address of the printer or by choosing a file locally (you have to change this file if the printer is not the same).  
   ![image](https://github.com/user-attachments/assets/2a316ba8-124d-48d5-83b1-3a6184aa189e)
 - Set the Filament values for each Extruder.  
 - if you make changes in the script, you have to refresh the Estimation before generating the G-Code, then Save/Print.
