@@ -20,7 +20,7 @@ With this Script Concept, you could print any object with 0 Slicer Settings and 
 # Instructions and prerequisites  
 1. [Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required and must be in the same Folder with this Script (Included Klipper_Estimator.exe V 3.7.3), it is used for time estimation using Klipper Look-Ahead kinematics, and gives the flow rate average for each move in the G-Code.  
     
-2. The script can be used as a normal program by running the SB53-Systems.exe file and opening a GCode file manually, or by adding it as a post-processing script in the Slicer.  
+2. The script can be used as a normal program by running the SB53-Systems.exe file and opening a GCode file manually, or by adding it to the Slicer as a post-processing script.  
   ![image](https://github.com/user-attachments/assets/3557a6ff-524f-4964-9cd2-044b01f46faa)
  
 ```
