@@ -28,4 +28,4 @@ X60 Time Laps :
 ![image](https://github.com/user-attachments/assets/2e5fb0ea-f925-48ae-a107-9497893ea1d2)
   
 # Conclusion
-With an automatic overhang speed and a single 5015 radial cooling fan, I'm able to print up to 60° overhang.
+With an automatic overhang speed and a single 5015 radial cooling fan, I am able to print up to 60° overhangs without loss of quality.  
