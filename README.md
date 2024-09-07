@@ -37,8 +37,8 @@ D:\SB53_G-Code_Flow_Temperature_Controller_V1.1Beta\SB53-Systems.exe;
     
   ![image](https://github.com/user-attachments/assets/c0a30aed-046a-48ad-b819-93def3b28de5)  
   
-You shoold only modify the filament settings and set :
-  - The maximum recommended volumetric speed at the maximum temperature that your Hotend can handle.
+You shoold set the filament settings and set :
+  - The maximum recommended volumetric speed at the maximum temperature that your Hotend or Filament can handle.
   - The Fan Cooling perdiode and the Min print speed.
   - ...
   
