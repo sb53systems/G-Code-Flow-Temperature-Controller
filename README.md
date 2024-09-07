@@ -17,7 +17,7 @@ With this Script Concept, you could print any object with 0 Slicer Settings and 
 # Latest Release
 [SB53 G-Code Flow/Temperature Controller V1.1 Beta (4 Sept 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
   
-# Instructions and prerequisites  
+# Instructions and Prerequisites  
 1. [Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required and must be in the same Folder with this Script (Included Klipper_Estimator.exe V 3.7.3), it is used for time estimation using Klipper Look-Ahead kinematics, and gives the flow rate average for each move in the G-Code.  
     
 2. The script can be used as a normal program by running the SB53-Systems.exe file and opening a GCode file manually, or by adding it to the Slicer as a post-processing script.  
@@ -100,7 +100,7 @@ Below the Generated G-Code
   
 ![image](https://github.com/user-attachments/assets/4a741c30-9c26-41f1-95e2-2f0070279949)  
   
-# Observations and tips
+# Observations and Tips
 - A printer with higher accelerations and lower heat/cool time will have a better result with this approach because it allows for better flow stabilization.  
 - With some prints, changing the Max/Average Smoothing value may affect the result and print time, you have to experiment yourself (I recommend values between 10 and 30).  
 - Aim for speed optimization as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes.  
