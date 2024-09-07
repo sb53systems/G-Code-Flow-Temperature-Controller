@@ -100,7 +100,7 @@ Below the Generated G-Code
   
 ![image](https://github.com/user-attachments/assets/4a741c30-9c26-41f1-95e2-2f0070279949)  
   
-# Observations  
+# Observations and tips
 - A printer with higher accelerations and lower heat/cool time will have a better result with this approach because it allows for better flow stabilization.  
 - With some prints, changing the Max/Average Smoothing value may affect the result and print time, you have to experiment yourself (I recommend values between 10 and 30).  
 - Aim for speed optimization as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes.  
