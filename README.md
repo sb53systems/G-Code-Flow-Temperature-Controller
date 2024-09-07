@@ -37,16 +37,6 @@ D:\SB53_G-Code_Flow_Temperature_Controller_V1.1Beta\SB53-Systems.exe;
     
   ![image](https://github.com/user-attachments/assets/c0a30aed-046a-48ad-b819-93def3b28de5)  
   
-You shoold set the filament settings and set :
-  - The maximum recommended volumetric speed at the maximum temperature that your Hotend or Filament can handle.
-  - The Fan Cooling perdiode and the Min print speed.
-  - ...
-  
-![image](https://github.com/user-attachments/assets/5dc1f64d-48dc-4d39-8290-ad8251267990)  
-![image](https://github.com/user-attachments/assets/c07c5e7c-b137-4af3-86b6-efeaecdc06cc)  
-  
-Note that I prefer to heat my filament a little more to have a better Layer adhesion, and my PTFE-Lined Hotend safe temperature is 240°.  
-    
 The speed of overhangs and small internal/external bridges should be set to the maximum speed, this will ensure that the filament is extruded at the recommended flow rate and that it is not too hot and falls off, or too cold and shrinks, and will avoid sudden changes in flow rate and unnecessary temperature drop. (Experimental approach)  
 ![image](https://github.com/user-attachments/assets/5bdbf7f0-58ec-4877-93f1-a5bde20caa38)  
   
@@ -59,6 +49,15 @@ For me there is not much deference between a bridge at 30mm/s and another at 100
   
 [See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
   
+You shoold set the filament settings and set :
+  - The maximum recommended volumetric speed at the maximum temperature that your Hotend or Filament can handle.
+  - The Fan Cooling perdiode and the Min print speed.
+  - ...
+  
+![image](https://github.com/user-attachments/assets/5dc1f64d-48dc-4d39-8290-ad8251267990)  
+![image](https://github.com/user-attachments/assets/c07c5e7c-b137-4af3-86b6-efeaecdc06cc)  
+  
+Note that I prefer to heat my filament a little more to have a better Layer adhesion, and my PTFE-Lined Hotend safe temperature is 240°.  
   
 5. The initial temperature estimated by the Script depends on the speed of the first movements of the g-code, you can adjust it by fixing the speed of the purge line or the speed of the first layer perimeters.  
   
@@ -70,11 +69,11 @@ Note that :
 - Changing the PA during printing causes a delay in execution and forms bubbles in the walls, the Script is programed to change PA only in Sparse infill, Internal solid infill, Support and Internal Bridge.  
 ![351913375-991fe2b8-3935-46ff-816e-5b0aee981b4d](https://github.com/user-attachments/assets/602b96a8-2666-44bd-b70f-aa5c06deadd4)  
   
-- This Script does not accept G2 and G3 in G-Code.
-- Time Estimation is based in Klipper Look-ahead kinematics (may not be compatible with Marlin or Others).
+- This Script does not accept G2 and G3 in G-Code (Arc Fitting, Spirale Z Hope Type,...).  
+- Time Estimation is based in Klipper Look-ahead kinematics, and may not be compatible with other firmware.
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
 - Generated G-Code are 30% to 50% larger than the original one due to Temp and Speed adjustment.
-- This Script is currently only available for Windows OS.  
+- This Script is currently only available for Windows OS, with some changes in the code (I can help for this, or can do it later!), the source can be compiled for deferent OS with delphi 12.  
   
 # Usage  
 The script will popup once you Print or Export the G-Code from the Slicer, ask the user whether the script will be applied or not.   
@@ -86,11 +85,12 @@ If yes, the first execution:
 - Klipper_Estimator script requires a file containing the maximum limits of the printer (config .json), can be obtained by specifying the IP address of the printer or by choosing a file locally. You have to set this file each profil.  
   ![image](https://github.com/user-attachments/assets/2a316ba8-124d-48d5-83b1-3a6184aa189e)
 - After saving the Extruder/Printer profil, Set the Filament type and name and values. (for each Extruder)
-- The script will recognize the extruder and filament used if they are written with the same name in the slicer.
+- Next uses the script can recognize the Extruder/Printer and Filament used if they are written with the same name in the slicer.  
   ![image](https://github.com/user-attachments/assets/7b467275-4bed-4927-adc6-0a6306d95de6)![image](https://github.com/user-attachments/assets/0219a6d0-63d1-4b7e-b465-d45c74db0d49)  
-  ![image](https://github.com/user-attachments/assets/40a1eeec-38eb-4db5-a4bf-36e83e9e284f)![image](https://github.com/user-attachments/assets/fefd7247-1c32-4f94-a1b5-1fc3124d0812)
+  ![image](https://github.com/user-attachments/assets/40a1eeec-38eb-4db5-a4bf-36e83e9e284f)![image](https://github.com/user-attachments/assets/fefd7247-1c32-4f94-a1b5-1fc3124d0812)  
   
-- if you make changes in the script, you have to refresh the Estimation before generating the G-Code, then Save/Print.
+- if you make changes in the script, you have to refresh the Estimation and re generate the G-Code, then Save/Print.
+- If you make any changes to the script, you need to refresh the estimation then regenerate the G-Code.  
   
 # 3DBenchy Example
 ![image](https://github.com/user-attachments/assets/86d50570-b77d-4f9c-8897-0421e7ca2b67)  
@@ -101,13 +101,17 @@ Below the Generated G-Code
 ![image](https://github.com/user-attachments/assets/4a741c30-9c26-41f1-95e2-2f0070279949)  
   
 # Observations  
-- Printers with higher accelerations and lower heating/cooling time will have a better result with this approach because it allows for better flow stabilization.  
+- A printer with higher accelerations and lower heat/cool time will have a better result with this approach because it allows for better flow stabilization.  
+- With some prints, changing the Max/Average Smoothing value may affect the result and print time, you have to experiment yourself (I recommend values between 10 and 30).  
+- Aim for speed optimization as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes.  
 - The speed of the outer wall is higher than the speed of the inner wall because of the deferent Line width.  
 ![image](https://github.com/user-attachments/assets/76acb2cf-f57e-4a38-b1c7-788689ed6470)![image](https://github.com/user-attachments/assets/52b5714b-5607-45f5-adc7-73b9782b6bcc)  
-- With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands, without any changes in the script.  
+- With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands without any changes in the script.  
   
 Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer.  
 I look forward to your feedback and remain available and open to new proposals.  
+  
+Happy Smart 3D Printing :-)  
   
 # About the Developer 
 By Salim BELAYEL.  
@@ -115,8 +119,6 @@ Developed in June 2024 with Delphi 12 Community Edition.
 Email : sb53systems@gmail.com  
   
 ![SB53-Systems~1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/b94703a1-cf21-4109-bfa6-b9bcff438a1d)  
-  
-Happy Smart 3D Printing :-)  
   
 If you find my work worthy, Bay me a coffee. Thank you.  
   
