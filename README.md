@@ -12,7 +12,7 @@ I think this will be the future of 3D printing, i encourage you to test and deve
   
 With this Script Concept, you could print any object with 0 Slicer Settings and have the best Speed/Quality Optimization, even with a 2018 Klipperized 3D printer and a nice inexpensive filament!  
   
-![346307110-8f27a797-6593-4679-9801-d587d88c093c](https://github.com/user-attachments/assets/449effb4-2b59-4a17-bbba-8f50f557fd6d)  
+![image](https://github.com/user-attachments/assets/959c95cd-48ec-48a6-92aa-607106f9f7d1)  
   
 # Latest Release
 [SB53 G-Code Flow/Temperature Controller V1.1 Beta (4 Sept 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
