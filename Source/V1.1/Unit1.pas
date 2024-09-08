@@ -185,7 +185,6 @@ type
     procedure Image7Click(Sender: TObject);
     procedure DBLookupComboBox1Click(Sender: TObject);
     procedure Image4Click(Sender: TObject);
-    procedure FormPaint(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure Label8Click(Sender: TObject);
     procedure BitBtn5Click(Sender: TObject);
@@ -338,7 +337,7 @@ var
   retract : bool;
   d, m, h, s, moveCount, indexSeries11 : integer;
 begin
-  klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+appPath+'\klipper_estimator.exe --config_file '+appPath+'\config.json dump-moves '+appPath+'\tempOut.gcode > '+appPath+'\gcode.txt';
+  klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+appPath+'\klipper_estimator.exe --config_file '+appPath+'\config.json dump-moves '+appPath+'\tempOut > '+appPath+'\gcode.txt';
   ExecNewProcess(klipperEstCom,true);
   Assignfile (GCode_IN, appPath+'\gcode.txt');
   Reset (GCode_IN);                                   +
@@ -383,6 +382,11 @@ begin
     end;
   END;
   CloseFile(GCode_IN);
+  try
+    DeleteFile(appPath+'\gcode.txt');
+  Except
+    // Do Nothing
+  end;
   d:=Trunc(tTime/86400);
   h:=Trunc((tTime-(d*86400))/3600);
   m:=Trunc((tTime-(h*3600))/60);
@@ -393,7 +397,7 @@ begin
   if m>0 then Form1.Label1.Caption:=Form1.Label1.Caption+inttostr(m)+'m ';
   if s>0 then Form1.Label1.Caption:=Form1.Label1.Caption+inttostr(s)+'s';
   // Change Estimated Time in GCODE
-  AssignFile(GCode_IN,appPath+'\tempOut.gcode');
+  AssignFile(GCode_IN,appPath+'\tempOut');
   Reset (GCode_IN);
   AssignFile(GCode_Output,appPath+'\Output.gcode');
   Rewrite(GCode_Output);
@@ -435,6 +439,7 @@ Var
   tempOutFile :textfile;
   retract, freqChanger : bool;
 begin
+  Form1.BitBtn7.Enabled:=False;
   if not canProcess then Exit;
   Form1.Label1.Repaint;
   Form1.Chart2.Title.Text.Clear;
@@ -443,7 +448,6 @@ begin
   Form1.Label16.Caption:=form1.ComboBox1.Text;
   Form1.Label17.Caption:=form1.ComboBox2.Text;
   Form1.Chart2.Repaint;
-  Assignfile (GCode_IN, file_path);
   lineType:='';
   totFilCount:=0;
   gcodeFreq:=0;
@@ -459,38 +463,43 @@ begin
   minTempCount:=strtofloat(curTemp);
   maxTempCount:=strtofloat(curTemp);
   curTemp:=StringReplace(curTemp, ',', '.', [rfReplaceAll]);
-  AssignFile(tempOutFile,appPath+'\tempOut.gcode');
+  Assignfile (GCode_IN, file_path);
+  AssignFile(tempOutFile,appPath+'\tempOut');
+                                                                                                     //// Try
   Rewrite(tempOutFile);
   Reset (GCode_IN);
   WHILE NOT (EOF(GCode_IN)and(canProcess)) DO BEGIN
     if not canProcess then Exit;
     Readln (GCode_IN, Lines);
+    // Change the Initial Temperature in Print Start Macro
     if copy(Lines,1,length(form1.Edit17.text))=form1.Edit17.text then begin
       WriteLn (tempOutFile , (copy(Lines,1,pos(form1.Edit16.text,Lines)+length(form1.Edit16.text)))+curTemp+copy(Lines,pos(form1.Edit16.text,Lines)+length(form1.Edit16.text)+4,Length(Lines)) +'    ; Reset Initial Temperature');
+    // Change the Initial Temperature in M109 S
     end else if copy(Lines,1,6)='M109 S' then begin
       WriteLn (tempOutFile ,'M109 S'+curTemp+'    ; Reset Initial Temperature');
+    // Get the Slicer Speed
     end else if copy(Lines,1,4)='G1 F' then begin
       WriteLn (tempOutFile , Lines+'    ; Slicer Speed');
       Lines:=copy(Lines,5,length(Lines));
       if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
       gcodeFreq:=round(strtofloat(Lines));
       freqChanger:=true;
+    // Get the Line Type
     end else if copy(Lines,1,6)=';TYPE:' then begin
       WriteLn (tempOutFile , Lines);
       lineType:=copy(Lines,7,length(Lines));
+    // Get the Line Width
     end else if copy(Lines,1,7)=';WIDTH:' then begin
       WriteLn (tempOutFile , Lines);
       Lines:=copy(Lines,8,length(Lines));
       if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
       lineWidth:=strtofloat(Lines);
+    // Get the Line Height
     end else if copy(Lines,1,8)=';HEIGHT:' then begin
       WriteLn (tempOutFile , Lines);
       Lines:=copy(Lines,9,length(Lines));
       if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
       layerHeight:=strtofloat(Lines);
-    end else if ((copy(Lines,1,3)='G2 ')or(copy(Lines,1,3)='G3 ')) then begin
-      showmessage('Cannot be processed ! This G-code contains G2 or G3 commands !');
-      canProcess:=false;
     end else if copy(Lines,1,3)='G1 ' then begin
       if (copy(Lines,1,4)<>'G1 F') then gcodeMovesCount:=gcodeMovesCount+1;
 
@@ -575,15 +584,14 @@ begin
   END;
   CloseFile(GCode_IN);
   CloseFile(tempOutFile);
-  Form1.Label21.Caption:=floattostr(minTempCount);
-  Form1.Label20.Caption:=floattostr(maxTempCount);
+
+  // Generate Final File and ...
   if canProcess then begin
-    try
-      DeleteFile(appPath+'\gcode.txt');
-    Except
-    end;
+    generateOutput;
+    Form1.Label21.Caption:=floattostr(minTempCount);
+    Form1.Label20.Caption:=floattostr(maxTempCount);
   end;
-  generateOutput;
+
 end;
 
 
@@ -670,7 +678,7 @@ begin
   Form1.Chart2.Repaint;
   Form1.BitBtn5.Enabled:=true;
   Form1.BitBtn7.Enabled:=true;
-  Form1.Chart1.ShowHint:=true;
+  //Form1.Chart1.ShowHint:=true;
 end;
 
 
@@ -683,20 +691,49 @@ var
   i, d, m, h, s, findIndex : integer;
   printerName, filamentType, filamentName : string;
 begin
-  // check if config.json and gcode File exist
+  form1.BitBtn4.Enabled:=false;
+  // Check for the necessary files
   if not FileExists(file_path) then begin
     canProcess:= false;
     showmessage('GCODE File not found !');
   end else if not FileExists(appPath+'\config.json') then begin
     canProcess:= false;
     Form2.ShowModal;
-    if FileExists(appPath+'\config.json') then
-      if FileSize(ExtractFileDir(Application.ExeName)+'\config.json')>0 then
-        canProcess:= true else showmessage('Printer Configuration file is still missing !');
+    if (FileExists(appPath+'\config.json'))and(FileSize(ExtractFileDir(Application.ExeName)+'\config.json')>0) then
+      canProcess:= true else showmessage('Printer Configuration file is still missing !');
+  end else if not FileExists(appPath+'\klipper_estimator.exe') then begin
+    canProcess:= false;
+    showmessage('klipper_estimator.exe File not found in main directory!');
   end;
   if not canProcess then Exit;
-  form1.BitBtn4.Enabled:=false;
-  IF FileExists (file_path) <> True THEN Exit else begin
+
+  // Get Informations in the G-Code
+  Assignfile (GCode_IN, file_path);
+  Reset (GCode_IN);
+  WHILE NOT (EOF(GCode_IN)) and canProcess Do begin
+    Readln (GCode_IN, Lines);
+    // Check if G2/G3 is used
+    if ((copy(Lines,1,3)='G2 ')or(copy(Lines,1,3)='G3 ')) then begin
+      showmessage('Cannot be processed ! This G-code contains G2 or G3 commands !');
+      canProcess:=false;
+    // Get the Filament Type
+    end else if copy(Lines,1,17)='; filament_type =' then begin
+      Lines:=copy(Lines,19,length(Lines));
+      filamentType:=Lines;
+    // Get the Printer/Extruder Name
+    end else if copy(Lines,1,23)='; printer_settings_id =' then begin
+      Lines:=copy(Lines,25,length(Lines));
+      printerName:=Lines;
+    // Get the Filament Name
+    end else if copy(Lines,1,24)='; filament_settings_id =' then begin
+      Lines:=copy(Lines,26,length(Lines));
+      filamentName:=Lines;
+    end;
+  end;
+  CloseFile(GCode_IN);
+
+  if canProcess then begin
+    // Reset initial parameters
     Form1.Series1.Clear;
     Form1.Series2.Clear;
     Form1.Series3.Clear;
@@ -713,10 +750,6 @@ begin
     Form1.Chart1.Title.Text.Add('Calculating...');
     Form1.Chart1.Repaint;
     Form1.Chart2.Repaint;
-    klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+appPath+'\klipper_estimator.exe --config_file '+appPath+'\config.json dump-moves '+file_path+' > '+appPath+'\gcode.txt';
-    ExecNewProcess(klipperEstCom,true);
-    Assignfile (GCode_IN, appPath+'\gcode.txt');
-    Reset (GCode_IN);
     tTime:=0;
     flow:=0;
     timeCount:=0;
@@ -731,6 +764,12 @@ begin
     filTypeFound:=false;
     extruderFound:=false;
     filNameFound:=false;
+
+    // Use Klipper Estimator Script / Read data / Calculate Averages
+    klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+appPath+'\klipper_estimator.exe --config_file '+appPath+'\config.json dump-moves '+file_path+' > '+appPath+'\gcode.txt';
+    ExecNewProcess(klipperEstCom,true);
+    Assignfile (GCode_IN, appPath+'\gcode.txt');
+    Reset (GCode_IN);
     WHILE NOT EOF(GCode_IN) DO BEGIN
       Readln (GCode_IN, Lines);
       if copy(Lines,1,8)='    Flow' then begin
@@ -781,43 +820,8 @@ begin
         end;
       end;
     END;
-    Form1.Chart1.BottomAxis.Maximum:=tTime;
-    d:=Trunc(tTime/86400);
-    h:=Trunc((tTime-(d*86400))/3600);
-    m:=Trunc((tTime-(h*3600))/60);
-    s:=Trunc(tTime-(h*3600)-(m*60));
-    Form1.Label4.Caption:='';
-    if d>0 then Form1.Label4.Caption:=inttostr(d)+'d ';
-    if h>0 then Form1.Label4.Caption:=Form1.Label4.Caption+inttostr(h)+'h ';
-    if m>0 then Form1.Label4.Caption:=Form1.Label4.Caption+inttostr(m)+'m ';
-    if s>0 then Form1.Label4.Caption:=Form1.Label4.Caption+inttostr(s)+'s';
     CloseFile(GCode_IN);
-    Try
-      Form1.Chart1.LeftAxis.Maximum:=round(maxCount)+1;
-    Except
-      // Do Nothing
-    End;
-    Form1.Label19.Caption:=floattostr(round(maxCount*10)/10);
-    // Get Informations in the G-Code
-    Assignfile (GCode_IN, file_path);
-    Reset (GCode_IN);
-    WHILE NOT EOF(GCode_IN) Do begin
-      Readln (GCode_IN, Lines);
-      // Get the Filament Type
-      if copy(Lines,1,17)='; filament_type =' then begin
-        Lines:=copy(Lines,19,length(Lines));
-        filamentType:=Lines;
-      // Get the Printer/Extruder Name
-      end else if copy(Lines,1,23)='; printer_settings_id =' then begin
-        Lines:=copy(Lines,25,length(Lines));
-        printerName:=Lines;
-      // Get the Filament Name
-      end else if copy(Lines,1,24)='; filament_settings_id =' then begin
-        Lines:=copy(Lines,26,length(Lines));
-        filamentName:=Lines;
-      end;
-    end;
-    CloseFile(GCode_IN);
+
     // If Extruder Name Found in G-Code
     if Form1.FDTableEXTRUDER.RecordCount>0 then begin
       Form1.FDTableEXTRUDER.First;
@@ -831,6 +835,7 @@ begin
       if extruderFound then  Form1.FDTableEXTRUDER.Bookmark := Bookmark else Form1.FDTableEXTRUDER.First;
       Form1.DBLookupComboBox1Click(Nil);
     end;
+
     // If Filament Type Found in G-Code
     findIndex:=0;
     i:=-1;
@@ -844,6 +849,9 @@ begin
     end;
     if filTypeFound then form1.ComboBox1.ItemIndex:=findIndex else form1.ComboBox1.ItemIndex:=0;
     Form1.ComboBox1Change(Nil);
+    Form1.ComboBox1.Repaint;
+    Form1.ComboBox2.Repaint;
+
     // If Filament Name Found in G-Code
     if Form1.FDTableFILAMENT.RecordCount>0 then begin
       findIndex:=0;
@@ -862,9 +870,40 @@ begin
       if filNameFound then Form1.ComboBox2.ItemIndex:=findIndex-1 else Form1.ComboBox2.ItemIndex:=0;
       Form1.ComboBox2Change(Nil);
     end;
+
+    // Show Informations In the Interface
+    Try
+      Form1.Chart1.BottomAxis.Maximum:=tTime;
+      Form1.Chart1.LeftAxis.Maximum:=round(maxCount)+1;
+    Except
+      // Do Nothing
+    End;
+    d:=Trunc(tTime/86400);
+    h:=Trunc((tTime-(d*86400))/3600);
+    m:=Trunc((tTime-(h*3600))/60);
+    s:=Trunc(tTime-(h*3600)-(m*60));
+    Form1.Label4.Caption:='';
+    if d>0 then Form1.Label4.Caption:=inttostr(d)+'d ';
+    if h>0 then Form1.Label4.Caption:=Form1.Label4.Caption+inttostr(h)+'h ';
+    if m>0 then Form1.Label4.Caption:=Form1.Label4.Caption+inttostr(m)+'m ';
+    if s>0 then Form1.Label4.Caption:=Form1.Label4.Caption+inttostr(s)+'s';
+    Form1.Label19.Caption:=floattostr(round(maxCount*10)/10);
+    Form1.BitBtn5.Enabled:=true;
+    //Form1.BitBtn4.Enabled:=true;
+  end else begin
+    Form1.Series1.Clear;
+    Form1.Series2.Clear;
+    Form1.Series3.Clear;
+    Form1.Series4.Clear;
+    Form1.Series5.Clear;
+    Form1.Series6.Clear;
+    Form1.Series7.Clear;
+    Form1.Series8.Clear;
+    Form1.Series9.Clear;
+    Form1.Series10.Clear;
+    Form1.Series11.Clear;
   end;
-  Form1.BitBtn5.Enabled:=true;
-  Form1.BitBtn4.Enabled:=true;
+  Form1.Chart1.Title.Text.Clear;
   Form1.Chart1.Title.Font.Color:=clNavy;
   Form1.Chart1.Title.Text.Add('- Slicer G-Code -');
 end;
@@ -874,6 +913,7 @@ end;
 procedure TForm1.BitBtn4Click(Sender: TObject);
 begin
   readGcode;
+  if not canProcess then Exit;
   if (filTypeFound and extruderFound and filNameFound) then begin                                                                                 /////////////////////////////////////////////////
     calculateAverages;
     generateTempOutput;
@@ -1059,6 +1099,7 @@ end;
 procedure TForm1.FormActivate(Sender: TObject);
 begin
   // Set initial Parameters
+  canProcess:=true;
   Form1.Series3.Visible:=false;
   Form1.Series6.Visible:=false;
   Form1.Series7.Visible:=false;
@@ -1081,13 +1122,21 @@ begin
   Form1.FDTableEXTRUDER.Active:=true;
   Form1.FDTableEXTRUDER.Refresh;
   DBLookupComboBox1Click(Self);  // Change Printer/Extruder
+
   Form1.Timer1.Enabled:=true;
 end;
+
 
 
 // Close Application                                                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 procedure TForm1.BitBtn3Click(Sender: TObject);
 begin
+  // Delete original G-Code File to Cancel Print
+  if ParamStr(1)<>'' then
+    try
+      DeleteFile(file_path);
+    Except
+    end;
   Application.Terminate;
 end;
 
@@ -1096,13 +1145,6 @@ end;
 procedure TForm1.FormShow(Sender: TObject);
 begin
   if ParamStr(1)<>'' then Form3.ShowModal;
-end;
-
-
-// Application Paint Event                                              ///////////////////////////////////////////////////////////////////////////////////////////////////////
-procedure TForm1.FormPaint(Sender: TObject);
-begin
-  
 end;
 
 
@@ -1163,14 +1205,13 @@ end;
 
 procedure TForm1.Timer1Timer(Sender: TObject);
 begin
-  if ParamStr(1)<>'' then begin
+  Form1.Timer1.Enabled:=false;
+  if (ParamStr(1)<>'') and canProcess  then begin
     file_path:=ParamStr(1);
     Form1.Edit1.Text:=file_path;
     Form1.BitBtn1.Enabled:=false;
-    canProcess:=true;
     BitBtn4Click(Self);
   end;
-  Form1.Timer1.Enabled:=false;
 end;
 
 // Get Chart On Mouse Move Coordinate                                   ///////////////////////////////////////////////////////////////////////////////////////////////////////
