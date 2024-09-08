@@ -27,7 +27,7 @@ I think this will be the future of 3D printing, I encourage you to test and deve
 D:\SB53_G-Code_Flow_Temperature_Controller_V1.1Beta\SB53-Systems.exe;
 ```
   
-3. Changing the initial layer temperature is important, the script automatically modifies the G-Code (M109 S) command or change the specified print start macro. Example Below : 
+3. Changing the initial layer temperature is important, the script automatically modifies the G-Code (M109 S) command or changes the specified print start macro. Example Below : 
 ![image](https://github.com/user-attachments/assets/26b1e09e-0750-43f6-995f-8671da5838e0)  
 ![image](https://github.com/user-attachments/assets/a3c814af-4522-4177-907c-7aab631505f7)  
   
