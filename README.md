@@ -15,7 +15,7 @@ With this Script Concept, you could print any object with 0 Slicer Settings and 
 ![image](https://github.com/user-attachments/assets/959c95cd-48ec-48a6-92aa-607106f9f7d1)  
   
 # Latest Release
-[SB53 G-Code Flow/Temperature Controller V1.1 Beta (updated September 5 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
+[SB53 G-Code Flow/Temperature Controller V1.1 Beta (updated September 8 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
   
 # Instructions and Prerequisites  
 1. [Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required and must be in the same Folder with this Script (Included Klipper_Estimator.exe V 3.7.3), it is used for time estimation using Klipper Look-Ahead kinematics, and gives the flow rate average for each move in the G-Code.  
