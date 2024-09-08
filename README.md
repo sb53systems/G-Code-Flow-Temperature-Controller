@@ -6,13 +6,13 @@ Its operation consists of varying the temperature according to the average flow 
   
 This Script is free and open source, created to prove the effectiveness of automatic Speeds/Flow and Nozzle temperature change during 3D printing in order to get the best Quality/Speed Optimization and reduce 3D Printing complexity.  
   
-This Script is not intended to be a definitive solution as I believe that integrating this concept in slicers will be more effective.  
-  
-I think this will be the future of 3D printing, i encourage you to test and develop it, with the hope that it will be integrated into the slicers.  
-  
-With this Script Concept, you could print any object with 0 Slicer Settings and have the best Speed/Quality Optimization, even with a 2018 Klipperized 3D printer and a nice inexpensive filament!  
+With this Concept, you could print any object with 0 Slicer Settings and have the best Speed/Quality Optimization, even with an old Klipperized 3D printer and a nice inexpensive filament!  
   
 ![image](https://github.com/user-attachments/assets/959c95cd-48ec-48a6-92aa-607106f9f7d1)  
+  
+This Script is not intended to be a definitive solution as I believe that integrating this concept in slicers will be more effective.  
+  
+I think this will be the future of 3D printing, I encourage you to test and develop it, with the hope that it will be integrated into the slicers.  
   
 # Latest Release
 [SB53 G-Code Flow/Temperature Controller V1.1 Beta (updated September 8 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
