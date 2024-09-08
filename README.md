@@ -6,7 +6,7 @@ Its operation consists of varying the temperature according to the average flow 
   
 This Script is free and open source, created to prove the effectiveness of automatic Speeds/Flow and Nozzle temperature change during 3D printing in order to get the best Quality/Speed Optimization and reduce 3D Printing complexity.  
   
-With this Concept, you could print any object with 0 Slicer Settings and have the best Speed/Quality Optimization, even with an old Klipperized 3D printer and a nice inexpensive filament!  
+With this Concept, you could print any object with the same Slicer Settings and have the best Speed/Quality Optimization, even with an old Klipperized 3D printer and a nice inexpensive filament!  
   
 ![image](https://github.com/user-attachments/assets/959c95cd-48ec-48a6-92aa-607106f9f7d1)  
   
