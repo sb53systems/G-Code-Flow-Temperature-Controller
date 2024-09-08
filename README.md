@@ -10,9 +10,9 @@ With this Concept, you could print any object with 0 Slicer Settings and have th
   
 ![image](https://github.com/user-attachments/assets/959c95cd-48ec-48a6-92aa-607106f9f7d1)  
   
-This Script is not intended to be a definitive solution as I believe that integrating this concept in slicers will be more effective.  
+This script is not intended to be a definitive solution as I think integrating this concept into the Slicers will be more effective.  
   
-I think this will be the future of 3D printing, I encourage you to test and develop it, with the hope that it will be integrated into the slicers.  
+I think this will be the future of 3D printing, I encourage you to test and develop it, with the hope that it will be integrated into Slicers.  
   
 # Latest Release
 [SB53 G-Code Flow/Temperature Controller V1.1 Beta (updated September 8 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
@@ -20,14 +20,14 @@ I think this will be the future of 3D printing, I encourage you to test and deve
 # Instructions and Prerequisites  
 1. [Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required and must be in the same Folder with this Script (Included Klipper_Estimator.exe V 3.7.3), it estimate the time and the average flow rate for each move in the G-Code using Klipper Look-Ahead kinematics.  
     
-2. The script can be used as a normal program by running the SB53-Systems.exe file and opening a GCode file manually, or by adding it to the Slicer as a post-processing script.  
+2. The script can be used as a normal program by running the SB53-Systems.exe file and opening a G-Code file manually, or by adding it to the Slicer as a post-processing script.  
   ![image](https://github.com/user-attachments/assets/3557a6ff-524f-4964-9cd2-044b01f46faa)
  
 ```
 D:\SB53_G-Code_Flow_Temperature_Controller_V1.1Beta\SB53-Systems.exe;
 ```
   
-3. Changing the initial layer temperature is important, the script automatically modifies the G-Code (M109 S) command or can change the specified print start macro. Example Below : 
+3. Changing the initial layer temperature is important, the script automatically modifies the G-Code (M109 S) command or change the specified print start macro. Example Below : 
 ![image](https://github.com/user-attachments/assets/26b1e09e-0750-43f6-995f-8671da5838e0)  
 ![image](https://github.com/user-attachments/assets/a3c814af-4522-4177-907c-7aab631505f7)  
   
@@ -59,7 +59,7 @@ You shoold set the filament settings :
   
 Note that I prefer to heat my filament a little more to have a better Layer adhesion, and my PTFE-Lined Hotend safe temperature is 240°.  
   
-5. The initial temperature estimated by the Script depends on the speed of the first movements of the g-code, you can adjust it by fixing the speed of the purge line or the speed of the first layer perimeters.  
+5. The initial temperature estimated by the Script depends on the speed of the first moves of the G-Code, you can adjust it by fixing the speed of the purge line or the speed of the first layer perimeters.  
   
   
 Note that :  
@@ -72,7 +72,7 @@ Note that :
 - This Script does not accept G2 and G3 in G-Code (Arc Fitting, Spirale Z Hope Type,...).  
 - Time Estimation is based in Klipper Look-ahead kinematics, and may not be compatible with other firmware.
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
-- Generated G-Code are 30% to 50% larger than the original one due to Temp and Speed adjustment.
+- Generated G-Code are 20% to 50% larger than the original one due to Temp and Speed adjustment.
 - This Script is currently only available for Windows OS, with some changes in the code (I can help for this, or can do it later!), the source can be compiled for deferent OS with delphi 12.  
   
 # Usage  
