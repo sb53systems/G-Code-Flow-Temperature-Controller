@@ -18,7 +18,7 @@ I think this will be the future of 3D printing, I encourage you to test, share a
 [SB53 G-Code Flow/Temperature Controller V1.1 Beta (updated September 8 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
   
 # Instructions and Prerequisites  
-1. [Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required and must be in the same Folder with this Script (Included Klipper_Estimator.exe V 3.7.3), it estimate the time and the average flow rate for each move in the G-Code using Klipper Look-Ahead kinematics.  
+1. [Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required and must be in the same Folder with this Script (Included Klipper_Estimator.exe V 3.7.3). Using Klipper Look-Ahead kinematics, it estimate the time and the average flow rate for each move in the G-Code.  
     
 2. The script can be used as a normal program by running the SB53-Systems.exe file and opening a G-Code file manually, or by adding it to the Slicer as a post-processing script.  
   ![image](https://github.com/user-attachments/assets/3557a6ff-524f-4964-9cd2-044b01f46faa)
