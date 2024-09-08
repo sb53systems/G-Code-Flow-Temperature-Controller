@@ -49,6 +49,8 @@ I use Thick Bridges in Orca Slicer and a single 5015 radial fan for part cooling
   
 [See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
   
+[See my Printer ORCA Slicer Settings.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/My_Config.md)  
+  
 You shoold set the filament settings :
   - The maximum recommended volumetric speed at the maximum temperature that your Hotend or Filament can handle.
   - The Fan Cooling perdiode and the Min print speed.
