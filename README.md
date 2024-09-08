@@ -12,7 +12,7 @@ With this Concept, you could print any object with 0 Slicer Settings and have th
   
 This script is not intended to be a definitive solution as I think integrating this concept into the Slicers will be more effective.  
   
-I think this will be the future of 3D printing, I encourage you to test and develop it, with the hope that it will be integrated into Slicers.  
+I think this will be the future of 3D printing, I encourage you to test, share and develop it, with the hope that equivalent solutions will be integrated into the Slicers.  
   
 # Latest Release
 [SB53 G-Code Flow/Temperature Controller V1.1 Beta (updated September 8 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
