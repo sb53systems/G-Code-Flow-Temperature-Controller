@@ -937,7 +937,6 @@ procedure TForm1.BitBtn7Click(Sender: TObject);
 begin
   if canProcess then begin
     generateTempOutput;
-    generateOutput;
   end;
 end;
 
