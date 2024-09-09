@@ -1,5 +1,7 @@
+# My ORCA Slicer Settings
+  
 # Used 3D Printer
-Know that all my tests are done in only one Klipperized 2018 3D printer (model: DMS Create DP5).  
+Note that all my tests are done in only one Klipperized 2018 3D printer (model: DMS Create DP5).  
   
 ![DMSCREATE-DP5-3d-i3](https://github.com/user-attachments/assets/7307c003-a19e-41f0-9e40-6adc4e97f0e7)  
   
