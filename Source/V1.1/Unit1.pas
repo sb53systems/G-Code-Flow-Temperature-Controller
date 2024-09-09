@@ -439,6 +439,7 @@ Var
   tempOutFile :textfile;
   retract, freqChanger : bool;
 begin
+  // Set Innitial Parameters
   Form1.BitBtn7.Enabled:=False;
   if not canProcess then Exit;
   Form1.Label1.Repaint;
@@ -465,127 +466,135 @@ begin
   curTemp:=StringReplace(curTemp, ',', '.', [rfReplaceAll]);
   Assignfile (GCode_IN, file_path);
   AssignFile(tempOutFile,appPath+'\tempOut');
-                                                                                                     //// Try
-  Rewrite(tempOutFile);
-  Reset (GCode_IN);
-  WHILE NOT (EOF(GCode_IN)and(canProcess)) DO BEGIN
-    if not canProcess then Exit;
-    Readln (GCode_IN, Lines);
-    // Change the Initial Temperature in Print Start Macro
-    if copy(Lines,1,length(form1.Edit17.text))=form1.Edit17.text then begin
-      WriteLn (tempOutFile , (copy(Lines,1,pos(form1.Edit16.text,Lines)+length(form1.Edit16.text)))+curTemp+copy(Lines,pos(form1.Edit16.text,Lines)+length(form1.Edit16.text)+4,Length(Lines)) +'    ; Reset Initial Temperature');
-    // Change the Initial Temperature in M109 S
-    end else if copy(Lines,1,6)='M109 S' then begin
-      WriteLn (tempOutFile ,'M109 S'+curTemp+'    ; Reset Initial Temperature');
-    // Get the Slicer Speed
-    end else if copy(Lines,1,4)='G1 F' then begin
-      WriteLn (tempOutFile , Lines+'    ; Slicer Speed');
-      Lines:=copy(Lines,5,length(Lines));
-      if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
-      gcodeFreq:=round(strtofloat(Lines));
-      freqChanger:=true;
-    // Get the Line Type
-    end else if copy(Lines,1,6)=';TYPE:' then begin
-      WriteLn (tempOutFile , Lines);
-      lineType:=copy(Lines,7,length(Lines));
-    // Get the Line Width
-    end else if copy(Lines,1,7)=';WIDTH:' then begin
-      WriteLn (tempOutFile , Lines);
-      Lines:=copy(Lines,8,length(Lines));
-      if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
-      lineWidth:=strtofloat(Lines);
-    // Get the Line Height
-    end else if copy(Lines,1,8)=';HEIGHT:' then begin
-      WriteLn (tempOutFile , Lines);
-      Lines:=copy(Lines,9,length(Lines));
-      if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
-      layerHeight:=strtofloat(Lines);
-    end else if copy(Lines,1,3)='G1 ' then begin
-      if (copy(Lines,1,4)<>'G1 F') then gcodeMovesCount:=gcodeMovesCount+1;
 
-      // Temperature change
-      if totFilCount>0 then
-        Try
-          getTemp:=floattostr(round(Form1.Series4.YValues[FindClosestIndex(totFilCount,Form1.Series7)]*10)/10);
-          if floatLocalFormat=',' then getTemp:=StringReplace(getTemp, ',', '.', [rfReplaceAll]);
-          if getTemp<>curTemp then begin
-            curTemp:=getTemp;
-            getTemp:=floattostr(round(Form1.Series4.YValues[FindClosestIndex(totFilCount,Form1.Series7)+1]*10)/10);
-            Form1.Series11.AddXY(gcodeMovesCount, strtofloat(getTemp) );
-            if minTempCount>strtofloat(getTemp) then minTempCount:=strtofloat(getTemp);
-            if maxTempCount<strtofloat(getTemp) then maxTempCount:=strtofloat(getTemp);
+  // Read The Original File and Create a Temporary File
+  Try
+    Rewrite(tempOutFile);
+    Reset (GCode_IN);
+    WHILE NOT (EOF(GCode_IN)and(canProcess)) DO BEGIN
+      if not canProcess then Exit;
+      Readln (GCode_IN, Lines);
+      // Change the Initial Temperature in Print Start Macro
+      if copy(Lines,1,length(form1.Edit17.text))=form1.Edit17.text then begin
+        WriteLn (tempOutFile , (copy(Lines,1,pos(form1.Edit16.text,Lines)+length(form1.Edit16.text)))+curTemp+copy(Lines,pos(form1.Edit16.text,Lines)+length(form1.Edit16.text)+4,Length(Lines)) +'    ; Reset Initial Temperature');
+      // Change the Initial Temperature in M109 S
+      end else if copy(Lines,1,6)='M109 S' then begin
+        WriteLn (tempOutFile ,'M109 S'+curTemp+'    ; Reset Initial Temperature');
+      // Get the Slicer Speed
+      end else if copy(Lines,1,4)='G1 F' then begin
+        WriteLn (tempOutFile , Lines+'    ; Slicer Speed');
+        Lines:=copy(Lines,5,length(Lines));
+        if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
+        gcodeFreq:=round(strtofloat(Lines));
+        freqChanger:=true;
+      // Get the Line Type
+      end else if copy(Lines,1,6)=';TYPE:' then begin
+        WriteLn (tempOutFile , Lines);
+        lineType:=copy(Lines,7,length(Lines));
+      // Get the Line Width
+      end else if copy(Lines,1,7)=';WIDTH:' then begin
+        WriteLn (tempOutFile , Lines);
+        Lines:=copy(Lines,8,length(Lines));
+        if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
+        lineWidth:=strtofloat(Lines);
+      // Get the Line Height
+      end else if copy(Lines,1,8)=';HEIGHT:' then begin
+        WriteLn (tempOutFile , Lines);
+        Lines:=copy(Lines,9,length(Lines));
+        if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
+        layerHeight:=strtofloat(Lines);
+      end else if copy(Lines,1,3)='G1 ' then begin
+        if (copy(Lines,1,4)<>'G1 F') then gcodeMovesCount:=gcodeMovesCount+1;
+
+        // Temperature change
+        if totFilCount>0 then
+          Try
+            getTemp:=floattostr(round(Form1.Series4.YValues[FindClosestIndex(totFilCount,Form1.Series7)]*10)/10);
             if floatLocalFormat=',' then getTemp:=StringReplace(getTemp, ',', '.', [rfReplaceAll]);
-            WriteLn (tempOutFile , 'M104 S'+getTemp);
-          end;
-        Except
-          //Esception
-        end;
-
-      // Calculate requested Flow and PA / Temperature
-      if floatLocalFormat=',' then curTemp:=StringReplace(curTemp, '.', ',', [rfReplaceAll]);
-      if strtofloat(curTemp)>form1.UpDown2.Position then begin
-        tempByflow:=((form1.UpDown3.Position-form1.UpDown2.Position)/(form1.UpDown6.Position-form1.UpDown5.Position));
-        recFlow:=form1.UpDown5.Position+((strtofloat(curTemp)-form1.UpDown2.Position)/tempByflow);
-        if floatLocalFormat=',' then begin
-          Form1.Edit13.Text:=StringReplace(Form1.edit13.Text, '.', ',', [rfReplaceAll]);
-          Form1.Edit12.Text:=StringReplace(Form1.edit12.Text, '.', ',', [rfReplaceAll]);
-        end;
-        tempByPA:=((form1.UpDown3.Position-form1.UpDown2.Position)/(strtofloat(Form1.edit13.Text)-strtofloat(Form1.edit12.Text)));
-        recPA:=strtofloat(Form1.edit12.Text)+((strtofloat(curTemp)-form1.UpDown2.Position)/tempByPA);
-      end else begin
-        tempByflow:=((form1.UpDown2.Position-form1.UpDown1.Position)/(form1.UpDown5.Position-form1.UpDown4.Position));
-        recFlow:=form1.UpDown5.Position-((form1.UpDown2.Position-strtofloat(curTemp))/tempByflow);
-        if floatLocalFormat=',' then begin
-          Form1.Edit10.Text:=StringReplace(Form1.edit10.Text, '.', ',', [rfReplaceAll]);
-          Form1.Edit12.Text:=StringReplace(Form1.edit12.Text, '.', ',', [rfReplaceAll]);
-        end;
-        tempByPA:=((form1.UpDown2.Position-form1.UpDown1.Position)/(strtofloat(Form1.edit12.Text)-strtofloat(Form1.edit10.Text)));
-        recPA:=strtofloat(Form1.edit12.Text)-((form1.UpDown2.Position-strtofloat(curTemp))/tempByPA);
-      end;
-      recPA:=round(recPA*1000)/1000;
-      if floatLocalFormat=',' then curTemp:=StringReplace(curTemp, ',', '.', [rfReplaceAll]);
-
-      // PA Change
-      if ((curPA<>recPA)and(Form1.CheckBox7.Checked)and((lineType='Sparse infill')or(lineType='Internal solid infill')or(lineType='Internal Bridge')or(lineType='Support'))) then begin
-        curPA:=recPA;
-        WriteLn (tempOutFile , 'SET_PRESSURE_ADVANCE ADVANCE='+StringReplace(floattostr(curPA), ',', '.', [rfReplaceAll]));
-      end;
-
-      // Frequance change
-      if pos('E', Lines)<>0 then begin
-        moveFilCount:=copy(Lines, pos('E',Lines)+1, length(Lines));
-        if pos(' ', moveFilCount)<>0 then moveFilCount:=copy(moveFilCount,1,pos(' ', moveFilCount)-1);
-        if floatLocalFormat=',' then moveFilCount:=StringReplace(moveFilCount, '.', ',', [rfReplaceAll]);
-        if moveFilCount[1]='-' then begin
-          if gcodeFreq>0 then WriteLn (tempOutFile , 'G1 F'+StringReplace(floattostr(gcodeFreq), ',', '.', [rfReplaceAll])+'    ; Keep G-Code Speed');
-          retract:=true;
-        end else if retract=true then retract:=false
-        else begin
-          try
-            if moveFilCount[1]=',' then  moveFilCount:='0'+moveFilCount;
-            moveFlowRate:=Form1.Series3.YValues[round(gcodeMovesCount)-1];
-            if (recFlow>0) then begin
-              sectionArea := layerHeight * lineWidth;
-              recFreq := round( 60 *(recFlow / sectionArea));
-              if recFreq>gcodeFreq then recFreq:=gcodeFreq;
-              if ((curFreq<>recFreq)or freqChanger) then begin
-                freqChanger:=false;
-                curFreq:=recFreq;
-                WriteLn (tempOutFile , 'G1 F'+StringReplace(floattostr(curFreq), ',', '.', [rfReplaceAll])+'    ; Set Recommended Speed');
-              end;
-            end else WriteLn (tempOutFile , 'G1 F'+StringReplace(floattostr(gcodeFreq), ',', '.', [rfReplaceAll])+'    ; Keep G-Code Speed');
+            if getTemp<>curTemp then begin
+              curTemp:=getTemp;
+              getTemp:=floattostr(round(Form1.Series4.YValues[FindClosestIndex(totFilCount,Form1.Series7)+1]*10)/10);
+              Form1.Series11.AddXY(gcodeMovesCount, strtofloat(getTemp) );
+              if minTempCount>strtofloat(getTemp) then minTempCount:=strtofloat(getTemp);
+              if maxTempCount<strtofloat(getTemp) then maxTempCount:=strtofloat(getTemp);
+              if floatLocalFormat=',' then getTemp:=StringReplace(getTemp, ',', '.', [rfReplaceAll]);
+              WriteLn (tempOutFile , 'M104 S'+getTemp);
+            end;
           Except
+            //Esception
           end;
-          totFilCount:=totFilCount+strtofloat(moveFilCount);
-        end;
-      end;
-      WriteLn (tempOutFile , Lines);
-    end else WriteLn (tempOutFile , Lines);
-  END;
-  CloseFile(GCode_IN);
-  CloseFile(tempOutFile);
 
-  // Generate Final File and ...
+        // Calculate requested Flow and PA / Temperature
+        if floatLocalFormat=',' then curTemp:=StringReplace(curTemp, '.', ',', [rfReplaceAll]);
+        if strtofloat(curTemp)>form1.UpDown2.Position then begin
+          tempByflow:=((form1.UpDown3.Position-form1.UpDown2.Position)/(form1.UpDown6.Position-form1.UpDown5.Position));
+          recFlow:=form1.UpDown5.Position+((strtofloat(curTemp)-form1.UpDown2.Position)/tempByflow);
+          if floatLocalFormat=',' then begin
+            Form1.Edit13.Text:=StringReplace(Form1.edit13.Text, '.', ',', [rfReplaceAll]);
+            Form1.Edit12.Text:=StringReplace(Form1.edit12.Text, '.', ',', [rfReplaceAll]);
+          end;
+          tempByPA:=((form1.UpDown3.Position-form1.UpDown2.Position)/(strtofloat(Form1.edit13.Text)-strtofloat(Form1.edit12.Text)));
+          recPA:=strtofloat(Form1.edit12.Text)+((strtofloat(curTemp)-form1.UpDown2.Position)/tempByPA);
+        end else begin
+          tempByflow:=((form1.UpDown2.Position-form1.UpDown1.Position)/(form1.UpDown5.Position-form1.UpDown4.Position));
+          recFlow:=form1.UpDown5.Position-((form1.UpDown2.Position-strtofloat(curTemp))/tempByflow);
+          if floatLocalFormat=',' then begin
+            Form1.Edit10.Text:=StringReplace(Form1.edit10.Text, '.', ',', [rfReplaceAll]);
+            Form1.Edit12.Text:=StringReplace(Form1.edit12.Text, '.', ',', [rfReplaceAll]);
+          end;
+          tempByPA:=((form1.UpDown2.Position-form1.UpDown1.Position)/(strtofloat(Form1.edit12.Text)-strtofloat(Form1.edit10.Text)));
+          recPA:=strtofloat(Form1.edit12.Text)-((form1.UpDown2.Position-strtofloat(curTemp))/tempByPA);
+        end;
+        recPA:=round(recPA*1000)/1000;
+        if floatLocalFormat=',' then curTemp:=StringReplace(curTemp, ',', '.', [rfReplaceAll]);
+
+        // PA Change
+        if ((curPA<>recPA)and(Form1.CheckBox7.Checked)and((lineType='Sparse infill')or(lineType='Internal solid infill')or(lineType='Internal Bridge')or(lineType='Support'))) then begin
+          curPA:=recPA;
+          WriteLn (tempOutFile , 'SET_PRESSURE_ADVANCE ADVANCE='+StringReplace(floattostr(curPA), ',', '.', [rfReplaceAll]));
+        end;
+
+        // Frequance change
+        if pos('E', Lines)<>0 then begin
+          moveFilCount:=copy(Lines, pos('E',Lines)+1, length(Lines));
+          if pos(' ', moveFilCount)<>0 then moveFilCount:=copy(moveFilCount,1,pos(' ', moveFilCount)-1);
+          if floatLocalFormat=',' then moveFilCount:=StringReplace(moveFilCount, '.', ',', [rfReplaceAll]);
+          if moveFilCount[1]='-' then begin
+            if gcodeFreq>0 then WriteLn (tempOutFile , 'G1 F'+StringReplace(floattostr(gcodeFreq), ',', '.', [rfReplaceAll])+'    ; Reset G-Code Before the Retraction');
+            retract:=true;
+          end else if retract=true then retract:=false
+          else begin
+            try
+              if ((moveFilCount[1]=',')or(moveFilCount[1]='.')) then  moveFilCount:='0'+moveFilCount;
+              moveFlowRate:=Form1.Series3.YValues[round(gcodeMovesCount)-1];
+              if (recFlow>0) then begin
+                sectionArea := layerHeight * lineWidth;
+                recFreq := round( 60 *(recFlow / sectionArea));
+                if recFreq>gcodeFreq then recFreq:=gcodeFreq;
+                if ((curFreq<>recFreq)or freqChanger) then begin
+                  freqChanger:=false;
+                  curFreq:=recFreq;
+                  WriteLn (tempOutFile , 'G1 F'+StringReplace(floattostr(curFreq), ',', '.', [rfReplaceAll])+'    ; Set Recommended Speed');
+                end;
+              end else WriteLn (tempOutFile , 'G1 F'+StringReplace(floattostr(gcodeFreq), ',', '.', [rfReplaceAll])+'    ; Keep G-Code Speed');
+            Except
+            end;
+            totFilCount:=totFilCount+strtofloat(moveFilCount);
+          end;
+        end;
+        WriteLn (tempOutFile , Lines);
+      end else WriteLn (tempOutFile , Lines);
+    END;
+    CloseFile(GCode_IN);
+    CloseFile(tempOutFile);
+  Except On E: Exception do
+    begin
+      canProcess:=False;
+      ShowMessage('There was an error: ' + E.Message);
+    end;
+  End;
+
+  // Generate Final File and Show Max and Min Temperature in the Interface
   if canProcess then begin
     generateOutput;
     Form1.Label21.Caption:=floattostr(minTempCount);
@@ -696,7 +705,7 @@ begin
   if not FileExists(file_path) then begin
     canProcess:= false;
     showmessage('GCODE File not found !');
-  end else if not FileExists(appPath+'\config.json') then begin
+  end else if ((not FileExists(appPath+'\config.json'))or(Not FileSize(ExtractFileDir(Application.ExeName)+'\config.json')>0)) then begin
     canProcess:= false;
     Form2.ShowModal;
     if (FileExists(appPath+'\config.json'))and(FileSize(ExtractFileDir(Application.ExeName)+'\config.json')>0) then
@@ -714,7 +723,11 @@ begin
     Readln (GCode_IN, Lines);
     // Check if G2/G3 is used
     if ((copy(Lines,1,3)='G2 ')or(copy(Lines,1,3)='G3 ')) then begin
-      showmessage('Cannot be processed ! This G-code contains G2 or G3 commands !');
+      showmessage('Cannot be processed ! This G-code File contains G2 or G3 commands !');
+      canProcess:=false;
+    // Check if the G-Code is already Edited
+    end else if copy(Lines,1,16)='; Edited by SB53' then begin
+      showmessage('Cannot be processed ! This G-Code file is already edited by this script');
       canProcess:=false;
     // Get the Filament Type
     end else if copy(Lines,1,17)='; filament_type =' then begin
