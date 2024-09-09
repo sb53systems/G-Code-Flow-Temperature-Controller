@@ -75,6 +75,7 @@ Note that :
 - This Script does not accept G2 and G3 in G-Code (Arc Fitting, Spirale Z Hope Type,...).
 - This script does not support Multi-Material printing.
 - Time Estimation is based in Klipper Look-ahead kinematics, and may not be compatible with other firmware.
+- Note that currently delta kinematic limits are not implemented in Klipper_Estimator Script.
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
 - Generated G-Code are 20% to 50% larger than the original one due to Temp and Speed adjustment.
 - This Script is currently only available for Windows OS, with some changes in the code, the source can be compiled for deferent OS with delphi 12 (I can help for this, or can do it later!).  
