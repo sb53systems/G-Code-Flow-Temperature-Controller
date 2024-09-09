@@ -73,7 +73,7 @@ Note that :
 ![351913375-991fe2b8-3935-46ff-816e-5b0aee981b4d](https://github.com/user-attachments/assets/602b96a8-2666-44bd-b70f-aa5c06deadd4)  
   
 - This Script does not accept G2 and G3 in G-Code (Arc Fitting, Spirale Z Hope Type,...).
-- This script does not support Multi-Material printing.
+- This script does not support Multi-Tool and Multi-Material printing.
 - Time Estimation is based in Klipper Look-ahead kinematics, and may not be compatible with other firmware.
 - The current version of Klipper_Estimator, does not support delta kinematic limits.
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
