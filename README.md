@@ -72,7 +72,8 @@ Note that :
 - Changing the PA during printing causes a delay in execution and forms bubbles in the walls, the Script is programed to change PA only in Sparse infill, Internal solid infill, Support and Internal Bridge.  
 ![351913375-991fe2b8-3935-46ff-816e-5b0aee981b4d](https://github.com/user-attachments/assets/602b96a8-2666-44bd-b70f-aa5c06deadd4)  
   
-- This Script does not accept G2 and G3 in G-Code (Arc Fitting, Spirale Z Hope Type,...).  
+- This Script does not accept G2 and G3 in G-Code (Arc Fitting, Spirale Z Hope Type,...).
+- This script does not support Multi-Material printing.
 - Time Estimation is based in Klipper Look-ahead kinematics, and may not be compatible with other firmware.
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
 - Generated G-Code are 20% to 50% larger than the original one due to Temp and Speed adjustment.
