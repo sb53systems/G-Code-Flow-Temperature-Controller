@@ -78,7 +78,7 @@ Note that :
 - The current version of Klipper_Estimator, does not support delta kinematic limits.
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
 - The generated G-Code is 20/50 % larger than the original one due to Temp and Speed adjustment.
-- This Script is currently only available for Windows OS. With delphi 12 and a few changes in the source code, it can be compiled for a deferential operating system (I can help for this, or can do it later!).  
+- This Script is currently only available for Windows OS. With delphi 12 and a few changes in the source code, it can be compiled for other operating system (I can help for this, or can do it later!).  
   
 # Usage  
 The script will popup once you Print or Export the G-Code from the Slicer, ask the user whether the script will be applied or not.   
