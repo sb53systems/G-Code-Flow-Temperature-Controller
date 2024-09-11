@@ -22,8 +22,6 @@ type
     BitBtn1: TBitBtn;
     OpenDialog1: TOpenDialog;
     Edit1: TEdit;
-    BitBtn2: TBitBtn;
-    BitBtn3: TBitBtn;
     XPManifest1: TXPManifest;
     BitBtn4: TBitBtn;
     StaticText2: TStaticText;
@@ -74,13 +72,10 @@ type
     Edit15: TEdit;
     UpDown9: TUpDown;
     UpDown11: TUpDown;
-    Image3: TImage;
-    Label6: TLabel;
     StaticText19: TStaticText;
     StaticText20: TStaticText;
     Image1: TImage;
     Image2: TImage;
-    Label5: TLabel;
     Bevel5: TBevel;
     Image6: TImage;
     Image7: TImage;
@@ -92,38 +87,9 @@ type
     DataSource2: TDataSource;
     FDTableEXTRUDER: TFDTable;
     DBLookupComboBox1: TDBLookupComboBox;
-    Chart2: TChart;
-    Label7: TLabel;
-    Label13: TLabel;
-    Label20: TLabel;
-    Label21: TLabel;
-    Series9: TLineSeries;
-    Series10: TLineSeries;
     Label3: TLabel;
     Label15: TLabel;
     Label14: TLabel;
-    Label1: TLabel;
-    Chart1: TChart;
-    Label2: TLabel;
-    Label4: TLabel;
-    Label19: TLabel;
-    Label22: TLabel;
-    Label23: TLabel;
-    Series8: TLineSeries;
-    Series3: TLineSeries;
-    Series2: TLineSeries;
-    Series1: TLineSeries;
-    Series5: TLineSeries;
-    Series4: TLineSeries;
-    Series6: TLineSeries;
-    Series7: TLineSeries;
-    Series11: TLineSeries;
-    Label8: TLabel;
-    Image8: TImage;
-    BitBtn5: TBitBtn;
-    BitBtn7: TBitBtn;
-    Label9: TLabel;
-    Label10: TLabel;
     Image9: TImage;
     FDTableEXTRUDEREXTRUDER_NAME: TStringField;
     FDTableEXTRUDERTEMP_RISE: TIntegerField;
@@ -146,14 +112,6 @@ type
     FDTableFILAMENTADJUST_PA: TBooleanField;
     FDTableFILAMENTSPEED_QUALITY_OPT: TIntegerField;
     ComboBox2: TComboBox;
-    Label11: TLabel;
-    Label12: TLabel;
-    Label16: TLabel;
-    Label17: TLabel;
-    Label18: TLabel;
-    Label24: TLabel;
-    Label25: TLabel;
-    Label26: TLabel;
     Edit16: TEdit;
     StaticText1: TStaticText;
     Edit17: TEdit;
@@ -162,6 +120,47 @@ type
     FDTableEXTRUDERSTART_MACRO: TStringField;
     FDTableEXTRUDERMACRO_EXTRUDER: TStringField;
     FDTableEXTRUDERPRINTER_CONFIG: TStringField;
+    Image3: TImage;
+    Label6: TLabel;
+    BitBtn3: TBitBtn;
+    BitBtn2: TBitBtn;
+    Chart1: TChart;
+    Label2: TLabel;
+    Label4: TLabel;
+    Label19: TLabel;
+    Label22: TLabel;
+    Label23: TLabel;
+    Label8: TLabel;
+    Image8: TImage;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label18: TLabel;
+    Label24: TLabel;
+    Label25: TLabel;
+    Label26: TLabel;
+    BitBtn5: TBitBtn;
+    Series8: TLineSeries;
+    Series3: TLineSeries;
+    Series2: TLineSeries;
+    Series1: TLineSeries;
+    Series5: TLineSeries;
+    Series4: TLineSeries;
+    Series6: TLineSeries;
+    Series7: TLineSeries;
+    Chart2: TChart;
+    Label7: TLabel;
+    Label13: TLabel;
+    Label20: TLabel;
+    Label21: TLabel;
+    Label1: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    BitBtn7: TBitBtn;
+    Series9: TLineSeries;
+    Series10: TLineSeries;
+    Series11: TLineSeries;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
@@ -213,6 +212,7 @@ type
     procedure Edit12Change(Sender: TObject);
     procedure Edit13Change(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
+    procedure FormResize(Sender: TObject);
   private
     { Déclarations privées }
   public
@@ -221,8 +221,8 @@ type
 
 var
   Form1: TForm1;
-  GCode_IN, GCode_Output, ConfigFile : textfile;
-  file_path, appPath, Lines, floatLocalFormat : string;
+  GCode_IN, GCode_Output, tempOutputFile, finalFile, ConfigFile : textfile;
+  file_path, appPath, Lines, initialTemp, floatLocalFormat : string;
   Filament_count, print_time : single;
   averageTime, imerCount: integer;
   canProcess, extruderFound, filNameFound, filTypeFound : bool;
@@ -284,7 +284,7 @@ var
 begin
   FillChar(StartInfo,SizeOf(TStartupInfo),#0);
   FillChar(ProcInfo,SizeOf(TProcessInformation),#0);
-  StartInfo.wShowWindow := SW_HIDE;
+  StartInfo.wShowWindow := SW_HIDE;  // SW_HIDE / SW_NORMAL
   StartInfo.dwFlags := STARTF_USESHOWWINDOW;
   StartInfo.cb := SizeOf(TStartupInfo);
   CreateOK := CreateProcess(nil, PChar(ProgramName), nil, nil, False, CREATE_NEW_PROCESS_GROUP+NORMAL_PRIORITY_CLASS,
@@ -332,15 +332,15 @@ end;
 // Read The Generated Temporary File Moves and creat a Final File with The New Estimated Time            //////////////////////////////////////////////////////////////////////////////////////////////
 procedure generateOutput;
 var
-  klipperEstCom : string;
+  klipperEstCom, Lines2 : string;
   tTime, moveTime, flow, maxCount : double;
-  retract : bool;
+  retract, edited, endFound, useStartMacro : bool;
   d, m, h, s, moveCount, indexSeries11 : integer;
 begin
   klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+appPath+'\klipper_estimator.exe --config_file '+appPath+'\config.json dump-moves '+appPath+'\tempOut > '+appPath+'\gcode.txt';
   ExecNewProcess(klipperEstCom,true);
   Assignfile (GCode_IN, appPath+'\gcode.txt');
-  Reset (GCode_IN);                                   +
+  Reset (GCode_IN);
   tTime:=0;
   flow:=0;
   maxCount:=0;
@@ -348,6 +348,9 @@ begin
   moveTime:=0;
   indexSeries11:=1;
   retract:=false;
+  edited:=false;
+  endFound:=false;
+  if form1.Edit17.text<>'' then useStartMacro:=true else useStartMacro:=false;
   WHILE NOT EOF(GCode_IN) DO BEGIN
     Readln (GCode_IN, Lines);
     if copy(Lines,1,8)='    Flow' then begin
@@ -397,29 +400,53 @@ begin
   if m>0 then Form1.Label1.Caption:=Form1.Label1.Caption+inttostr(m)+'m ';
   if s>0 then Form1.Label1.Caption:=Form1.Label1.Caption+inttostr(s)+'s';
   // Change Estimated Time in GCODE
-  AssignFile(GCode_IN,appPath+'\tempOut');
+  AssignFile(GCode_IN,file_path);
   Reset (GCode_IN);
-  AssignFile(GCode_Output,appPath+'\Output.gcode');
-  Rewrite(GCode_Output);
+  AssignFile(GCode_Output,appPath+'\tempOut');
+  Reset (GCode_Output);
+  AssignFile(finalFile,appPath+'\Output.gcode');
+  Rewrite(finalFile);
   WHILE NOT EOF(GCode_IN) DO BEGIN
     Readln (GCode_IN, Lines);
+    // Change the Initial Temperature in Print Start Macro
+    if useStartMacro and (copy(Lines,1,length(form1.Edit17.text))=form1.Edit17.text) then begin
+      WriteLn (finalFile , (copy(Lines,1,pos(form1.Edit16.text,Lines)+length(form1.Edit16.text)))+initialTemp+copy(Lines,pos(form1.Edit16.text,Lines)+length(form1.Edit16.text)+4,Length(Lines)) +'    ; Reset Initial Temperature');
+    // Change the Initial Temperature in M109 S
+    end else if copy(Lines,1,6)='M109 S' then begin
+      WriteLn (finalFile ,'M109 S'+initialTemp+' '+copy(Lines,11,length(Lines))+'    ; Reset Initial Temperature');
     // Change Print Time
-    if copy(Lines,1,41)='; estimated printing time (normal mode) =' then begin
+    end else if copy(Lines,1,41)='; estimated printing time (normal mode) =' then begin
       Lines:='; estimated printing time (normal mode) = '+Form1.Label1.Caption;
-      WriteLn (GCode_Output , Lines);
+      WriteLn (finalFile , Lines);
     // Add Script Version
     end else if copy(Lines,1,20)='; HEADER_BLOCK_START' then begin
-       WriteLn (GCode_Output , Lines);
-       WriteLn (GCode_Output , '; Edited by SB53 G-Code Flow/Temperature Controller 1.1');
-    end else WriteLn (GCode_Output , Lines);
+       WriteLn (finalFile , Lines);
+       WriteLn (finalFile , '; Edited by '+Form1.Caption);
+    // Detect Print End
+    end else if copy(Lines,1,22)='; EXECUTABLE_BLOCK_END' then begin
+      endFound:=true;
+      WriteLn (finalFile , Lines);
+    // Detect Print Start
+    end else if (Not edited)and((copy(Lines,1,8)=';HEIGHT:')or(copy(Lines,1,11)='; Z_HEIGHT:')) then begin
+      edited:=true;
+      WHILE NOT EOF(GCode_Output) DO BEGIN
+        Readln (GCode_Output, Lines2);
+        WriteLn (finalFile , Lines2);
+      END;
+    end else if ((Not endFound)and(Not edited)) then begin
+      WriteLn (finalFile , Lines);
+    end else if (endFound and edited) then begin
+      WriteLn (finalFile , Lines);
+    end;
   end;
   CloseFile(GCode_IN);
   CloseFile(GCode_Output);
+  CloseFile(finalFile);
   Form1.Chart2.Title.Text.Clear;
   Form1.Chart2.Title.Font.Color:=clNavy;
   Form1.Chart2.Title.Text.Add('- Generated G-Code -');
   Form1.Chart2.BottomAxis.Maximum:=tTime;
-  Form1.Series11.AddXY(tTime, Form1.Series11.YValues[Form1.Series11.Count]);
+  Form1.Series11.AddXY(tTime, Form1.Series11.YValues[Form1.Series11.Count]);                                              ///////////////////
   Try
     Form1.Chart2.LeftAxis.Maximum:=round(maxCount)+1;
   Except
@@ -436,7 +463,6 @@ procedure generateTempOutput;
 Var
   totFilCount, gcodeFreq, curFreq, recFreq, tempByPA, curPA, recPA, recFlow, tempByflow, moveFlowRate, maxTempCount, minTempCount, sectionArea, layerHeight, lineWidth, gcodeMovesCount : double;
   curTemp, getTemp, moveFilCount, lineType : string;
-  tempOutFile :textfile;
   retract, freqChanger : bool;
 begin
   // Set Innitial Parameters
@@ -464,47 +490,59 @@ begin
   minTempCount:=strtofloat(curTemp);
   maxTempCount:=strtofloat(curTemp);
   curTemp:=StringReplace(curTemp, ',', '.', [rfReplaceAll]);
-  Assignfile (GCode_IN, file_path);
-  AssignFile(tempOutFile,appPath+'\tempOut');
-
+  initialTemp:=curTemp;
+  Assignfile (GCode_IN, appPath+'\tempOutput');
+  Reset (GCode_IN);
+  AssignFile(tempOutputFile,appPath+'\tempOut');
+  Rewrite(tempOutputFile);
   // Read The Original File and Create a Temporary File
   Try
-    Rewrite(tempOutFile);
-    Reset (GCode_IN);
     WHILE NOT (EOF(GCode_IN)and(canProcess)) DO BEGIN
       if not canProcess then Exit;
       Readln (GCode_IN, Lines);
-      // Change the Initial Temperature in Print Start Macro
-      if copy(Lines,1,length(form1.Edit17.text))=form1.Edit17.text then begin
-        WriteLn (tempOutFile , (copy(Lines,1,pos(form1.Edit16.text,Lines)+length(form1.Edit16.text)))+curTemp+copy(Lines,pos(form1.Edit16.text,Lines)+length(form1.Edit16.text)+4,Length(Lines)) +'    ; Reset Initial Temperature');
-      // Change the Initial Temperature in M109 S
-      end else if copy(Lines,1,6)='M109 S' then begin
-        WriteLn (tempOutFile ,'M109 S'+curTemp+'    ; Reset Initial Temperature');
       // Get the Slicer Speed
-      end else if copy(Lines,1,4)='G1 F' then begin
-        WriteLn (tempOutFile , Lines+'    ; Slicer Speed');
+      if copy(Lines,1,4)='G1 F' then begin
+        WriteLn (tempOutputFile , Lines+'    ; Slicer Speed');
         Lines:=copy(Lines,5,length(Lines));
         if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
         gcodeFreq:=round(strtofloat(Lines));
         freqChanger:=true;
       // Get the Line Type
       end else if copy(Lines,1,6)=';TYPE:' then begin
-        WriteLn (tempOutFile , Lines);
+        WriteLn (tempOutputFile , Lines);
         lineType:=copy(Lines,7,length(Lines));
+      end else if copy(Lines,1,10)='; FEATURE:' then begin
+        WriteLn (tempOutputFile , Lines);
+        lineType:=copy(Lines,12,length(Lines));
       // Get the Line Width
       end else if copy(Lines,1,7)=';WIDTH:' then begin
-        WriteLn (tempOutFile , Lines);
+        WriteLn (tempOutputFile , Lines);
         Lines:=copy(Lines,8,length(Lines));
+        if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
+        lineWidth:=strtofloat(Lines);
+      end else if copy(Lines,1,13)='; LINE_WIDTH:' then begin
+        WriteLn (tempOutputFile , Lines);
+        Lines:=copy(Lines,15,length(Lines));
         if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
         lineWidth:=strtofloat(Lines);
       // Get the Line Height
       end else if copy(Lines,1,8)=';HEIGHT:' then begin
-        WriteLn (tempOutFile , Lines);
+        WriteLn (tempOutputFile , Lines);
         Lines:=copy(Lines,9,length(Lines));
         if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
         layerHeight:=strtofloat(Lines);
+      end else if copy(Lines,1,15)='; LAYER_HEIGHT:' then begin
+        WriteLn (tempOutputFile , Lines);
+        Lines:=copy(Lines,17,length(Lines));
+        if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
+        layerHeight:=strtofloat(Lines);
       end else if copy(Lines,1,3)='G1 ' then begin
-        if (copy(Lines,1,4)<>'G1 F') then gcodeMovesCount:=gcodeMovesCount+1;
+        gcodeMovesCount:=gcodeMovesCount+1;
+        if pos('F', Lines)<>0 then begin
+          freqChanger:=true;
+          if pos(' ',copy(Lines, pos('F',Lines)+1, length(Lines)))<>0 then gcodeFreq:=round(strtofloat(copy(Lines, pos('F',Lines)+1, pos(' ',copy(Lines, pos('F',Lines)+1, length(Lines)))-1)))
+            else gcodeFreq:=round(strtofloat(copy(Lines, pos('F',Lines)+1, length(Lines))));
+        end;
 
         // Temperature change
         if totFilCount>0 then
@@ -518,7 +556,7 @@ begin
               if minTempCount>strtofloat(getTemp) then minTempCount:=strtofloat(getTemp);
               if maxTempCount<strtofloat(getTemp) then maxTempCount:=strtofloat(getTemp);
               if floatLocalFormat=',' then getTemp:=StringReplace(getTemp, ',', '.', [rfReplaceAll]);
-              WriteLn (tempOutFile , 'M104 S'+getTemp);
+              WriteLn (tempOutputFile , 'M104 S'+getTemp);
             end;
           Except
             //Esception
@@ -551,7 +589,7 @@ begin
         // PA Change
         if ((curPA<>recPA)and(Form1.CheckBox7.Checked)and((lineType='Sparse infill')or(lineType='Internal solid infill')or(lineType='Internal Bridge')or(lineType='Support'))) then begin
           curPA:=recPA;
-          WriteLn (tempOutFile , 'SET_PRESSURE_ADVANCE ADVANCE='+StringReplace(floattostr(curPA), ',', '.', [rfReplaceAll]));
+          WriteLn (tempOutputFile , 'SET_PRESSURE_ADVANCE ADVANCE='+StringReplace(floattostr(curPA), ',', '.', [rfReplaceAll]));
         end;
 
         // Frequance change
@@ -560,33 +598,34 @@ begin
           if pos(' ', moveFilCount)<>0 then moveFilCount:=copy(moveFilCount,1,pos(' ', moveFilCount)-1);
           if floatLocalFormat=',' then moveFilCount:=StringReplace(moveFilCount, '.', ',', [rfReplaceAll]);
           if moveFilCount[1]='-' then begin
-            if gcodeFreq>0 then WriteLn (tempOutFile , 'G1 F'+StringReplace(floattostr(gcodeFreq), ',', '.', [rfReplaceAll])+'    ; Reset G-Code Before the Retraction');
+            if gcodeFreq>0 then WriteLn (tempOutputFile , 'G1 F'+StringReplace(floattostr(gcodeFreq), ',', '.', [rfReplaceAll])+'    ; Reset Speed Before Retraction');
             retract:=true;
           end else if retract=true then retract:=false
           else begin
             try
               if ((moveFilCount[1]=',')or(moveFilCount[1]='.')) then  moveFilCount:='0'+moveFilCount;
-              moveFlowRate:=Form1.Series3.YValues[round(gcodeMovesCount)-1];
+              //moveFlowRate:=Form1.Series3.YValues[round(gcodeMovesCount)];
               if (recFlow>0) then begin
                 sectionArea := layerHeight * lineWidth;
                 recFreq := round( 60 *(recFlow / sectionArea));
-                if recFreq>gcodeFreq then recFreq:=gcodeFreq;
+                //if recFreq>gcodeFreq then recFreq:=gcodeFreq;
                 if ((curFreq<>recFreq)or freqChanger) then begin
                   freqChanger:=false;
                   curFreq:=recFreq;
-                  WriteLn (tempOutFile , 'G1 F'+StringReplace(floattostr(curFreq), ',', '.', [rfReplaceAll])+'    ; Set Recommended Speed');
+                  if recFreq>gcodeFreq then WriteLn (tempOutputFile , 'G1 F'+StringReplace(floattostr(gcodeFreq), ',', '.', [rfReplaceAll])+'    ; Keep Slicer Speed')
+                    else WriteLn (tempOutputFile , 'G1 F'+StringReplace(floattostr(curFreq), ',', '.', [rfReplaceAll])+'    ; Recommended Speed');
                 end;
-              end else WriteLn (tempOutFile , 'G1 F'+StringReplace(floattostr(gcodeFreq), ',', '.', [rfReplaceAll])+'    ; Keep G-Code Speed');
+              end;
             Except
             end;
             totFilCount:=totFilCount+strtofloat(moveFilCount);
           end;
         end;
-        WriteLn (tempOutFile , Lines);
-      end else WriteLn (tempOutFile , Lines);
+        WriteLn (tempOutputFile , Lines);
+      end else WriteLn (tempOutputFile , Lines);
     END;
     CloseFile(GCode_IN);
-    CloseFile(tempOutFile);
+    CloseFile(tempOutputFile);
   Except On E: Exception do
     begin
       canProcess:=False;
@@ -692,11 +731,11 @@ end;
 
 
 // Read Original G-Code                                                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-procedure readGcode;
+procedure readOriginalGcode;
 var
   klipperEstCom : string;
   tTime, tTimeSecond, timeCount, moveTime, flowEverage, flow, maxFlow, usedFilament, maxCount : double;
-  retract : bool;
+  retract, firstMove, lastMove : bool;
   i, d, m, h, s, findIndex : integer;
   printerName, filamentType, filamentName : string;
 begin
@@ -716,13 +755,17 @@ begin
   end;
   if not canProcess then Exit;
 
+  firstMove:=false;
+  lastMove:=false;
   // Get Informations in the G-Code
   Assignfile (GCode_IN, file_path);
   Reset (GCode_IN);
+  AssignFile(tempOutputFile,appPath+'\tempOutput');
+  Rewrite(tempOutputFile);
   WHILE NOT (EOF(GCode_IN)) and canProcess Do begin
     Readln (GCode_IN, Lines);
     // Check if G2/G3 is used
-    if ((copy(Lines,1,3)='G2 ')or(copy(Lines,1,3)='G3 ')) then begin
+    if firstMove and ((copy(Lines,1,3)='G2 ')or(copy(Lines,1,3)='G3 ')) then begin
       showmessage('Cannot be processed ! This G-code File contains G2 or G3 commands !');
       canProcess:=false;
     // Check if the G-Code is already Edited
@@ -731,19 +774,31 @@ begin
       canProcess:=false;
     // Get the Filament Type
     end else if copy(Lines,1,17)='; filament_type =' then begin
-      Lines:=copy(Lines,19,length(Lines));
-      filamentType:=Lines;
+      filamentType:=copy(Lines,19,length(Lines));
     // Get the Printer/Extruder Name
     end else if copy(Lines,1,23)='; printer_settings_id =' then begin
-      Lines:=copy(Lines,25,length(Lines));
-      printerName:=Lines;
+      printerName:=copy(Lines,25,length(Lines));
     // Get the Filament Name
     end else if copy(Lines,1,24)='; filament_settings_id =' then begin
-      Lines:=copy(Lines,26,length(Lines));
-      filamentName:=Lines;
+      filamentName:=copy(Lines,26,length(Lines));
+    // Detect First Move
+    end else if ((copy(Lines,1,8)=';HEIGHT:')or(copy(Lines,1,11)='; Z_HEIGHT:')) then begin
+      firstMove:=true;
+    // Detect Last Move
+    end else if copy(Lines,1,22)='; EXECUTABLE_BLOCK_END' then begin
+      lastMove:=true;
+    end;
+    // Write the Line in TempOutput File
+    if (firstMove=true and lastMove=false) then begin
+      WriteLn (tempOutputFile , Lines);
     end;
   end;
   CloseFile(GCode_IN);
+  CloseFile(tempOutputFile);
+  if (Not firstMove) or (Not lastMove) then begin
+    canProcess:=false;
+    Showmessage('Cannot be processed ! Printing Start/End not found!');
+  end;
 
   if canProcess then begin
     // Reset initial parameters
@@ -779,7 +834,7 @@ begin
     filNameFound:=false;
 
     // Use Klipper Estimator Script / Read data / Calculate Averages
-    klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+appPath+'\klipper_estimator.exe --config_file '+appPath+'\config.json dump-moves '+file_path+' > '+appPath+'\gcode.txt';
+    klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+appPath+'\klipper_estimator.exe --config_file '+appPath+'\config.json dump-moves '+appPath+'\tempOutput'+' > '+appPath+'\gcode.txt';
     ExecNewProcess(klipperEstCom,true);
     Assignfile (GCode_IN, appPath+'\gcode.txt');
     Reset (GCode_IN);
@@ -925,7 +980,7 @@ end;
 // Generate Button Click                                                //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 procedure TForm1.BitBtn4Click(Sender: TObject);
 begin
-  readGcode;
+  readOriginalGcode;
   if not canProcess then Exit;
   if (filTypeFound and extruderFound and filNameFound) then begin                                                                                 /////////////////////////////////////////////////
     calculateAverages;
@@ -1139,6 +1194,11 @@ begin
 end;
 
 
+// TODO When interface resize
+procedure TForm1.FormResize(Sender: TObject);
+begin
+  Form1.Chart2.Height:=form1.Height-form1.Chart2.top-95;
+end;
 
 // Close Application                                                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 procedure TForm1.BitBtn3Click(Sender: TObject);
