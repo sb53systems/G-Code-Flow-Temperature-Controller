@@ -74,6 +74,7 @@ Note that :
   
 - This Script does not accept G2 and G3 in G-Code (Arc Fitting, Spirale Z Hope Type,...).
 - This script does not support Multi-Tool and Multi-Material printing.
+- Ironing and Scarf joint seam are not recommanded, it will affect the printing time and the desired result.  
 - Time Estimation is based in Klipper Look-ahead kinematics, and may not be compatible with other firmware.
 - The current version of Klipper_Estimator, does not support delta kinematic limits.
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
@@ -107,8 +108,7 @@ Below the Generated G-Code
 - A printer with higher accelerations and lower heat/cool time will have a better result with this approach because it allows for better flow stabilization.  
 - With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands without any changes in the script.  
 - With some prints, changing the Max/Average Smoothing value may affect the result and print time, you have to experiment yourself (I recommend values between 10 and 30).  
-- Aim for speed optimization as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes.
-- Do not use ironing, this will affect the printing time and the desired ironing result.  
+- Aim for speed optimization as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes. 
 - The speed of the outer wall is higher than the speed of the inner wall because of the deferent Line width.  
 ![image](https://github.com/user-attachments/assets/76acb2cf-f57e-4a38-b1c7-788689ed6470)![image](https://github.com/user-attachments/assets/52b5714b-5607-45f5-adc7-73b9782b6bcc)   
   
