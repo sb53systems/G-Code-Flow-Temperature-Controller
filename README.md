@@ -74,7 +74,7 @@ Note that :
   
 - This Script does not accept G2 and G3 in G-Code (Arc Fitting, Spirale Z Hope Type,...).
 - This script does not support Multi-Tool and Multi-Material printing.
-- Ironing and Scarf joint seam are not recommanded, it will affect the printing time and the desired result.  
+- Ironing and Scarf joint seam are not recommanded with this Script, it will affect the printing time and the desired result.  
 - Time Estimation is based in Klipper Look-ahead kinematics, and may not be compatible with other firmware.
 - The current version of Klipper_Estimator, does not support delta kinematic limits.
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
