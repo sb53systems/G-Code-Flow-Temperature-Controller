@@ -161,6 +161,13 @@ type
     Series9: TLineSeries;
     Series10: TLineSeries;
     Series11: TLineSeries;
+    Bevel2: TBevel;
+    Bevel3: TBevel;
+    Bevel4: TBevel;
+    Bevel6: TBevel;
+    Bevel7: TBevel;
+    Bevel8: TBevel;
+    Bevel9: TBevel;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
@@ -485,7 +492,8 @@ begin
   minTempCount:=1000;
   retract:=false;
   freqChanger:=false;
-  curTemp:=floattostr((round(Form1.Series4.YValues[0]*10))/10);
+  getTemp:=floattostr((round(Form1.Series4.YValues[1]*10))/10);
+  curTemp:=floattostr((round(Form1.Series4.YValues[1]*10))/10);
   Form1.Series10.AddXY(0,strtofloat(curTemp));
   minTempCount:=strtofloat(curTemp);
   maxTempCount:=strtofloat(curTemp);
@@ -545,22 +553,21 @@ begin
         end;
 
         // Temperature change
-        if totFilCount>0 then
-          Try
-            getTemp:=floattostr(round(Form1.Series4.YValues[FindClosestIndex(totFilCount,Form1.Series7)]*10)/10);
+        Try
+          getTemp:=floattostr(round(Form1.Series4.YValues[FindClosestIndex(totFilCount,Form1.Series7)]*10)/10);
+          if floatLocalFormat=',' then getTemp:=StringReplace(getTemp, ',', '.', [rfReplaceAll]);
+          if getTemp<>curTemp then begin
+            curTemp:=getTemp;
+            getTemp:=floattostr(round(Form1.Series4.YValues[FindClosestIndex(totFilCount,Form1.Series7)+1]*10)/10);
+            Form1.Series11.AddXY(gcodeMovesCount, strtofloat(getTemp) );
+            if minTempCount>strtofloat(getTemp) then minTempCount:=strtofloat(getTemp);
+            if maxTempCount<strtofloat(getTemp) then maxTempCount:=strtofloat(getTemp);
             if floatLocalFormat=',' then getTemp:=StringReplace(getTemp, ',', '.', [rfReplaceAll]);
-            if getTemp<>curTemp then begin
-              curTemp:=getTemp;
-              getTemp:=floattostr(round(Form1.Series4.YValues[FindClosestIndex(totFilCount,Form1.Series7)+1]*10)/10);
-              Form1.Series11.AddXY(gcodeMovesCount, strtofloat(getTemp) );
-              if minTempCount>strtofloat(getTemp) then minTempCount:=strtofloat(getTemp);
-              if maxTempCount<strtofloat(getTemp) then maxTempCount:=strtofloat(getTemp);
-              if floatLocalFormat=',' then getTemp:=StringReplace(getTemp, ',', '.', [rfReplaceAll]);
-              WriteLn (tempOutputFile , 'M104 S'+getTemp);
-            end;
-          Except
-            //Esception
+            WriteLn (tempOutputFile , 'M104 S'+getTemp);
           end;
+        Except On E: Exception do
+          //ShowMessage('There was an error: ' + E.Message);
+        end;
 
         // Calculate requested Flow and PA / Temperature
         if floatLocalFormat=',' then curTemp:=StringReplace(curTemp, '.', ',', [rfReplaceAll]);
@@ -604,15 +611,13 @@ begin
           else begin
             try
               if ((moveFilCount[1]=',')or(moveFilCount[1]='.')) then  moveFilCount:='0'+moveFilCount;
-              //moveFlowRate:=Form1.Series3.YValues[round(gcodeMovesCount)];
               if (recFlow>0) then begin
                 sectionArea := layerHeight * lineWidth;
                 recFreq := round( 60 *(recFlow / sectionArea));
-                //if recFreq>gcodeFreq then recFreq:=gcodeFreq;
                 if ((curFreq<>recFreq)or freqChanger) then begin
                   freqChanger:=false;
                   curFreq:=recFreq;
-                  if recFreq>gcodeFreq then WriteLn (tempOutputFile , 'G1 F'+StringReplace(floattostr(gcodeFreq), ',', '.', [rfReplaceAll])+'    ; Keep Slicer Speed')
+                  if curFreq>gcodeFreq then WriteLn (tempOutputFile , 'G1 F'+StringReplace(floattostr(gcodeFreq), ',', '.', [rfReplaceAll])+'    ; Keep Slicer Speed')
                     else WriteLn (tempOutputFile , 'G1 F'+StringReplace(floattostr(curFreq), ',', '.', [rfReplaceAll])+'    ; Recommended Speed');
                 end;
               end;
@@ -758,10 +763,17 @@ begin
   firstMove:=false;
   lastMove:=false;
   // Get Informations in the G-Code
-  Assignfile (GCode_IN, file_path);
-  Reset (GCode_IN);
-  AssignFile(tempOutputFile,appPath+'\tempOutput');
-  Rewrite(tempOutputFile);
+
+  Try
+    Assignfile (GCode_IN, file_path);
+    AssignFile(tempOutputFile,appPath+'\tempOutput');
+    Reset (GCode_IN);
+    Rewrite(tempOutputFile);
+  Except
+    canProcess:=false;
+    Showmessage('Cannot be processed ! Make sure that the path of the Script does not contain ''Space !''');
+  End;
+
   WHILE NOT (EOF(GCode_IN)) and canProcess Do begin
     Readln (GCode_IN, Lines);
     // Check if G2/G3 is used
@@ -1198,6 +1210,25 @@ end;
 procedure TForm1.FormResize(Sender: TObject);
 begin
   Form1.Chart2.Height:=form1.Height-form1.Chart2.top-95;
+  if Form1.Width>1345 then begin
+    Form1.Chart1.Width:=form1.Width-32;
+    Form1.Chart2.Width:=form1.Width-32;
+    Form1.Image1.Left:=form1.Width-193;
+    Form1.Image2.Left:=form1.Width-190;
+    Form1.Image3.Left:=form1.Width-60;
+    Form1.Label6.Left:=form1.Width-159;
+    Form1.Bevel1.Width:=form1.Width-221;
+    Form1.Bevel5.Width:=form1.Width-663;
+  end else begin
+    Form1.Chart1.Width:=1313;
+    Form1.Chart2.Width:=1313;
+    Form1.Image1.Left:=1152;
+    Form1.Image2.Left:=1155;
+    Form1.Image3.Left:=1285;
+    Form1.Label6.Left:=1186;
+    Form1.Bevel1.Width:=1124;
+    Form1.Bevel5.Width:=682;
+  end;
 end;
 
 // Close Application                                                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
