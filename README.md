@@ -15,7 +15,7 @@ This script is not intended to be a definitive solution as I think integrating t
 I think this concept will be the future of 3D printing, I encourage you to test, share and develop it, with the hope that equivalent solutions will be integrated into the Slicers.  
   
 # Latest Release
-[SB53 G-Code Flow/Temperature Controller V1.1 Beta (updated September 11 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
+[SB53 G-Code Flow/Temperature Controller V1.1 Beta (updated September 15 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
   
 # Instructions and Prerequisites  
 1. The script can be used as a normal program by running the SB53-Systems.exe file and opening a G-Code file manually, or by adding it to the Slicer as a post-processing script.  
