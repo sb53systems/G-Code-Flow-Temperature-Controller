@@ -1,5 +1,5 @@
 # G-Code-Flow-Temperature-Controller
-A Post Processing Script for Slic3r based Slicers and Klipper 3D Printers.  
+A Post Processing Script for Orca Slicer and Klipper 3D Printers.  
   
 This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.  
 Its operation consists of varying the temperature according to the average flow rate during printing time, then limit the speed in the G-Code to reach the recommended flow rate for the temperature reached.  
