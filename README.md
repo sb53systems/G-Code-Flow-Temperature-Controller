@@ -120,7 +120,7 @@ Happy Smart 3D Printing :-)
   
 # Features
 - Add support for G2 and G3 commands.
-- Add support for other firmware.
+- Add support for Marlin and RepRap Firmware.
   
 # About the Developer 
 By Salim BELAYEL.  
