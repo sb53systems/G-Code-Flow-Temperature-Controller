@@ -106,7 +106,8 @@ Below the Generated G-Code
   
 # Observations and Tips
 - A printer with higher accelerations and lower heat/cool time will have a better result with this approach because it allows for better flow stabilization.  
-- With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands without any changes in the script.  
+- With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands without any changes in the script.
+- You can reduce the speed of the cooling fan during the entire printing process (Except for Bridges and Ovehangs).  
 - With some prints, changing the Max/Average Smoothing value may affect the result and print time, you have to experiment yourself (I recommend values between 10 and 30).  
 - Aim for speed optimization as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes. 
 - The speed of the outer wall is higher than the speed of the inner wall because of the deferent Line width.  
