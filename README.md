@@ -118,6 +118,10 @@ I look forward to your feedback and remain available and open to new proposals.
   
 Happy Smart 3D Printing :-)  
   
+# Features
+- Add support for G2 and G3 commands.
+- Add support for other firmware.
+  
 # About the Developer 
 By Salim BELAYEL.  
 Developed in June 2024 with Delphi 12 Community Edition.  
