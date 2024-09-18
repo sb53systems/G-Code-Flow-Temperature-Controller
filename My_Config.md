@@ -9,6 +9,7 @@ Converted to direct drive, and with a few other additions and improvements.
   
 ![image](https://github.com/user-attachments/assets/e12ccbe9-76d0-4c6a-8232-c4f779447f5c)  
 ![IMG20240908135825](https://github.com/user-attachments/assets/ed4f3960-5f03-4b46-8f75-73bb7e4608fe)  
+![IMG_20240918_121906](https://github.com/user-attachments/assets/efc006f4-d0f7-4fe9-a5c7-f296d5c17ec1)  
   
 # Orca Slicer Settings 
 - Printer (0.4mm Nozzle):  
