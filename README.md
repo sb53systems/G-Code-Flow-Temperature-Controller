@@ -27,11 +27,13 @@ D:\SB53_G-Code_Flow_Temperature_Controller_V1.1Beta\SB53-Systems.exe;
   
 2. [Klipper_Estimator](https://github.com/Annex-Engineering/klipper_estimator) Script is required and must be in the same Folder with this Script (Included Klipper_Estimator.exe V 3.7.3). Using Klipper Look-Ahead kinematics, it estimate the time and the average flow rate for each move in the G-Code.  
   
-3. Changing the initial layer temperature is important, the script automatically modifies the G-Code (M109 S) command or changes the specified print start macro. Example Below : 
+3. The initial temperature estimated by the Script depends on the speed of the first moves of the G-Code, you can adjust it by fixing the speed of the purge line or the speed of the first layer perimeters.  
+  
+4. Changing the initial layer temperature is important, the script automatically modifies the G-Code (M109 S) command or changes the specified print start macro. Example Below : 
 ![image](https://github.com/user-attachments/assets/26b1e09e-0750-43f6-995f-8671da5838e0)  
 ![image](https://github.com/user-attachments/assets/a3c814af-4522-4177-907c-7aab631505f7)  
   
-4. To have a best Speed/Quality Optemization, the Slicer Profil must be set for Max Moves and Max Volumetric Speed, the Nozzle temperature is not important because it will be reset in the script, and the speed will be reduced (not increased) to the Recommended Flow.  
+5. To have a best Speed/Quality Optemization, the Slicer Profil must be set for Max Moves and Max Volumetric Speed, the Nozzle temperature is not important because it will be reset in the script, and the speed will be reduced (not increased) to the Recommended Flow.  
   
   Example below with my max 200mm/s Printer speed : (Same profil for PLA, PETG and ABS)  
     
@@ -52,7 +54,7 @@ I use Thick Bridges in Orca Slicer and a single 5015 radial fan for part cooling
   
 [See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
   
-You shoold set the filament settings :
+Set your filament settings :
   - The maximum recommended volumetric speed at the maximum temperature that your Hotend or Filament can handle.
   - The Fan Cooling perdiode and the Min print speed.
   - ...
@@ -60,23 +62,17 @@ You shoold set the filament settings :
 ![image](https://github.com/user-attachments/assets/5dc1f64d-48dc-4d39-8290-ad8251267990)  
 ![image](https://github.com/user-attachments/assets/c07c5e7c-b137-4af3-86b6-efeaecdc06cc)  
   
-Note that I prefer to heat my filament a little more to have a better Layer adhesion, and my PTFE-Lined Hotend safe temperature is 240°.  
-  
-5. The initial temperature estimated by the Script depends on the speed of the first moves of the G-Code, you can adjust it by fixing the speed of the purge line or the speed of the first layer perimeters.  
-  
-  
 Note that :  
 - The script only reduces the speeds above the recommended speed, lower speeds will be kept as in the G-Code.
 - Hotend PID cannot be changed during print in Klipper, I recommend using PID values for a temperature between 70-90% of the maximum temperature.  
-- PA can be regulated in the script according to the temperature or not by unchecking the Adjust PA option befor generating the G-Code, and use the fixed PA from the Slicer or Klipper.  
+- PA can be regulated in the script according to the temperature, or not and use the fixed PA from the Slicer or Klipper by unchecking the Adjust PA option befor generating the G-Code.  
 - Changing the PA during printing causes a delay in execution and forms bubbles in the walls, the Script is programed to change PA only in Sparse infill, Internal solid infill, Support and Internal Bridge.  
 ![351913375-991fe2b8-3935-46ff-816e-5b0aee981b4d](https://github.com/user-attachments/assets/602b96a8-2666-44bd-b70f-aa5c06deadd4)  
   
-- This Script does not accept G2 and G3 in G-Code (Arc Fitting, Spirale Z Hope Type,...).
-- This script does not support Multi-Tool and Multi-Material printing.
-- Ironing and Scarf joint seam are not recommanded with this Script, it will affect the printing time and the desired result.  
-- Time Estimation is based in Klipper Look-ahead kinematics, and may not be compatible with other firmware.
-- The current version of Klipper_Estimator, does not support delta kinematic limits.
+- This Script does not accept G2 and G3 in G-Code (Arc Fitting, Spirale Z Hope Type,...)
+- This script does not support Multi-Tool and Multi-Material printing.  
+- Ironing is not recommanded with this Script, it will affect the printing time and the desired result.  
+- Delta printers kinematic limits are not supported with the current version of Klipper_Estimator.  
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
 - The generated G-Code is 20/50 % larger than the original one due to Temp and Speed adjustment.
 - This Script is currently only available for Windows OS. With delphi 12 and a few changes in the source code, it can be compiled for other operating system (I can help for this, or can do it later!).  
