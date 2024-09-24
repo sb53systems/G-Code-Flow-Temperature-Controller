@@ -2,7 +2,7 @@
 A Post Processing Script for Orca Slicer and Klipper 3D Printers.  
   
 This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.  
-Its operation consists of varying the temperature according to the average flow rate during printing time, then limit the speed in the G-Code to reach the recommended flow rate for the temperature reached.  
+Its operation consists of varying the temperature according to the average flow rate during printing time, then limit the speed in the G-Code to reach the recommended flow rate for the temperature reached (It doesn't matter the layer height or line width).  
   
 This Script is free and open source, created to prove the effectiveness of automatic Speeds/Flow and Nozzle temperature change during 3D printing in order to get the best Quality/Speed Optimization and reduce 3D Printing complexity.  
   
@@ -13,6 +13,15 @@ With this Concept, you could print any object with the same Slicer Settings and 
 This script is not intended to be a definitive solution as I think integrating this concept into the Slicers will be more effective.  
   
 I think this concept will be the future of 3D printing, I encourage you to test, share and develop it, with the hope that equivalent solutions will be integrated into the Slicers.  
+  
+If you find my work worthy, Bay me a coffee. Thank you.  
+  
+[![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system)
+ [Co-fi](https://ko-fi.com/sb53system)  
+   
+# Video that speak about the project on Youtube
+Variable Temperature 3D Printing – The FUTURE of 3D Printing? By PRINTING PERSPECTIVE:  
+https://www.youtube.com/watch?v=P6Y8uUPd3yg  
   
 # Latest Release
 [SB53 G-Code Flow/Temperature Controller V1.1 Beta (updated September 15 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
@@ -124,10 +133,5 @@ Developed in June 2024 with Delphi 12 Community Edition.
 Email : sb53systems@gmail.com  
   
 ![SB53-Systems~1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/b94703a1-cf21-4109-bfa6-b9bcff438a1d)  
-  
-If you find my work worthy, Bay me a coffee. Thank you.  
-  
-[![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system)
- [Co-fi](https://ko-fi.com/sb53system) 
 
 
