@@ -94,7 +94,7 @@ If yes, the first execution:
 - You have to set the appropriate Extruder/Printer values.
 - Klipper_Estimator script requires a file containing the maximum limits of the printer (config .json), can be obtained by specifying the IP address of the printer or by choosing a file locally. You have to set this file for each preset.  
   ![image](https://github.com/user-attachments/assets/2a316ba8-124d-48d5-83b1-3a6184aa189e)
-- After saving the Extruder/Printer preset, Set the Filament type and name and values (for each Extruder).
+- After saving the Extruder/Printer preset, you have to select the filament type then set the Filament name and values (for each Extruder).
 - The next uses, the script can recognize the Extruder/Printer and Filament used if they are written with the same name as in the slicer (Copy and Paste).  
   ![image](https://github.com/user-attachments/assets/7b467275-4bed-4927-adc6-0a6306d95de6)![image](https://github.com/user-attachments/assets/0219a6d0-63d1-4b7e-b465-d45c74db0d49)  
   ![image](https://github.com/user-attachments/assets/58a4ac0d-620c-4715-9b16-e55401641720)![image](https://github.com/user-attachments/assets/fefd7247-1c32-4f94-a1b5-1fc3124d0812)  
