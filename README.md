@@ -86,7 +86,7 @@ Note that :
   
 - The current version does not accept G2 and G3 in G-Code (Arc Fitting, Spirale Z Hope Type,...)
 - This script does not support Multi-Tool and Multi-Material printing.  
-- Ironing is not recommanded with this Script, it will affect the desired result and the printing time.  
+- Ironing, Variable_Layer_Height, Scarf_Joint_Seam,...  are not recommanded with this Script, it will affect the desired result and the printing time.  
 - Delta printers kinematic limits are not supported with the current version of Klipper_Estimator.  
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
 - The generated G-Code is 20/50 % larger than the original one due to Temp and Speed adjustment.
