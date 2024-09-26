@@ -2,7 +2,7 @@
 A Post Processing Script for Orca Slicer and Klipper 3D Printers.  
   
 This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.  
-Its operation consists of varying the temperature according to the average flow rate during printing time, then limit the speed in the G-Code (according to layer height and line width) to reach the recommended flow rate for the temperature reached.  
+Its operation consists of varying the temperature according to the average flow rate during printing time, then limit the speed in the G-Code to reach the recommended flow rate for the temperature reached.  
   
 This Script is free and open source, created to prove the effectiveness of automatic Speeds/Flow and Nozzle temperature change during 3D printing in order to get the best Quality/Speed Optimization and reduce 3D Printing complexity.  
   
@@ -66,7 +66,7 @@ Set your filament settings :
 ![image](https://github.com/user-attachments/assets/c07c5e7c-b137-4af3-86b6-efeaecdc06cc)  
   
 Note that :  
-- The script only reduces the speeds above the recommended speed, lower speeds will be kept as in the G-Code.
+- The script only reduces the speeds above the recommended speed (according to layer height and line width), lower speeds will be kept as in the G-Code.
 - Hotend PID cannot be changed during print in Klipper, I recommend using PID values for a temperature between 70-90% of the maximum temperature.  
 - PA can be regulated in the script according to the temperature, or not and use the fixed PA from the Slicer or Klipper by unchecking the Adjust PA option befor generating the G-Code.  
 - Changing the PA during printing causes a delay in execution and forms bubbles in the walls, the Script is programed to change PA only in Sparse infill, Internal solid infill, Support and Internal Bridge.  
