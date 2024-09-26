@@ -128,7 +128,7 @@ Below the Generated G-Code
   
 # About the Developer 
 By Salim BELAYEL.  
-Developed in June 2024 with Delphi 12 Community Edition.  
+This project started in June 2024, developed with Delphi 12 Community Edition.  
 Email : sb53systems@gmail.com  
   
 [![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system)  
