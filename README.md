@@ -124,6 +124,7 @@ I look forward to your feedback and remain available and open to new proposals.
 Happy Smart 3D Printing :-)  
   
 # Next Features
+- Add a first-time use explainer video on youtube.
 - Add support for G2 and G3 commands.
 - Add support for Marlin and RepRap Firmware.
   
