@@ -68,7 +68,7 @@ Or you can use a modifier (or more) in the slicer that changes the speed of a fe
   
 [See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
   
-Set the filament settings:
+You have to set your filament settings:
   - The maximum recommended volumetric speed at the maximum temperature that your Hotend or Filament can handle.
   - The Fan Cooling perdiode and the Min print speed, according to the Filament and your cooling configuration.
   - ...
