@@ -25,6 +25,14 @@ If you find my work worthy, Bay me a [Co-fi](https://ko-fi.com/sb53system) [![im
 Variable Temperature 3D Printing – The FUTURE of 3D Printing? (By PRINTING PERSPECTIVE):  
 https://www.youtube.com/watch?v=P6Y8uUPd3yg  
   
+# Latest Release
+[SB53 G-Code Flow/Temperature Controller V1.1 Beta (updated September 15 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
+  
+# Next Features
+- Add a first-time use explainer video on youtube.
+- Add support for G2 and G3 commands.
+- Add support for Marlin and RepRap Firmware.
+  
 # Instructions and Prerequisites  
 1. The script can be used as a normal program by running the SB53-Systems.exe file and opening a G-Code file manually, or by adding it to the Slicer as a post-processing script.  
   ![image](https://github.com/user-attachments/assets/3557a6ff-524f-4964-9cd2-044b01f46faa)
@@ -117,14 +125,6 @@ Below the Generated G-Code
 - Aim for speed optimization as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes. 
 - The speed of the outer wall is higher than the speed of the inner wall because of the deferent Line width.  
 ![image](https://github.com/user-attachments/assets/76acb2cf-f57e-4a38-b1c7-788689ed6470)![image](https://github.com/user-attachments/assets/52b5714b-5607-45f5-adc7-73b9782b6bcc)   
-  
-# Latest Release
-[SB53 G-Code Flow/Temperature Controller V1.1 Beta (updated September 15 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
-  
-# Next Features
-- Add a first-time use explainer video on youtube.
-- Add support for G2 and G3 commands.
-- Add support for Marlin and RepRap Firmware.
   
 # About the Developer 
 By Salim BELAYEL.  
