@@ -12,41 +12,39 @@ Converted to direct drive, and with a few other additions and improvements.
 ![IMG_20240918_121906](https://github.com/user-attachments/assets/efc006f4-d0f7-4fe9-a5c7-f296d5c17ec1)  
   
 # Orca Slicer Settings 
-- Printer (0.4mm Nozzle):  
+# Printer (0.4mm Nozzle):  
 ![image](https://github.com/user-attachments/assets/314b1792-dc47-44b4-b1d3-70bf22fc6247)
 ![image](https://github.com/user-attachments/assets/9c291cb7-3ced-43b2-99a1-957bf3cfa34b)
 ![image](https://github.com/user-attachments/assets/b5c087fd-dde9-4f0f-83f8-5987947ca54e)
 ![image](https://github.com/user-attachments/assets/846887d0-2ca8-49cd-8252-936d05a90c98)  
   
-- Filament (0.4mm Nozzle):  
-  PLA Example:  
+# Filament (0.4mm Nozzle):  
+# PLA Example:  
 ![image](https://github.com/user-attachments/assets/49b18474-109b-4d56-9535-1c6a2e98cc58)
 ![image](https://github.com/user-attachments/assets/796d3e25-1f45-43cd-825e-f8d15ca119e2)  
   
-  PETG Example:  
+# PETG Example:  
 ![image](https://github.com/user-attachments/assets/020c2a65-3e3b-4407-bef5-b5973e0afb59)
 ![image](https://github.com/user-attachments/assets/e389a8f4-a041-4958-924c-74deef393727)  
   
-- Process (0.4mm Nozzle, 0.2mm Layer Height):  
-  Quality:  
-![image](https://github.com/user-attachments/assets/0be663a0-a0c1-4349-952b-c1c712296af0)
-![image](https://github.com/user-attachments/assets/c4db5c90-631a-4449-a5e4-f483adfaed1d)
-![image](https://github.com/user-attachments/assets/08f6694e-e1d8-45d5-979d-6179f93f4888)
-![image](https://github.com/user-attachments/assets/6d1412f4-05af-493e-9c94-4297c93a3845)  
+# Process (0.4mm Nozzle, 0.2mm Layer Height):  
+# Quality:  
+![image](https://github.com/user-attachments/assets/bd97752a-6515-40e4-84a7-d7a2fbcb4e64)
+![image](https://github.com/user-attachments/assets/8599d576-c563-47cb-8c79-3644614edb68)
+![image](https://github.com/user-attachments/assets/a754ce78-6214-4a1a-b049-2b2214f88e25)  
   
-  Strength:  
-![image](https://github.com/user-attachments/assets/a28689f6-38db-40ef-8fb6-e63b65188fee)
-![image](https://github.com/user-attachments/assets/d827907e-a7b1-4118-938e-1d725373f46b)  
+# Strength:  
+![image](https://github.com/user-attachments/assets/df99b6f5-a971-4d21-b371-05212e0ce8ab)
+![image](https://github.com/user-attachments/assets/aa1b7cf4-0457-45c5-9125-fd995c5bfaee)  
   
-  Speed:  
-![image](https://github.com/user-attachments/assets/4309eab6-4475-4c7b-818f-fb465aa2e803)
-![image](https://github.com/user-attachments/assets/31841ec8-ad05-4b8f-9174-8ec4abc6f820)
-![image](https://github.com/user-attachments/assets/4793e5bf-81fe-414c-8872-080a9086aadc)  
+# Speed:  
+![image](https://github.com/user-attachments/assets/0f0464b0-4cb0-4c45-a799-ac678358edaf)
+![image](https://github.com/user-attachments/assets/7bae50a1-10d7-4bc3-918c-5c01a4ef802c)  
   
-  Support:  
+# Support:  
 Tree(manual) or Tree(auto).  
   
-  Others:  
+# Others:  
 ![image](https://github.com/user-attachments/assets/b88330ed-2d56-4b24-8507-e081c36969c8)
 ![image](https://github.com/user-attachments/assets/5b144d31-8830-4704-845f-dee8739c9d29)
 ![image](https://github.com/user-attachments/assets/96265dfa-2518-4545-945e-23c888baeafd)  
