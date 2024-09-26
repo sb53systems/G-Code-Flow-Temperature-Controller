@@ -64,7 +64,7 @@ I use Thick Bridges in Orca Slicer and a single 5015 radial fan for part cooling
   
 Set the filament settings:
   - The maximum recommended volumetric speed at the maximum temperature that your Hotend or Filament can handle.
-  - The Fan Cooling perdiode and the Min print speed according to your Filament and cooling configuration.
+  - The Fan Cooling perdiode and the Min print speed, according to your Filament and cooling configuration.
   - ...
   
 ![image](https://github.com/user-attachments/assets/5dc1f64d-48dc-4d39-8290-ad8251267990)  
