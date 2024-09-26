@@ -123,7 +123,7 @@ Below the Generated G-Code
 - You can reduce the speed of the cooling fan during the entire printing process (Except for Bridges and Ovehangs).  
 - With some prints, changing the Max/Average Smoothing value may affect the result and print time, you have to experiment yourself (I recommend values between 10 and 30).  
 - Aim for speed optimization as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes. 
-- The outer wall speed is greater than the inner wall speed due to a deferent line width.  
+- The outer wall speed is greater than the inner wall speed due to a deferent line width. This script will adapt the speed to any line width and layer height, making it very effective for Variable_Layer_Height and Precise_Z_Height.  
 ![image](https://github.com/user-attachments/assets/26026ed0-d97e-4423-9d84-68c5b2a863e8)![image](https://github.com/user-attachments/assets/2fe5dd0f-008a-400b-9fa9-10228bf07b40)  
   
 # About the Developer 
