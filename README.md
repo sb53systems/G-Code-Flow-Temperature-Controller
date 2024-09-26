@@ -110,12 +110,12 @@ If yes, the first execution:
   ![image](https://github.com/user-attachments/assets/50612330-e3c0-4bee-b368-66a5f3641955)  
   
 # 3DBenchy Example
-![image](https://github.com/user-attachments/assets/86d50570-b77d-4f9c-8897-0421e7ca2b67)  
-![image](https://github.com/user-attachments/assets/394f024d-6dde-4e2f-aade-4836b72a122d)  
+![image](https://github.com/user-attachments/assets/8df25619-d150-45b3-bf7f-3fa152b2f433)  
+![image](https://github.com/user-attachments/assets/2b55cdb2-9b2d-41b1-9267-ed09f8aefce4)  
   
 Below the Generated G-Code 
   
-![image](https://github.com/user-attachments/assets/4a741c30-9c26-41f1-95e2-2f0070279949)  
+![image](https://github.com/user-attachments/assets/5e1f1f21-afda-491c-8213-7d0b82128bc2)  
   
 # Observations and Tips
 - A printer with higher accelerations and lower heat/cool time will have a better result with this approach because it allows for better flow stabilization.  
