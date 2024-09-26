@@ -30,7 +30,7 @@ https://www.youtube.com/watch?v=P6Y8uUPd3yg
 [SB53 G-Code Flow/Temperature Controller V1.1 Beta (updated September 15 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
   
 # Next Features
-- Add a first-time use explainer video on youtube.
+- Add an explainer video on youtube and instructions on how to use it.
 - Add support for G2 and G3 commands.
 - Add support for Marlin and RepRap Firmware.
   
