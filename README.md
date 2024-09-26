@@ -62,12 +62,6 @@ Or you can use a modifier (or more) in the slicer that changes the speed of a fe
 ![image](https://github.com/user-attachments/assets/51f2cba4-d57d-4ea7-8ef7-d0c36dd61dc0)   
 ![image](https://github.com/user-attachments/assets/1cee9879-389b-4117-9048-b96c76e51891)  
   
-[See my ORCA Slicer Settings.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/My_Config.md)  
-  
-[See my Bridge test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Bridges_Test.md)  
-  
-[See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
-  
 You have to set your filament settings:
   - The maximum recommended volumetric speed at the maximum temperature that your Hotend or Filament can handle.
   - The Fan Cooling perdiode and the Min print speed, according to the Filament and your cooling configuration.
@@ -75,6 +69,12 @@ You have to set your filament settings:
   
 ![image](https://github.com/user-attachments/assets/5dc1f64d-48dc-4d39-8290-ad8251267990)  
 ![image](https://github.com/user-attachments/assets/c07c5e7c-b137-4af3-86b6-efeaecdc06cc)  
+  
+[See my ORCA Slicer Settings.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/My_Config.md)  
+  
+[See my Bridge test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Bridges_Test.md)  
+  
+[See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
   
 Note that :  
 - The script only reduces the speeds above the recommended speed (according to layer height and line width), lower speeds will be kept as in the G-Code.
