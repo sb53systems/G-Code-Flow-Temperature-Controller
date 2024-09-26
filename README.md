@@ -12,7 +12,7 @@ With this Concept, you could print any object with the same Slicer Settings and 
   
 This script is not intended to be a definitive solution as I think integrating this concept into the Slicers will be more effective.  
   
-I think this concept will be the future of 3D printing, I encourage you to test, share and develop it, with the hope that equivalent solutions will be integrated into the Slicers.  
+I think this concept will be the future of 3D printing, I encourage you to test, share and develop it, with the hope that equivalent solutions will be integrated into the Slicers for all 3D Printers.  
   
 If you find my work worthy, Bay me a [Co-fi](https://ko-fi.com/sb53system) [![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system) or give this project a :star:. Thank you...  
    
