@@ -14,6 +14,11 @@ This script is not intended to be a definitive solution as I think integrating t
   
 I think this concept will be the future of 3D printing, I encourage you to test, share and develop it, with the hope that equivalent solutions will be integrated into the Slicers for all 3D Printers.  
   
+Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer.  
+I look forward to your feedback and remain available and open to new proposals.  
+  
+Happy Smart 3D Printing :-)  
+  
 If you find my work worthy, Bay me a [Co-fi](https://ko-fi.com/sb53system) [![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system) or give this project a :star:. Thank you...  
    
 # Video that speak about the project on Youtube
@@ -111,11 +116,6 @@ Below the Generated G-Code
 - Aim for speed optimization as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes. 
 - The speed of the outer wall is higher than the speed of the inner wall because of the deferent Line width.  
 ![image](https://github.com/user-attachments/assets/76acb2cf-f57e-4a38-b1c7-788689ed6470)![image](https://github.com/user-attachments/assets/52b5714b-5607-45f5-adc7-73b9782b6bcc)   
-  
-Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer.  
-I look forward to your feedback and remain available and open to new proposals.  
-  
-Happy Smart 3D Printing :-)  
   
 # Latest Release
 [SB53 G-Code Flow/Temperature Controller V1.1 Beta (updated September 15 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
