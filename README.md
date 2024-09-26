@@ -12,7 +12,7 @@ With this Concept, you could print any object with the same Slicer Settings and 
   
 This script is not intended to be a definitive solution as I think integrating this concept into the Slicers will be more effective.  
   
-I think this concept will be the future of 3D printing, I encourage you to test, share and develop it, with the hope that equivalent solutions will be integrated into the Slicers for all 3D Printers.  
+I encourage you to test, share and develop it because I think this concept will be the future of 3D printing, and with some AI anyone could use a 3D Printer.  
   
 Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer.  
 I look forward to your feedback and remain available and open to new proposals.  
