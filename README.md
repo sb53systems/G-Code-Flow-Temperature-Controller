@@ -122,7 +122,7 @@ Below the Generated G-Code
 - With some prints, changing the Max/Average Smoothing value may affect the result and print time, you have to experiment yourself (I recommend values between 10 and 30).  
 - Aim for speed optimization as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes. 
 - The speed of the outer wall is higher than the speed of the inner wall because of the deferent Line width.  
-![image](https://github.com/user-attachments/assets/76acb2cf-f57e-4a38-b1c7-788689ed6470)![image](https://github.com/user-attachments/assets/52b5714b-5607-45f5-adc7-73b9782b6bcc)   
+![image](https://github.com/user-attachments/assets/26026ed0-d97e-4423-9d84-68c5b2a863e8)![image](https://github.com/user-attachments/assets/2fe5dd0f-008a-400b-9fa9-10228bf07b40)  
   
 # About the Developer 
 By Salim BELAYEL.  
