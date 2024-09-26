@@ -20,9 +20,6 @@ If you find my work worthy, Bay me a [Co-fi](https://ko-fi.com/sb53system) [![im
 Variable Temperature 3D Printing – The FUTURE of 3D Printing? By PRINTING PERSPECTIVE:  
 https://www.youtube.com/watch?v=P6Y8uUPd3yg  
   
-# Latest Release
-[SB53 G-Code Flow/Temperature Controller V1.1 Beta (updated September 15 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
-  
 # Instructions and Prerequisites  
 1. The script can be used as a normal program by running the SB53-Systems.exe file and opening a G-Code file manually, or by adding it to the Slicer as a post-processing script.  
   ![image](https://github.com/user-attachments/assets/3557a6ff-524f-4964-9cd2-044b01f46faa)
@@ -119,6 +116,9 @@ Be responsible and careful with this Script by using reasonable values ​​and
 I look forward to your feedback and remain available and open to new proposals.  
   
 Happy Smart 3D Printing :-)  
+  
+# Latest Release
+[SB53 G-Code Flow/Temperature Controller V1.1 Beta (updated September 15 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
   
 # Next Features
 - Add a first-time use explainer video on youtube.
