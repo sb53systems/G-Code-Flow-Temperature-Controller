@@ -8,7 +8,7 @@ This Script is free and open source, created to prove the effectiveness of autom
   
 With this Concept, you could print any object with the same Slicer Settings and have the best Speed/Quality Optimization, even with an old Klipperized 3D printer and a nice inexpensive filament!  
   
-![image](https://github.com/user-attachments/assets/959c95cd-48ec-48a6-92aa-607106f9f7d1)  
+![IMG_20240926_010343](https://github.com/user-attachments/assets/b6e98b33-12af-4310-824a-535a618a26d6)  
   
 This script is not intended to be a definitive solution as I think integrating this concept into the Slicers will be more effective.  
   
