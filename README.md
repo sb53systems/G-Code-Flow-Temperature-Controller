@@ -59,7 +59,7 @@ The speed of overhangs and small internal/external bridges should be set to the 
 ![image](https://github.com/user-attachments/assets/050be022-7cef-47ff-b1aa-15f8b5134dce)  
   
 For larger bridges, I use Thick Bridges in Orca Slicer and a single 5015 radial fan for part cooling, there is not much deference between a 60mm bridge at 30mm/s and another at 100mm/s, and since I don't print a lot of wide bridges, I prefer to keep an automatic speed.  
-Or you can use a modifier (or more) in the slicer that changes the speed of a few lower layers to the bridge, This Approach can only be optimized if it is included in the Slicer, the temperature and speed should gradually decrease to the desired bridge speed. Example bellow for 50mm/s External Bridge speed.  
+Or you can use a modifier (or more than one) in the slicer that changes the speed of a few lower layers to the bridge, this Approach can only be optimized if it is included in the Slicer, the temperature and speed should gradually decrease to the desired bridge speed. Example bellow for 50mm/s External Bridge speed.  
 ![image](https://github.com/user-attachments/assets/51f2cba4-d57d-4ea7-8ef7-d0c36dd61dc0)   
 ![image](https://github.com/user-attachments/assets/1cee9879-389b-4117-9048-b96c76e51891)  
   
@@ -78,7 +78,7 @@ You have to set your filament settings:
 [See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
   
 Note that :  
-- The script only reduces the speeds above the recommended speed (according to layer height and line width), lower speeds will be kept as in the G-Code.
+- The script only reduces the speeds above the recommended flow rate (according to layer height and line width), lower speeds will be kept as in the G-Code.
 - Hotend PID cannot be changed during print in Klipper, I recommend using PID values for a temperature between 70-90% of the maximum temperature.  
 - PA can be regulated in the script according to the temperature, or not and use the fixed PA from the Slicer or Klipper by unchecking the Adjust PA option befor generating the G-Code.  
 - Changing the PA during printing causes a delay in execution and forms bubbles in the walls, the Script is programed to change PA only in Sparse infill, Internal solid infill, Support and Internal Bridge.  
