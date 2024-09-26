@@ -41,7 +41,7 @@ D:\SB53_G-Code_Flow_Temperature_Controller_V1.1Beta\SB53-Systems.exe;
 ```  
 ![image](https://github.com/user-attachments/assets/3557a6ff-524f-4964-9cd2-044b01f46faa)  
   
-2. Included [Klipper_Estimator.exe V 3.7.3](https://github.com/Annex-Engineering/klipper_estimator) script (required and must be in the same Folder with this Script), using Klipper Look-Ahead kinematics, it estimate the time and the average flow rate for each move in the G-Code.  
+2. Included [Klipper_Estimator.exe V 3.7.3](https://github.com/Annex-Engineering/klipper_estimator) script, using Klipper Look-Ahead kinematics it estimate the time and the average flow rate for each move in the G-Code. (required and must be in the same Folder with this Script)  
   
 3. Changing the initial layer temperature is important, the script automatically modifies the G-Code (M109 S) command or changes the specified print start macro. Example Below :  
 ![image](https://github.com/user-attachments/assets/26b1e09e-0750-43f6-995f-8671da5838e0)  
