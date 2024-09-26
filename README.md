@@ -14,7 +14,7 @@ This script is not intended to be a definitive solution as I think integrating t
   
 I think this concept will be the future of 3D printing, I encourage you to test, share and develop it, with the hope that equivalent solutions will be integrated into the Slicers.  
   
-If you find my work worthy, Bay me a coffee or give a STAR. Thank you.  
+If you find my work worthy, Bay me a coffee or give a :star:. Thank you.  
   
 [![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system)
  [Co-fi](https://ko-fi.com/sb53system)  
