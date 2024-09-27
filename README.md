@@ -9,7 +9,7 @@ Its operation consists of varying the temperature according to the average flow 
   
 With this Concept, you could print any object with the same Slicer Settings and have the best Speed/Quality Optimization, even with an old Klipperized 3D printer and a nice inexpensive filament!  
   
-![IMG20240926163809](https://github.com/user-attachments/assets/5dc0a271-5cb6-4eca-9b04-0d5f23dba77f)  
+![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
 This script is not intended to be a definitive solution as I think integrating this concept into the Slicers will be more effective.  
   
