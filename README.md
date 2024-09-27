@@ -116,6 +116,7 @@ If yes, the first execution:
 Below the Generated G-Code 
   
 ![image](https://github.com/user-attachments/assets/5e1f1f21-afda-491c-8213-7d0b82128bc2)  
+![IMG20240927023059](https://github.com/user-attachments/assets/c6c46ea2-3909-4eb6-8e2d-ce51e23e7ebf)  
   
 # Observations and Tips
 - A printer with higher accelerations and lower heat/cool time will have a better result with this approach because it allows for better flow stabilization.  
