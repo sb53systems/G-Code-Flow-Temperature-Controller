@@ -1,3 +1,5 @@
+![IMG_20240928_134329](https://github.com/user-attachments/assets/aad83221-7a2e-487a-9962-e09ed7b1c0e8)  
+  
 # Bridges Test
 the one above is with automatic speed and temperature, the one below with a modifier at 30mm/s.  
 A single 5015 radial fan is used for part cooling.  
