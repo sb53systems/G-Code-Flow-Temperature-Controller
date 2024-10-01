@@ -5,7 +5,7 @@ A Post Processing Script for Orca Slicer and Klipper 3D Printers.
 This Script is free and open source, created to prove the effectiveness of automatic Speeds/Flow and Nozzle temperature change during 3D printing in order to get the best Quality/Speed Optimization and reduce 3D Printing complexity.  
   
 This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.  
-Its operation consists of varying the temperature according to the average flow rate during printing time, then limit the speed in the G-Code to reach the recommended flow rate for the temperature reached.  
+Its operation consists of varying the temperature according to the average flow rate that can be achieved during printing time, then limit the speed in the G-Code to reach the recommended flow rate for the temperature reached.  
   
 With this Concept, you could print any object with the same Slicer Settings and have the best Speed/Quality Optimization, even with an old Klipperized 3D printer and a nice inexpensive filament!  
   
@@ -86,7 +86,8 @@ Note that :
   
 - The current version does not accept G2 and G3 in G-Code (Arc Fitting, Spirale Z Hope Type,...)
 - This script does not support Multi-Tool and Multi-Material printing.  
-- Ironing, Variable_Layer_Height, Scarf_Joint_Seam,...  are not recommanded with this Script, it will affect the desired result and the printing time.  
+- Ironing is not recommanded with this Script, it will affect the desired result and the printing time.
+- Adaptive pressure advance is not compatible with the concept of this script.  
 - Delta printers kinematic limits are not supported with the current version of Klipper_Estimator.  
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
 - The generated G-Code is 20/50 % larger than the original one due to Temp and Speed adjustment.
@@ -126,6 +127,7 @@ Below the Generated G-Code
 - Aim for speed optimization as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes. 
 - The outer wall speed is greater than the inner wall speed due to a deferent line width. This script will adapt the speed to any line width and layer height, making it very effective for Variable_Layer_Height and Precise_Z_Height.  
 ![image](https://github.com/user-attachments/assets/26026ed0-d97e-4423-9d84-68c5b2a863e8)![image](https://github.com/user-attachments/assets/2fe5dd0f-008a-400b-9fa9-10228bf07b40)  
+- Fuzzy Skin, Variable_Layer_Height and Scarf_Joint_Seam can cause print delay due to frequent flow changes.  
   
 # About the Developer 
 By Salim BELAYEL.  
