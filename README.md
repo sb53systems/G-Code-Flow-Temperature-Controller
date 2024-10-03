@@ -41,7 +41,7 @@ D:\SB53_G-Code_Flow_Temperature_Controller_V1.1Beta\SB53-Systems.exe;
 ```  
 ![image](https://github.com/user-attachments/assets/3557a6ff-524f-4964-9cd2-044b01f46faa)  
   
-2. Included [Klipper_Estimator.exe](https://github.com/Annex-Engineering/klipper_estimator) script (V 3.7.3). Uusing Klipper Look-Ahead kinematics, it estimate the time (+/- 1s) and the average flow rate for each move in the G-Code. This file is required and must be in the same Folder with this Script.
+2. Included [Klipper_Estimator.exe](https://github.com/Annex-Engineering/klipper_estimator) script (V 3.7.3). Using Klipper Look-Ahead kinematics, it estimate the time (+/- 1s) and the average flow rate for each move in the G-Code. This file is required and must be in the same Folder with this Script.
   ![image](https://github.com/user-attachments/assets/30449359-fabd-4b3d-9593-523db606c0c1)
   
 3. Changing the initial layer temperature is important, the script automatically modifies the G-Code (M109 S) command or changes the specified print start macro. Example Below :  
@@ -50,7 +50,7 @@ D:\SB53_G-Code_Flow_Temperature_Controller_V1.1Beta\SB53-Systems.exe;
   
 4. The initial temperature estimated by the Script depends on the speed of the first moves of the G-Code, you can adjust it by fixing the speed of the purge line or the speed of the first layer perimeters.  
   
-5. To have a best Speed/Quality Optemization, the Slicer Profil must be set for Max Moves and Max Volumetric Speed, the Nozzle temperature is not important because it will be reset in the script, and the speed will be reduced (not increased) to the Recommended Flow.  
+5. To have a best Speed/Quality Optemization, the Slicer Profil must be set for Max Moves and Max Volumetric Speed. The Nozzle temperature is not important because it will be reset in the script, and the speed will be reduced (not increased) to the Recommended Flow.  
   
   Example below with my max 200mm/s Printer speed : (Same profil for PLA, PETG and ABS)  
     
@@ -82,7 +82,7 @@ Note that :
 - The script only reduces the speeds above the recommended flow rate (according to layer height and line width), lower speeds will be kept as in the G-Code.
 - Hotend PID cannot be changed during print in Klipper, I recommend using PID values for a temperature between 70-90% of the maximum temperature.  
 - PA can be regulated in the script according to the temperature, or not and use the fixed PA from the Slicer or Klipper by unchecking the Adjust PA option befor generating the G-Code.  
-- Changing the PA during printing causes a delay in execution and forms bubbles in the walls, the Script is programed to change PA only in Sparse infill, Internal solid infill, Support and Internal Bridge.  
+- Changing the PA during printing forms bubbles in the walls, the Script is programed to change PA only in Sparse infill, Internal solid infill, Support and Internal Bridge.  
 ![351913375-991fe2b8-3935-46ff-816e-5b0aee981b4d](https://github.com/user-attachments/assets/602b96a8-2666-44bd-b70f-aa5c06deadd4)  
   
 - The current version does not accept G2 and G3 in G-Code (Arc Fitting, Spirale Z Hope Type,...)
@@ -121,8 +121,8 @@ Below the Generated G-Code
 ![IMG20240927023059](https://github.com/user-attachments/assets/c6c46ea2-3909-4eb6-8e2d-ce51e23e7ebf)  
   
 # Observations and Tips
-- A printer with higher accelerations and lower heat/cool time will have a better result with this approach because it allows for better flow stabilization.  
-- With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands without any changes in the script.
+- A printer with higher accelerations and lower hotend heating/cooling time, will have a better result with this approach because it allows for better flow stabilization (Quality) and Higher Max/Average Flow (Speed).  
+- With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands without any changes in the script.  
 - You can reduce the speed of the cooling fan during the entire printing process (Except for Bridges and Ovehangs).  
 - With some prints, changing the Max/Average Smoothing value may affect the result and print time, you have to experiment yourself (I recommend values between 10 and 30).  
 - Aim for speed optimization as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes. 
