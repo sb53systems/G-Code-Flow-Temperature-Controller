@@ -34,6 +34,17 @@ https://www.youtube.com/watch?v=P6Y8uUPd3yg
 - Add support for G2 and G3 commands.
 - Add support for Marlin and RepRap Firmware.
   
+# Observations and Tips
+- A printer with higher accelerations and lower hotend heating/cooling time, will have a better result with this approach because it allows for better flow stabilization (Quality) and Higher Max/Average Flow (Speed).  
+- With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands without any changes in the script.  
+- You can reduce the speed of the cooling fan during the entire printing process (Except for Bridges and Ovehangs).  
+- With some prints, changing the Max/Average Smoothing value may affect the result and print time, you have to experiment yourself (I recommend values between 10 and 30).  
+- Aim for speed optimization as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes.
+- Fuzzy Skin, Variable_Layer_Height and Scarf_Joint_Seam can cause print delay due to frequent flow changes.  
+- The outer wall speed is greater than the inner wall speed due to a deferent line width. This script will adapt the speed to any line width and layer height, making it very effective for Variable_Layer_Height and Precise_Z_Height.  
+![371310408-26026ed0-d97e-4423-9d84-68c5b2a863e8](https://github.com/user-attachments/assets/e83fd21d-e34a-4def-869d-c62838b0b8b3)  
+![image](https://github.com/user-attachments/assets/2fe5dd0f-008a-400b-9fa9-10228bf07b40)  
+  
 # Instructions and Prerequisites  
 1. The script can be used as a normal program by running the SB53-Systems.exe file and opening a G-Code file manually, or by adding it to the Slicer as a post-processing script.  
 ```
@@ -119,16 +130,6 @@ Below the Generated G-Code
   
 ![image](https://github.com/user-attachments/assets/5e1f1f21-afda-491c-8213-7d0b82128bc2)  
 ![IMG20240927023059](https://github.com/user-attachments/assets/c6c46ea2-3909-4eb6-8e2d-ce51e23e7ebf)  
-  
-# Observations and Tips
-- A printer with higher accelerations and lower hotend heating/cooling time, will have a better result with this approach because it allows for better flow stabilization (Quality) and Higher Max/Average Flow (Speed).  
-- With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands without any changes in the script.  
-- You can reduce the speed of the cooling fan during the entire printing process (Except for Bridges and Ovehangs).  
-- With some prints, changing the Max/Average Smoothing value may affect the result and print time, you have to experiment yourself (I recommend values between 10 and 30).  
-- Aim for speed optimization as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes. 
-- The outer wall speed is greater than the inner wall speed due to a deferent line width. This script will adapt the speed to any line width and layer height, making it very effective for Variable_Layer_Height and Precise_Z_Height.  
-![image](https://github.com/user-attachments/assets/26026ed0-d97e-4423-9d84-68c5b2a863e8)![image](https://github.com/user-attachments/assets/2fe5dd0f-008a-400b-9fa9-10228bf07b40)  
-- Fuzzy Skin, Variable_Layer_Height and Scarf_Joint_Seam can cause print delay due to frequent flow changes.  
   
 # About the Developer 
 By Salim BELAYEL.  
