@@ -85,7 +85,7 @@ Note that :
 - Changing the PA during printing forms bubbles in the walls, the Script is programed to change PA only in Sparse infill, Internal solid infill, Support and Internal Bridge.  
 ![351913375-991fe2b8-3935-46ff-816e-5b0aee981b4d](https://github.com/user-attachments/assets/602b96a8-2666-44bd-b70f-aa5c06deadd4)  
   
-- The current version does not accept G2 and G3 in G-Code (Arc Fitting, Spirale Z Hope Type,...)
+- The current version does not accept G2 and G3 in G-Code. (Arc Fitting, Spirale Z Hope Type,...)
 - This script does not support Multi-Tool and Multi-Material printing.  
 - Ironing is not recommanded with this Script, it will affect the desired result and the printing time.
 - Adaptive pressure advance is not compatible with the concept of this script.  
@@ -98,8 +98,8 @@ Note that :
 Note that this solution is not useful with non-shiny filaments or that do not change color, other advanced solutions will be necessary to determine the edial values, such as layer adhesion or dimensional accuracy or the final temperature of the extruded filament or...  
   
 The visual calibration method (useful for PETG,PLA,...) involves choosing the desired appearance (closest to the original filament) over 3-5 prints: 
-- A Cylinder in Vase mode for higher flow rate (you can use the max Layer Height and max Line Width).  
-- And very small prints for (0 to 3)mm3/s (a 3DBenchy at 20/30 % Scale!).
+- A Cylinder in Vase mode for higher flow rate. You can use the max Layer Height and max Line Width, and Limit the Max Volumetric Flow to the desired test.  
+- And very small prints for (0 to 3)mm3/s. (a 3DBenchy at 20/30 % Scale!)
   
 You should limit the maximum volumetric speed to the desired flow rate test, and a maximum recommended temperature, then reduce the temperature manually and gradually during printing.  
   
