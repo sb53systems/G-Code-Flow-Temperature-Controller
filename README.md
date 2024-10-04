@@ -96,7 +96,7 @@ Note that :
 - This Script is currently only available for Windows OS. With delphi 12 and a few changes in the source code, it can be compiled for other operating system (I can help for this, or can do it later!).  
   
 # Ideal Flow/Temperature Calibration
-Note that this method is not useful with non-shiny filaments or that do not change color, other advanced solutions will be necessary to determine the edial values, such as layer adhesion or dimensional accuracy or the final temperature of the extruded filament or...  
+Note that this method is not useful with non-shiny filaments or that do not change color, other advanced solutions will be necessary to determine the ideal values, such as layer adhesion or dimensional accuracy or the final temperature of the extruded filament or...  
   
 The visual calibration method (useful for PETG,PLA,...) involves choosing the desired appearance (closest to the original filament) over 3-5 prints: 
 - A Cylinder in Vase mode for higher flow rate. You can use the max Layer Height and max Line Width, you should limit the maximum volumetric speed to the desired flow rate test, and start with the maximum recommended temperature, then reduce the temperature manually and gradually during printing. ; Must be done without the script  
