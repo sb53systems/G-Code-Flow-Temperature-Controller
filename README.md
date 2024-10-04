@@ -96,7 +96,7 @@ Note that :
   
 # Ideal Flow/Temperature Calibration
 Note that this solution is not useful with non-glossy filaments, other advanced solutions will be necessary to determine the edial values, such as layer adhesion or dimensional accuracy or the final temperature of the extruded filament or...  
-My calibration method is to do a visual test on 3 to 5 prints; a Cylinder in Vase mode for higher flow rate (you can use the max Layer Height and max Line Width), and very small prints for (0 to 3)mm3/s (a 3DBenchy at 20/30 % Scale!).  
+The visual calibration method involves choosing the desired appearance (closest to the original filament) over 3-5 prints: a Cylinder in Vase mode for higher flow rate (you can use the max Layer Height and max Line Width), and very small prints for (0 to 3)mm3/s (a 3DBenchy at 20/30 % Scale!).  
 You should limit the maximum volumetric speed to the desired flow rate test, and a maximum recommended temperature, then reduce the temperature manually and gradually during printing.  
   
 This process could be optimized with an automatic and much more accurate solution!!!  
