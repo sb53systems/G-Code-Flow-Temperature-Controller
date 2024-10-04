@@ -95,7 +95,7 @@ Note that :
 - This Script is currently only available for Windows OS. With delphi 12 and a few changes in the source code, it can be compiled for other operating system (I can help for this, or can do it later!).  
   
 # Ideal Flow/Temperature Calibration
-Note that this solution is not useful with non-glossy filaments or not color changing filament, other advanced solutions will be necessary to determine the edial values, such as layer adhesion or dimensional accuracy or the final temperature of the extruded filament or...  
+Note that this solution is not useful with non-shiny filaments or that do not change color, other advanced solutions will be necessary to determine the edial values, such as layer adhesion or dimensional accuracy or the final temperature of the extruded filament or...  
   
 The visual calibration method (useful for PETG,PLA,...) involves choosing the desired appearance (closest to the original filament) over 3-5 prints: 
 - A Cylinder in Vase mode for higher flow rate (you can use the max Layer Height and max Line Width).  
@@ -107,9 +107,10 @@ This process could be optimized with an automatic and much more accurate solutio
 I think the Filament absorbs energy gradually in the heat element, and that it must be extruded with an edial final temperature.  
 What sensor could accurately track the temperature of the extruded filament during a circular motion of the printhead?!  
 In a single print controlled by a real-time system, starting with max flow rate and max temperature, then record the values ​​where the filament is extruded at the desired temperature, going all the way down to near negative Fluw rate.  
-Filament vendors should provide only one Edial Temperature.  
+Filament vendors should provide only one Edial Temperature!  
   
 I launch the competition to makers, to find a precise, less expensive and easy to use solution on the majority of 3D printers :)  
+  
 I would love to hear your suggestions in the discussions section.  
   
 # Observations and Tips
