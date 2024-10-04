@@ -99,7 +99,8 @@ Note that this solution is not useful with non-glossy filaments, other advanced 
   
 The visual calibration method (useful for PETG,PLA,...) involves choosing the desired appearance (closest to the original filament) over 3-5 prints: 
 - A Cylinder in Vase mode for higher flow rate (you can use the max Layer Height and max Line Width).  
-- And very small prints for (0 to 3)mm3/s (a 3DBenchy at 20/30 % Scale!).  
+- And very small prints for (0 to 3)mm3/s (a 3DBenchy at 20/30 % Scale!).
+  
 You should limit the maximum volumetric speed to the desired flow rate test, and a maximum recommended temperature, then reduce the temperature manually and gradually during printing.  
   
 This process could be optimized with an automatic and much more accurate solution!!!  
