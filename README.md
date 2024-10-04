@@ -106,7 +106,7 @@ You should limit the maximum volumetric speed to the desired flow rate test, and
 This process could be optimized with an automatic and much more accurate solution!!!  
 I think the Filament absorbs energy gradually in the heat element, and that it must be extruded with an edial final temperature.  
 What sensor could accurately track the temperature of the extruded filament during a circular motion of the printhead?!  
-In a single print controlled by a real-time system, starting with max flow rate and max temperature, then record the values ​​where the filament is extruded at the desired temperature, going all the way down to near negative Fluw rate.  
+In a single print controlled by a real-time system, starting with max flow rate and max temperature going all the way down to near negative Fluw rate, and record the values ​​where the filament is extruded at the desired temperature.  
 Filament vendors should provide only one Edial Temperature!  
   
 I launch the competition to makers, to find a precise, less expensive and easy to use solution on the majority of 3D printers :)  
