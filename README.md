@@ -27,7 +27,7 @@ Variable Temperature 3D Printing – The FUTURE of 3D Printing? (By PRINTING PER
 https://www.youtube.com/watch?v=P6Y8uUPd3yg  
   
 # Latest Release
-[SB53 G-Code Flow/Temperature Controller V1.1 Beta (updated October 04 2024)](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta)  
+[SB53 G-Code Flow/Temperature Controller V1.1 Beta](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta) (updated October 04 2024)  
   
 # Next Features
 - Add an explainer video on youtube and instructions on how to use it.
