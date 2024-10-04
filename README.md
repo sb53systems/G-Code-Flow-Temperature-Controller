@@ -107,7 +107,7 @@ I think the Filament absorbs energy gradually in the heat element, and that it m
 This process could be optimized with an automatic and much more accurate solution!!!  
 A sensor capable of accurately tracking the temperature of the extruded filament (in air), with a real-time script that controls the Flow and the Temperature, starting with max flow rate and max temperature going all the way down to near negative Fluw rate, and record the values ​​where the filament is extruded at the desired temperature.  
   
-Filament vendors should provide only one Edial Temperature!  
+Filament vendors should provide only one Ideal Temperature!  
   
 I launch the competition to makers, to find a precise, less expensive and easy to use solution on the majority of 3D printers :)  
   
