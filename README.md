@@ -31,8 +31,9 @@ https://www.youtube.com/watch?v=P6Y8uUPd3yg
   
 # Next Features
 - Add an explainer video on youtube and instructions on how to use it.
-- Add support for G2 and G3 commands.
 - Add support for Marlin and RepRap Firmware.
+- Add support for G2 and G3 commands. (Latest beta update already supports G2 and G3, The generated G-Codes are good but the temperature displayed on the interface is not yet aligned)
+  ![image](https://github.com/user-attachments/assets/245919f9-dc4d-4312-8b64-28d6fa29fb11)
   
 # Instructions and Prerequisites  
 1. The script can be used as a normal program by running the SB53-Systems.exe file and opening a G-Code file manually, or by adding it to the Slicer as a post-processing script.  
