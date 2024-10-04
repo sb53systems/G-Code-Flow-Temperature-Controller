@@ -94,6 +94,20 @@ Note that :
 - The generated G-Code is 20/50 % larger than the original one due to Temp and Speed adjustment.
 - This Script is currently only available for Windows OS. With delphi 12 and a few changes in the source code, it can be compiled for other operating system (I can help for this, or can do it later!).  
   
+# Ideal Flow/Temperature Calibration
+Note that this solution is not useful with non-glossy filaments, other advanced solutions will be necessary to determine the edial values, such as layer adhesion or dimensional accuracy or the final temperature of the extruded filament or...  
+My calibration method is to do a visual test on 3 to 5 prints; a Cylinder in Vase mode for higher flow rate (you can use the max Layer Height and max Line Width), and very small prints for (0 to 3)mm3/s (a 3DBenchy at 20/30 % Scale!).  
+You should limit the maximum volumetric speed to the desired flow rate test, and a maximum recommended temperature, then reduce the temperature manually and gradually during printing.  
+  
+This process could be optimized with an automatic and much more accurate solution!!!  
+I think the Filament absorbs energy gradually in the heat element, and that it must be extruded with an edial final temperature.  
+What sensor could accurately track the temperature of the extruded filament during a circular motion of the printhead?!  
+In a single print controlled by a real-time system, start with max flow rate and max temperature, then record the values ​​where the filament is extruded at the desired temperature, going all the way down to near negative Flux.  
+Filament vendors should provide only one Edial Temperature.  
+  
+I am launching the competition to makers, to find a precise solution, less expensive and simple to use on the majority of 3D printers :)  
+I would love to hear your suggestions in the discussions section.  
+  
 # Observations and Tips
 - A printer with higher accelerations and lower hotend heating/cooling time, will have a better result with this approach because it allows for better flow stabilization (Quality) and Higher Max/Average Flow (Speed).  
 - With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands without any changes in the script.  
