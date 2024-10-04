@@ -28,6 +28,7 @@ https://www.youtube.com/watch?v=P6Y8uUPd3yg
   
 # Latest Release
 [SB53 G-Code Flow/Temperature Controller V1.1 Beta](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta) (updated October 04 2024)  
+You need to replace the SB53-Systems.exe file only, and keep the other files (previous preset data).  
   
 # Next Features
 - Add an explainer video on youtube and instructions on how to use it.
