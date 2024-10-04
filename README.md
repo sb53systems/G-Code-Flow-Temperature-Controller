@@ -101,8 +101,9 @@ The visual calibration method (useful for PETG,PLA,...) involves choosing the de
 - A Cylinder in Vase mode for higher flow rate. You can use the max Layer Height and max Line Width, you should limit the maximum volumetric speed to the desired flow rate test, and start with the maximum recommended temperature, then reduce the temperature manually and gradually during printing. ; Must be done without the script  
 - And very small prints for (0 to 3)mm3/s. (a 3DBenchy at 20/30 % Scale!) ; Must be done with the Script  
   
-This process could be optimized with an automatic and much more accurate solution!!!  
 I think the Filament absorbs energy gradually in the heat element, and that it must be extruded with an edial final temperature.  
+  
+This process could be optimized with an automatic and much more accurate solution!!!  
 What sensor could accurately track the temperature of the extruded filament during a circular motion of the printhead?!  
 In a single print controlled by a real-time system, starting with max flow rate and max temperature going all the way down to near negative Fluw rate, and record the values ​​where the filament is extruded at the desired temperature.  
 Filament vendors should provide only one Edial Temperature!  
