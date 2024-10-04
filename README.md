@@ -86,7 +86,6 @@ Note that :
 - Changing the PA during printing forms bubbles in the walls, the Script is programed to change PA only in Sparse infill, Internal solid infill, Support and Internal Bridge.  
 ![351913375-991fe2b8-3935-46ff-816e-5b0aee981b4d](https://github.com/user-attachments/assets/602b96a8-2666-44bd-b70f-aa5c06deadd4)  
   
-- The current version does not accept G2 and G3 in G-Code. (Arc Fitting, Spirale Z Hope Type,...)
 - This script does not support Multi-Tool and Multi-Material printing.  
 - Ironing is not recommanded with this Script, it will affect the desired result and the printing time.
 - Adaptive pressure advance is not compatible with the concept of this script.  
