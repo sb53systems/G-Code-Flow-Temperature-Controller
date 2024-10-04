@@ -98,7 +98,7 @@ Note that :
 Note that this method is not useful with non-shiny filaments or that do not change color, other advanced solutions will be necessary to determine the edial values, such as layer adhesion or dimensional accuracy or the final temperature of the extruded filament or...  
   
 The visual calibration method (useful for PETG,PLA,...) involves choosing the desired appearance (closest to the original filament) over 3-5 prints: 
-- A Cylinder in Vase mode for higher flow rate. You can use the max Layer Height and max Line Width, you should limit the maximum volumetric speed to the desired flow rate test, and start with the maximum recommended temperature, then reduce the temperature manually and gradually during printing. ;ust be done without the Script  
+- A Cylinder in Vase mode for higher flow rate. You can use the max Layer Height and max Line Width, you should limit the maximum volumetric speed to the desired flow rate test, and start with the maximum recommended temperature, then reduce the temperature manually and gradually during printing. ; Must be done without the script  
 - And very small prints for (0 to 3)mm3/s. (a 3DBenchy at 20/30 % Scale!) ; Must be done with the Script  
   
 This process could be optimized with an automatic and much more accurate solution!!!  
