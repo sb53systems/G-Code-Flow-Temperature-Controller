@@ -105,7 +105,7 @@ What sensor could accurately track the temperature of the extruded filament duri
 In a single print controlled by a real-time system, starting with max flow rate and max temperature, then record the values ​​where the filament is extruded at the desired temperature, going all the way down to near negative Fluw rate.  
 Filament vendors should provide only one Edial Temperature.  
   
-I launch the competition to makers, to find a precise, less expensive and easy to use solution on the majority of 3D printers:) 
+I launch the competition to makers, to find a precise, less expensive and easy to use solution on the majority of 3D printers:)  
 I would love to hear your suggestions in the discussions section.  
   
 # Observations and Tips
