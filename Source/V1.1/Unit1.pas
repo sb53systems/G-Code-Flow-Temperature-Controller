@@ -19,10 +19,62 @@ uses
 
 type
   TForm1 = class(TForm)
-    BitBtn1: TBitBtn;
     OpenDialog1: TOpenDialog;
-    Edit1: TEdit;
     XPManifest1: TXPManifest;
+    SaveDialog1: TSaveDialog;
+    FDConnection1: TFDConnection;
+    DataSource1: TDataSource;
+    FDTableFILAMENT: TFDTable;
+    DataSource2: TDataSource;
+    FDTableEXTRUDER: TFDTable;
+    FDTableEXTRUDEREXTRUDER_NAME: TStringField;
+    FDTableEXTRUDERTEMP_RISE: TIntegerField;
+    FDTableEXTRUDERTEMP_RISE_TIME: TIntegerField;
+    FDTableEXTRUDERTEMP_FALL: TIntegerField;
+    FDTableEXTRUDERTEMP_FALL_TIME: TIntegerField;
+    FDTableEXTRUDERA_M_SMOOTH: TIntegerField;
+    FDTableFILAMENTEXTRUDER_NAME: TStringField;
+    FDTableFILAMENTFILAMENT_NAME: TStringField;
+    FDTableFILAMENTFILAMENT_TYPE: TStringField;
+    FDTableFILAMENTHEIGHT_TEMP: TIntegerField;
+    FDTableFILAMENTMID_TEMP: TIntegerField;
+    FDTableFILAMENTLOW_TEMP: TIntegerField;
+    FDTableFILAMENTHEIGHT_FLOW: TIntegerField;
+    FDTableFILAMENTMID_FLOW: TIntegerField;
+    FDTableFILAMENTLOW_FLOW: TIntegerField;
+    FDTableFILAMENTHEIGHT_PA: TFloatField;
+    FDTableFILAMENTMID_PA: TFloatField;
+    FDTableFILAMENTLOW_PA: TFloatField;
+    FDTableFILAMENTADJUST_PA: TBooleanField;
+    FDTableFILAMENTSPEED_QUALITY_OPT: TIntegerField;
+    Timer1: TTimer;
+    FDTableEXTRUDERSTART_MACRO: TStringField;
+    FDTableEXTRUDERMACRO_EXTRUDER: TStringField;
+    FDTableEXTRUDERPRINTER_CONFIG: TStringField;
+    Bevel10: TBevel;
+    Bevel1: TBevel;
+    Image1: TImage;
+    Image2: TImage;
+    Bevel5: TBevel;
+    Image4: TImage;
+    Image5: TImage;
+    Label3: TLabel;
+    Label15: TLabel;
+    Label14: TLabel;
+    Image9: TImage;
+    Image3: TImage;
+    Label6: TLabel;
+    Bevel2: TBevel;
+    Bevel3: TBevel;
+    Bevel4: TBevel;
+    Bevel6: TBevel;
+    Bevel7: TBevel;
+    Bevel8: TBevel;
+    Bevel9: TBevel;
+    Image6: TImage;
+    Image7: TImage;
+    BitBtn1: TBitBtn;
+    Edit1: TEdit;
     BitBtn4: TBitBtn;
     StaticText2: TStaticText;
     StaticText3: TStaticText;
@@ -45,7 +97,6 @@ type
     StaticText8: TStaticText;
     Edit8: TEdit;
     UpDown7: TUpDown;
-    Bevel1: TBevel;
     StaticText9: TStaticText;
     Edit9: TEdit;
     UpDown8: TUpDown;
@@ -56,9 +107,7 @@ type
     StaticText13: TStaticText;
     Edit11: TEdit;
     UpDown10: TUpDown;
-    SaveDialog1: TSaveDialog;
     ComboBox1: TComboBox;
-    StaticText10: TStaticText;
     StaticText14: TStaticText;
     StaticText15: TStaticText;
     StaticText16: TStaticText;
@@ -74,54 +123,12 @@ type
     UpDown11: TUpDown;
     StaticText19: TStaticText;
     StaticText20: TStaticText;
-    Image1: TImage;
-    Image2: TImage;
-    Bevel5: TBevel;
-    Image6: TImage;
-    Image7: TImage;
-    Image4: TImage;
-    Image5: TImage;
-    FDConnection1: TFDConnection;
-    DataSource1: TDataSource;
-    FDTableFILAMENT: TFDTable;
-    DataSource2: TDataSource;
-    FDTableEXTRUDER: TFDTable;
     DBLookupComboBox1: TDBLookupComboBox;
-    Label3: TLabel;
-    Label15: TLabel;
-    Label14: TLabel;
-    Image9: TImage;
-    FDTableEXTRUDEREXTRUDER_NAME: TStringField;
-    FDTableEXTRUDERTEMP_RISE: TIntegerField;
-    FDTableEXTRUDERTEMP_RISE_TIME: TIntegerField;
-    FDTableEXTRUDERTEMP_FALL: TIntegerField;
-    FDTableEXTRUDERTEMP_FALL_TIME: TIntegerField;
-    FDTableEXTRUDERA_M_SMOOTH: TIntegerField;
-    FDTableFILAMENTEXTRUDER_NAME: TStringField;
-    FDTableFILAMENTFILAMENT_NAME: TStringField;
-    FDTableFILAMENTFILAMENT_TYPE: TStringField;
-    FDTableFILAMENTHEIGHT_TEMP: TIntegerField;
-    FDTableFILAMENTMID_TEMP: TIntegerField;
-    FDTableFILAMENTLOW_TEMP: TIntegerField;
-    FDTableFILAMENTHEIGHT_FLOW: TIntegerField;
-    FDTableFILAMENTMID_FLOW: TIntegerField;
-    FDTableFILAMENTLOW_FLOW: TIntegerField;
-    FDTableFILAMENTHEIGHT_PA: TFloatField;
-    FDTableFILAMENTMID_PA: TFloatField;
-    FDTableFILAMENTLOW_PA: TFloatField;
-    FDTableFILAMENTADJUST_PA: TBooleanField;
-    FDTableFILAMENTSPEED_QUALITY_OPT: TIntegerField;
     ComboBox2: TComboBox;
     Edit16: TEdit;
     StaticText1: TStaticText;
     Edit17: TEdit;
     StaticText21: TStaticText;
-    Timer1: TTimer;
-    FDTableEXTRUDERSTART_MACRO: TStringField;
-    FDTableEXTRUDERMACRO_EXTRUDER: TStringField;
-    FDTableEXTRUDERPRINTER_CONFIG: TStringField;
-    Image3: TImage;
-    Label6: TLabel;
     BitBtn3: TBitBtn;
     BitBtn2: TBitBtn;
     Chart1: TChart;
@@ -161,13 +168,7 @@ type
     Series9: TLineSeries;
     Series10: TLineSeries;
     Series11: TLineSeries;
-    Bevel2: TBevel;
-    Bevel3: TBevel;
-    Bevel4: TBevel;
-    Bevel6: TBevel;
-    Bevel7: TBevel;
-    Bevel8: TBevel;
-    Bevel9: TBevel;
+    ComboBox3: TComboBox;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
@@ -453,7 +454,6 @@ begin
   Form1.Chart2.Title.Font.Color:=clNavy;
   Form1.Chart2.Title.Text.Add('- Generated G-Code -');
   Form1.Chart2.BottomAxis.Maximum:=tTime;
-  Form1.Series11.AddXY(tTime, Form1.Series11.YValues[Form1.Series11.Count]);                                              ///////////////////
   Try
     Form1.Chart2.LeftAxis.Maximum:=round(maxCount)+1;
   Except
@@ -468,7 +468,7 @@ end;
 // Generate Temporary File                                              //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 procedure generateTempOutput;
 Var
-  totFilCount, gcodeFreq, curFreq, recFreq, tempByPA, curPA, recPA, recFlow, tempByflow, moveFlowRate, maxTempCount, minTempCount, sectionArea, layerHeight, lineWidth, gcodeMovesCount : double;
+  totFilCount, gcodeFreq, getNextTemp, curFreq, recFreq, tempByPA, curPA, recPA, recFlow, tempByflow, moveFlowRate, maxTempCount, minTempCount, sectionArea, layerHeight, lineWidth, gcodeMovesCount : double;
   curTemp, getTemp, moveFilCount, lineType : string;
   retract, freqChanger : bool;
 begin
@@ -488,17 +488,13 @@ begin
   curFreq:=0;
   curPA:=0;
   gcodeMovesCount:=0;
-  maxTempCount:=0;
-  minTempCount:=1000;
   retract:=false;
   freqChanger:=false;
-  getTemp:=floattostr((round(Form1.Series4.YValues[1]*10))/10);
-  curTemp:=floattostr((round(Form1.Series4.YValues[1]*10))/10);
+  getTemp:=initialTemp;
+  curTemp:=initialTemp;
+  minTempCount:=strtofloat(initialTemp);
+  maxTempCount:=strtofloat(initialTemp);
   Form1.Series10.AddXY(0,strtofloat(curTemp));
-  minTempCount:=strtofloat(curTemp);
-  maxTempCount:=strtofloat(curTemp);
-  curTemp:=StringReplace(curTemp, ',', '.', [rfReplaceAll]);
-  initialTemp:=curTemp;
   Assignfile (GCode_IN, appPath+'\tempOutput');
   Reset (GCode_IN);
   AssignFile(tempOutputFile,appPath+'\tempOut');
@@ -511,6 +507,7 @@ begin
       // Get the Slicer Speed
       if copy(Lines,1,4)='G1 F' then begin
         WriteLn (tempOutputFile , Lines+'    ; Slicer Speed');
+        if pos(';', Lines)<>0 then Lines:=copy(Lines, 1, pos(';',Lines)-1);
         Lines:=copy(Lines,5,length(Lines));
         if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
         gcodeFreq:=round(strtofloat(Lines));
@@ -544,8 +541,9 @@ begin
         Lines:=copy(Lines,17,length(Lines));
         if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
         layerHeight:=strtofloat(Lines);
-      end else if copy(Lines,1,3)='G1 ' then begin
+      end else if ((copy(Lines,1,3)='G1 ')or(copy(Lines,1,3)='G2 ')or(copy(Lines,1,3)='G3 ')) then begin
         gcodeMovesCount:=gcodeMovesCount+1;
+        if pos(';', Lines)<>0 then Lines:=copy(Lines, 1, pos(';',Lines)-1);
         if pos('F', Lines)<>0 then begin
           freqChanger:=true;
           if pos(' ',copy(Lines, pos('F',Lines)+1, length(Lines)))<>0 then gcodeFreq:=round(strtofloat(copy(Lines, pos('F',Lines)+1, pos(' ',copy(Lines, pos('F',Lines)+1, length(Lines)))-1)))
@@ -553,45 +551,40 @@ begin
         end;
 
         // Temperature change
-        Try
-          getTemp:=floattostr(round(Form1.Series4.YValues[FindClosestIndex(totFilCount,Form1.Series7)]*10)/10);
-          if floatLocalFormat=',' then getTemp:=StringReplace(getTemp, ',', '.', [rfReplaceAll]);
-          if getTemp<>curTemp then begin
-            curTemp:=getTemp;
-            getTemp:=floattostr(round(Form1.Series4.YValues[FindClosestIndex(totFilCount,Form1.Series7)+1]*10)/10);
-            Form1.Series11.AddXY(gcodeMovesCount, strtofloat(getTemp) );
-            if minTempCount>strtofloat(getTemp) then minTempCount:=strtofloat(getTemp);
-            if maxTempCount<strtofloat(getTemp) then maxTempCount:=strtofloat(getTemp);
-            if floatLocalFormat=',' then getTemp:=StringReplace(getTemp, ',', '.', [rfReplaceAll]);
-            WriteLn (tempOutputFile , 'M104 S'+getTemp);
+        if minTempCount>strtofloat(curTemp) then minTempCount:=strtofloat(curTemp);
+        if maxTempCount<strtofloat(curTemp) then maxTempCount:=strtofloat(curTemp);
+        curTemp:=getTemp;
+        if totFilCount>1 then begin
+          Try
+            getNextTemp:=round(Form1.Series4.YValues[FindClosestIndex(totFilCount,Form1.Series7)+1]*10)/10;
+            if getNextTemp>1 then getTemp:=floattostr(getNextTemp);
+            if getTemp<>curTemp then begin
+              Form1.Series11.AddXY(gcodeMovesCount, strtofloat(getTemp) );
+              WriteLn (tempOutputFile , 'M104 S'+StringReplace(getTemp, ',', '.', [rfReplaceAll]));
+            end;
+          Except
+            // Do Nothing
           end;
-        Except On E: Exception do
-          //ShowMessage('There was an error: ' + E.Message);
         end;
 
         // Calculate requested Flow and PA / Temperature
-        if floatLocalFormat=',' then curTemp:=StringReplace(curTemp, '.', ',', [rfReplaceAll]);
+        if floatLocalFormat=',' then begin
+          Form1.Edit10.Text:=StringReplace(Form1.edit10.Text, '.', ',', [rfReplaceAll]);
+          Form1.Edit13.Text:=StringReplace(Form1.edit13.Text, '.', ',', [rfReplaceAll]);
+          Form1.Edit12.Text:=StringReplace(Form1.edit12.Text, '.', ',', [rfReplaceAll]);
+        end;
         if strtofloat(curTemp)>form1.UpDown2.Position then begin
           tempByflow:=((form1.UpDown3.Position-form1.UpDown2.Position)/(form1.UpDown6.Position-form1.UpDown5.Position));
           recFlow:=form1.UpDown5.Position+((strtofloat(curTemp)-form1.UpDown2.Position)/tempByflow);
-          if floatLocalFormat=',' then begin
-            Form1.Edit13.Text:=StringReplace(Form1.edit13.Text, '.', ',', [rfReplaceAll]);
-            Form1.Edit12.Text:=StringReplace(Form1.edit12.Text, '.', ',', [rfReplaceAll]);
-          end;
           tempByPA:=((form1.UpDown3.Position-form1.UpDown2.Position)/(strtofloat(Form1.edit13.Text)-strtofloat(Form1.edit12.Text)));
           recPA:=strtofloat(Form1.edit12.Text)+((strtofloat(curTemp)-form1.UpDown2.Position)/tempByPA);
         end else begin
           tempByflow:=((form1.UpDown2.Position-form1.UpDown1.Position)/(form1.UpDown5.Position-form1.UpDown4.Position));
           recFlow:=form1.UpDown5.Position-((form1.UpDown2.Position-strtofloat(curTemp))/tempByflow);
-          if floatLocalFormat=',' then begin
-            Form1.Edit10.Text:=StringReplace(Form1.edit10.Text, '.', ',', [rfReplaceAll]);
-            Form1.Edit12.Text:=StringReplace(Form1.edit12.Text, '.', ',', [rfReplaceAll]);
-          end;
           tempByPA:=((form1.UpDown2.Position-form1.UpDown1.Position)/(strtofloat(Form1.edit12.Text)-strtofloat(Form1.edit10.Text)));
           recPA:=strtofloat(Form1.edit12.Text)-((form1.UpDown2.Position-strtofloat(curTemp))/tempByPA);
         end;
         recPA:=round(recPA*1000)/1000;
-        if floatLocalFormat=',' then curTemp:=StringReplace(curTemp, ',', '.', [rfReplaceAll]);
 
         // PA Change
         if ((curPA<>recPA)and(Form1.CheckBox7.Checked)and((lineType='Sparse infill')or(lineType='Internal solid infill')or(lineType='Internal Bridge')or(lineType='Support'))) then begin
@@ -629,6 +622,8 @@ begin
         WriteLn (tempOutputFile , Lines);
       end else WriteLn (tempOutputFile , Lines);
     END;
+    //showmessage(floattostr(Form1.Series11.YValues[Form1.Series11.Count]));
+    //Form1.Series11.AddXY(gcodeMovesCount+1, Form1.Series11.YValues[Form1.Series11.Count]);
     CloseFile(GCode_IN);
     CloseFile(tempOutputFile);
   Except On E: Exception do
@@ -711,8 +706,9 @@ begin
     if actTemp<minTempCount then minTempCount:=actTemp;
     if actTemp>maxTempCount then maxTempCount:=actTemp;
   end;
-  Form1.Series4.AddXY(Form1.Chart1.BottomAxis.Maximum, actTemp);
+  Form1.Series4.AddXY(Form1.Chart1.BottomAxis.Maximum+1, actTemp);
   Try
+    initialTemp:=floattostr((round(Form1.Series4.YValues[0]*10))/10);
     Form1.Chart1.RightAxis.Minimum:=round(minTempCount)-1;
     Form1.Chart1.RightAxis.Maximum:=round(maxTempCount)+1;
     Form1.Chart2.RightAxis.Minimum:=round(minTempCount)-1;
@@ -777,11 +773,11 @@ begin
   WHILE NOT (EOF(GCode_IN)) and canProcess Do begin
     Readln (GCode_IN, Lines);
     // Check if G2/G3 is used
-    if firstMove and ((copy(Lines,1,3)='G2 ')or(copy(Lines,1,3)='G3 ')) then begin
+   { if firstMove and ((copy(Lines,1,3)='G2 ')or(copy(Lines,1,3)='G3 ')) then begin
       showmessage('Cannot be processed ! This G-code File contains G2 or G3 commands !');
       canProcess:=false;
     // Check if the G-Code is already Edited
-    end else if copy(Lines,1,16)='; Edited by SB53' then begin
+    end else} if copy(Lines,1,16)='; Edited by SB53' then begin
       showmessage('Cannot be processed ! This G-Code file is already edited by this script');
       canProcess:=false;
     // Get the Filament Type
