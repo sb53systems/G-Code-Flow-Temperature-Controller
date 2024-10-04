@@ -105,7 +105,7 @@ The visual calibration method (useful for PETG,PLA,...) involves choosing the de
 I think the Filament absorbs energy gradually in the heat element, and that it must be extruded with an ideal final temperature.  
   
 This process could be optimized with an automatic and much more accurate solution!!!  
-A sensor like an infrared thermometer (MLX90614 or better) capable of accurately tracking the temperature of the extruded filament (in air), with a real-time script that controls the Flow and the Temperature, starting with max flow rate and max temperature going all the way down to near negative Fluw rate, and record the values ​​where the filament is extruded at the desired temperature.  
+A sensor like an infrared thermometer (MLX90614 or better) capable of accurately tracking the temperature of the extruded filament (in air), with a real-time script that controls the Flow and the Temperature, starting with max flow rate and max temperature going all the way down to 1mm3/s, and record the values ​​where the filament is extruded at the desired temperature.  
   
 Filament vendors should provide only one Ideal Temperature!  
   
