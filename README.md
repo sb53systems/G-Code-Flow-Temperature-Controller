@@ -17,6 +17,7 @@ I encourage you to test, share and develop it because I think this concept will 
   
 Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer.  
   
+I know this concept seems crazy, it's not going to prove that the earth is flat but just means that 3D Printing could be less complex than it looks!  
 I look forward to your feedback and remain available and open to new proposals.  
 Happy Smart 3D Printing :)  
   
