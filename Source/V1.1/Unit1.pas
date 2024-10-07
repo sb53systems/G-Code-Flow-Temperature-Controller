@@ -418,10 +418,10 @@ begin
     Readln (GCode_IN, Lines);
     // Change the Initial Temperature in Print Start Macro
     if useStartMacro and (copy(Lines,1,length(form1.Edit17.text))=form1.Edit17.text) then begin
-      WriteLn (finalFile , (copy(Lines,1,pos(form1.Edit16.text,Lines)+length(form1.Edit16.text)))+initialTemp+copy(Lines,pos(form1.Edit16.text,Lines)+length(form1.Edit16.text)+4,Length(Lines)) +'    ; Reset Initial Temperature');
+      WriteLn (finalFile , (copy(Lines,1,pos(form1.Edit16.text,Lines)+length(form1.Edit16.text)))+StringReplace(initialTemp, ',', '.', [rfReplaceAll])+copy(Lines,pos(form1.Edit16.text,Lines)+length(form1.Edit16.text)+4,Length(Lines)) +'    ; Reset Initial Temperature');
     // Change the Initial Temperature in M109 S
     end else if copy(Lines,1,6)='M109 S' then begin
-      WriteLn (finalFile ,'M109 S'+initialTemp+' '+copy(Lines,11,length(Lines))+'    ; Reset Initial Temperature');
+      WriteLn (finalFile ,'M109 S'+StringReplace(initialTemp, ',', '.', [rfReplaceAll])+' '+copy(Lines,11,length(Lines))+'    ; Reset Initial Temperature');
     // Change Print Time
     end else if copy(Lines,1,41)='; estimated printing time (normal mode) =' then begin
       Lines:='; estimated printing time (normal mode) = '+Form1.Label1.Caption;
