@@ -59,7 +59,7 @@ D:\SB53_G-Code_Flow_Temperature_Controller_V1.1Beta\SB53-Systems.exe;
     
   ![image](https://github.com/user-attachments/assets/c0a30aed-046a-48ad-b819-93def3b28de5)  
   
-The speed of overhangs and small internal/external bridges should be set to the maximum speed, this will ensure that the filament is extruded at the recommended flow rate and that it is not too hot and falls off, or too cold and shrinks, and will avoid sudden changes in flow rate and unnecessary temperature drop.
+The speed of overhangs and small internal/external bridges should be set to the maximum speed, this will ensure that the filament is extruded at the recommended flow rate and that it is not too hot and falls off, or too cold and shrinks, and will avoid sudden changes in flow rate and unnecessary temperature drop.  
 ![image](https://github.com/user-attachments/assets/050be022-7cef-47ff-b1aa-15f8b5134dce)  
   
 For larger bridges, I use Thick Bridges in Orca Slicer and a single 5015 radial fan for part cooling, there is not much deference between a 60mm bridge at 30mm/s and another at 100mm/s, and since I don't print a lot of wide bridges, I prefer to keep an automatic speed.  
@@ -133,7 +133,35 @@ The script will popup once you Print or Export the G-Code from the Slicer, ask t
 If yes, the first execution:  
 - You have to set the appropriate Extruder/Printer values.
 - Klipper_Estimator script requires a file containing the maximum limits of the printer (config .json), can be obtained by specifying the IP address of the printer or by choosing a file locally. You have to set this file for each preset.  
-  ![image](https://github.com/user-attachments/assets/492b5d6e-f29a-4c02-991a-d1173a65d844)  
+  ```
+  {
+  "max_velocity": 400.0,
+  "max_acceleration": 10000.0,
+  "minimum_cruise_ratio": 0.5,
+  "square_corner_velocity": 5.0,
+  "instant_corner_velocity": 1.0,
+  "mm_per_arc_segment": 0.1,
+  "move_checkers": [
+    {
+      "axis_limiter": {
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "max_velocity": 5.0,
+        "max_accel": 200.0
+      }
+    },
+    {
+      "extruder_limiter": {
+        "max_velocity": 106.43243214765772,
+        "max_accel": 2660.8108036914427
+      }
+    }
+  ]
+  }
+  ```  
 - After saving the Extruder/Printer preset, you need to select the filament type, then set the filament values (start with 1mm3/2) and save with a specific name (for each Extruder).
   ![image](https://github.com/user-attachments/assets/9b6c98a9-0847-4118-a9d6-f37696be13a9)
 - The next uses, the script can recognize the Extruder/Printer and Filament used if they are written with the same name as in the slicer (Copy and Paste).  
