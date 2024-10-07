@@ -6,6 +6,7 @@ This Script is free and open source, created to prove the effectiveness of autom
   
 This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.  
 Its operation consists of varying the temperature according to the average flow rate that can be achieved during printing time, then limit the speed in the G-Code to reach the recommended flow rate for the temperature reached.  
+I know this concept sounds crazy, it won't prove the earth is flat, but just tries to make 3D printing less complex than it seems!  
   
 With this Concept, you could print any object with the same Slicer Settings and have the best Speed/Quality Optimization, even with an old Klipperized 3D printer and a nice inexpensive filament!  
   
@@ -17,7 +18,6 @@ I encourage you to test, share and develop it because I think this concept will 
   
 Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer.  
   
-I know this concept seems crazy, it's not going to prove that the earth is flat but just means that 3D Printing could be less complex than it looks!  
 I look forward to your feedback and remain available and open to new proposals.  
 Happy Smart 3D Printing :)  
   
