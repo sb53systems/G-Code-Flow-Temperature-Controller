@@ -93,6 +93,7 @@ Note that :
 - Adaptive pressure advance is not compatible with the concept of this script.  
 - Delta printers kinematic limits are not supported with the current version of Klipper_Estimator.  
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
+- Processing G-Code with Arc moves will take longer, because the Klipper Estimator script will cut them into small segments based on the parameter "mm_per_arc_segment": 0.1
 - The generated G-Code is 20/50 % larger than the original one due to Temp and Speed adjustment.
 - This Script is currently only available for Windows OS. With delphi 12 and a few changes in the source code, it can be compiled for other operating system (I can help for this, or can do it later!).  
   
