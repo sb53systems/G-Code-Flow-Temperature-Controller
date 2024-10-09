@@ -112,7 +112,7 @@ A sensor like an infrared thermometer (MLX90614 or better) capable of accurately
 Filament vendors should provide only one Ideal Temperature!  
   
 I launch the competition to makers, to find a precise, less expensive and easy to use solution on the majority of 3D printers :)  
-See my [Ideal Flow Vs Hotend_Temperature Calibration](https://github.com/sb53systems/Flow_Temperature_Calibration) Project on Github.  
+See my [Ideal Flow Vs Hotend Temperature Calibration](https://github.com/sb53systems/Flow_Temperature_Calibration) Project on Github.  
   
 I would love to hear your suggestions in the discussions section.  
   
