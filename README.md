@@ -2,6 +2,7 @@
 # G-Code Flow and Temperature Controller
 A Post Processing Script for Orca Slicer and Klipper 3D Printers.  
   
+I think the Filament absorbs energy gradually in the hotend, and that it must be extruded with an ideal final temperature.  
 This Script is free and open source, created to prove the effectiveness of automatic Speeds/Flow and Nozzle temperature change during 3D printing in order to get the best Quality/Speed Optimization and reduce 3D Printing complexity.  
   
 This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.  
@@ -103,8 +104,6 @@ Note that this method is not useful with non-shiny filaments or that do not chan
 The visual calibration method (useful for PETG,PLA,...) involves choosing the desired appearance (closest to the original filament) over 3-5 prints: 
 - A Cylinder in Vase mode for higher flow rate. You can use the max Layer Height and max Line Width, you should limit the maximum volumetric speed to the desired flow rate test, and start with the maximum recommended temperature, then reduce the temperature manually and gradually during printing. ; Must be done without the script  
 - And very small prints for (0 to 3)mm3/s. (a 3DBenchy at 20/30 % Scale!) ; Must be done with the Script  
-  
-I think the Filament absorbs energy gradually in the heat element, and that it must be extruded with an ideal final temperature.  
   
 This process could be optimized with an automatic and much more accurate solution!!!  
 A sensor like an infrared thermometer (MLX90614 or better) capable of accurately tracking the temperature of the extruded filament (in air or during print), with a real-time script that controls the Flow and the Temperature, starting with max flow rate and max temperature going all the way down to 1mm3/s, and record the values ​​where the filament is extruded at the desired temperature.  
