@@ -181,7 +181,7 @@ Below the Generated G-Code
 ![image](https://github.com/user-attachments/assets/5e1f1f21-afda-491c-8213-7d0b82128bc2)  
 ![IMG20240927023059](https://github.com/user-attachments/assets/c6c46ea2-3909-4eb6-8e2d-ce51e23e7ebf)  
   
-# About the Developer 
+# About this Repository
 By Salim BELAYEL.  
 This project started in June 2024, developed with Delphi 12 Community Edition.  
 Email : sb53systems@gmail.com  
