@@ -2,8 +2,7 @@
 # G-Code Flow and Temperature Controller
 A Post Processing Script for Orca Slicer and Klipper 3D Printers.  
   
-This Script is free and open source, created to prove the effectiveness of automatic ideal Speeds/Flow and Nozzle temperature change during 3D printing in order to get the best Quality/Speed Optimization and reduce 3D Printing complexity.  
-It is not intended to be a definitive solution as I think integrating this concept into the Slicers will be more effective.  
+This Script is free and open source, created to prove the effectiveness of automatic ideal Speeds/Flow and Nozzle temperature change during 3D printing in order to get the best Quality/Speed Optimization and reduce 3D Printing complexity. It is not intended to be a definitive solution as I think integrating this concept into the Slicers will be more effective.  
   
 This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.  
 I think the Filament absorbs energy gradually in the hotend, and that it must be extruded with an ideal final temperature.  
