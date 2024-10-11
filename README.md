@@ -13,6 +13,9 @@ I don't know if this will work on your 3D Printer or Filament, anyway with my pr
   
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
+I suggest you send me STL files to test, I will share my result and thoughts with you.  
+See my [Prints examples](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/discussions/8) Discussion. Share yours.  
+  
 I encourage you to test it, share it and develop it because I believe this concept or a similar one will be the future of 3D printing, and with some AI anyone could use a 3D Printer.  
   
 Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer.  
