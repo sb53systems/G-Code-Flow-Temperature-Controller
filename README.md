@@ -122,7 +122,7 @@ I would love to hear your suggestions in the discussions section.
 - You can reduce the speed of the cooling fan during the entire printing process (Except for Bridges and Ovehangs).  
 - With some prints, changing the Max/Average Smoothing value may affect the result and print time, you have to experiment yourself (I recommend values between 10 and 30).  
 - Aim for speed optimization as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes.  
-- If your filament is very sensitive and you need to reduce speed for overhangs or small features, or if you have a large difference between average flow rate and max/average flow rate, aim for quality optimization to reduce sudden flow rate change.  
+- If your filament is very sensitive and you need to reduce the speed for overhangs or small features in between large features, aim for quality optimization to reduce flow variation.  
 - Fuzzy Skin, Variable_Layer_Height and Scarf_Joint_Seam can cause print delay due to frequent flow changes.  
 - The outer wall speed is greater than the inner wall speed due to a deferent line width. This script will adapt the speed to any line width and layer height, making it very effective for Variable_Layer_Height and Precise_Z_Height.  
 ![371310408-26026ed0-d97e-4423-9d84-68c5b2a863e8](https://github.com/user-attachments/assets/e83fd21d-e34a-4def-869d-c62838b0b8b3)  
