@@ -15,7 +15,7 @@ I don't know if this will work for any printer setup, anyway with my setup I can
   
 See my [Prints examples](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/discussions/8) Discussion. Share yours.  
   
-I encourage you to test it, share it and develop it because I believe this concept or a similar one will be the future of 3D printing, and with some AI anyone could use a 3D Printer.  
+I encourage you to test, share and develop it because I believe this concept or a similar one will be the future of 3D printing, and with some AI anyone could use a 3D Printer.  
   
 Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer.  
   
