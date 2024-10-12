@@ -9,7 +9,7 @@ I think the Filament absorbs energy gradually in the hotend, and that it must be
 The operation of this Script consists of varying the temperature according to the average flow rate that can be achieved during printing time, then limit the speed in the G-Code to reach the recommended flow rate for the temperature reached.  
   
 I know this concept seems crazy and not perfect, it's not going to prove that the earth is flat, but just means that 3D Printing could be less complex than it looks!  
-I don't know if this will work for you, anyway with my printer setup I can print any object with the same slicer settings and have the best speed/quality optimization, even with an old 3D printer running Klipper and good cheap filament.  
+I don't know if this will work for any printer setup, anyway with my setup I can print any object with the same slicer settings and have the best speed/quality optimization, even with an old 3D printer running Klipper and good cheap filament.  
   
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
