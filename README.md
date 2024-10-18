@@ -13,7 +13,7 @@ I don't know if this will work for any printer setup, anyway with my setup I can
   
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
-See my [ORCA Slicer](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/My_Config.md) Settings :gear:  
+See my ORCA Slicer [Settings](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/My_Config.md) :gear:  
   
 See my [Prints examples](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/discussions/8). You can share yours :bulb:  
   
