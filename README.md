@@ -13,6 +13,8 @@ I don't know if this will work for any printer setup, anyway with my setup I can
   
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
+[See my ORCA Slicer Settings.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/My_Config.md)  
+  
 See my [Prints examples](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/discussions/8) Discussion. Share yours.  
   
 I encourage you to test, share and develop it because I believe this concept or a similar one will be the future of 3D printing, and with some AI anyone could use a 3D Printer.  
@@ -75,8 +77,6 @@ You have to set your filament settings:
   
 ![image](https://github.com/user-attachments/assets/5dc1f64d-48dc-4d39-8290-ad8251267990)  
 ![image](https://github.com/user-attachments/assets/c07c5e7c-b137-4af3-86b6-efeaecdc06cc)  
-  
-[See my ORCA Slicer Settings.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/My_Config.md)  
   
 [See my Bridge test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Bridges_Test.md)  
   
