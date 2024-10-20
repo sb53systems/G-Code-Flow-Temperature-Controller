@@ -15,7 +15,7 @@ I don't know if this will work for any printer setup, anyway with my setup I can
   
 See my ORCA Slicer [Settings](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/My_Config.md) :gear:  
   
-See my [Prints examples](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/discussions/8). You can share yours :bulb:  
+See the [Discussion of print samples](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/discussions/8) :bulb:  Share yours.  
   
 I encourage you to test, share and develop it because I believe this concept or a similar one will be the future of 3D printing, and with some AI anyone could use a 3D Printer.  
   
