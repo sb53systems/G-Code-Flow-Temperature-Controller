@@ -67,7 +67,10 @@ The speed of `overhangs` and small `internal/external bridges` should be set to 
 ![image](https://github.com/user-attachments/assets/050be022-7cef-47ff-b1aa-15f8b5134dce)  
   
 For larger bridges, I use `Thick Bridges` in Orca Slicer and a single 5015 radial fan for part cooling, there is not much deference between a 60mm bridge at 30mm/s and another at 100mm/s, and since I don't print a lot of wide bridges, I prefer to keep an automatic speed.  
-You can use a modifier (or more than one) in the slicer that changes the speed of a few lower layers to the bridge, this Approach can only be optimized if it is included in the Slicer, the temperature and speed should gradually decrease to the desired bridge speed. Example bellow for 50mm/s External Bridge speed.  
+[See my Bridge test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Bridges_Test.md)  
+[See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
+  
+You can use a modifier (or more) in the slicer that changes the speed of a few lower layers to the bridge, this Approach can only be optimized if it is included in the Slicer, the temperature and speed should gradually decrease to the desired bridge speed. Example bellow for 50mm/s External Bridge speed.  
 ![image](https://github.com/user-attachments/assets/51f2cba4-d57d-4ea7-8ef7-d0c36dd61dc0)   
 ![image](https://github.com/user-attachments/assets/1cee9879-389b-4117-9048-b96c76e51891)  
   
@@ -78,10 +81,6 @@ You have to set your filament settings:
   
 ![image](https://github.com/user-attachments/assets/5dc1f64d-48dc-4d39-8290-ad8251267990)  
 ![image](https://github.com/user-attachments/assets/c07c5e7c-b137-4af3-86b6-efeaecdc06cc)  
-  
-[See my Bridge test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Bridges_Test.md)  
-  
-[See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
   
 Note that :  
 - The script is specifically programed to only reduces the speeds above the recommended flow rate (according to layer height and line width), lower speeds will be kept as in the G-Code (Slicer speed).   
