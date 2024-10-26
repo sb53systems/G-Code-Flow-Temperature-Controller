@@ -14,11 +14,11 @@ I understand that this concept may seem unconventional, but I believe that 3D pr
   
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
-See my ORCA Slicer [Settings](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/My_Config.md) :gear:  
+See my `ORCA Slicer` [Settings](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/My_Config.md) :gear:  
   
 See the [Print Samples Discussion](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/discussions/8) :bulb:  Share yours.  
   
-I encourage you to test, share, and further develop this concept, as I believe it/or a similar approach will shape the future of 3D printing. With AI, 3D printing could become accessible to everyone.  
+I encourage you to test, share, and further develop this concept, as I believe it/or a similar approach will shape the future of 3D printing. With `AI`, 3D printing could become accessible to everyone.  
   
 Please use this script responsibly and with caution, applying reasonable values and closely monitoring your printer's behavior.  
   
@@ -134,8 +134,8 @@ The script will popup once you Print or Export the G-Code from the Slicer, ask t
 ![image](https://github.com/user-attachments/assets/f1589c73-8261-4171-89c9-ff0ca416f5fb)  
   
 If yes, the first execution:  
-- You have to set the appropriate Extruder/Printer values.
-- Klipper_Estimator script requires a file containing the maximum limits of the printer (config .json), can be obtained by specifying the IP address of the printer or by choosing a file locally. You have to set this file for each preset.  
+- You have to set the appropriate `Extruder/Printer` values.
+- `Klipper_Estimator` script requires a file containing the maximum limits of the printer `(config .json)`, can be obtained by specifying the IP address of the printer or by choosing a file locally. You have to set this file for each preset.  
   Config.json file Example below.  
   ```
   {
@@ -166,9 +166,9 @@ If yes, the first execution:
   ]
   }
   ```  
-- After saving the Extruder/Printer preset, you need to select the filament type, then set the filament values (start with 1mm3/2) and save with a specific name (for each Extruder).
-  ![image](https://github.com/user-attachments/assets/9b6c98a9-0847-4118-a9d6-f37696be13a9)
-- In subsequent uses, the script can recognize the Extruder/Printer and Filament used, if they are written with the same name as in the slicer (Copy and Paste).  
+- After saving the `Extruder/Printer` preset, you need to select the `filament type`, then set the filament values (start with 1mm3/2) and save with a specific name. (for each Extruder)  
+  ![image](https://github.com/user-attachments/assets/9b6c98a9-0847-4118-a9d6-f37696be13a9)  
+- In subsequent uses, the script can recognize the `Extruder/Printer` and `Filament` used, if they are written with the same name as in the slicer (Copy and Paste).  
   ![image](https://github.com/user-attachments/assets/7b467275-4bed-4927-adc6-0a6306d95de6)![image](https://github.com/user-attachments/assets/0219a6d0-63d1-4b7e-b465-d45c74db0d49)  
   ![image](https://github.com/user-attachments/assets/58a4ac0d-620c-4715-9b16-e55401641720)![image](https://github.com/user-attachments/assets/fefd7247-1c32-4f94-a1b5-1fc3124d0812)  
 - If you make any changes to the script, be sure to refresh the estimation and then regenerate the G-Code.  
