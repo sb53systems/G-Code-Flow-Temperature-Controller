@@ -70,7 +70,7 @@ For larger bridges, I use `Thick Bridges` in Orca Slicer and a single 5015 radia
 [See my Bridge test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Bridges_Test.md)  
 [See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
   
-You can use a modifier (or more) in the slicer that changes the speed of a few lower layers to the bridge, this Approach can only be optimized if it is included in the Slicer, the temperature and speed should gradually decrease to the desired bridge speed. Example bellow for 50mm/s External Bridge speed.  
+You can use a modifier (or more) in the slicer that changes the speed of a few lower layers to the bridge, the temperature and speed should gradually decrease to the desired bridge speed. Example bellow for 50mm/s External Bridge speed. (This approach can only be optimized when it is integrated into the Slicer)  
 ![image](https://github.com/user-attachments/assets/51f2cba4-d57d-4ea7-8ef7-d0c36dd61dc0)   
 ![image](https://github.com/user-attachments/assets/1cee9879-389b-4117-9048-b96c76e51891)  
   
