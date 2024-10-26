@@ -2,14 +2,13 @@
 # G-Code Flow and Temperature Controller
 A Post Processing Script for Orca Slicer and Klipper 3D Printers.  
   
-This Script is free and open source, created to prove the effectiveness of automatic ideal Speeds/Flow and Nozzle temperature change during 3D printing in order to get the best Quality/Speed Optimization and reduce 3D Printing complexity. It is not intended to be a definitive solution as I think integrating this concept into the Slicers will be more effective.  
+This free and open source script demonstrates the effectiveness of automatically adjusting nozzle temperatures and flow rates during 3D printing. The goal is to optimize quality and speed while simplifying the printing process.   
+Although it is not a definitive solution, as I believe that integrating this concept into slicers would improve its efficiency.  
+This approach is based on my personal approach and minimal Delphi programming skills.  
   
-This 3D Printing Concept is Based on my personal approach and with a minimum of Delphi programming skills.  
-I think the Filament absorbs energy gradually in the hotend, and that it must be extruded with an ideal final temperature.  
-The operation of this Script consists of varying the temperature according to the average flow rate that can be achieved during printing time, then limit the speed in the G-Code to reach the recommended flow rate for the temperature reached.  
+I think that the filament gradually absorbs energy in the hotend and should be extruded at an ideal final temperature. The script adjusts the temperature based on the average flow rate reached during printing, and then changes the G-code speed to align with the optimal flow rate for that temperature.  
   
-I know this concept seems crazy and not perfect, it's not going to prove that the earth is flat, but just means that 3D Printing could be less complex than it looks!  
-I don't know if this will work for any printer setup, anyway with my setup I can print any object with the same slicer settings and have the best speed/quality optimization, even with an old 3D printer running Klipper and good cheap filament.  
+I understand that this concept may seem unconventional, but I believe that 3D printing can be less complex than it seems. My setup allowed me to achieve optimal speed and quality with the same slicer settings, even with an old 3D printer using Klipper and affordable filament.  
   
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
