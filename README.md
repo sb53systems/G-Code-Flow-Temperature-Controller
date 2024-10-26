@@ -100,21 +100,23 @@ Note that :
 - This Script is currently only available for Windows OS. With delphi 12 and a few changes in the source code, it can be compiled for other operating system (I can help for this, or can do it later!).  
   
 # Ideal Flow/Temperature Calibration
-Note that this method is not useful with non-shiny filaments or that do not change color, other advanced solutions will be necessary to determine the ideal values, such as layer adhesion or dimensional accuracy or the final temperature of the extruded filament or...  
+The visual calibration method (effective for PETG, PLA, etc.) involves selecting the desired appearance (closest to the original filament) over 3 to 5 prints:  
+
+1. **Print a cylinder in vase mode:** This allows for a higher flow rate. Use the maximum layer height and maximum line width, while limiting the maximum volumetric speed to the desired test flow rate. Start with the maximum recommended temperature, then manually and gradually reduce the temperature during printing. **This step should be done without a script.**
+
+2. **Small prints for flow rates of (0 to 3) mm³/s:** For instance, print a 3DBenchy at 20/30% scale. **This step should be done with a script.**
   
-The visual calibration method (useful for PETG,PLA,...) involves choosing the desired appearance (closest to the original filament) over 3-5 prints: 
-- A Cylinder in Vase mode for higher flow rate. You can use the max Layer Height and max Line Width, you should limit the maximum volumetric speed to the desired flow rate test, and start with the maximum recommended temperature, then reduce the temperature manually and gradually during printing. ; Must be done without the script  
-- And very small prints for (0 to 3)mm3/s. (a 3DBenchy at 20/30 % Scale!) ; Must be done with the Script  
+**Note:** This method is not suitable for non-shiny filaments or those that do not change color. To determine the ideal values, other advanced solutions will be necessary, particularly for assessing layer adhesion, dimensional accuracy, or the final temperature of the extruded filament.  
   
-This process could be optimized with an automatic and much more accurate solution!!!  
-A sensor like an infrared thermometer (MLX90614 or better) capable of accurately tracking the temperature of the extruded filament (in air or during print), with a real-time script that controls the Flow and the Temperature, starting with max flow rate and max temperature going all the way down to 1mm3/s, and record the values ​​where the filament is extruded at the desired temperature.  
+The calibration process could be optimized with a more accurate automatic solution. Using a sensor, such as an infrared thermometer (MLX90614 or similar), capable of accurately tracking the temperature of the extruded filament (in air or during printing), along with a real-time script that controls the flow and temperature, could start at the maximum flow rate and temperature, gradually reducing down to 1 mm³/s, while recording the values at which the filament is extruded at the desired temperature.  
   
-Filament vendors should provide only one Ideal Temperature!  
+It would be ideal for filament vendors to provide just one ideal temperature!  
   
-I launch the competition to makers, to find a precise, less expensive and easy to use solution on the majority of 3D printers :)  
 See my [Ideal Flow Vs Hotend Temperature Calibration](https://github.com/sb53systems/Flow_Temperature_Calibration) Project on Github.  
   
-I would love to hear your suggestions in the discussions section.  
+I challenge makers to find a precise, cost-effective, and user-friendly solution for the majority of 3D printers. :)  
+  
+Feel free to let me know if you need further adjustments or details!  
   
 # Observations and Tips
 - A printer with higher accelerations and lower hotend heating/cooling time, will have a better result with this approach because it allows for better flow stabilization (Quality) and Higher Max/Average Flow (Speed).  
