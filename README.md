@@ -38,7 +38,7 @@ You can retain your old script configuration after an update by using the "/Conf
 # Next Features
 - Add an explainer video on youtube and instructions on how to use it.
 - Add support for Marlin and RepRap Firmware.
-- Add support for G2 and G3 commands. (Latest beta update already supports G2 and G3, The generated G-Codes are good but the temperature displayed on the interface is not yet aligned)
+- Add support for `G2` and `G3` commands. (Latest beta update already supports Arcs moves, The generated G-Codes are good but the temperature displayed on the interface is not yet aligned)
   ![image](https://github.com/user-attachments/assets/245919f9-dc4d-4312-8b64-28d6fa29fb11)
   
 # Instructions and Prerequisites  
@@ -48,7 +48,7 @@ D:\SB53_G-Code_Flow_Temperature_Controller_V1.1Beta\SB53-Systems.exe;
 ```  
 ![image](https://github.com/user-attachments/assets/3557a6ff-524f-4964-9cd2-044b01f46faa)  
   
-2. Included [Klipper_Estimator.exe](https://github.com/Annex-Engineering/klipper_estimator) script (V 3.7.3). Using Klipper Look-Ahead kinematics, it estimate the time and the average flow rate for each move in the G-Code (+/- 1s total time). This file is required and must be in the same Folder with this Script.
+2. Included [Klipper_Estimator.exe](https://github.com/Annex-Engineering/klipper_estimator) script `V 3.7.3`. Using Klipper Look-Ahead kinematics, it estimate the time and the average flow rate for each move in the G-Code (+/- 1s total time). This file is required and must be in the same Folder with this Script.
   ![image](https://github.com/user-attachments/assets/30449359-fabd-4b3d-9593-523db606c0c1)
   
 3. Changing the initial layer temperature is important, the script automatically modifies the G-Code "M109 S" command or changes the specified print start macro. Example Below :  
@@ -59,14 +59,14 @@ D:\SB53_G-Code_Flow_Temperature_Controller_V1.1Beta\SB53-Systems.exe;
   
 5. To have a best Speed/Quality Optemization, the Slicer Profil must be set for Max Moves and Max Volumetric Speed. The Nozzle temperature is not important because it will be reset in the script, and the speed will be reduced (not increased) to the Recommended Flow.  
   
-  Example below with my max 200mm/s Printer speed : (Same profil for PLA, PETG and ABS)  
+  Example below with my max `200mm/s` Printer speed : (Same profil for `PLA`, `PETG` and `ABS`)  
     
   ![image](https://github.com/user-attachments/assets/c0a30aed-046a-48ad-b819-93def3b28de5)  
   
-The speed of overhangs and small internal/external bridges should be set to the maximum speed, this will ensure that the filament is extruded at the recommended flow rate and that it is not too hot and falls off, or too cold and shrinks, also avoiding sudden flow changes and unnecessary temperature drops caused by the average flow calculated by the script.  
+The speed of `overhangs` and small `internal/external bridges` should be set to the maximum speed, this will ensure that the filament is extruded at the recommended flow rate and that it is not too hot and falls off, or too cold and shrinks, also avoiding sudden flow changes and unnecessary temperature drops caused by the average flow calculated by the script.  
 ![image](https://github.com/user-attachments/assets/050be022-7cef-47ff-b1aa-15f8b5134dce)  
   
-For larger bridges, I use "Thick Bridges" in Orca Slicer and a single 5015 radial fan for part cooling, there is not much deference between a 60mm bridge at 30mm/s and another at 100mm/s, and since I don't print a lot of wide bridges, I prefer to keep an automatic speed.  
+For larger bridges, I use `Thick Bridges` in Orca Slicer and a single 5015 radial fan for part cooling, there is not much deference between a 60mm bridge at 30mm/s and another at 100mm/s, and since I don't print a lot of wide bridges, I prefer to keep an automatic speed.  
 You can use a modifier (or more than one) in the slicer that changes the speed of a few lower layers to the bridge, this Approach can only be optimized if it is included in the Slicer, the temperature and speed should gradually decrease to the desired bridge speed. Example bellow for 50mm/s External Bridge speed.  
 ![image](https://github.com/user-attachments/assets/51f2cba4-d57d-4ea7-8ef7-d0c36dd61dc0)   
 ![image](https://github.com/user-attachments/assets/1cee9879-389b-4117-9048-b96c76e51891)  
@@ -95,9 +95,9 @@ Note that :
 - Adaptive pressure advance is not compatible with the concept of this script.  
 - Delta printers kinematic limits are not supported with the current version of Klipper_Estimator.  
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
-- Processing G-Code with Arc moves will take longer, because the Klipper Estimator script will cut them into small segments based on the parameter "mm_per_arc_segment": 0.1
+- Processing G-Code with Arc moves will take longer, because the Klipper Estimator script will cut them into small segments based on the parameter `"mm_per_arc_segment": 0.1`
 - The generated G-Code is 20/50 % larger than the original one due to Temp and Speed adjustment.
-- This Script is currently only available for Windows OS. With delphi 12 and a few changes in the source code, it can be compiled for other operating system (I can help for this, or can do it later!).  
+- This Script is currently only available for `Windows OS`. With delphi 12 and a few changes in the source code, it can be compiled for other operating system (I can help for this, or can do it later!).  
   
 # Ideal Flow/Temperature Calibration
 The visual calibration method (effective for PETG, PLA, etc.) involves selecting the desired appearance (closest to the original filament) over 3 to 5 prints:  
