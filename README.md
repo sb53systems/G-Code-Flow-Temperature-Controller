@@ -102,7 +102,7 @@ Note that :
 # Ideal Flow/Temperature Calibration
 The visual calibration method (effective for PETG, PLA, etc.) involves selecting the desired appearance (closest to the original filament) over 3 to 5 prints:  
 
-1. Print a cylinder in vase mode: This allows for a higher flow rate. Use the maximum layer height and maximum line width, while limiting the maximum volumetric speed to the desired test flow rate. Start with the maximum recommended temperature, then manually and gradually reduce the temperature during printing. (This step should be done without the script.)  
+1. Print a cylinder in vase mode: This allows for a higher flow rate. You can use the maximum layer height and maximum line width, while limiting the maximum volumetric speed to the desired test flow rate. Start with the maximum recommended temperature, then manually and gradually reduce the temperature during printing. (This step should be done without the script.)  
 2. Small prints for flow rates of (0 to 3) mm³/s: For instance, print a 3DBenchy at 20/30% scale. (This step should be done with the script.)  
   
 Note: This method is not suitable for non-shiny filaments or those that do not change color. To determine the ideal values, other advanced solutions will be necessary, particularly for assessing layer adhesion, dimensional accuracy, or the final temperature of the extruded filament.  
