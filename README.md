@@ -38,7 +38,7 @@ You can retain your old script configuration after an update by using the "/Conf
 # Next Features
 - Add an explainer video on youtube and instructions on how to use it.
 - Add support for Marlin and RepRap Firmware.
-- Add support for `G2` and `G3` commands. (Latest beta update already supports Arcs moves, The generated G-Codes are good but the temperature displayed on the interface is not yet aligned)
+- Add support for `G2` and `G3` commands. (Latest beta update already supports `Arcs moves`, The generated G-Codes are good but the temperature displayed on the interface is not yet aligned)
   ![image](https://github.com/user-attachments/assets/245919f9-dc4d-4312-8b64-28d6fa29fb11)
   
 # Instructions and Prerequisites  
@@ -48,7 +48,7 @@ D:\SB53_G-Code_Flow_Temperature_Controller_V1.1Beta\SB53-Systems.exe;
 ```  
 ![image](https://github.com/user-attachments/assets/3557a6ff-524f-4964-9cd2-044b01f46faa)  
   
-2. Included [Klipper_Estimator.exe](https://github.com/Annex-Engineering/klipper_estimator) script `V 3.7.3`. Using Klipper Look-Ahead kinematics, it estimate the time and the average flow rate for each move in the G-Code (+/- 1s total time). This file is required and must be in the same Folder with this Script.
+2. Included [Klipper_Estimator.exe](https://github.com/Annex-Engineering/klipper_estimator) script `V 3.7.3`. Using Klipper Look-Ahead kinematics, it estimate the time and the average flow rate for each move in the G-Code `(+/- 1s total time)`. This file is required and must be in the same Folder with this Script.
   ![image](https://github.com/user-attachments/assets/30449359-fabd-4b3d-9593-523db606c0c1)
   
 3. Changing the initial layer temperature is important, the script automatically modifies the G-Code "M109 S" command or changes the specified print start macro. Example Below :  
