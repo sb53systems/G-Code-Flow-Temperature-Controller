@@ -2,8 +2,9 @@
 # G-Code Flow and Temperature Controller
 A Post Processing Script for Orca Slicer and Klipper 3D Printers.  
   
-This free and open source script demonstrates the effectiveness of automatically adjusting nozzle temperatures and flow rates during 3D printing. The goal is to optimize quality and speed while simplifying the printing process.   
-Although it is not a definitive solution, as I believe that integrating this concept into slicers would improve its efficiency.  
+This free and open-source script demonstrates the effectiveness of automatically adjusting nozzle temperatures and flow rates during 3D printing. Its goal is to optimize both quality and speed while simplifying the printing process.  
+Although it’s not a definitive solution, I believe that integrating this concept into slicers would significantly enhance its efficiency.  
+  
 This approach is based on my personal approach and minimal Delphi programming skills.  
   
 I think that the filament gradually absorbs energy in the hotend and should be extruded at an ideal final temperature. The script adjusts the temperature based on the average flow rate reached during printing, and then changes the G-code speed to align with the optimal flow rate for that temperature.  
