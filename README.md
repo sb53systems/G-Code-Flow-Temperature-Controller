@@ -102,11 +102,10 @@ Note that :
 # Ideal Flow/Temperature Calibration
 The visual calibration method (effective for PETG, PLA, etc.) involves selecting the desired appearance (closest to the original filament) over 3 to 5 prints:  
 
-1. **Print a cylinder in vase mode:** This allows for a higher flow rate. Use the maximum layer height and maximum line width, while limiting the maximum volumetric speed to the desired test flow rate. Start with the maximum recommended temperature, then manually and gradually reduce the temperature during printing. **This step should be done without a script.**
-
-2. **Small prints for flow rates of (0 to 3) mm³/s:** For instance, print a 3DBenchy at 20/30% scale. **This step should be done with a script.**
+1. Print a cylinder in vase mode: This allows for a higher flow rate. Use the maximum layer height and maximum line width, while limiting the maximum volumetric speed to the desired test flow rate. Start with the maximum recommended temperature, then manually and gradually reduce the temperature during printing. (This step should be done without the script.)  
+2. Small prints for flow rates of (0 to 3) mm³/s: For instance, print a 3DBenchy at 20/30% scale. (This step should be done with the script.)  
   
-**Note:** This method is not suitable for non-shiny filaments or those that do not change color. To determine the ideal values, other advanced solutions will be necessary, particularly for assessing layer adhesion, dimensional accuracy, or the final temperature of the extruded filament.  
+Note: This method is not suitable for non-shiny filaments or those that do not change color. To determine the ideal values, other advanced solutions will be necessary, particularly for assessing layer adhesion, dimensional accuracy, or the final temperature of the extruded filament.  
   
 The calibration process could be optimized with a more accurate automatic solution. Using a sensor, such as an infrared thermometer (MLX90614 or similar), capable of accurately tracking the temperature of the extruded filament (in air or during printing), along with a real-time script that controls the flow and temperature, could start at the maximum flow rate and temperature, gradually reducing down to 1 mm³/s, while recording the values at which the filament is extruded at the desired temperature.  
   
