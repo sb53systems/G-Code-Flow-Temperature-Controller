@@ -15,13 +15,13 @@ I understand that this concept may seem unconventional, but I believe that 3D pr
   
 See my ORCA Slicer [Settings](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/My_Config.md) :gear:  
   
-See the [Discussion of print samples](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/discussions/8) :bulb:  Share yours.  
+See the [Print Samples Discussion](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/discussions/8) :bulb:  Share yours.  
   
 I encourage you to test, share and develop it because I believe this concept or a similar one will be the future of 3D printing, and with some AI anyone could use a 3D Printer.  
   
-Be responsible and careful with this Script by using reasonable values ​​and monitoring the behavior of your printer.  
+Please use this script responsibly and with caution, applying reasonable values and closely monitoring your printer's behavior.  
   
-I look forward to your feedback and remain available and open to new proposals.  
+I welcome your feedback and am open to any new proposals.  
 Happy Smart 3D Printing :)  
   
 If you find my work worthy, Bay me a [![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system) or give this project a :star:. Thank you...  
@@ -32,7 +32,7 @@ https://www.youtube.com/watch?v=P6Y8uUPd3yg
   
 # Latest Release
 [SB53 G-Code Flow/Temperature Controller V1.1 Beta](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta) (updated October 08 2024)  
-You can keep your old script configuration after an update, just use the "/Config" folder of the previous version and change the files; "SB53-Systems.exe" and "Klipper_estimator.exe". (The final version 1.1 will use a different Klipper_Estimator script)  
+You can retain your old script configuration after an update by using the "/Config" folder from the previous version. Simply replace the files "SB53-Systems.exe" and "Klipper_estimator.exe.". Note that the final version 1.1 will include a different Klipper_Estimator script.  
   
 # Next Features
 - Add an explainer video on youtube and instructions on how to use it.
@@ -41,7 +41,7 @@ You can keep your old script configuration after an update, just use the "/Confi
   ![image](https://github.com/user-attachments/assets/245919f9-dc4d-4312-8b64-28d6fa29fb11)
   
 # Instructions and Prerequisites  
-1. The script can be used as a normal program by running the SB53-Systems.exe file and opening a G-Code file manually, or by adding it to the Slicer as a post-processing script.  
+1. The script can be utilized as a standard program by running the SB53-Systems.exe file and manually opening a G-Code file, or by integrating it into the slicer as a post-processing script.  
 ```
 D:\SB53_G-Code_Flow_Temperature_Controller_V1.1Beta\SB53-Systems.exe;
 ```  
