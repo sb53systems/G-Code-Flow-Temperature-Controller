@@ -32,7 +32,7 @@ https://www.youtube.com/watch?v=P6Y8uUPd3yg
   
 # Latest Release
 [SB53 G-Code Flow/Temperature Controller V1.1 Beta](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta) (updated October 08 2024)  
-To update, you need to replace the SB53-Systems.exe file only, and keep the other files (previous preset data).  
+You can keep your old script configuration after an update, just use the "/Config" folder of the previous version and change the files; "/SB53-Systems.exe" and "Klipper_Estimator.exe". (The final version 1.1 will use a different Klipper_Estimator script)  
   
 # Next Features
 - Add an explainer video on youtube and instructions on how to use it.
