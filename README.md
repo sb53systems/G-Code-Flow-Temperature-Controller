@@ -3,6 +3,7 @@
 A Post Processing Script for Orca Slicer and Klipper 3D Printers.  
   
 This free and open-source script demonstrates the effectiveness of automatically adjusting nozzle temperatures and flow rates during 3D printing. Its goal is to optimize both quality and speed while simplifying the printing process.  
+  
 Although it’s not a definitive solution, I believe that integrating this concept into slicers would significantly enhance its efficiency.  
   
 This approach is based on my personal approach and minimal Delphi programming skills.  
