@@ -19,9 +19,9 @@ See my `ORCA Slicer` [Settings](https://github.com/sb53systems/G-Code-Flow-Tempe
   
 See the [Print Samples Discussion](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/discussions/8) :bulb:  Share yours.  
   
-I believe that 3D printing can be less complex than it seems. I encourage you to test, share, and further develop this concept, as I believe it/or a similar approach will shape the future of 3D printing. With `AI`, 3D printing could become accessible to everyone.  
+I believe that 3D printing can be less complex than it seems. I encourage you to test, share, and further develop this concept, as I believe it/or a similar approach will shape the future of 3D printing. With a bit of `AI` 3D printing could become accessible to everyone.  
   
-Please use this script responsibly and with caution, applying reasonable values and closely monitoring your printer's behavior.  
+:warning: Please use this script responsibly and with caution, applying reasonable values and closely monitoring your printer's behavior.  
   
 I welcome your feedback and am open to any new proposals.  
 Happy Smart 3D Printing :)  
