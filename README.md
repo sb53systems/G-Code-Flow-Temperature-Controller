@@ -11,7 +11,7 @@ I think that the filament gradually absorbs energy in the hotend and should be e
 This script adjusts the temperature based on the average flow rate that can be reached during printing, and then changes the G-code speed to align with the optimal flow rate for that temperature.  
 This will adapt the nozzle temperature for different sections and geometries of the print, while ensuring that the filament is extruded at an ideal speed.  
   
-I understand that this concept may seem unconventional, in any case with my setup it allowed me to achieve optimal speed and quality with the same slicer settings, even with an old 3D printer using Klipper and affordable filament.  
+I know this concept might seem unconventional, but with my setup, it helped me achieve optimal speed and quality with the same slicer settings, even using an old 3D printer with Klipper and affordable filament.  
   
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
