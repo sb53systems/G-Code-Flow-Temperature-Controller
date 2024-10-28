@@ -83,7 +83,7 @@ You have to set your filament settings:
 ![image](https://github.com/user-attachments/assets/5dc1f64d-48dc-4d39-8290-ad8251267990)  
 ![image](https://github.com/user-attachments/assets/c07c5e7c-b137-4af3-86b6-efeaecdc06cc)  
   
-Note that :  
+### Note that :  
 - The script is specifically programed to only reduces the speeds above the recommended flow rate (according to layer height and line width), lower speeds will be kept as in the G-Code (Slicer speed).   
 - Hotend PID cannot be changed during print in Klipper, I recommend using PID values for a temperature between 70-90% of the maximum temperature.  
 - PA can be regulated in the script according to the temperature, or not and use the fixed PA from the Slicer or Klipper by unchecking the Adjust PA option befor generating the G-Code.  
@@ -114,8 +114,6 @@ It would be ideal for filament vendors to provide just one ideal temperature!
 See my [Ideal Flow Vs Hotend Temperature Calibration](https://github.com/sb53systems/Flow_Temperature_Calibration) Project on Github.  
   
 I challenge makers to find a precise, cost-effective, and user-friendly solution for the majority of 3D printers. :)  
-  
-Feel free to let me know if you need further adjustments or details!  
   
 # Observations and Tips
 - A printer with higher accelerations and lower hotend heating/cooling time, will have a better result with this approach because it allows for better flow stabilization (Quality) and Higher Max/Average Flow (Speed).  
@@ -186,7 +184,7 @@ Below is the Generated G-Code
   
 # About this Repository
 ![SB53-Systems~1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/b94703a1-cf21-4109-bfa6-b9bcff438a1d)  
-By Salim BELAYEL.  
+### By Salim BELAYEL.  
 This project began in June 2024 and was developed using Delphi 12 Community Edition.  
 Email : sb53systems@gmail.com  
   
