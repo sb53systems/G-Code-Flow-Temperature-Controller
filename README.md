@@ -36,11 +36,7 @@ You can retain your old script configuration after an update by using the "/Conf
 - Add an explainer video on youtube and instructions on how to use it.
 - Add support for Marlin and RepRap Firmware.
 - Add support for `G2` and `G3` commands. (Latest beta update already supports `Arcs moves`, The generated G-Codes are good but the temperature displayed on the interface is not yet aligned)
-  ![image](https://github.com/user-attachments/assets/245919f9-dc4d-4312-8b64-28d6fa29fb11)
-  
-# Video that speak about the project on Youtube
-### - Variable Temperature 3D Printing – The FUTURE of 3D Printing? (By PRINTING PERSPECTIVE):  
-https://www.youtube.com/watch?v=P6Y8uUPd3yg  
+  ![image](https://github.com/user-attachments/assets/245919f9-dc4d-4312-8b64-28d6fa29fb11)  
   
 # Instructions and Prerequisites  
 1. The script can be utilized as a standard program by running the SB53-Systems.exe file and manually opening a G-Code file, or by integrating it into the slicer as a post-processing script.  
@@ -181,6 +177,10 @@ Below is the Generated G-Code
   
 ![image](https://github.com/user-attachments/assets/5e1f1f21-afda-491c-8213-7d0b82128bc2)  
 ![IMG20240927023059](https://github.com/user-attachments/assets/c6c46ea2-3909-4eb6-8e2d-ce51e23e7ebf)  
+  
+# Video that speak about the project on Youtube
+### - Variable Temperature 3D Printing – The FUTURE of 3D Printing? (By PRINTING PERSPECTIVE):  
+https://www.youtube.com/watch?v=P6Y8uUPd3yg  
   
 # About this Repository
 ![SB53-Systems~1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/b94703a1-cf21-4109-bfa6-b9bcff438a1d)  
