@@ -1,11 +1,11 @@
 # My Slicer Settings
   
 # Used 3D Printer
-Note that all my tests are done in only one Klipperized 2018 3D printer (model: DMS Create DP5).  
+Note that all my tests are done in only one Klipperized 2018 3D printer (model: DMS Create DMS-DP5).  
   
 ![DMSCREATE-DP5-3d-i3](https://github.com/user-attachments/assets/7307c003-a19e-41f0-9e40-6adc4e97f0e7)  
   
-Converted to direct drive, and with a few other additions and improvements.  
+Converted to direct drive, with a few other small improvements.  
   
 ![image](https://github.com/user-attachments/assets/e12ccbe9-76d0-4c6a-8232-c4f779447f5c)  
 ![IMG20240908135825](https://github.com/user-attachments/assets/ed4f3960-5f03-4b46-8f75-73bb7e4608fe)  
