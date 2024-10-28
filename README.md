@@ -27,10 +27,6 @@ I welcome your feedback and am open to any new proposals.
 Happy Smart 3D Printing :)  
   
 If you find my work worthy, Bay me a [![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system) or give this project a :star:. Thank you :rose:  
-   
-# Video that speak about the project on Youtube
-### - Variable Temperature 3D Printing – The FUTURE of 3D Printing? (By PRINTING PERSPECTIVE):  
-https://www.youtube.com/watch?v=P6Y8uUPd3yg  
   
 # Latest Release
 [SB53 G-Code Flow/Temperature Controller V1.1 Beta](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta) (updated October 08 2024)  
@@ -41,6 +37,10 @@ You can retain your old script configuration after an update by using the "/Conf
 - Add support for Marlin and RepRap Firmware.
 - Add support for `G2` and `G3` commands. (Latest beta update already supports `Arcs moves`, The generated G-Codes are good but the temperature displayed on the interface is not yet aligned)
   ![image](https://github.com/user-attachments/assets/245919f9-dc4d-4312-8b64-28d6fa29fb11)
+  
+# Video that speak about the project on Youtube
+### - Variable Temperature 3D Printing – The FUTURE of 3D Printing? (By PRINTING PERSPECTIVE):  
+https://www.youtube.com/watch?v=P6Y8uUPd3yg  
   
 # Instructions and Prerequisites  
 1. The script can be utilized as a standard program by running the SB53-Systems.exe file and manually opening a G-Code file, or by integrating it into the slicer as a post-processing script.  
