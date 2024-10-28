@@ -11,7 +11,7 @@ I think that the filament gradually absorbs energy in the hotend and should be e
 This script adjusts the temperature based on the average flow rate that can be reached during printing, and then changes the G-code speed to align with the optimal flow rate for that temperature.  
 This will adapt the nozzle temperature for different sections and geometries of the print, while ensuring that the filament is extruded at an ideal speed.  
   
-I understand that this concept may seem unconventional, but I believe that 3D printing can be less complex than it seems. My setup allowed me to achieve optimal speed and quality with the same slicer settings, even with an old 3D printer using Klipper and affordable filament.  
+I understand that this concept may seem unconventional, in any case with my setup it allowed me to achieve optimal speed and quality with the same slicer settings, even with an old 3D printer using Klipper and affordable filament.  
   
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
@@ -19,7 +19,7 @@ See my `ORCA Slicer` [Settings](https://github.com/sb53systems/G-Code-Flow-Tempe
   
 See the [Print Samples Discussion](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/discussions/8) :bulb:  Share yours.  
   
-I encourage you to test, share, and further develop this concept, as I believe it/or a similar approach will shape the future of 3D printing. With `AI`, 3D printing could become accessible to everyone.  
+I believe that 3D printing can be less complex than it seems. I encourage you to test, share, and further develop this concept, as I believe it/or a similar approach will shape the future of 3D printing. With `AI`, 3D printing could become accessible to everyone.  
   
 Please use this script responsibly and with caution, applying reasonable values and closely monitoring your printer's behavior.  
   
