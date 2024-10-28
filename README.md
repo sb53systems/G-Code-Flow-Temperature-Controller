@@ -2,13 +2,13 @@
 # G-Code Flow and Temperature Controller
 A Post Processing Script for Orca Slicer and Klipper 3D Printers.  
   
-This free and open-source script demonstrates the effectiveness of automatically adjusting nozzle temperatures and flow rates during 3D printing. Its goal is to optimize both `quality` and `speed` while simplifying the printing process.  
+This free and open-source script demonstrates the effectiveness of automatically adjusting nozzle temperatures and flow rates during 3D printing. Its goal is to optimize both `Quality` and `Speed` while simplifying the `Slicers settings`.  
   
 This approach is based on my personal approach and minimal `Delphi` programming skills.  
-Although it’s not a definitive solution, I believe that integrating this concept into slicers would significantly enhance its efficiency.  
+Although it’s not a definitive solution, I believe that integrating this concept into slicers would significantly enhance its efficiency and will allow more advanced features.  
   
 I think that the filament gradually absorbs energy in the hotend and should be extruded at an ideal final temperature.  
-The script adjusts the temperature based on the average flow rate that can be reached during printing, and then changes the G-code speed to align with the optimal flow rate for that temperature.  
+Tis script adjusts the temperature based on the average flow rate that can be reached during printing, and then changes the G-code speed to align with the optimal flow rate for that temperature. This will adjusted the nozzle temperature for different sections and geometries of the print, while ensuring that the filament is extruded at an ideal speed.  
   
 I understand that this concept may seem unconventional, but I believe that 3D printing can be less complex than it seems. My setup allowed me to achieve optimal speed and quality with the same slicer settings, even with an old 3D printer using Klipper and affordable filament.  
   
@@ -25,10 +25,10 @@ Please use this script responsibly and with caution, applying reasonable values 
 I welcome your feedback and am open to any new proposals.  
 Happy Smart 3D Printing :)  
   
-If you find my work worthy, Bay me a [![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system) or give this project a :star:. Thank you...  
+If you find my work worthy, Bay me a [![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system) or give this project a :star:. Thank you :rose:  
    
 # Video that speak about the project on Youtube
-Variable Temperature 3D Printing – The FUTURE of 3D Printing? (By PRINTING PERSPECTIVE):  
+### - Variable Temperature 3D Printing – The FUTURE of 3D Printing? (By PRINTING PERSPECTIVE):  
 https://www.youtube.com/watch?v=P6Y8uUPd3yg  
   
 # Latest Release
