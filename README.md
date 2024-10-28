@@ -84,20 +84,20 @@ You have to set your filament settings:
 ![image](https://github.com/user-attachments/assets/c07c5e7c-b137-4af3-86b6-efeaecdc06cc)  
   
 ### Note that :  
-- The script is specifically programed to only reduces the speeds above the recommended flow rate (according to layer height and line width), lower speeds will be kept as in the G-Code (Slicer speed).   
-- Hotend PID cannot be changed during print in Klipper, I recommend using PID values for a temperature between 70-90% of the maximum temperature.  
-- PA can be regulated in the script according to the temperature, or not and use the fixed PA from the Slicer or Klipper by unchecking the Adjust PA option befor generating the G-Code.  
-- Changing the PA during printing forms bubbles in the walls, the Script is programed to change PA only in Sparse infill, Internal solid infill, Support and Internal Bridge.  
+- The script is specifically programmed to reduce speeds only when they exceed the recommended flow rate (based on layer height and line width), while lower speeds will remain as set in the G-Code (Slicer speed).  
+- In Klipper, you can't change the hotend PID while printing. I recommend using PID values for temperatures between 70% and 90% of the maximum temperature.  
+- PA can be adjusted in the script based on temperature, or you can use the fixed PA from the Slicer or Klipper firmware by unchecking the Adjust PA option before generating the G-Code.  
+- Changing PA while printing can cause bubbles in the walls. The script is programmed to adjust PA only in sparse infill, internal solid infill, support, and internal bridges.  
 ![351913375-991fe2b8-3935-46ff-816e-5b0aee981b4d](https://github.com/user-attachments/assets/602b96a8-2666-44bd-b70f-aa5c06deadd4)  
   
-- This script does not support Multi-Tool and Multi-Material printing.  
-- Ironing is not recommanded with this Script, it will affect the desired result and the printing time.
-- Adaptive pressure advance is not compatible with the concept of this script.  
+- This script doesn't support multi-tool or multi-material printing.  
+- Ironing is not recommended with this script, as it can affect the desired results and increase printing time.  
+- Adaptive pressure advance is not recommended with this script.  
 - Delta printers kinematic limits are not supported with the current version of Klipper_Estimator.  
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
-- Processing G-Code with Arc moves will take longer, because the Klipper Estimator script will cut them into small segments based on the parameter `"mm_per_arc_segment": 0.1`
+- Processing G-Code with Arc moves will take longer, because the Klipper Estimator script will cut them into small segments based on the parameter `"mm_per_arc_segment": 0.1`.
 - The generated G-Code is 20/50 % larger than the original one due to Temp and Speed adjustment.
-- This Script is currently only available for `Windows OS`. With delphi 12 and a few changes in the source code, it can be compiled for other operating system (I can help for this, or can do it later!).  
+- This script is currently only available for `Windows OS`. With Delphi 12 and some changes to the source code, it can be compiled for other operating systems (I can help with this or do it later!).  
   
 # Ideal Flow/Temperature Calibration
 The visual calibration method (effective for PETG, PLA, etc.) involves selecting the desired appearance (closest to the original filament) over 3 to 5 prints:  
