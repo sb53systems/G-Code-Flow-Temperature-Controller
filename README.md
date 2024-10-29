@@ -45,11 +45,13 @@ D:\SB53_G-Code_Flow_Temperature_Controller_V1.1\SB53-Systems.exe;
   ![image](https://github.com/user-attachments/assets/30449359-fabd-4b3d-9593-523db606c0c1)  
   
 3. Edit the initial layer temperature is important, the script can :
-  - Modify the specified print start macro. Example Below  
-  ![image](https://github.com/user-attachments/assets/26b1e09e-0750-43f6-995f-8671da5838e0)  
-  ![image](https://github.com/user-attachments/assets/a3c814af-4522-4177-907c-7aab631505f7)
-
-  - Edit the GCode command "M109 S" provided that it is preceded by the comment " ; Temp_To_Edit". Example Below
+    - Modify the specified print start macro. Example Below  
+    ![image](https://github.com/user-attachments/assets/26b1e09e-0750-43f6-995f-8671da5838e0)  
+    ![image](https://github.com/user-attachments/assets/a3c814af-4522-4177-907c-7aab631505f7)  
+    - Edit the GCode command "M109 S" provided that it is preceded by the comment "; Temp_To_Edit". Example Below  
+   ```
+    ; Temp_To_Edit
+   ```  
     ![image](https://github.com/user-attachments/assets/a51b55dc-831b-48e2-88e8-18b2c99c3222)  
   
 4. The initial temperature estimated by the Script depends on the speed of the first moves of the G-Code, you can adjust it by fixing the speed of the purge line or the speed of the first layer perimeters.  
