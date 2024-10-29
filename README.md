@@ -29,14 +29,12 @@ Happy Smart 3D Printing :)
 If you find my work worthy, Bay me a [![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system) or give this project a :star:. Thank you :rose:  
   
 # Latest Release
-[SB53 G-Code Flow/Temperature Controller V1.1 Beta](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1Beta) (updated October 08 2024)  
-You can retain your old script configuration after an update by using the "/Config" folder from the previous version. Simply replace the files "SB53-Systems.exe" and "Klipper_estimator.exe.". Note that the final version 1.1 will include a different Klipper_Estimator script.  
+[SB53 G-Code Flow/Temperature Controller V1.1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1) (updated October 29 2024)  
+You can retain your old script configuration after an update by using the "/Config" folder from the previous version. Simply replace the files "SB53-Systems.exe" and "Klipper_estimator.exe.". Note that the final version 1.1 include a different Klipper_Estimator script.  
   
 # Next Features
 - Add an explainer video on youtube and instructions on how to use it.
-- Add support for Marlin and RepRap Firmware.
-- Add support for `G2` and `G3` commands. (Latest beta update already supports `Arcs moves`, The generated G-Codes are good but the temperature displayed on the interface is not yet aligned)
-  ![image](https://github.com/user-attachments/assets/245919f9-dc4d-4312-8b64-28d6fa29fb11)  
+- Allow more advanced optimization for different printing features. (EX: Overhangs, Outer wall, Bridges, ...more)
   
 # Instructions and Prerequisites  
 1. The script can be utilized as a standard program by running the SB53-Systems.exe file and manually opening a G-Code file, or by integrating it into the slicer as a post-processing script.  
