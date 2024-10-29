@@ -133,7 +133,7 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=SB53-Systems;FileDescription=SB53 G-Code Flow/Temperature Controller V1.1 Beta;FileVersion=1.1.0.0;InternalName=SB53 G-Code Flow/Temperature Controller;LegalCopyright=2024;LegalTrademarks=;OriginalFilename=SB53-Systems By Salim BELAYEL ;ProductName=SB53 G-Code Flow/Temperature Controller;ProductVersion=1.1.0.0;Comments=By Salim BELAYEL ;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=SB53-Systems;FileDescription=SB53 G-Code Flow/Temperature Controller V1.1;FileVersion=1.1.0.0;InternalName=SB53 G-Code Flow/Temperature Controller;LegalCopyright=2024;LegalTrademarks=;OriginalFilename=SB53-Systems By Salim BELAYEL ;ProductName=SB53 G-Code Flow/Temperature Controller;ProductVersion=1.1.0.0;Comments=By Salim BELAYEL ;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
     </PropertyGroup>
     <ItemGroup>
@@ -162,6 +162,10 @@
         </DCCReference>
         <DCCReference Include="Unit7.pas">
             <Form>Form7</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Unit8.pas">
+            <Form>Form8</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
