@@ -22,7 +22,7 @@ I believe that 3D printing can be less complex than it seems. I encourage you to
 :warning: Please use this script responsibly and with caution, applying reasonable values and closely monitoring your printer's behavior.  
   
 I welcome your feedback and am open to any new proposals.  
-Happy Smart 3D Printing :)  
+`Happy Smart 3D Printing :)`  
   
 If you find my work worthy, Bay me a [![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system) or give this project a :star:. Thank you :rose:  
   
@@ -94,16 +94,16 @@ You can retain your old script configuration after an update by using the "/Conf
   ![351913375-991fe2b8-3935-46ff-816e-5b0aee981b4d](https://github.com/user-attachments/assets/602b96a8-2666-44bd-b70f-aa5c06deadd4)  
   
   - This script doesn't support multi-tool or multi-material printing.
-  - For Bambu 3D Printers, you need :
-    - To save the G-Code generated in Orcaslicer to a memory card or USB drive, and then print from there instead of starting the print directly from the slicer.
+  - For `Bambu 3D Printers`, you need :
+    - To save the G-Code generated in Orcaslicer to a `memory card` or `USB drive`, and then print from there instead of starting the print directly from the slicer.
     - Avoid Flow calibration before printing and first layer inspection.
   - Ironing is not recommended with this script, as it can affect the desired results and increase printing time.  
   - Adaptive pressure advance is not recommended with this script.  
   - Delta printers kinematic limits are not supported with the current version of Klipper_Estimator.  
   - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
   - Processing G-Code with Arc moves will take longer, because the Klipper Estimator script will cut them into small segments based on the parameter `"mm_per_arc_segment": 0.1`.
-  - The generated G-Code is 20/40 % larger than the original one due to Temp and Speed adjustment.
-  - This script is currently only available for `Windows OS`. With Delphi 12 and some changes to the source code, it can be compiled for other operating systems (I can help with this or do it later!).  
+  - The generated G-Code is 10/30 % larger than the original one due to Temp and Speed adjustment.
+  - This script is currently only available for `Windows OS`. With `Delphi 12` and some changes to the source code, it can be compiled for other operating systems (I can help with this or do it later!).  
   
 # Ideal Flow/Temperature Calibration
 The visual calibration method (effective for PETG, PLA, etc.) involves selecting the desired appearance (closest to the original filament) over 3 to 5 prints:  
@@ -200,7 +200,7 @@ Below is the Generated G-Code
   
 # About this Repository
 ### By Salim BELAYEL.  
-This project began in June 2024 and was developed using Delphi 12 Community Edition.  
+This project began in June 2024 and was developed using `Delphi 12 Community Edition`.  
 Email : sb53systems@gmail.com  
   
 ![SB53-Systems~1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/b94703a1-cf21-4109-bfa6-b9bcff438a1d)  
