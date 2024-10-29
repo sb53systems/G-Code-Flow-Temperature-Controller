@@ -41,12 +41,15 @@ D:\SB53_G-Code_Flow_Temperature_Controller_V1.1\SB53-Systems.exe;
 ```  
 ![image](https://github.com/user-attachments/assets/3557a6ff-524f-4964-9cd2-044b01f46faa)  
   
-2. Included [Klipper_Estimator.exe](https://github.com/Annex-Engineering/klipper_estimator) script `V 3.7.3`. Using Klipper Look-Ahead kinematics, it estimate the time and the average flow rate for each move in the G-Code `(+/- 1s total time)`. This file is required and must be in the same Folder with this Script.
-  ![image](https://github.com/user-attachments/assets/30449359-fabd-4b3d-9593-523db606c0c1)
+2. included a [custom](https://github.com/sb53systems/klipper_estimator) version of [Klipper_Estimator V 3.7.3](https://github.com/Annex-Engineering/klipper_estimator). Using Klipper Look-Ahead kinematics, it estimate the time and the average flow rate for each move in the G-Code (`+/- 1s total time`). `\Klipper_estimator.exe` file is required and must be in the same Folder with this Script.  
+  ![image](https://github.com/user-attachments/assets/30449359-fabd-4b3d-9593-523db606c0c1)  
   
-3. Changing the initial layer temperature is important, the script automatically modifies the G-Code "M109 S" command or changes the specified print start macro. Example Below :  
-![image](https://github.com/user-attachments/assets/26b1e09e-0750-43f6-995f-8671da5838e0)  
-![image](https://github.com/user-attachments/assets/a3c814af-4522-4177-907c-7aab631505f7)  
+3. Changing the initial layer temperature is important, the script can :
+  - Modifie the specified print start macro. Example Below :  
+  ![image](https://github.com/user-attachments/assets/26b1e09e-0750-43f6-995f-8671da5838e0)  
+  ![image](https://github.com/user-attachments/assets/a3c814af-4522-4177-907c-7aab631505f7)
+
+  - Modifie the G-Code "M109 S" command  
   
 4. The initial temperature estimated by the Script depends on the speed of the first moves of the G-Code, you can adjust it by fixing the speed of the purge line or the speed of the first layer perimeters.  
   
@@ -67,7 +70,7 @@ You can use a modifier (or more) in the slicer that changes the speed of a few l
 ![image](https://github.com/user-attachments/assets/51f2cba4-d57d-4ea7-8ef7-d0c36dd61dc0)   
 ![image](https://github.com/user-attachments/assets/1cee9879-389b-4117-9048-b96c76e51891)  
   
-You have to set your filament settings:
+6. You have to set your filament settings:
   - The maximum recommended volumetric speed at the maximum temperature that your Hotend or Filament can handle.
   - The Fan Cooling perdiode and the Min print speed, according to the Filament and your cooling configuration.
   - ...
