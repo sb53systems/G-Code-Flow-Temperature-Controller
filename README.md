@@ -36,13 +36,13 @@ You can retain your old script configuration after an update by using the "/Conf
   
 # Instructions and Prerequisites  
 1. The script can be used as a standard program by running the SB53-Systems.exe file and manually opening a G-Code file, or by integrating it into the slicer as a post-processing script.  
-```
-D:\SB53_G-Code_Flow_Temperature_Controller_V1.1\SB53-Systems.exe;
-```  
-![image](https://github.com/user-attachments/assets/722d57b1-6568-4317-ba3f-5873c66e221c)  
+    ```
+    D:\SB53_G-Code_Flow_Temperature_Controller_V1.1\SB53-Systems.exe;
+    ```  
+    ![image](https://github.com/user-attachments/assets/722d57b1-6568-4317-ba3f-5873c66e221c)  
   
 2. included a [Custom](https://github.com/sb53systems/klipper_estimator) version of [Klipper_Estimator V 3.7.3](https://github.com/Annex-Engineering/klipper_estimator). Using Klipper Look-Ahead kinematics, it estimate the time and the average flow rate for each move in the G-Code (+/- 1s total time). (`\Klipper_estimator.exe` file is required and must be in the same Folder with this Script.)  
-  ![image](https://github.com/user-attachments/assets/30449359-fabd-4b3d-9593-523db606c0c1)  
+    ![image](https://github.com/user-attachments/assets/30449359-fabd-4b3d-9593-523db606c0c1)  
   
 3. Editing the `first layer temperature` is important, the script can :
     ### For Klipper Firmware
@@ -64,29 +64,28 @@ D:\SB53_G-Code_Flow_Temperature_Controller_V1.1\SB53-Systems.exe;
   
 5. The initial temperature estimated by the Script depends on the speed of the first moves of the G-Code, you can adjust it by fixing the speed of the purge line or the speed of the first layer perimeters.  
   
-6. To have a best Speed/Quality Optemization, the Slicer Profil must be set for Max Moves and Max Volumetric Speed. The Nozzle temperature is not important because it will be reset in the script, and the speed will be reduced (not increased) to the Recommended Flow.  
-  
-     Example below with my max 200mm/s Printer speed : (Same profil for `PLA, PETG and ABS`)  
+6. To have a best Speed/Quality Optemization, the Slicer Profil must be set for Max Moves and Max Volumetric Speed. The Nozzle temperature is not important because it will be reset in the script, and the speed will be reduced (not increased) to the Recommended Flow.   
+    Example below with my max 200mm/s Printer speed : (Same profil for `PLA, PETG and ABS`)  
     
-     ![image](https://github.com/user-attachments/assets/c0a30aed-046a-48ad-b819-93def3b28de5)  
+    ![image](https://github.com/user-attachments/assets/c0a30aed-046a-48ad-b819-93def3b28de5)  
   
-     The speed of `overhangs` and small `internal/external bridges` should be set to the maximum speed, this will ensure that the filament is extruded at the recommended flow rate and that it is not too hot and falls off, or too cold and shrinks, also avoiding sudden flow changes and unnecessary temperature drops caused by the average flow calculated by the script.  
-     ![image](https://github.com/user-attachments/assets/050be022-7cef-47ff-b1aa-15f8b5134dce)  
-     [See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
+    The speed of `overhangs` and small `internal/external bridges` should be set to the maximum speed, this will ensure that the filament is extruded at the recommended flow rate and that it is not too hot and falls off, or too cold and shrinks, also avoiding sudden flow changes and unnecessary temperature drops caused by the average flow calculated by the script.  
+    ![image](https://github.com/user-attachments/assets/050be022-7cef-47ff-b1aa-15f8b5134dce)  
+    [See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
   
-     For larger bridges, I use `Thick Bridges` in Orca Slicer and a single 5015 radial fan for part cooling, there is not much deference between a 60mm bridge at 30mm/s and another at 100mm/s, and since I don't print a lot of wide bridges, I prefer to keep an automatic speed.  
-     [See my Bridge test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Bridges_Test.md)  
+    For larger bridges, I use `Thick Bridges` in Orca Slicer and a single 5015 radial fan for part cooling, there is not much deference between a 60mm bridge at 30mm/s and another at 100mm/s, and since I don't print a lot of wide bridges, I prefer to keep an automatic speed.  
+    [See my Bridge test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Bridges_Test.md)  
   
-     You can use a modifier (or more) in the slicer that changes the speed of a few lower layers to the bridge, the temperature and speed should gradually decrease to the desired bridge speed. Example bellow for 50mm/s External Bridge speed. (This approach can only be optimized when it is integrated into the Slicer)  
-![image](https://github.com/user-attachments/assets/51f2cba4-d57d-4ea7-8ef7-d0c36dd61dc0)   
-![image](https://github.com/user-attachments/assets/1cee9879-389b-4117-9048-b96c76e51891)  
+    You can use a modifier (or more) in the slicer that changes the speed of a few lower layers to the bridge, the temperature and speed should gradually decrease to the desired bridge speed. Example bellow for 50mm/s External Bridge speed. (This approach can only be optimized when it is integrated into the Slicer)  
+    ![image](https://github.com/user-attachments/assets/51f2cba4-d57d-4ea7-8ef7-d0c36dd61dc0)   
+    ![image](https://github.com/user-attachments/assets/1cee9879-389b-4117-9048-b96c76e51891)  
   
 6. You have to set your filament settings:
     - The maximum recommended volumetric speed at the maximum temperature that your Hotend or Filament can handle.
     - The Fan Cooling perdiode and the Min print speed, according to the Filament and your cooling configuration.
   
-![image](https://github.com/user-attachments/assets/5dc1f64d-48dc-4d39-8290-ad8251267990)  
-![image](https://github.com/user-attachments/assets/c07c5e7c-b137-4af3-86b6-efeaecdc06cc)  
+    ![image](https://github.com/user-attachments/assets/5dc1f64d-48dc-4d39-8290-ad8251267990)  
+    ![image](https://github.com/user-attachments/assets/c07c5e7c-b137-4af3-86b6-efeaecdc06cc)  
   
 ### Note that :  
   - The script is specifically programmed to reduce speeds only when they exceed the recommended flow rate (based on layer height and line width), while lower speeds will remain as set in the G-Code (Slicer speed).   
