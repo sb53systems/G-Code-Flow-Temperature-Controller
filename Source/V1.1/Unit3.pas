@@ -4,13 +4,17 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons;
+  Dialogs, StdCtrls, Buttons, Vcl.Imaging.jpeg, Vcl.ExtCtrls;
 
 type
   TForm3 = class(TForm)
     StaticText1: TStaticText;
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
+    Image1: TImage;
+    StaticText2: TStaticText;
+    Label3: TLabel;
+    StaticText3: TStaticText;
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
   private
@@ -30,7 +34,6 @@ uses Unit1;
 
 procedure TForm3.BitBtn2Click(Sender: TObject);
 begin
-  canProcess:=false;
   Application.Terminate;
 end;
 

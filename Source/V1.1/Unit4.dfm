@@ -16,7 +16,7 @@ object Form4: TForm4
   TextHeight = 13
   object Image1: TImage
     Left = 168
-    Top = 8
+    Top = -30
     Width = 233
     Height = 241
     Picture.Data = {
@@ -1779,7 +1779,7 @@ object Form4: TForm4
   end
   object Label2: TLabel
     Left = 424
-    Top = 608
+    Top = 603
     Width = 114
     Height = 16
     Cursor = crHandPoint
@@ -1794,7 +1794,7 @@ object Form4: TForm4
   end
   object Label1: TLabel
     Left = 218
-    Top = 268
+    Top = 238
     Width = 257
     Height = 16
     Cursor = crHandPoint
@@ -1809,10 +1809,10 @@ object Form4: TForm4
   end
   object StaticText3: TStaticText
     Left = 188
-    Top = 229
-    Width = 198
+    Top = 191
+    Width = 193
     Height = 20
-    Caption = 'V 1.1 Beta         04 Sept 2024'
+    Caption = 'V 1.1           October 29 2024'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -1823,7 +1823,7 @@ object Form4: TForm4
   end
   object StaticText4: TStaticText
     Left = 88
-    Top = 360
+    Top = 340
     Width = 415
     Height = 20
     Caption = 'This Script was developed by Salim BELAYEL, in June 2024'
@@ -1837,7 +1837,7 @@ object Form4: TForm4
   end
   object StaticText10: TStaticText
     Left = 94
-    Top = 496
+    Top = 476
     Width = 398
     Height = 20
     Caption = 'If you find this idea effective and deserving, I invite you to'
@@ -1851,7 +1851,7 @@ object Form4: TForm4
   end
   object StaticText11: TStaticText
     Left = 105
-    Top = 522
+    Top = 502
     Width = 376
     Height = 20
     Caption = 'share and encourage the development of this Concept'
@@ -1910,7 +1910,7 @@ object Form4: TForm4
   end
   object StaticText14: TStaticText
     Left = 182
-    Top = 213
+    Top = 175
     Width = 208
     Height = 17
     Caption = 'G-Code Flow/Temperature Controler'
@@ -1924,7 +1924,7 @@ object Form4: TForm4
   end
   object StaticText15: TStaticText
     Left = 100
-    Top = 268
+    Top = 238
     Width = 112
     Height = 20
     Caption = 'GitHub Source :'
@@ -1938,7 +1938,7 @@ object Form4: TForm4
   end
   object StaticText9: TStaticText
     Left = 110
-    Top = 430
+    Top = 410
     Width = 358
     Height = 20
     Caption = 'Hoping to find Equivalent solution in current Slicers.'
@@ -1952,7 +1952,7 @@ object Form4: TForm4
   end
   object StaticText16: TStaticText
     Left = 55
-    Top = 386
+    Top = 366
     Width = 479
     Height = 20
     Caption = 
@@ -1968,7 +1968,7 @@ object Form4: TForm4
   end
   object StaticText5: TStaticText
     Left = 175
-    Top = 284
+    Top = 254
     Width = 223
     Height = 20
     Cursor = crHandPoint
@@ -1984,7 +1984,7 @@ object Form4: TForm4
   end
   object StaticText7: TStaticText
     Left = 110
-    Top = 310
+    Top = 280
     Width = 361
     Height = 20
     Cursor = crHandPoint

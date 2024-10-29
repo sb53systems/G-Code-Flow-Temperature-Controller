@@ -1,11 +1,11 @@
 object Form1: TForm1
   Left = 203
   Top = 128
-  BorderIcons = [biSystemMenu, biMinimize]
-  BorderStyle = bsSingle
-  Caption = 'SB53 G-Code Flow/Temperature Controller V1.1 Beta'
-  ClientHeight = 906
-  ClientWidth = 1329
+  Width = 1345
+  Height = 958
+  HorzScrollBar.Range = 1321
+  VertScrollBar.Range = 915
+  Caption = 'SB53 G-Code Flow/Temperature Controller V1.1'
   Color = clDimgray
   Font.Charset = BALTIC_CHARSET
   Font.Color = clWindowText
@@ -14,129 +14,21 @@ object Form1: TForm1
   Font.Style = []
   Position = poScreenCenter
   OnActivate = FormActivate
-  OnPaint = FormPaint
+  OnResize = FormResize
   OnShow = FormShow
   TextHeight = 14
+  object Bevel10: TBevel
+    Left = 0
+    Top = 0
+    Width = 1345
+    Height = 958
+    Visible = False
+  end
   object Bevel1: TBevel
     Left = 8
     Top = 52
     Width = 1124
     Height = 170
-  end
-  object Image3: TImage
-    Left = 878
-    Top = 875
-    Width = 36
-    Height = 27
-    Cursor = crHandPoint
-    Picture.Data = {
-      07544269746D6170560A0000424D560A00000000000036000000280000002300
-      0000180000000100180000000000200A0000C40E0000C40E0000000000000000
-      0000277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF
-      277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277F
-      FF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF27
-      7FFF277FFF277FFF277FFF000000277FFF277FFF277FFF4F4F4F080808000000
-      0000000101010101010101010101010101010101010202020202020202020202
-      020303030404040505050606060B0B0B505050277FFF277FFF277FFF277FFF27
-      7FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF000000277FFF277FFF
-      1A1A1A0000000303031B1B1B1B1B1B1919191919191919191919191919191818
-      181717171717171616161515151313131212121010100E0E0E0202020000000C
-      0C0C277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF
-      277FFF000000277FFF6262620000001E1E1EEEEEEEFFFFFFFFFFFFFFFFFFFFFF
-      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-      FFFFFFFFFFF1F1F1272727000000404040277FFF277FFF277FFF277FFF277FFF
-      277FFF277FFF277FFF277FFF277FFF000000277FFF181818010101D6D6D6FFFF
-      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8F8F8090909000000277FFF
-      277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF000000277F
-      FF0C0C0C090909FEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-      FFFFFF373737000000277FFF277FFF277FFF277FFF277FFF277FFF277FFF277F
-      FF277FFF277FFF000000277FFF0808080C0C0CFFFFFFFFFFFFFFFFFFFFFFFFFF
-      FFFFFFFFFFFFFFFFFFFFFFFFFFFFDBDCFF7D7FFFF7F7FFFFFFFFFFFFFFFFFFFF
-      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3C3C3C0000000000000303030A0A0A4848
-      48277FFF277FFF277FFF277FFF277FFF277FFF000000277FFF0505050F0F0FFF
-      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFFC3C5FF5B5EFF5A5DFF
-      7B7DFFF0F1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA5A5A52222
-      221D1D1D0A0A0A000000000000000000565656277FFF277FFF277FFF277FFF00
-      0000277FFF040404111111FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFF
-      B8BAFF5A5DFF5A5DFF5A5DFF5A5DFF7A7CFFEEEFFFFFFFFFFFFFFFFFFFFFFFFF
-      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDBDBDBD6D6D6D0101010000002D
-      2D2D277FFF277FFF277FFF000000277FFF030303131313FFFFFFFFFFFFFFFFFF
-      FFFFFFFFFFFFFEFEFFB7B8FF5A5DFF5A5DFF5A5DFF5A5DFF5A5DFF5A5DFF7A7C
-      FFF1F1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9F9F9BCBCBCBEBEBED6D6D6F9
-      F9F9FFFFFFCCCCCC121212000000505050277FFF277FFF000000277FFF020202
-      141414FFFFFFFFFFFFFFFFFFFFFFFFFEFEFFB8B8FF5A5BFF5A5CFF5A5CFF5A5D
-      FF5A5DFF5A5DFF5A5DFF5A5DFF7B7DFFF5F6FFFFFFFFFFFFFFFFFFFFFFFFFF4B
-      4B4B0000000000000000000D0D0DBABABAFEFEFEE0E0E00B0B0B000000277FFF
-      277FFF000000277FFF020202141414FFFFFFFFFFFFFFFFFFFFFFFFCDCCFF605A
-      FF5F5BFF5D5BFF5C5BFF5A5CFF5A5CFF5A5DFF5A5DFF5A5DFF5A5DFF8588FFFE
-      FEFFFFFFFFFFFFFFFFFFFF3D3D3D000000030303040404000000000000CECECE
-      FEFEFE6565650000003C3C3C277FFF000000277FFF010101161616FFFFFFFFFF
-      FFFFFFFFFFFFFF7B71FF655AFF645AFF625AFF605BFF5E5BFF5C5BFF5C5CFF5A
-      5CFF5A5DFF5A5DFF5A5DFFCACBFFFFFFFFFFFFFFFFFFFF3D3D3D0000006E6E6E
-      FDFDFD878787000000030303F8F8F8E5E5E50202020D0D0D277FFF000000277F
-      FF010101161616FFFFFFFFFFFFFFFFFFF6F6FF6C58FF6A58FF6859FF6759FF65
-      5AFF635AFF615AFF605BFF5E5BFF5D5BFF5C5CFF5A5CFF8F91FFFFFFFFFFFFFF
-      FFFFFF3D3D3D0000006E6E6EFFFFFFFDFDFD010101000000E7E7E7FFFFFF1818
-      18020202277FFF000000277FFF010101161616FFFFFFFFFFFFFFFFFFF5F4FF70
-      57FF6F57FF6D58FF6C58FF6A58FF6959FF6759FF6559FF635AFF625AFF605BFF
-      5E5BFF8E8CFFFFFFFFFFFFFFFFFFFF3D3D3D0000006E6E6EFFFFFFFFFFFF0404
-      04000000E3E3E3FFFFFF1D1D1D010101277FFF000000277FFF010101161616FF
-      FFFFFFFFFFFFFFFFFCFCFF8269FF7456FF7257FF7157FF6F57FF6D58FF6D59FF
-      6A58FF6959FF6759FF6559FF645AFFCDCAFFFFFFFFFFFFFFFFFFFF3D3D3D0000
-      006E6E6EFFFFFFE7E7E7000000000000EEEEEEFCFCFC0E0E0E060606277FFF00
-      0000277FFF010101161616FFFFFFFFFFFFFFFFFFFFFFFFD4CBFF896CFF7755FF
-      7656FF795BFFAFA1FFF1EFFF9181FF6E58FF6C58FF6E5CFFB2AAFFFEFEFFFFFF
-      FFFFFFFFFFFFFF3D3D3D0000006E6E6EE3E3E3303030000000303030FCFCFCC6
-      C6C6000000191919277FFF000000277FFF010101161616FFFFFFFFFFFFFFFFFF
-      FFFFFFFFFFFFFDFDFFF0ECFFEDE9FFF9F8FFFFFFFFFFFFFFFFFFFFEFEDFFE2DD
-      FFF6F4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3D3D3D00000000000000000000
-      00000E0E0EF4F4F4FFFFFF4B4B4B000000535353277FFF000000277FFF020202
-      141414FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6F
-      6F6F111111101010131313363636F3F3F3FFFFFFC3C3C3030303000000277FFF
-      277FFF000000277FFF020202141414FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFAFAFAF
-      020202000000277FFF277FFF277FFF000000277FFF020202121212FFFFFFFFFF
-      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-      FCFCFCA1A1A11F1F1F000000000000277FFF277FFF277FFF277FFF000000277F
-      FF1B1B1B0000000B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B
-      0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B
-      0B0B0B0B0B0B0B0B0B0B0B0B040404000000000000020202277FFF277FFF277F
-      FF277FFF277FFF000000277FFF277FFF25252508080808080808080808080808
-      0808080808080808080808080808080808080808080808080808080808080808
-      080808080808080808080808080808080808080808080808121212383838277F
-      FF277FFF277FFF277FFF277FFF277FFF277FFF000000277FFF277FFF277FFF27
-      7FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF
-      277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277F
-      FF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF00
-      0000}
-    Stretch = True
-    Transparent = True
-    OnClick = Label6Click
-  end
-  object Label6: TLabel
-    Left = 920
-    Top = 885
-    Width = 94
-    Height = 13
-    Cursor = crHandPoint
-    Hint = 
-      'this indicates the Nozzle temperature variations authorized by a' +
-      ' chosen time'
-    Caption = 'Buy me a Coffee'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlue
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-    ParentShowHint = False
-    ShowHint = True
-    OnClick = Label6Click
   end
   object Image1: TImage
     Left = 1152
@@ -1690,7 +1582,7 @@ object Form1: TForm1
     Stretch = True
   end
   object Image2: TImage
-    Left = 1290
+    Left = 1155
     Top = 186
     Width = 25
     Height = 25
@@ -2178,71 +2070,15 @@ object Form1: TForm1
     Transparent = True
     OnClick = Image2Click
   end
-  object Label5: TLabel
-    Left = 1160
-    Top = 192
-    Width = 125
-    Height = 13
-    Cursor = crHandPoint
-    Caption = 'V1.1Beta      09/2024'
-    Color = clRed
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clNavy
-    Font.Height = -12
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentColor = False
-    ParentFont = False
-    OnClick = Label5Click
-  end
   object Bevel5: TBevel
     Left = 442
     Top = 68
     Width = 682
     Height = 148
   end
-  object Image6: TImage
-    Left = 372
-    Top = 64
-    Width = 17
-    Height = 17
-    Cursor = crHandPoint
-    Hint = 'Save Current Printer/Extruder'
-    AutoSize = True
-    ParentShowHint = False
-    Picture.Data = {
-      0954506E67496D61676589504E470D0A1A0A0000000D49484452000000110000
-      001108060000003B6D47FA0000000467414D410000B18F0BFC61050000000970
-      48597300000EC000000EC0016AD68909000000614944415478DA63CCCCCCFCCF
-      4021600419F2E5CB3786C6C67AA235757777631A525A5A8A2281CE4717479727
-      CB10743656437079AFBEBE918187870BC350AC86100B460D21C11042090F3986
-      701A42C855D8D40E474348CDC5E881CC488DF2040007A2AFEC65F1A78A000000
-      0049454E44AE426082}
-    ShowHint = True
-    OnClick = Image6Click
-  end
-  object Image7: TImage
-    Left = 395
-    Top = 64
-    Width = 17
-    Height = 17
-    Cursor = crHandPoint
-    Hint = 'Delete Current Printer/Extruder'
-    AutoSize = True
-    ParentShowHint = False
-    Picture.Data = {
-      0954506E67496D61676589504E470D0A1A0A0000000D49484452000000110000
-      001108060000003B6D47FA0000000467414D410000B18F0BFC61050000000970
-      48597300000EC000000EC0016AD68909000000484944415478DA63CCCCCCFCCF
-      4021600419F2E5CB3786C6C67A9235D7D73732F0F070410C292D2D65E8EEEE26
-      D91098BE5143E86508884D0820AB1DE4DE1935848AB99864DD680000BB4E82EC
-      01F612390000000049454E44AE426082}
-    ShowHint = True
-    OnClick = Image7Click
-  end
   object Image4: TImage
-    Left = 1092
-    Top = 78
+    Left = 987
+    Top = 82
     Width = 17
     Height = 17
     Cursor = crHandPoint
@@ -2260,8 +2096,8 @@ object Form1: TForm1
     OnClick = Image4Click
   end
   object Image5: TImage
-    Left = 1069
-    Top = 78
+    Left = 960
+    Top = 82
     Width = 17
     Height = 17
     Cursor = crHandPoint
@@ -2302,9 +2138,9 @@ object Form1: TForm1
   object Label15: TLabel
     Left = 448
     Top = 60
-    Width = 56
+    Width = 188
     Height = 13
-    Caption = 'Filament :'
+    Caption = '  Filament Type :                       '
     Color = clDimgray
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlue
@@ -2318,12 +2154,14 @@ object Form1: TForm1
   object Label14: TLabel
     Left = 14
     Top = 44
-    Width = 99
+    Width = 459
     Height = 13
     Hint = 
       'this indicates the Nozzle temperature variations authorized by a' +
       ' chosen time'
-    Caption = 'Printer/Extruder :'
+    Caption = 
+      '  Printer/Extruder :                                            ' +
+      '                                            '
     Color = clDimgray
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlue
@@ -2336,9 +2174,221 @@ object Form1: TForm1
     ShowHint = True
     Transparent = False
   end
+  object Image3: TImage
+    Left = 1285
+    Top = 186
+    Width = 36
+    Height = 27
+    Cursor = crHandPoint
+    Picture.Data = {
+      07544269746D6170560A0000424D560A00000000000036000000280000002300
+      0000180000000100180000000000200A0000C40E0000C40E0000000000000000
+      0000277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF
+      277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277F
+      FF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF27
+      7FFF277FFF277FFF277FFF000000277FFF277FFF277FFF4F4F4F080808000000
+      0000000101010101010101010101010101010101010202020202020202020202
+      020303030404040505050606060B0B0B505050277FFF277FFF277FFF277FFF27
+      7FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF000000277FFF277FFF
+      1A1A1A0000000303031B1B1B1B1B1B1919191919191919191919191919191818
+      181717171717171616161515151313131212121010100E0E0E0202020000000C
+      0C0C277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF
+      277FFF000000277FFF6262620000001E1E1EEEEEEEFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFF1F1F1272727000000404040277FFF277FFF277FFF277FFF277FFF
+      277FFF277FFF277FFF277FFF277FFF000000277FFF181818010101D6D6D6FFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8F8F8090909000000277FFF
+      277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF000000277F
+      FF0C0C0C090909FEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFF373737000000277FFF277FFF277FFF277FFF277FFF277FFF277FFF277F
+      FF277FFF277FFF000000277FFF0808080C0C0CFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFDBDCFF7D7FFFF7F7FFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3C3C3C0000000000000303030A0A0A4848
+      48277FFF277FFF277FFF277FFF277FFF277FFF000000277FFF0505050F0F0FFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFFC3C5FF5B5EFF5A5DFF
+      7B7DFFF0F1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA5A5A52222
+      221D1D1D0A0A0A000000000000000000565656277FFF277FFF277FFF277FFF00
+      0000277FFF040404111111FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFF
+      B8BAFF5A5DFF5A5DFF5A5DFF5A5DFF7A7CFFEEEFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDBDBDBD6D6D6D0101010000002D
+      2D2D277FFF277FFF277FFF000000277FFF030303131313FFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFEFEFFB7B8FF5A5DFF5A5DFF5A5DFF5A5DFF5A5DFF5A5DFF7A7C
+      FFF1F1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9F9F9BCBCBCBEBEBED6D6D6F9
+      F9F9FFFFFFCCCCCC121212000000505050277FFF277FFF000000277FFF020202
+      141414FFFFFFFFFFFFFFFFFFFFFFFFFEFEFFB8B8FF5A5BFF5A5CFF5A5CFF5A5D
+      FF5A5DFF5A5DFF5A5DFF5A5DFF7B7DFFF5F6FFFFFFFFFFFFFFFFFFFFFFFFFF4B
+      4B4B0000000000000000000D0D0DBABABAFEFEFEE0E0E00B0B0B000000277FFF
+      277FFF000000277FFF020202141414FFFFFFFFFFFFFFFFFFFFFFFFCDCCFF605A
+      FF5F5BFF5D5BFF5C5BFF5A5CFF5A5CFF5A5DFF5A5DFF5A5DFF5A5DFF8588FFFE
+      FEFFFFFFFFFFFFFFFFFFFF3D3D3D000000030303040404000000000000CECECE
+      FEFEFE6565650000003C3C3C277FFF000000277FFF010101161616FFFFFFFFFF
+      FFFFFFFFFFFFFF7B71FF655AFF645AFF625AFF605BFF5E5BFF5C5BFF5C5CFF5A
+      5CFF5A5DFF5A5DFF5A5DFFCACBFFFFFFFFFFFFFFFFFFFF3D3D3D0000006E6E6E
+      FDFDFD878787000000030303F8F8F8E5E5E50202020D0D0D277FFF000000277F
+      FF010101161616FFFFFFFFFFFFFFFFFFF6F6FF6C58FF6A58FF6859FF6759FF65
+      5AFF635AFF615AFF605BFF5E5BFF5D5BFF5C5CFF5A5CFF8F91FFFFFFFFFFFFFF
+      FFFFFF3D3D3D0000006E6E6EFFFFFFFDFDFD010101000000E7E7E7FFFFFF1818
+      18020202277FFF000000277FFF010101161616FFFFFFFFFFFFFFFFFFF5F4FF70
+      57FF6F57FF6D58FF6C58FF6A58FF6959FF6759FF6559FF635AFF625AFF605BFF
+      5E5BFF8E8CFFFFFFFFFFFFFFFFFFFF3D3D3D0000006E6E6EFFFFFFFFFFFF0404
+      04000000E3E3E3FFFFFF1D1D1D010101277FFF000000277FFF010101161616FF
+      FFFFFFFFFFFFFFFFFCFCFF8269FF7456FF7257FF7157FF6F57FF6D58FF6D59FF
+      6A58FF6959FF6759FF6559FF645AFFCDCAFFFFFFFFFFFFFFFFFFFF3D3D3D0000
+      006E6E6EFFFFFFE7E7E7000000000000EEEEEEFCFCFC0E0E0E060606277FFF00
+      0000277FFF010101161616FFFFFFFFFFFFFFFFFFFFFFFFD4CBFF896CFF7755FF
+      7656FF795BFFAFA1FFF1EFFF9181FF6E58FF6C58FF6E5CFFB2AAFFFEFEFFFFFF
+      FFFFFFFFFFFFFF3D3D3D0000006E6E6EE3E3E3303030000000303030FCFCFCC6
+      C6C6000000191919277FFF000000277FFF010101161616FFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFDFDFFF0ECFFEDE9FFF9F8FFFFFFFFFFFFFFFFFFFFEFEDFFE2DD
+      FFF6F4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3D3D3D00000000000000000000
+      00000E0E0EF4F4F4FFFFFF4B4B4B000000535353277FFF000000277FFF020202
+      141414FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6F
+      6F6F111111101010131313363636F3F3F3FFFFFFC3C3C3030303000000277FFF
+      277FFF000000277FFF020202141414FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFAFAFAF
+      020202000000277FFF277FFF277FFF000000277FFF020202121212FFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FCFCFCA1A1A11F1F1F000000000000277FFF277FFF277FFF277FFF000000277F
+      FF1B1B1B0000000B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B
+      0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B0B
+      0B0B0B0B0B0B0B0B0B0B0B0B040404000000000000020202277FFF277FFF277F
+      FF277FFF277FFF000000277FFF277FFF25252508080808080808080808080808
+      0808080808080808080808080808080808080808080808080808080808080808
+      080808080808080808080808080808080808080808080808121212383838277F
+      FF277FFF277FFF277FFF277FFF277FFF277FFF000000277FFF277FFF277FFF27
+      7FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF
+      277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277F
+      FF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF277FFF00
+      0000}
+    Stretch = True
+    Transparent = True
+    OnClick = Label6Click
+  end
+  object Label6: TLabel
+    Left = 1186
+    Top = 195
+    Width = 94
+    Height = 13
+    Cursor = crHandPoint
+    Hint = 
+      'this indicates the Nozzle temperature variations authorized by a' +
+      ' chosen time'
+    Caption = 'Buy me a Coffee'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    OnClick = Label6Click
+  end
+  object Bevel2: TBevel
+    Left = 448
+    Top = 127
+    Width = 657
+    Height = 25
+  end
+  object Bevel3: TBevel
+    Left = 448
+    Top = 155
+    Width = 657
+    Height = 25
+  end
+  object Bevel4: TBevel
+    Left = 448
+    Top = 183
+    Width = 657
+    Height = 25
+  end
+  object Bevel6: TBevel
+    Left = 944
+    Top = 107
+    Width = 176
+    Height = 104
+  end
+  object Bevel7: TBevel
+    Left = 20
+    Top = 135
+    Width = 400
+    Height = 25
+  end
+  object Bevel8: TBevel
+    Left = 20
+    Top = 164
+    Width = 400
+    Height = 25
+  end
+  object Bevel9: TBevel
+    Left = 20
+    Top = 104
+    Width = 400
+    Height = 25
+  end
+  object Image6: TImage
+    Left = 418
+    Top = 41
+    Width = 17
+    Height = 17
+    Cursor = crHandPoint
+    Hint = 'Save Current Printer/Extruder'
+    AutoSize = True
+    ParentShowHint = False
+    Picture.Data = {
+      0954506E67496D61676589504E470D0A1A0A0000000D49484452000000110000
+      001108060000003B6D47FA0000000467414D410000B18F0BFC61050000000970
+      48597300000EC000000EC0016AD68909000000614944415478DA63CCCCCCFCCF
+      4021600419F2E5CB3786C6C67AA235757777631A525A5A8A2281CE4717479727
+      CB10743656437079AFBEBE918187870BC350AC86100B460D21C11042090F3986
+      701A42C855D8D40E474348CDC5E881CC488DF2040007A2AFEC65F1A78A000000
+      0049454E44AE426082}
+    ShowHint = True
+    OnClick = Image6Click
+  end
+  object Image7: TImage
+    Left = 445
+    Top = 41
+    Width = 17
+    Height = 17
+    Cursor = crHandPoint
+    Hint = 'Delete Current Printer/Extruder'
+    AutoSize = True
+    ParentShowHint = False
+    Picture.Data = {
+      0954506E67496D61676589504E470D0A1A0A0000000D49484452000000110000
+      001108060000003B6D47FA0000000467414D410000B18F0BFC61050000000970
+      48597300000EC000000EC0016AD68909000000484944415478DA63CCCCCCFCCF
+      4021600419F2E5CB3786C6C67A9235D7D73732F0F070410C292D2D65E8EEEE26
+      D91098BE5143E86508884D0820AB1DE4DE1935848AB99864DD680000BB4E82EC
+      01F612390000000049454E44AE426082}
+    ShowHint = True
+    OnClick = Image7Click
+  end
+  object Label5: TLabel
+    Left = 990
+    Top = 110
+    Width = 56
+    Height = 13
+    Caption = 'Adjust PA'
+    Color = clDimgray
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
   object Image9: TImage
-    Left = 535
-    Top = 114
+    Left = 534
+    Top = 120
     Width = 255
     Height = 3
     Picture.Data = {
@@ -2388,48 +2438,19 @@ object Form1: TForm1
     TabOrder = 1
     Text = 'None'
   end
-  object BitBtn2: TBitBtn
-    Left = 1056
-    Top = 875
-    Width = 113
-    Height = 25
-    Hint = 'Save / Print'
-    Caption = 'Save/ Print'
-    Enabled = False
-    Kind = bkAll
-    NumGlyphs = 2
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 2
-    OnClick = BitBtn2Click
-  end
-  object BitBtn3: TBitBtn
-    Left = 1208
-    Top = 875
-    Width = 113
-    Height = 25
-    Hint = 'Cancel and Close'
-    Caption = 'Close'
-    Kind = bkAbort
-    NumGlyphs = 2
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 3
-    OnClick = BitBtn3Click
-  end
   object BitBtn4: TBitBtn
     Left = 1011
     Top = 13
     Width = 121
     Height = 25
     Hint = 'Generate G-Code'
-    Caption = 'GENERATE'
+    Caption = 'PROCEED'
     Enabled = False
     Kind = bkAll
     NumGlyphs = 2
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 4
+    TabOrder = 2
     OnClick = BitBtn4Click
   end
   object StaticText2: TStaticText
@@ -2444,7 +2465,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 3
   end
   object StaticText3: TStaticText
     Left = 457
@@ -2458,7 +2479,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 4
   end
   object StaticText4: TStaticText
     Left = 457
@@ -2472,7 +2493,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 5
   end
   object Edit2: TEdit
     Left = 606
@@ -2480,14 +2501,14 @@ object Form1: TForm1
     Width = 57
     Height = 18
     BorderStyle = bsNone
-    Color = clActiveBorder
+    Color = clDarkgray
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 8
+    TabOrder = 6
     Text = '170'
     OnChange = Edit2Change
     OnKeyPress = Edit2KeyPress
@@ -2498,14 +2519,14 @@ object Form1: TForm1
     Width = 57
     Height = 18
     BorderStyle = bsNone
-    Color = clActiveBorder
+    Color = clDarkgray
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 9
+    TabOrder = 7
     Text = '170'
     OnChange = Edit3Change
     OnKeyPress = Edit3KeyPress
@@ -2516,14 +2537,14 @@ object Form1: TForm1
     Width = 57
     Height = 18
     BorderStyle = bsNone
-    Color = clActiveBorder
+    Color = clDarkgray
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 10
+    TabOrder = 8
     Text = '170'
     OnChange = Edit4Change
     OnKeyPress = Edit4KeyPress
@@ -2537,7 +2558,7 @@ object Form1: TForm1
     Min = 70
     Max = 500
     Position = 170
-    TabOrder = 11
+    TabOrder = 9
   end
   object UpDown2: TUpDown
     Left = 663
@@ -2548,7 +2569,7 @@ object Form1: TForm1
     Min = 70
     Max = 500
     Position = 170
-    TabOrder = 12
+    TabOrder = 10
   end
   object UpDown3: TUpDown
     Left = 663
@@ -2559,7 +2580,7 @@ object Form1: TForm1
     Min = 70
     Max = 500
     Position = 170
-    TabOrder = 13
+    TabOrder = 11
   end
   object StaticText5: TStaticText
     Left = 716
@@ -2573,7 +2594,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 14
+    TabOrder = 12
   end
   object Edit5: TEdit
     Left = 836
@@ -2588,7 +2609,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 15
+    TabOrder = 13
     Text = '1'
     OnChange = Edit5Change
     OnKeyPress = Edit5KeyPress
@@ -2605,7 +2626,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 16
+    TabOrder = 14
   end
   object Edit6: TEdit
     Left = 836
@@ -2620,7 +2641,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 17
+    TabOrder = 15
     Text = '2'
     OnChange = Edit6Change
     OnKeyPress = Edit6KeyPress
@@ -2637,7 +2658,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 18
+    TabOrder = 16
   end
   object Edit7: TEdit
     Left = 836
@@ -2652,7 +2673,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 19
+    TabOrder = 17
     Text = '3'
     OnChange = Edit7Change
     OnKeyPress = Edit7KeyPress
@@ -2666,7 +2687,7 @@ object Form1: TForm1
     Min = 1
     Max = 200
     Position = 1
-    TabOrder = 20
+    TabOrder = 18
   end
   object UpDown5: TUpDown
     Left = 869
@@ -2677,7 +2698,7 @@ object Form1: TForm1
     Min = 2
     Max = 200
     Position = 2
-    TabOrder = 21
+    TabOrder = 19
   end
   object UpDown6: TUpDown
     Left = 869
@@ -2688,11 +2709,11 @@ object Form1: TForm1
     Min = 3
     Max = 200
     Position = 3
-    TabOrder = 22
+    TabOrder = 20
   end
   object StaticText8: TStaticText
     Left = 25
-    Top = 101
+    Top = 141
     Width = 137
     Height = 17
     Hint = 'Lower heating time reduces printing time'
@@ -2705,11 +2726,11 @@ object Form1: TForm1
     ParentFont = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 23
+    TabOrder = 21
   end
   object Edit8: TEdit
     Left = 169
-    Top = 100
+    Top = 140
     Width = 33
     Height = 18
     Hint = 'Lower heating time reduces printing time'
@@ -2723,25 +2744,25 @@ object Form1: TForm1
     ParentFont = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 24
+    TabOrder = 22
     Text = '1'
     OnChange = Edit8Change
     OnKeyPress = Edit8KeyPress
   end
   object UpDown7: TUpDown
     Left = 202
-    Top = 100
+    Top = 140
     Width = 16
     Height = 18
     Associate = Edit8
     Min = 1
-    Max = 10
+    Max = 50
     Position = 1
-    TabOrder = 25
+    TabOrder = 23
   end
   object StaticText9: TStaticText
     Left = 233
-    Top = 101
+    Top = 141
     Width = 98
     Height = 17
     Hint = 'Lower heating time reduces printing time'
@@ -2754,11 +2775,11 @@ object Form1: TForm1
     ParentFont = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 26
+    TabOrder = 24
   end
   object Edit9: TEdit
     Left = 337
-    Top = 100
+    Top = 140
     Width = 33
     Height = 18
     Hint = 'Lower heating time reduces printing time'
@@ -2772,25 +2793,25 @@ object Form1: TForm1
     ParentFont = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 27
+    TabOrder = 25
     Text = '1'
     OnChange = Edit9Change
     OnKeyPress = Edit9KeyPress
   end
   object UpDown8: TUpDown
     Left = 370
-    Top = 100
+    Top = 140
     Width = 16
     Height = 18
     Associate = Edit9
     Min = 1
     Max = 60
     Position = 1
-    TabOrder = 28
+    TabOrder = 26
   end
   object BitBtn6: TBitBtn
-    Left = 291
-    Top = 184
+    Left = 299
+    Top = 71
     Width = 121
     Height = 25
     Hint = 'Set the Config.json File For Klipper Estimator Script'
@@ -2799,67 +2820,12 @@ object Form1: TForm1
     NumGlyphs = 2
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 29
+    TabOrder = 27
     OnClick = BitBtn6Click
   end
-  object TrackBar1: TTrackBar
-    Left = 527
-    Top = 102
-    Width = 270
-    Height = 19
-    Cursor = crHandPoint
-    Hint = 
-      'Tilt the average optimezation between Speed (Max Flow) and Quali' +
-      'ty (Average Flow)'
-    DragCursor = crSizeWE
-    ParentShowHint = False
-    PageSize = 1
-    Position = 3
-    ShowHint = True
-    TabOrder = 30
-    ThumbLength = 15
-  end
-  object StaticText11: TStaticText
-    Left = 457
-    Top = 106
-    Width = 64
-    Height = 17
-    Hint = 
-      'Tilt the average optimezation between Speed (Max Flow) and Quali' +
-      'ty (Average Flow)'
-    Caption = 'Speed Opt'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 31
-  end
-  object StaticText12: TStaticText
-    Left = 803
-    Top = 106
-    Width = 67
-    Height = 17
-    Hint = 
-      'Tilt the average optimezation between Speed (Max Flow) and Quali' +
-      'ty (Average Flow)'
-    Caption = 'Quality Opt'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 32
-  end
   object StaticText13: TStaticText
-    Left = 26
-    Top = 188
+    Left = 24
+    Top = 78
     Width = 181
     Height = 17
     Hint = 
@@ -2874,18 +2840,18 @@ object Form1: TForm1
     ParentFont = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 33
+    TabOrder = 28
   end
   object Edit11: TEdit
-    Left = 210
-    Top = 187
+    Left = 211
+    Top = 77
     Width = 33
     Height = 18
     Hint = 
       'this indicates the size of the moving average, for Max/Average f' +
       'low smoothing (Recommended value 20)'
     BorderStyle = bsNone
-    Color = clActiveBorder
+    Color = clDarkgray
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
     Font.Height = -13
@@ -2894,24 +2860,24 @@ object Form1: TForm1
     ParentFont = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 34
-    Text = '10'
+    TabOrder = 29
+    Text = '15'
     OnChange = Edit11Change
     OnKeyPress = Edit11KeyPress
   end
   object UpDown10: TUpDown
-    Left = 243
-    Top = 187
+    Left = 244
+    Top = 77
     Width = 16
     Height = 18
     Associate = Edit11
     Increment = 5
-    Position = 10
-    TabOrder = 35
+    Position = 15
+    TabOrder = 30
   end
   object ComboBox1: TComboBox
-    Left = 503
-    Top = 76
+    Left = 550
+    Top = 57
     Width = 78
     Height = 21
     Color = clDarkgray
@@ -2923,7 +2889,7 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ItemIndex = 0
     ParentFont = False
-    TabOrder = 36
+    TabOrder = 31
     Text = 'PETG'
     OnChange = ComboBox1Change
     OnKeyPress = ComboBox1KeyPress
@@ -2961,22 +2927,8 @@ object Form1: TForm1
       'PVA'
       'PVB')
   end
-  object StaticText10: TStaticText
-    Left = 457
-    Top = 80
-    Width = 40
-    Height = 17
-    Caption = 'Type :'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 37
-  end
   object StaticText14: TStaticText
-    Left = 920
+    Left = 968
     Top = 132
     Width = 66
     Height = 17
@@ -2987,10 +2939,10 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 38
+    TabOrder = 32
   end
   object StaticText15: TStaticText
-    Left = 920
+    Left = 968
     Top = 160
     Width = 66
     Height = 17
@@ -3001,10 +2953,10 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 39
+    TabOrder = 33
   end
   object StaticText16: TStaticText
-    Left = 920
+    Left = 968
     Top = 188
     Width = 66
     Height = 17
@@ -3015,10 +2967,10 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 40
+    TabOrder = 34
   end
   object Edit10: TEdit
-    Left = 992
+    Left = 1038
     Top = 131
     Width = 49
     Height = 18
@@ -3030,13 +2982,13 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 41
+    TabOrder = 35
     Text = '0'
     OnChange = Edit10Change
     OnKeyPress = Edit10KeyPress
   end
   object Edit12: TEdit
-    Left = 992
+    Left = 1038
     Top = 159
     Width = 49
     Height = 18
@@ -3048,13 +3000,13 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 42
+    TabOrder = 36
     Text = '0'
     OnChange = Edit12Change
     OnKeyPress = Edit12KeyPress
   end
   object Edit13: TEdit
-    Left = 992
+    Left = 1038
     Top = 187
     Width = 49
     Height = 18
@@ -3066,30 +3018,27 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 43
+    TabOrder = 37
     Text = '0'
     OnChange = Edit13Change
     OnKeyPress = Edit13KeyPress
   end
   object CheckBox7: TCheckBox
-    Left = 965
-    Top = 106
-    Width = 78
+    Left = 968
+    Top = 109
+    Width = 102
     Height = 16
-    Caption = 'Adjust PA'
-    Checked = True
     Font.Charset = BALTIC_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    State = cbChecked
-    TabOrder = 44
+    TabOrder = 38
   end
   object StaticText17: TStaticText
     Left = 25
-    Top = 129
+    Top = 169
     Width = 132
     Height = 17
     Hint = 
@@ -3104,11 +3053,11 @@ object Form1: TForm1
     ParentFont = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 45
+    TabOrder = 39
   end
   object StaticText18: TStaticText
     Left = 233
-    Top = 129
+    Top = 169
     Width = 98
     Height = 17
     Caption = '/ time (second) :'
@@ -3118,31 +3067,11 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 46
+    TabOrder = 40
   end
   object Edit14: TEdit
     Left = 169
-    Top = 128
-    Width = 33
-    Height = 18
-    BorderStyle = bsNone
-    Color = clActiveBorder
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clNavy
-    Font.Height = -13
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 47
-    Text = '1'
-    OnChange = Edit14Change
-    OnKeyPress = Edit14KeyPress
-  end
-  object Edit15: TEdit
-    Left = 337
-    Top = 128
+    Top = 168
     Width = 33
     Height = 18
     BorderStyle = bsNone
@@ -3155,64 +3084,70 @@ object Form1: TForm1
     ParentFont = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 48
+    TabOrder = 41
+    Text = '1'
+    OnChange = Edit14Change
+    OnKeyPress = Edit14KeyPress
+  end
+  object Edit15: TEdit
+    Left = 337
+    Top = 168
+    Width = 33
+    Height = 18
+    BorderStyle = bsNone
+    Color = clDarkgray
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 42
     Text = '1'
     OnChange = Edit15Change
     OnKeyPress = Edit15KeyPress
   end
   object UpDown9: TUpDown
     Left = 202
-    Top = 128
+    Top = 168
     Width = 16
     Height = 18
     Associate = Edit14
     Min = 1
-    Max = 10
+    Max = 50
     Position = 1
-    TabOrder = 49
+    TabOrder = 43
   end
   object UpDown11: TUpDown
     Left = 370
-    Top = 128
+    Top = 168
     Width = 16
     Height = 18
     Associate = Edit15
     Min = 1
     Max = 60
     Position = 1
-    TabOrder = 50
+    TabOrder = 44
   end
   object StaticText19: TStaticText
-    Left = 605
-    Top = 80
-    Width = 44
+    Left = 457
+    Top = 84
+    Width = 95
     Height = 17
-    Caption = 'Name :'
+    Caption = 'Filament Name :'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 51
-  end
-  object StaticText20: TStaticText
-    Left = 25
-    Top = 66
-    Width = 44
-    Height = 17
-    Caption = 'Name :'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 52
+    TabOrder = 45
   end
   object DBLookupComboBox1: TDBLookupComboBox
-    Left = 75
-    Top = 63
+    Left = 124
+    Top = 40
     Width = 278
     Height = 21
     Color = clDarkgray
@@ -3226,256 +3161,126 @@ object Form1: TForm1
     ListFieldIndex = 1
     ListSource = DataSource1
     ParentFont = False
-    TabOrder = 53
+    TabOrder = 46
     OnClick = DBLookupComboBox1Click
   end
-  object Chart2: TChart
-    Left = 8
-    Top = 551
-    Width = 1313
-    Height = 318
-    AllowPanning = pmHorizontal
-    BackWall.Brush.Style = bsClear
-    Legend.Alignment = laBottom
-    Legend.Color = clSilver
-    Legend.Frame.Visible = False
-    Legend.LegendStyle = lsSeries
-    Legend.Shadow.HorizSize = 0
-    Legend.Shadow.VertSize = 0
-    Legend.TopPos = 0
-    Legend.VertMargin = 5
-    Title.Font.Color = clNavy
-    Title.Font.Height = -15
-    Title.Font.Style = [fsBold]
-    Title.Text.Strings = (
-      '- Generated G-Code -')
-    Title.VertMargin = 0
-    BottomAxis.Automatic = False
-    BottomAxis.AutomaticMaximum = False
-    BottomAxis.AutomaticMinimum = False
-    BottomAxis.AxisValuesFormat = '#.#'
-    BottomAxis.Maximum = 25.000000000000000000
-    BottomAxis.Title.Caption = 'Time (s)'
-    LeftAxis.Automatic = False
-    LeftAxis.AutomaticMaximum = False
-    LeftAxis.AutomaticMinimum = False
-    LeftAxis.AxisValuesFormat = '0'
-    LeftAxis.ExactDateTime = False
-    LeftAxis.Increment = 1.000000000000000000
-    LeftAxis.Maximum = 200.000000000000000000
-    LeftAxis.Title.Caption = 'Flow   (mm3/s)'
-    RightAxis.Automatic = False
-    RightAxis.AutomaticMaximum = False
-    RightAxis.AutomaticMinimum = False
-    RightAxis.AxisValuesFormat = '0'
-    RightAxis.ExactDateTime = False
-    RightAxis.Increment = 1.000000000000000000
-    RightAxis.Maximum = 300.000000000000000000
-    RightAxis.Minimum = 170.000000000000000000
-    RightAxis.Title.Caption = 'Temperature (c'#176')'
-    TopAxis.Visible = False
-    View3D = False
+  object ComboBox2: TComboBox
+    Left = 550
+    Top = 80
+    Width = 394
+    Height = 21
     Color = clDarkgray
+    DropDownCount = 10
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 47
+    Text = 'None'
+    OnChange = ComboBox2Change
+    OnKeyPress = ComboBox2KeyPress
+    Items.Strings = (
+      'None'
+      'None1')
+  end
+  object Edit16: TEdit
+    Left = 290
+    Top = 107
+    Width = 122
+    Height = 18
+    BorderStyle = bsNone
+    Color = clDarkgray
+    Font.Charset = ARABIC_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 48
+    Text = 'EXTRUDER_TEMP'
+  end
+  object StaticText1: TStaticText
+    Left = 233
+    Top = 108
+    Width = 51
+    Height = 17
+    Caption = 'Extruder'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 49
+  end
+  object Edit17: TEdit
+    Left = 97
+    Top = 107
+    Width = 121
+    Height = 18
+    BorderStyle = bsNone
+    Color = clDarkgray
+    Font.Charset = ARABIC_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 50
+    Text = 'PRINT_START'
+    OnChange = Edit14Change
+  end
+  object StaticText21: TStaticText
+    Left = 25
+    Top = 108
+    Width = 66
+    Height = 17
+    Hint = 
+      'this indicates the Nozzle temperature variations authorized by a' +
+      ' chosen time'
+    Caption = 'Stat Macro'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
     ParentShowHint = False
-    ShowHint = False
-    TabOrder = 54
-    DefaultCanvas = 'TGDIPlusCanvas'
-    PrintMargins = (
-      15
-      38
-      15
-      38)
-    ColorPaletteIndex = 13
-    object Label7: TLabel
-      Left = 1198
-      Top = 275
-      Width = 91
-      Height = 13
-      Caption = 'Estimated time :'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
-    object Label13: TLabel
-      Left = 16
-      Top = 40
-      Width = 8
-      Height = 13
-      Caption = '0'
-      Color = clGray
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      ParentColor = False
-      ParentFont = False
-    end
-    object Label20: TLabel
-      Left = 1277
-      Top = 44
-      Width = 8
-      Height = 13
-      Caption = '0'
-      Color = clGray
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clRed
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      ParentColor = False
-      ParentFont = False
-    end
-    object Label21: TLabel
-      Left = 1277
-      Top = 220
-      Width = 8
-      Height = 13
-      Caption = '0'
-      Color = clGray
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clRed
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      ParentColor = False
-      ParentFont = False
-    end
-    object Label1: TLabel
-      Left = 1200
-      Top = 292
-      Width = 55
-      Height = 13
-      Caption = '0 minutes'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      ParentFont = False
-      Transparent = True
-    end
-    object Label11: TLabel
-      Left = 88
-      Top = 8
-      Width = 88
-      Height = 13
-      Caption = 'Filament Type :'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
-    object Label12: TLabel
-      Left = 261
-      Top = 8
-      Width = 92
-      Height = 13
-      Caption = 'Filament Name :'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
-    object Label16: TLabel
-      Left = 186
-      Top = 8
-      Width = 31
-      Height = 13
-      Caption = 'None'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      ParentFont = False
-      Transparent = True
-    end
-    object Label17: TLabel
-      Left = 359
-      Top = 8
-      Width = 31
-      Height = 13
-      Caption = 'None'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      ParentFont = False
-      Transparent = True
-    end
-    object BitBtn7: TBitBtn
-      Left = 6
-      Top = 280
-      Width = 138
-      Height = 25
-      Caption = 'Generate'
-      Enabled = False
-      Kind = bkRetry
-      NumGlyphs = 2
-      TabOrder = 0
-      OnClick = BitBtn7Click
-    end
-    object Series9: TLineSeries
-      HoverElement = [heCurrent]
-      SeriesColor = 6710886
-      Shadow.Visible = False
-      Title = 'Move Flow (Average)'
-      Brush.BackColor = clDefault
-      ClickableLine = False
-      Pointer.InflateMargins = True
-      Pointer.Style = psRectangle
-      Stairs = True
-      XValues.Name = 'X'
-      XValues.Order = loAscending
-      YValues.Name = 'Y'
-      YValues.Order = loNone
-      Data = {0000000000}
-      Detail = {0000000000}
-    end
-    object Series10: TLineSeries
-      HoverElement = [heCurrent]
-      SeriesColor = clRed
-      Shadow.Visible = False
-      Title = 'Temperature'
-      VertAxis = aRightAxis
-      Brush.BackColor = clDefault
-      ClickableLine = False
-      LinePen.Style = psDash
-      Pointer.InflateMargins = True
-      Pointer.Style = psRectangle
-      XValues.Name = 'X'
-      XValues.Order = loAscending
-      YValues.Name = 'Y'
-      YValues.Order = loNone
-      Data = {0000000000}
-      Detail = {0000000000}
-    end
-    object Series11: TLineSeries
-      HoverElement = [heCurrent]
-      Legend.Visible = False
-      HorizAxis = aTopAxis
-      ShowInLegend = False
-      Title = 'Temp Ref'
-      Brush.BackColor = clDefault
-      ClickableLine = False
-      Pointer.InflateMargins = True
-      Pointer.Style = psRectangle
-      XValues.Name = 'X'
-      XValues.Order = loAscending
-      YValues.Name = 'Y'
-      YValues.Order = loNone
-      Data = {0000000000}
-      Detail = {0000000000}
-    end
+    ShowHint = True
+    TabOrder = 51
+  end
+  object BitBtn3: TBitBtn
+    Left = 0
+    Top = 894
+    Width = 1329
+    Height = 25
+    Hint = 'Cancel and Close'
+    Align = alBottom
+    Caption = 'Close'
+    Kind = bkAbort
+    NumGlyphs = 2
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 52
+    OnClick = BitBtn3Click
+  end
+  object BitBtn2: TBitBtn
+    Left = 0
+    Top = 869
+    Width = 1329
+    Height = 25
+    Hint = 'Save / Print'
+    Align = alBottom
+    Caption = 'Save/ Print'
+    Enabled = False
+    Kind = bkAll
+    NumGlyphs = 2
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 53
+    OnClick = BitBtn2Click
   end
   object Chart1: TChart
     Left = 8
@@ -3525,7 +3330,10 @@ object Form1: TForm1
     Color = clDarkgray
     ParentShowHint = False
     ShowHint = False
-    TabOrder = 55
+    TabOrder = 54
+    DesignSize = (
+      1313
+      318)
     DefaultCanvas = 'TGDIPlusCanvas'
     PrintMargins = (
       15
@@ -3534,7 +3342,7 @@ object Form1: TForm1
       38)
     ColorPaletteIndex = 13
     object Label2: TLabel
-      Left = 1198
+      Left = 50
       Top = 272
       Width = 91
       Height = 13
@@ -3547,7 +3355,7 @@ object Form1: TForm1
       ParentFont = False
     end
     object Label4: TLabel
-      Left = 1200
+      Left = 50
       Top = 289
       Width = 55
       Height = 13
@@ -3610,6 +3418,7 @@ object Form1: TForm1
       Width = 76
       Height = 13
       Cursor = crHandPoint
+      Anchors = [akTop, akRight]
       Caption = 'How to Zoom'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
@@ -3624,6 +3433,7 @@ object Form1: TForm1
       Top = 5
       Width = 20
       Height = 20
+      Anchors = [akTop, akRight]
       Picture.Data = {
         0954506E67496D61676589504E470D0A1A0A0000000D49484452000000180000
         001908060000002B2BEE5D000000017352474200AECE1CE90000000467414D41
@@ -3653,6 +3463,7 @@ object Form1: TForm1
       Top = 220
       Width = 8
       Height = 13
+      Anchors = [akTop, akRight]
       Caption = '0'
       Color = clGray
       Font.Charset = DEFAULT_CHARSET
@@ -3668,6 +3479,7 @@ object Form1: TForm1
       Top = 44
       Width = 8
       Height = 13
+      Anchors = [akTop, akRight]
       Caption = '0'
       Color = clGray
       Font.Charset = DEFAULT_CHARSET
@@ -3679,11 +3491,11 @@ object Form1: TForm1
       ParentFont = False
     end
     object Label18: TLabel
-      Left = 261
+      Left = 283
       Top = 8
-      Width = 92
+      Width = 56
       Height = 13
-      Caption = 'Filament Name :'
+      Caption = 'Filament :'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -3692,10 +3504,11 @@ object Form1: TForm1
       ParentFont = False
     end
     object Label24: TLabel
-      Left = 359
+      Left = 345
       Top = 8
-      Width = 31
+      Width = 180
       Height = 13
+      AutoSize = False
       Caption = 'None'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
@@ -3706,10 +3519,11 @@ object Form1: TForm1
       Transparent = True
     end
     object Label25: TLabel
-      Left = 186
+      Left = 110
       Top = 8
-      Width = 31
+      Width = 155
       Height = 13
+      AutoSize = False
       Caption = 'None'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
@@ -3720,11 +3534,11 @@ object Form1: TForm1
       Transparent = True
     end
     object Label26: TLabel
-      Left = 88
+      Left = 6
       Top = 8
-      Width = 88
+      Width = 99
       Height = 13
-      Caption = 'Filament Type :'
+      Caption = 'Printer/Extruder :'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -3733,10 +3547,11 @@ object Form1: TForm1
       ParentFont = False
     end
     object BitBtn5: TBitBtn
-      Left = 6
+      Left = 1100
       Top = 280
       Width = 138
       Height = 25
+      Anchors = [akTop, akRight]
       Caption = 'Refresh Estimation'
       Enabled = False
       Kind = bkRetry
@@ -3765,6 +3580,7 @@ object Form1: TForm1
     object Series3: TLineSeries
       HoverElement = [heCurrent]
       Legend.Visible = False
+      Active = False
       SeriesColor = clBlack
       Shadow.Visible = False
       ShowInLegend = False
@@ -3784,7 +3600,8 @@ object Form1: TForm1
     end
     object Series2: TLineSeries
       HoverElement = [heCurrent]
-      SeriesColor = 4259584
+      Active = False
+      SeriesColor = clLime
       Shadow.Visible = False
       Title = 'Max Flow / s'
       Brush.BackColor = clDefault
@@ -3802,6 +3619,7 @@ object Form1: TForm1
     end
     object Series1: TLineSeries
       HoverElement = [heCurrent]
+      Active = False
       SeriesColor = clGreen
       Shadow.Visible = False
       Title = 'Average Flow / s'
@@ -3857,6 +3675,7 @@ object Form1: TForm1
     object Series6: TLineSeries
       HoverElement = [heCurrent]
       Legend.Visible = False
+      Active = False
       SeriesColor = clYellow
       Shadow.Visible = False
       ShowInLegend = False
@@ -3893,83 +3712,291 @@ object Form1: TForm1
       Detail = {0000000000}
     end
   end
-  object ComboBox2: TComboBox
-    Left = 655
-    Top = 76
-    Width = 394
-    Height = 21
+  object Chart2: TChart
+    Left = 8
+    Top = 545
+    Width = 1313
+    Height = 318
+    AllowPanning = pmHorizontal
+    BackWall.Brush.Style = bsClear
+    Legend.Alignment = laBottom
+    Legend.Color = clSilver
+    Legend.Frame.Visible = False
+    Legend.LegendStyle = lsSeries
+    Legend.Shadow.HorizSize = 0
+    Legend.Shadow.VertSize = 0
+    Legend.TopPos = 0
+    Legend.VertMargin = 5
+    Title.Font.Color = clNavy
+    Title.Font.Height = -15
+    Title.Font.Style = [fsBold]
+    Title.Text.Strings = (
+      '- Generated G-Code -')
+    Title.VertMargin = 0
+    BottomAxis.Automatic = False
+    BottomAxis.AutomaticMaximum = False
+    BottomAxis.AutomaticMinimum = False
+    BottomAxis.AxisValuesFormat = '#.#'
+    BottomAxis.Maximum = 25.000000000000000000
+    BottomAxis.Title.Caption = 'Time (s)'
+    LeftAxis.Automatic = False
+    LeftAxis.AutomaticMaximum = False
+    LeftAxis.AutomaticMinimum = False
+    LeftAxis.AxisValuesFormat = '0'
+    LeftAxis.ExactDateTime = False
+    LeftAxis.Increment = 1.000000000000000000
+    LeftAxis.Maximum = 200.000000000000000000
+    LeftAxis.Title.Caption = 'Flow   (mm3/s)'
+    RightAxis.Automatic = False
+    RightAxis.AutomaticMaximum = False
+    RightAxis.AutomaticMinimum = False
+    RightAxis.AxisValuesFormat = '0'
+    RightAxis.ExactDateTime = False
+    RightAxis.Increment = 1.000000000000000000
+    RightAxis.Maximum = 300.000000000000000000
+    RightAxis.Minimum = 170.000000000000000000
+    RightAxis.Title.Caption = 'Temperature (c'#176')'
+    TopAxis.Visible = False
+    View3D = False
     Color = clDarkgray
-    DropDownCount = 10
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clNavy
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
+    ParentShowHint = False
+    Constraints.MinHeight = 318
+    ShowHint = False
+    TabOrder = 55
+    DesignSize = (
+      1313
+      318)
+    DefaultCanvas = 'TGDIPlusCanvas'
+    PrintMargins = (
+      15
+      38
+      15
+      38)
+    ColorPaletteIndex = 13
+    object Label7: TLabel
+      Left = 50
+      Top = 275
+      Width = 91
+      Height = 13
+      Anchors = [akLeft, akBottom]
+      Caption = 'Estimated time :'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label13: TLabel
+      Left = 16
+      Top = 40
+      Width = 8
+      Height = 13
+      Caption = '0'
+      Color = clGray
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label20: TLabel
+      Left = 1277
+      Top = 44
+      Width = 8
+      Height = 13
+      Anchors = [akTop, akRight]
+      Caption = '0'
+      Color = clGray
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label21: TLabel
+      Left = 1277
+      Top = 220
+      Width = 8
+      Height = 13
+      Anchors = [akRight, akBottom]
+      Caption = '0'
+      Color = clGray
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label1: TLabel
+      Left = 50
+      Top = 292
+      Width = 55
+      Height = 13
+      Anchors = [akLeft, akBottom]
+      Caption = '0 minutes'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      Transparent = True
+    end
+    object Label11: TLabel
+      Left = 6
+      Top = 8
+      Width = 99
+      Height = 13
+      Caption = 'Printer/Extruder :'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label12: TLabel
+      Left = 283
+      Top = 8
+      Width = 56
+      Height = 13
+      Caption = 'Filament :'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label16: TLabel
+      Left = 110
+      Top = 8
+      Width = 155
+      Height = 13
+      AutoSize = False
+      Caption = 'None'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      Transparent = True
+    end
+    object Label17: TLabel
+      Left = 345
+      Top = 8
+      Width = 180
+      Height = 13
+      AutoSize = False
+      Caption = 'None'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      Transparent = True
+    end
+    object BitBtn7: TBitBtn
+      Left = 1100
+      Top = 280
+      Width = 138
+      Height = 25
+      Anchors = [akRight, akBottom]
+      Caption = 'Generate'
+      Enabled = False
+      Kind = bkRetry
+      NumGlyphs = 2
+      TabOrder = 0
+      OnClick = BitBtn7Click
+    end
+    object Series9: TLineSeries
+      HoverElement = [heCurrent]
+      SeriesColor = 6710886
+      Shadow.Visible = False
+      Title = 'Move Flow (Average)'
+      Brush.BackColor = clDefault
+      ClickableLine = False
+      Pointer.InflateMargins = True
+      Pointer.Style = psRectangle
+      Stairs = True
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+      Data = {0000000000}
+      Detail = {0000000000}
+    end
+    object Series10: TLineSeries
+      HoverElement = [heCurrent]
+      SeriesColor = clRed
+      Shadow.Visible = False
+      Title = 'Temperature'
+      VertAxis = aRightAxis
+      Brush.BackColor = clDefault
+      ClickableLine = False
+      LinePen.Style = psDash
+      Pointer.InflateMargins = True
+      Pointer.Style = psRectangle
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+      Data = {0000000000}
+      Detail = {0000000000}
+    end
+    object Series11: TLineSeries
+      HoverElement = [heCurrent]
+      Legend.Visible = False
+      HorizAxis = aTopAxis
+      ShowInLegend = False
+      Title = 'Temp Ref'
+      Brush.BackColor = clDefault
+      ClickableLine = False
+      Pointer.InflateMargins = True
+      Pointer.Style = psRectangle
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+      Data = {0000000000}
+      Detail = {0000000000}
+    end
+  end
+  object TrackBar1: TTrackBar
+    Left = 526
+    Top = 107
+    Width = 270
+    Height = 19
+    Cursor = crHandPoint
+    Hint = 
+      'Tilt the average optimezation between Speed (Max Flow) and Quali' +
+      'ty (Average Flow)'
+    DragCursor = crSizeWE
+    ParentShowHint = False
+    PageSize = 1
+    Position = 3
+    ShowHint = True
     TabOrder = 56
-    Text = 'None'
-    OnChange = ComboBox2Change
-    OnKeyPress = ComboBox2KeyPress
-    Items.Strings = (
-      'None'
-      'None1')
+    ThumbLength = 15
   end
-  object Edit16: TEdit
-    Left = 290
-    Top = 156
-    Width = 122
-    Height = 18
-    BorderStyle = bsNone
-    Color = clDarkgray
-    Font.Charset = ARABIC_CHARSET
-    Font.Color = clNavy
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 57
-    Text = 'EXTRUDER_TEMP'
-  end
-  object StaticText1: TStaticText
-    Left = 233
-    Top = 157
-    Width = 51
-    Height = 17
-    Caption = 'Extruder'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 58
-  end
-  object Edit17: TEdit
-    Left = 97
-    Top = 156
-    Width = 121
-    Height = 18
-    BorderStyle = bsNone
-    Color = clActiveBorder
-    Font.Charset = ARABIC_CHARSET
-    Font.Color = clNavy
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 59
-    Text = 'PRINT_START'
-    OnChange = Edit14Change
-  end
-  object StaticText21: TStaticText
-    Left = 25
-    Top = 157
-    Width = 66
+  object StaticText11: TStaticText
+    Left = 483
+    Top = 109
+    Width = 40
     Height = 17
     Hint = 
-      'this indicates the Nozzle temperature variations authorized by a' +
-      ' chosen time'
-    Caption = 'Stat Macro'
+      'Tilt the average optimezation between Speed (Max Flow) and Quali' +
+      'ty (Average Flow)'
+    Caption = 'Speed'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -3978,21 +4005,43 @@ object Form1: TForm1
     ParentFont = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 60
+    TabOrder = 57
+  end
+  object StaticText12: TStaticText
+    Left = 802
+    Top = 109
+    Width = 43
+    Height = 17
+    Hint = 
+      'Tilt the average optimezation between Speed (Max Flow) and Quali' +
+      'ty (Average Flow)'
+    Caption = 'Quality'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 58
   end
   object OpenDialog1: TOpenDialog
     Filter = 'GCode|*.gcode'
     Title = 'Open a G-Code File'
-    Left = 624
+    Left = 1272
+    Top = 8
   end
   object XPManifest1: TXPManifest
-    Left = 576
+    Left = 1168
+    Top = 56
   end
   object SaveDialog1: TSaveDialog
     DefaultExt = 'gcode'
     Filter = 'GCODE FILE|*.gcode'
     Title = 'Save generated GCODE'
-    Left = 528
+    Left = 1184
+    Top = 8
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
@@ -4003,11 +4052,13 @@ object Form1: TForm1
       'Synchronous=Normal'
       'DriverID=SQLite')
     LoginPrompt = False
-    Left = 664
+    Left = 1280
+    Top = 64
   end
   object DataSource1: TDataSource
     DataSet = FDTableEXTRUDER
-    Left = 744
+    Left = 1184
+    Top = 120
   end
   object FDTableFILAMENT: TFDTable
     Filter = 'EXTRUDER_NAME =None'
@@ -4015,7 +4066,8 @@ object Form1: TForm1
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     TableName = 'FILAMENT'
-    Left = 816
+    Left = 1240
+    Top = 128
     object FDTableFILAMENTEXTRUDER_NAME: TStringField
       FieldName = 'EXTRUDER_NAME'
       Origin = 'EXTRUDER_NAME'
@@ -4087,14 +4139,16 @@ object Form1: TForm1
   end
   object DataSource2: TDataSource
     DataSet = FDTableFILAMENT
-    Left = 856
+    Left = 1280
+    Top = 128
   end
   object FDTableEXTRUDER: TFDTable
     IndexFieldNames = 'EXTRUDER_NAME'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     TableName = 'EXTRUDER'
-    Left = 704
+    Left = 1152
+    Top = 120
     object FDTableEXTRUDEREXTRUDER_NAME: TStringField
       FieldName = 'EXTRUDER_NAME'
       Origin = 'EXTRUDER_NAME'
@@ -4146,6 +4200,7 @@ object Form1: TForm1
   object Timer1: TTimer
     Enabled = False
     OnTimer = Timer1Timer
-    Left = 488
+    Left = 1224
+    Top = 64
   end
 end

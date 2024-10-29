@@ -30,7 +30,7 @@ implementation
 
 {$R *.dfm}
 
-uses Unit1;
+uses Unit1, Unit8;
 
 procedure TForm6.BitBtn1Click(Sender: TObject);
 begin
@@ -38,7 +38,7 @@ Try
   if Form1.FDTableFILAMENT.RecordCount > 0 then begin
     if Form6.Edit1.Text = Form1.FDTableFILAMENT['FILAMENT_NAME'] then begin
       Form1.FDTableFILAMENT.Edit;
-      Form1.FDTableFILAMENT.FieldByName('SPEED_QUALITY_OPT').AsInteger := form1.TrackBar1.Position;
+      Form1.FDTableFILAMENT.FieldByName('SPEED_QUALITY_OPT').AsInteger := form8.TrackBar1.Position;
       if form1.CheckBox7.Checked then Form1.FDTableFILAMENT.FieldByName('ADJUST_PA').AsBoolean := true else Form1.FDTableFILAMENT.FieldByName('ADJUST_PA').AsBoolean := false;
       Form1.FDTableFILAMENT.FieldByName('HEIGHT_TEMP').AsInteger := form1.UpDown3.Position;
       Form1.FDTableFILAMENT.FieldByName('MID_TEMP').AsInteger := form1.UpDown2.Position;
@@ -61,7 +61,7 @@ Try
       Form1.FDTableFILAMENT.FieldByName('EXTRUDER_NAME').AsString := Form1.FDTableEXTRUDER['EXTRUDER_NAME'];
       Form1.FDTableFILAMENT.FieldByName('FILAMENT_NAME').AsString := Form6.Edit1.Text;
       Form1.FDTableFILAMENT.FieldByName('FILAMENT_TYPE').AsString := Form1.ComboBox1.Text;
-      Form1.FDTableFILAMENT.FieldByName('SPEED_QUALITY_OPT').AsInteger := form1.TrackBar1.Position;
+      Form1.FDTableFILAMENT.FieldByName('SPEED_QUALITY_OPT').AsInteger := form8.TrackBar1.Position;
       if form1.CheckBox7.Checked then Form1.FDTableFILAMENT.FieldByName('ADJUST_PA').AsBoolean := true else Form1.FDTableFILAMENT.FieldByName('ADJUST_PA').AsBoolean := false;
       Form1.FDTableFILAMENT.FieldByName('HEIGHT_TEMP').AsInteger := form1.UpDown3.Position;
       Form1.FDTableFILAMENT.FieldByName('MID_TEMP').AsInteger := form1.UpDown2.Position;
@@ -86,7 +86,7 @@ Try
     Form1.FDTableFILAMENT.FieldByName('EXTRUDER_NAME').AsString := Form1.FDTableEXTRUDER['EXTRUDER_NAME'];
     Form1.FDTableFILAMENT.FieldByName('FILAMENT_NAME').AsString := Form6.Edit1.Text;
     Form1.FDTableFILAMENT.FieldByName('FILAMENT_TYPE').AsString := Form1.ComboBox1.Text;
-    Form1.FDTableFILAMENT.FieldByName('SPEED_QUALITY_OPT').AsInteger := form1.TrackBar1.Position;
+    Form1.FDTableFILAMENT.FieldByName('SPEED_QUALITY_OPT').AsInteger := form8.TrackBar1.Position;
     if form1.CheckBox7.Checked then Form1.FDTableFILAMENT.FieldByName('ADJUST_PA').AsBoolean := true else Form1.FDTableFILAMENT.FieldByName('ADJUST_PA').AsBoolean := false;
     Form1.FDTableFILAMENT.FieldByName('HEIGHT_TEMP').AsInteger := form1.UpDown3.Position;
     Form1.FDTableFILAMENT.FieldByName('MID_TEMP').AsInteger := form1.UpDown2.Position;
