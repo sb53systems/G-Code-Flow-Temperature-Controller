@@ -46,12 +46,12 @@ D:\SB53_G-Code_Flow_Temperature_Controller_V1.1\SB53-Systems.exe;
   
 3. Edit the initial layer temperature is important, the script can :
     - Modify the specified print start macro. Example Below  
-  ![image](https://github.com/user-attachments/assets/26b1e09e-0750-43f6-995f-8671da5838e0)  
-  ![image](https://github.com/user-attachments/assets/a3c814af-4522-4177-907c-7aab631505f7)  
+    ![image](https://github.com/user-attachments/assets/26b1e09e-0750-43f6-995f-8671da5838e0)  
+    ![image](https://github.com/user-attachments/assets/a3c814af-4522-4177-907c-7aab631505f7)  
     - Edit the GCode command "M109 S" provided that it is preceded by the comment "; Temp_To_Edit". Example Below  
-   ```
-    ; Temp_To_Edit
-   ```  
+     ```
+      ; Temp_To_Edit
+     ```  
     ![image](https://github.com/user-attachments/assets/a51b55dc-831b-48e2-88e8-18b2c99c3222)  
   
 4. The initial temperature estimated by the Script depends on the speed of the first moves of the G-Code, you can adjust it by fixing the speed of the purge line or the speed of the first layer perimeters.  
@@ -82,9 +82,8 @@ You can use a modifier (or more) in the slicer that changes the speed of a few l
 ![image](https://github.com/user-attachments/assets/c07c5e7c-b137-4af3-86b6-efeaecdc06cc)  
   
 ### Note that :  
-- The script is specifically programmed to reduce speeds only when they exceed the recommended flow rate (based on layer height and line width), while lower speeds will remain as set in the G-Code (Slicer speed).  
-- In Klipper, you can't change the hotend PID while printing. I recommend using PID values for temperatures between 70% and 90% of the maximum temperature.  
-- PA can be adjusted in the script based on temperature, or you can use the fixed PA from the Slicer or Klipper firmware by unchecking the Adjust PA option before generating the G-Code.  
+- The script is specifically programmed to reduce speeds only when they exceed the recommended flow rate (based on layer height and line width), while lower speeds will remain as set in the G-Code (Slicer speed).   
+- PA can be adjusted based on temperature only for Klipper firmware. For other firmwares you need to uncheck the Adjust PA option.  
 - Changing PA while printing can cause bubbles in the walls. The script is programmed to adjust PA only in sparse infill, internal solid infill, support, and internal bridges.  
 ![351913375-991fe2b8-3935-46ff-816e-5b0aee981b4d](https://github.com/user-attachments/assets/602b96a8-2666-44bd-b70f-aa5c06deadd4)  
   
@@ -94,7 +93,7 @@ You can use a modifier (or more) in the slicer that changes the speed of a few l
 - Delta printers kinematic limits are not supported with the current version of Klipper_Estimator.  
 - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
 - Processing G-Code with Arc moves will take longer, because the Klipper Estimator script will cut them into small segments based on the parameter `"mm_per_arc_segment": 0.1`.
-- The generated G-Code is 20/50 % larger than the original one due to Temp and Speed adjustment.
+- The generated G-Code is 20/40 % larger than the original one due to Temp and Speed adjustment.
 - This script is currently only available for `Windows OS`. With Delphi 12 and some changes to the source code, it can be compiled for other operating systems (I can help with this or do it later!).  
   
 # Ideal Flow/Temperature Calibration
@@ -114,6 +113,7 @@ See my [Ideal Flow Vs Hotend Temperature Calibration](https://github.com/sb53sys
 I challenge makers to find a precise, cost-effective, and user-friendly solution for the majority of 3D printers. :)  
   
 # Observations and Tips
+- I recommend that you calibrate your PID values ​​for a temperature between 70% and 90% of the maximum temperature.  
 - A printer with higher accelerations and lower hotend heating/cooling time, will have a better result with this approach because it allows for better flow stabilization (Quality) and Higher Max/Average Flow (Speed).  
 - With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands without any changes in the script.  
 - You can reduce the speed of the cooling fan during the entire printing process (Except for Bridges and Ovehangs).  
