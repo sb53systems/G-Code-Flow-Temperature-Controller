@@ -61,7 +61,6 @@ type
     Label3: TLabel;
     Label15: TLabel;
     Label14: TLabel;
-    Image9: TImage;
     Image3: TImage;
     Label6: TLabel;
     Bevel2: TBevel;
@@ -101,9 +100,6 @@ type
     Edit9: TEdit;
     UpDown8: TUpDown;
     BitBtn6: TBitBtn;
-    TrackBar1: TTrackBar;
-    StaticText11: TStaticText;
-    StaticText12: TStaticText;
     StaticText13: TStaticText;
     Edit11: TEdit;
     UpDown10: TUpDown;
@@ -122,7 +118,6 @@ type
     UpDown9: TUpDown;
     UpDown11: TUpDown;
     StaticText19: TStaticText;
-    StaticText20: TStaticText;
     DBLookupComboBox1: TDBLookupComboBox;
     ComboBox2: TComboBox;
     Edit16: TEdit;
@@ -168,7 +163,11 @@ type
     Series9: TLineSeries;
     Series10: TLineSeries;
     Series11: TLineSeries;
-    ComboBox3: TComboBox;
+    Label5: TLabel;
+    Image9: TImage;
+    TrackBar1: TTrackBar;
+    StaticText11: TStaticText;
+    StaticText12: TStaticText;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
@@ -231,15 +230,14 @@ var
   Form1: TForm1;
   GCode_IN, GCode_Output, tempOutputFile, finalFile, ConfigFile : textfile;
   file_path, appPath, Lines, initialTemp, floatLocalFormat : string;
-  Filament_count, print_time : single;
   averageTime, imerCount: integer;
-  canProcess, extruderFound, filNameFound, filTypeFound : bool;
+  canProcess, extruderFound, filNameFound, filTypeFound, acrsFound : bool;
   formatSettings : TFormatSettings;
   Bookmark: TBookmark;
 
 implementation
 
-uses Unit2, Unit3, Unit4, Unit5, Unit6, Unit7;
+uses Unit2, Unit3, Unit4, Unit5, Unit6, Unit7, Unit8;
 
 {$R *.dfm}
 
@@ -342,12 +340,12 @@ procedure generateOutput;
 var
   klipperEstCom, Lines2 : string;
   tTime, moveTime, flow, maxCount : double;
-  retract, edited, endFound, useStartMacro : bool;
+  retract, edited, endFound, tempToEdit, useStartMacro : bool;
   d, m, h, s, moveCount, indexSeries11 : integer;
 begin
-  klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+appPath+'\klipper_estimator.exe --config_file '+appPath+'\config.json dump-moves '+appPath+'\tempOut > '+appPath+'\gcode.txt';
+  klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+appPath+'\klipper_estimator.exe --config_file '+appPath+'\config.json dump-moves '+appPath+'\tempOut > '+appPath+'\KEOutput';
   ExecNewProcess(klipperEstCom,true);
-  Assignfile (GCode_IN, appPath+'\gcode.txt');
+  Assignfile (GCode_IN, appPath+'\KEOutput');
   Reset (GCode_IN);
   tTime:=0;
   flow:=0;
@@ -358,10 +356,11 @@ begin
   retract:=false;
   edited:=false;
   endFound:=false;
+  tempToEdit:=false;
   if form1.Edit17.text<>'' then useStartMacro:=true else useStartMacro:=false;
   WHILE NOT EOF(GCode_IN) DO BEGIN
     Readln (GCode_IN, Lines);
-    if copy(Lines,1,8)='    Flow' then begin
+    if copy(Lines,1,4)='Flow' then begin
       if pos('(', Lines)<>0 then begin
         Lines:=copy(Lines, pos('(',Lines)+1, length(Lines));
         Lines:=copy(Lines, 1, length(Lines)-1);
@@ -378,14 +377,14 @@ begin
           end;
         end;
       end else flow:=0;
-    end else if copy(Lines,1,8)='    Time' then begin
+    end else if copy(Lines,1,4)='Time' then begin
       moveCount:=moveCount+1;
       Lines:=copy(Lines, pos('=',Lines)+2, length(Lines));
       if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
       moveTime:=StrToFloat(Lines);
       if tTime>0 then Form1.Series9.AddXY(tTime, flow);
       tTime:=tTime+moveTime;
-      if moveCount=Form1.Series11.XValue[indexSeries11] then begin
+      if ((not acrsFound)and(moveCount=Form1.Series11.XValue[indexSeries11])) then begin
         Form1.Series10.AddXY(tTime,Form1.Series11.YValue[indexSeries11]);
         indexSeries11:=indexSeries11+1;
       end;
@@ -393,11 +392,6 @@ begin
     end;
   END;
   CloseFile(GCode_IN);
-  try
-    DeleteFile(appPath+'\gcode.txt');
-  Except
-    // Do Nothing
-  end;
   d:=Trunc(tTime/86400);
   h:=Trunc((tTime-(d*86400))/3600);
   m:=Trunc((tTime-(h*3600))/60);
@@ -407,6 +401,7 @@ begin
   if h>0 then Form1.Label1.Caption:=Form1.Label1.Caption+inttostr(h)+'h ';
   if m>0 then Form1.Label1.Caption:=Form1.Label1.Caption+inttostr(m)+'m ';
   if s>0 then Form1.Label1.Caption:=Form1.Label1.Caption+inttostr(s)+'s';
+
   // Change Estimated Time in GCODE
   AssignFile(GCode_IN,file_path);
   Reset (GCode_IN);
@@ -419,9 +414,14 @@ begin
     // Change the Initial Temperature in Print Start Macro
     if useStartMacro and (copy(Lines,1,length(form1.Edit17.text))=form1.Edit17.text) then begin
       WriteLn (finalFile , (copy(Lines,1,pos(form1.Edit16.text,Lines)+length(form1.Edit16.text)))+StringReplace(initialTemp, ',', '.', [rfReplaceAll])+copy(Lines,pos(form1.Edit16.text,Lines)+length(form1.Edit16.text)+4,Length(Lines)) +'    ; Reset Initial Temperature');
+    // Found "M109 S" to edit
+    end else if copy(Lines,1,14)='; Temp_To_Edit' then begin
+      WriteLn (finalFile , Lines);
+      tempToEdit:=true;
     // Change the Initial Temperature in M109 S
-    end else if copy(Lines,1,6)='M109 S' then begin
+    end else if ((tempToEdit) and (copy(Lines,1,6)='M109 S')) then begin
       WriteLn (finalFile ,'M109 S'+StringReplace(initialTemp, ',', '.', [rfReplaceAll])+' '+copy(Lines,11,length(Lines))+'    ; Reset Initial Temperature');
+      tempToEdit:=false;
     // Change Print Time
     end else if copy(Lines,1,41)='; estimated printing time (normal mode) =' then begin
       Lines:='; estimated printing time (normal mode) = '+Form1.Label1.Caption;
@@ -431,7 +431,7 @@ begin
        WriteLn (finalFile , Lines);
        WriteLn (finalFile , '; Edited by '+Form1.Caption);
     // Detect Print End
-    end else if copy(Lines,1,22)='; EXECUTABLE_BLOCK_END' then begin
+    end else if ((copy(Lines,1,22)='; EXECUTABLE_BLOCK_END')or(copy(Lines,1,11)='; PRINT_END')) then begin
       endFound:=true;
       WriteLn (finalFile , Lines);
     // Detect Print Start
@@ -479,7 +479,7 @@ begin
   Form1.Chart2.Title.Text.Clear;
   Form1.Chart2.Title.Font.Color:=clRed;
   Form1.Chart2.Title.Text.Add('Generating...');
-  Form1.Label16.Caption:=form1.ComboBox1.Text;
+  Form1.Label16.Caption:=form1.DBLookupComboBox1.Text;
   Form1.Label17.Caption:=form1.ComboBox2.Text;
   Form1.Chart2.Repaint;
   lineType:='';
@@ -665,7 +665,7 @@ begin
   Form1.Chart1.Title.Text.Clear;
   Form1.Chart1.Title.Font.Color:=clRed;
   Form1.Chart1.Title.Text.Add('Calculating...');
-  Form1.Label25.Caption:=form1.ComboBox1.Text;
+  Form1.Label25.Caption:=form1.DBLookupComboBox1.Text;
   Form1.Label24.Caption:=form1.ComboBox2.Text;
   Form1.Chart1.Repaint;
   Form1.Chart2.Repaint;
@@ -741,6 +741,7 @@ var
   printerName, filamentType, filamentName : string;
 begin
   form1.BitBtn4.Enabled:=false;
+  acrsFound:=false;
   // Check for the necessary files
   if not FileExists(file_path) then begin
     canProcess:= false;
@@ -772,14 +773,13 @@ begin
 
   WHILE NOT (EOF(GCode_IN)) and canProcess Do begin
     Readln (GCode_IN, Lines);
-    // Check if G2/G3 is used
-   { if firstMove and ((copy(Lines,1,3)='G2 ')or(copy(Lines,1,3)='G3 ')) then begin
-      showmessage('Cannot be processed ! This G-code File contains G2 or G3 commands !');
-      canProcess:=false;
     // Check if the G-Code is already Edited
-    end else} if copy(Lines,1,16)='; Edited by SB53' then begin
+    if copy(Lines,1,16)='; Edited by SB53' then begin
       showmessage('Cannot be processed ! This G-Code file is already edited by this script');
       canProcess:=false;
+    // Get the Filament Type
+    end else if ((copy(Lines,1,3)='G2 ')or(copy(Lines,1,3)='G3 ')) then begin
+      acrsFound:=true;
     // Get the Filament Type
     end else if copy(Lines,1,17)='; filament_type =' then begin
       filamentType:=copy(Lines,19,length(Lines));
@@ -793,7 +793,7 @@ begin
     end else if ((copy(Lines,1,8)=';HEIGHT:')or(copy(Lines,1,11)='; Z_HEIGHT:')) then begin
       firstMove:=true;
     // Detect Last Move
-    end else if copy(Lines,1,22)='; EXECUTABLE_BLOCK_END' then begin
+    end else if ((copy(Lines,1,22)='; EXECUTABLE_BLOCK_END')or(copy(Lines,1,11)='; PRINT_END')) then begin
       lastMove:=true;
     end;
     // Write the Line in TempOutput File
@@ -842,13 +842,13 @@ begin
     filNameFound:=false;
 
     // Use Klipper Estimator Script / Read data / Calculate Averages
-    klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+appPath+'\klipper_estimator.exe --config_file '+appPath+'\config.json dump-moves '+appPath+'\tempOutput'+' > '+appPath+'\gcode.txt';
+    klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+appPath+'\klipper_estimator.exe --config_file '+appPath+'\config.json dump-moves '+appPath+'\tempOutput'+' > '+appPath+'\KEOutput';
     ExecNewProcess(klipperEstCom,true);
-    Assignfile (GCode_IN, appPath+'\gcode.txt');
+    Assignfile (GCode_IN, appPath+'\KEOutput');
     Reset (GCode_IN);
     WHILE NOT EOF(GCode_IN) DO BEGIN
       Readln (GCode_IN, Lines);
-      if copy(Lines,1,8)='    Flow' then begin
+      if copy(Lines,1,4)='Flow' then begin
         if pos('(', Lines)<>0 then begin
           Lines:=copy(Lines, pos('(',Lines)+1, length(Lines));
           Lines:=copy(Lines, 1, length(Lines)-1);
@@ -865,7 +865,7 @@ begin
             end;
           end;
         end else flow:=0;
-      end else if copy(Lines,1,8)='    Time' then begin
+      end else if copy(Lines,1,4)='Time' then begin
         Lines:=copy(Lines, pos('=',Lines)+2, length(Lines));
         if floatLocalFormat=',' then Lines:=StringReplace(Lines, '.', ',', [rfReplaceAll]);
         moveTime:=StrToFloat(Lines);
@@ -988,9 +988,10 @@ end;
 // Generate Button Click                                                //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 procedure TForm1.BitBtn4Click(Sender: TObject);
 begin
+  if not Form1.FDTableEXTRUDER.RecordCount>0 then Exit;
   readOriginalGcode;
   if not canProcess then Exit;
-  if (filTypeFound and extruderFound and filNameFound) then begin                                                                                 /////////////////////////////////////////////////
+  if (filTypeFound and extruderFound and filNameFound) then begin
     calculateAverages;
     generateTempOutput;
   end else showmessage('Used Filament and Extruder in the G-Code file are not found ! choose your settings and click on the Refresh and generate button');
@@ -1103,6 +1104,7 @@ Var
 begin
   if Form1.FDTableEXTRUDER.RecordCount>0 then begin
     Form1.FDTableFILAMENT.Filtered:=false;
+    // Show preset values
     DBLookupComboBox1.KeyValue := Form1.FDTableEXTRUDER['EXTRUDER_NAME'];
     Form1.UpDown7.Position:=Form1.FDTableEXTRUDER['TEMP_RISE'];
     Form1.UpDown8.Position:=Form1.FDTableEXTRUDER['TEMP_RISE_TIME'];
@@ -1111,6 +1113,7 @@ begin
     Form1.UpDown10.Position:=Form1.FDTableEXTRUDER['A_M_SMOOTH'];
     Form1.Edit17.Text:=Form1.FDTableEXTRUDER['START_MACRO'];
     Form1.Edit16.Text:=Form1.FDTableEXTRUDER['MACRO_EXTRUDER'];
+    // Filter the Filament list
     Form1.FDTableFILAMENT.Filter := 'EXTRUDER_NAME = ' + QuotedStr(Form1.FDTableEXTRUDER['EXTRUDER_NAME'])+' AND FILAMENT_TYPE = '+QuotedStr(Form1.ComboBox1.Text);
     // Rewrite Config.json File
     try
@@ -1158,6 +1161,13 @@ procedure TForm1.BitBtn2Click(Sender: TObject);
 begin
   if ParamStr(1)<>'' then begin
     CopyFile(PChar(appPath+'\Output.gcode'), PChar(ParamStr(1)), False);
+    try
+      DeleteFile(appPath+'\tempOutput');
+      DeleteFile(appPath+'\KEOutput');
+      DeleteFile(appPath+'\tempOut');
+    Except
+      // Do Nothing
+    end;
     Application.Terminate;
   end else if saveDialog1.Execute then begin
     try
