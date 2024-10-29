@@ -39,17 +39,18 @@ You can retain your old script configuration after an update by using the "/Conf
 ```
 D:\SB53_G-Code_Flow_Temperature_Controller_V1.1\SB53-Systems.exe;
 ```  
-![image](https://github.com/user-attachments/assets/3557a6ff-524f-4964-9cd2-044b01f46faa)  
+![image](https://github.com/user-attachments/assets/722d57b1-6568-4317-ba3f-5873c66e221c)  
   
-2. included a [custom](https://github.com/sb53systems/klipper_estimator) version of [Klipper_Estimator V 3.7.3](https://github.com/Annex-Engineering/klipper_estimator). Using Klipper Look-Ahead kinematics, it estimate the time and the average flow rate for each move in the G-Code (`+/- 1s total time`). `\Klipper_estimator.exe` file is required and must be in the same Folder with this Script.  
+2. included a [custom](https://github.com/sb53systems/klipper_estimator) version of [Klipper_Estimator V 3.7.3](https://github.com/Annex-Engineering/klipper_estimator). Using Klipper Look-Ahead kinematics, it estimate the time and the average flow rate for each move in the G-Code (+/- 1s total time). (`\Klipper_estimator.exe` file is required and must be in the same Folder with this Script.)  
   ![image](https://github.com/user-attachments/assets/30449359-fabd-4b3d-9593-523db606c0c1)  
   
-3. Changing the initial layer temperature is important, the script can :
-  - Modifie the specified print start macro. Example Below :  
+3. Edit the initial layer temperature is important, the script can :
+  - Modify the specified print start macro. Example Below  
   ![image](https://github.com/user-attachments/assets/26b1e09e-0750-43f6-995f-8671da5838e0)  
   ![image](https://github.com/user-attachments/assets/a3c814af-4522-4177-907c-7aab631505f7)
 
-  - Modifie the G-Code "M109 S" command  
+  - Edit the GCode command "M109 S" provided that it is preceded by the comment " ; Temp_To_Edit". Example Below
+    ![image](https://github.com/user-attachments/assets/a51b55dc-831b-48e2-88e8-18b2c99c3222)  
   
 4. The initial temperature estimated by the Script depends on the speed of the first moves of the G-Code, you can adjust it by fixing the speed of the purge line or the speed of the first layer perimeters.  
   
