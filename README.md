@@ -1,8 +1,6 @@
 ![image](https://github.com/user-attachments/assets/b5b84ecc-84e5-4583-97c8-efdcdf985504)  
 # G-Code Flow and Temperature Controller
-A Post Processing Script for Orca Slicer and Klipper 3D Printers.  
-  
-This free and open-source script demonstrates the effectiveness of automatically adjusting nozzle temperatures and flow rates during 3D printing. Its goal is to optimize both `Quality` and `Speed` while simplifying the `Slicer settings`.  
+A free and open-source Post Processing Script for Orca Slicer, that demonstrates the effectiveness of automatically adjusting nozzle temperatures and flow rates during 3D printing. Its goal is to optimize both `Quality` and `Speed` while simplifying the `Slicer settings`.  
   
 This concept is based on my personal approach and minimal `Delphi` programming skills.  
 Although it’s not a definitive solution, as I believe that integrating this concept into slicers would significantly enhance its efficiency and allow more advanced features.  
@@ -37,9 +35,9 @@ You can retain your old script configuration after an update by using the "/Conf
 - Allow more advanced optimization for different printing features. (EX: Overhangs, Outer wall, Bridges, ...more)
   
 # Instructions and Prerequisites  
-1. The script can be utilized as a standard program by running the SB53-Systems.exe file and manually opening a G-Code file, or by integrating it into the slicer as a post-processing script.  
+1. The script can be used as a standard program by running the SB53-Systems.exe file and manually opening a G-Code file, or by integrating it into the slicer as a post-processing script.  
 ```
-D:\SB53_G-Code_Flow_Temperature_Controller_V1.1Beta\SB53-Systems.exe;
+D:\SB53_G-Code_Flow_Temperature_Controller_V1.1\SB53-Systems.exe;
 ```  
 ![image](https://github.com/user-attachments/assets/3557a6ff-524f-4964-9cd2-044b01f46faa)  
   
