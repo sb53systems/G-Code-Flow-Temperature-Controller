@@ -93,7 +93,10 @@ You can retain your old script configuration after an update by using the "/Conf
   - Changing PA while printing can cause bubbles in the walls. The script is programmed to adjust PA only in sparse infill, internal solid infill, support, and internal bridges.  
   ![351913375-991fe2b8-3935-46ff-816e-5b0aee981b4d](https://github.com/user-attachments/assets/602b96a8-2666-44bd-b70f-aa5c06deadd4)  
   
-  - This script doesn't support multi-tool or multi-material printing.  
+  - This script doesn't support multi-tool or multi-material printing.
+  - For Bambu 3D Printers, you need :
+    - To save the G-Code generated in Orcaslicer to a memory card or USB drive, and then print from there instead of starting the print directly from the slicer.
+    - Avoid Flow calibration before printing and first layer inspection.
   - Ironing is not recommended with this script, as it can affect the desired results and increase printing time.  
   - Adaptive pressure advance is not recommended with this script.  
   - Delta printers kinematic limits are not supported with the current version of Klipper_Estimator.  
