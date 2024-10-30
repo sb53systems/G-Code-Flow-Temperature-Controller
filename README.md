@@ -51,11 +51,11 @@ You can retain your old script configuration after an update by using the "/Conf
    ![image](https://github.com/user-attachments/assets/30449359-fabd-4b3d-9593-523db606c0c1)  
   
 3. Editing the `first layer temperature` is important, the script can :
-    ### - Using a Start Print Macro (Klipper):
+    ### - With a Start Print Macro (Klipper):
     Modify the specified print start macro. Example Below  
     ![image](https://github.com/user-attachments/assets/26b1e09e-0750-43f6-995f-8671da5838e0)  
     ![image](https://github.com/user-attachments/assets/a3c814af-4522-4177-907c-7aab631505f7)  
-    ### - Using "M109 S":
+    ### - With "M109 S" :
     Edit the GCode command "M109 S" provided that it is preceded by the comment "; Temp_To_Edit". Example Below  
       ```
        ; Temp_To_Edit
@@ -120,13 +120,14 @@ The visual calibration method (effective for PETG, PLA, etc.) involves selecting
   
 Note: This method is not suitable for non-shiny filaments or those that do not change color. To determine the ideal values, other advanced solutions will be necessary, particularly for assessing layer adhesion, dimensional accuracy, or the final temperature of the extruded filament.  
   
-The calibration process could be optimized with a more accurate automatic solution. Using a sensor, such as an infrared thermometer (MLX90614 or similar), capable of accurately tracking the temperature of the extruded filament (in air or during printing), along with a real-time script that controls the flow and temperature, could start at the maximum flow rate and temperature, gradually reducing down to 1 mm³/s, while recording the values at which the filament is extruded at the desired temperature.  
-  
+The calibration process could be optimized with a more accurate automatic solution!  
 It would be ideal for filament vendors to provide just one ideal temperature!  
   
-See my [Ideal Flow Vs Hotend Temperature Calibration](https://github.com/sb53systems/Flow_Temperature_Calibration) Project on Github.  
-  
 I challenge makers to find a precise, cost-effective, and user-friendly solution for the majority of 3D printers. :)  
+  
+### See my [Ideal Flow Vs Hotend Temperature Calibration](https://github.com/sb53systems/Flow_Temperature_Calibration) Project on Github.  
+Using a sensor, such as an infrared thermometer (`MLX90614ESF-DCI`), capable of accurately tracking the temperature of the extruded filament (in air or during printing), along with a real-time script that controls the flow and temperature.  
+Could start at the maximum flow rate and temperature, gradually reducing down to 1 mm³/s, while recording the values at which the filament is extruded at the desired temperature.  
   
 # Observations and Tips
   - I recommend that you calibrate your PID values ​​for a temperature between 70% and 90% of the maximum temperature.  
