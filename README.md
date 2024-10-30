@@ -27,7 +27,7 @@ I welcome your feedback and am open to any new proposals.
 ### If you find my work worthy, Bay me a [![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system) or give this project a :star:. Thank you :rose:  
   
 # Latest Release
-### [SB53 G-Code Flow/Temperature Controller V1.1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1) (updated October 29 2024)  
+[SB53 G-Code Flow/Temperature Controller V1.1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1) (updated October 29 2024)  
 ### Addons:
 - Compatibility with all Firmware.
 - Arcs moves support.
