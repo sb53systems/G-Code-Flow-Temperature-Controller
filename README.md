@@ -22,7 +22,7 @@ I believe that 3D printing can be less complex than it seems. I encourage you to
 :warning: Please use this script responsibly and with caution, applying reasonable values and closely monitoring your printer's behavior.  
   
 I welcome your feedback and am open to any new proposals.  
-`Happy Smart 3D Printing :)`  
+### `Happy Smart 3D Printing :)`  
   
 ### If you find my work worthy, Bay me a [![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system) or give this project a :star:. Thank you :rose:  
   
