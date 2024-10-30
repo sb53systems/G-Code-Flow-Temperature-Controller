@@ -9,7 +9,7 @@ I think that the filament gradually absorbs energy in the hotend and should be e
 This script adjusts the temperature based on the average flow rate that can be reached during printing, and then changes the G-code speed to align with the optimal flow rate for that temperature.  
 This will adapt the nozzle temperature for different sections and geometries of the print, while ensuring that the filament is extruded at an ideal speed.  
   
-I know this concept might seem unconventional, but with my setup, it helps me achieve optimal speed and quality with the same slicer settings—even using an old 3D printer with Klipper and affordable filament. In fact, I’ve stopped printing without it.  
+With my printer setup, this script helps me achieve optimal speed and quality with the same slicer settings—even using an old 3D printer with Klipper and affordable filament. In fact, I’ve stopped printing without it.  
   
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
@@ -204,7 +204,7 @@ Below is the Generated G-Code
   
 # Video that speak about the project on Youtube
 ### - Variable Temperature 3D Printing – The FUTURE of 3D Printing? (By PRINTING PERSPECTIVE):  
-  https://www.youtube.com/watch?v=P6Y8uUPd3yg  
+  [![Sans titre](https://github.com/user-attachments/assets/b4fc2c73-4a1b-4467-8a5d-7326e216152d)](https://www.youtube.com/watch?v=P6Y8uUPd3yg)  
   
 # About this Repository
 ### By Salim BELAYEL.  
