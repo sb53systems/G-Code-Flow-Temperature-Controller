@@ -33,6 +33,7 @@ I welcome your feedback and am open to any new proposals.
 - `Arcs` moves support.
 - Improve GCode reading and generation time with a `Custom Klipper Estimator` script.
   
+### Note
 You can retain your old script configuration after an update by using the "/Config" folder from the previous version. Simply replace the files "SB53-Systems.exe" and "Klipper_estimator.exe.". Note that the final version 1.1 include a different Klipper_Estimator script.  
   
 # Next Features
