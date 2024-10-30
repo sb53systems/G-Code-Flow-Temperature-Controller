@@ -52,11 +52,11 @@ You can retain your old script configuration after an update by using the "/Conf
    ![image](https://github.com/user-attachments/assets/30449359-fabd-4b3d-9593-523db606c0c1)  
   
 3. Editing the `First Layer Temperature` is important, the script can :
-    ### - Using a Start Print Macro (Klipper):
+    ### - Using a `Start Print Macro` (Klipper):
     Modify the specified print start macro. Example Below  
     ![image](https://github.com/user-attachments/assets/26b1e09e-0750-43f6-995f-8671da5838e0)  
     ![image](https://github.com/user-attachments/assets/a3c814af-4522-4177-907c-7aab631505f7)  
-    ### - Using "M109 S" :
+    ### - Using `M109 S` :
     Edit the G-Code command "M109 S" provided that it is preceded by the comment "; Temp_To_Edit". Example Below  
       ```
        ; Temp_To_Edit
