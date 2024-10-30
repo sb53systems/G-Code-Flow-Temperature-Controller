@@ -28,6 +28,11 @@ I welcome your feedback and am open to any new proposals.
   
 # Latest Release
 ### [SB53 G-Code Flow/Temperature Controller V1.1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1) (updated October 29 2024)  
+### Addons:
+- Compatibility with all Firmware.
+- Arcs moves support.
+- Improve GCode reading and generation time with a custom Klipper_Estimator script.
+  
 You can retain your old script configuration after an update by using the "/Config" folder from the previous version. Simply replace the files "SB53-Systems.exe" and "Klipper_estimator.exe.". Note that the final version 1.1 include a different Klipper_Estimator script.  
   
 # Next Features
