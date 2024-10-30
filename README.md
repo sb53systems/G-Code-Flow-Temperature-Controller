@@ -100,23 +100,23 @@ You can retain your old script configuration after an update by using the "/Conf
   - Changing PA while printing can cause bubbles in the walls. The script is programmed to adjust PA only in sparse infill, internal solid infill, support, and internal bridges.  
   ![351913375-991fe2b8-3935-46ff-816e-5b0aee981b4d](https://github.com/user-attachments/assets/602b96a8-2666-44bd-b70f-aa5c06deadd4)  
   
-  - This script doesn't support multi-tool or multi-material printing.
+  - This script doesn't support `Multi-Tool` or `Multi-Material` printing.
   - For `Bambu 3D Printers`, you need :
-    - To save the G-Code generated in Orcaslicer to a `memory card` or `USB drive`, and then print from there instead of starting the print directly from the slicer.
+    - To save the G-Code generated in Orcaslicer to a `Memory Card` or `USB Drive`, and then print from there instead of starting the print directly from the slicer.
     - Avoid Flow calibration before printing and first layer inspection.
-  - Ironing is not recommended with this script, as it can affect the desired results and increase printing time.  
-  - Adaptive pressure advance is not recommended with this script.  
+  - `Ironing` is not recommended with this script, as it can affect the desired results and increase printing time.  
+  - `Adaptive Pressure Advance` is not recommended with this script.  
   - Delta printers kinematic limits are not supported with the current version of Klipper_Estimator.  
   - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
-  - Processing G-Code with Arc moves will take longer, because the Klipper Estimator script will cut them into small segments based on the parameter `"mm_per_arc_segment": 0.1`.
-  - The generated G-Code is 10/30 % larger than the original one due to Temp and Speed adjustment.
+  - Processing G-Code with `Arcs` moves will take longer, because the Klipper Estimator script will cut them into small segments based on the parameter `"mm_per_arc_segment": 0.1`.
+  - The generated G-Code is 10% to 30% larger than the original one due to Temp and Speed adjustment.
   - This script is currently only available for `Windows OS`. With `Delphi 12` and some changes to the source code, it can be compiled for other operating systems (I can help with this or do it later!).  
   
 # Ideal Flow/Temperature Calibration
 The visual calibration method (effective for PETG, PLA, etc.) involves selecting the desired appearance (closest to the original filament) over 3 to 5 prints:  
 
-  1. Print a cylinder in vase mode: This allows for a higher flow rate. You can use the maximum layer height and maximum line width, while limiting the maximum volumetric speed to the desired test flow rate. Start with the maximum recommended temperature, then manually and gradually reduce the temperature during printing. (This step should be done without the script.)  
-  2. Small prints for flow rates of (0 to 3) mm³/s: For instance, print a 3DBenchy at 20/30% scale. (This step should be done with the script.)  
+  1. Print a `Cylinder` in `Vase Mode` (For a higher flow rate >3mm³/s). You can use the maximum layer height and maximum line width, while limiting the maximum volumetric speed to the desired test flow rate. Start with the maximum recommended temperature, then manually and gradually reduce the temperature during printing. (This step should be done without the script)  
+  2. Small prints for flow rates of (<3 mm³/s). For instance, print a 3DBenchy at 20% or 30% scale. (This step should be done with the script)  
   
 Note: This method is not suitable for non-shiny filaments or those that do not change color. To determine the ideal values, other advanced solutions will be necessary, particularly for assessing layer adhesion, dimensional accuracy, or the final temperature of the extruded filament.  
   
@@ -133,12 +133,12 @@ Could start at the maximum flow rate and temperature, gradually reducing down to
   - I recommend that you calibrate your PID values ​​for a temperature between 70% and 90% of the maximum temperature.  
   - A printer with higher accelerations and lower hotend heating/cooling time, will have a better result with this approach because it allows for better flow stabilization (Quality) and Higher Max/Average Flow (Speed).  
   - With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands without any changes in the script.  
-  - You can reduce the speed of the cooling fan during the entire printing process (Except for Bridges and Ovehangs).  
-  - With some prints, changing the Max/Average Smoothing value may affect the result and print time, you have to experiment yourself (I recommend values between 10 and 30).  
-  - Aim for speed optimization as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes.  
-  - If your filament is very sensitive and you need to reduce the speed for overhangs or small features in between large features, aim for quality optimization to reduce flow variation.  
-  - Fuzzy Skin, Variable_Layer_Height and Scarf_Joint_Seam: can cause print delay due to frequent flow changes.  
-  - The outer wall speed is greater than the inner wall speed due to a deferent line width. This script will adapt the speed to any line width and layer height, making it very effective for Variable_Layer_Height and Precise_Z_Height.  
+  - You can reduce the speed of the `cooling fan` and the `Min print speed`. (Except for Bridges and Ovehangs)  
+  - With some prints, changing the `Max/Average Smoothing value` may affect the result and print time, you have to experiment yourself (I recommend values between 10 and 30).  
+  - Aim for `Speed Optimization` as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes.  
+  - If your filament is very sensitive and you need to reduce the speed for overhangs or small features in between large features, aim for `Quality Optimization` to reduce flow variation.  
+  - `Fuzzy Skin`, `Variable_Layer_Height` and `Scarf_Joint_Seam` can cause print delay due to frequent flow changes.  
+  - The outer wall speed is greater than the inner wall speed due to a deferent line width. This script will adapt the speed to any line width and layer height, making it very effective for `Variable_Layer_Height` and `Precise_Z_Height`.  
 ![371310408-26026ed0-d97e-4423-9d84-68c5b2a863e8](https://github.com/user-attachments/assets/e83fd21d-e34a-4def-869d-c62838b0b8b3)  
 ![image](https://github.com/user-attachments/assets/2fe5dd0f-008a-400b-9fa9-10228bf07b40)  
   
@@ -203,7 +203,7 @@ Below is the Generated G-Code
 ![IMG20240927023059](https://github.com/user-attachments/assets/c6c46ea2-3909-4eb6-8e2d-ce51e23e7ebf)  
   
 # Video that speak about the project on Youtube
-### - Variable Temperature 3D Printing – The FUTURE of 3D Printing? (By PRINTING PERSPECTIVE):  
+### - Variable Temperature 3D Printing – The FUTURE of 3D Printing? `By PRINTING PERSPECTIVE`  
   [![Sans titre](https://github.com/user-attachments/assets/b4fc2c73-4a1b-4467-8a5d-7326e216152d)](https://www.youtube.com/watch?v=P6Y8uUPd3yg)  
   
 # About this Repository
