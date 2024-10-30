@@ -13,9 +13,9 @@ With my printer setup, this script helps me achieve optimal speed and quality wi
   
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
-See my `ORCA Slicer` [Settings](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/My_Config.md) :gear:  
+See my `OrcaSlicer` [Settings](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/My_Config.md) :gear:  
   
-See the [Print Samples Discussion](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/discussions/8) :bulb:  Share yours.  
+See the `Print Samples` [Discussion](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/discussions/8) :bulb:  Share yours.  
   
 I believe that 3D printing can be less complex than it seems. I encourage you to test, share, and further develop this concept, as I believe it/or a similar approach will shape the future of 3D printing. With a bit of `AI` 3D printing could become accessible to everyone.  
   
