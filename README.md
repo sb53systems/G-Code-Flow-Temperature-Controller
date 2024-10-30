@@ -36,8 +36,8 @@ I welcome your feedback and am open to any new proposals.
 You can retain your old script configuration after an update by using the "/Config" folder from the previous version. Simply replace the files "SB53-Systems.exe" and "Klipper_estimator.exe.". Note that the final version 1.1 include a different Klipper_Estimator script.  
   
 # Next Features
-### - Add an explainer video on youtube and instructions on how to use it.
-### - Allow more advanced optimization for different printing features. (EX: Overhangs, Outer wall, Bridges, ...more)
+- ### Add an explainer video on youtube and instructions on how to use it.
+- ### Allow more advanced optimization for different printing features. (EX: Overhangs, Outer wall, Bridges, ...more)
   
 # Instructions and Prerequisites  
 1. The script can be used as a standard program by running the SB53-Systems.exe file and manually opening a G-Code file, or by integrating it into the slicer as a post-processing script.  
