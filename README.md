@@ -89,7 +89,8 @@ You can retain your old script configuration after an update by using the "/Conf
     ![image](https://github.com/user-attachments/assets/c07c5e7c-b137-4af3-86b6-efeaecdc06cc)  
   
 ### Note that :  
-  - The script is specifically programmed to reduce speeds only when they exceed the recommended flow rate (based on layer height and line width), while lower speeds will remain as set in the G-Code (Slicer speed).   
+  - The script is specifically programmed to reduce speeds only when they exceed the recommended flow rate (based on layer height and line width), while lower speeds will remain as set in the G-Code (Slicer speed).
+  - The script does not display the temperature curve in the generated G-Code Chart if Arcs moves are used. This is due to the integration and interpretation of the Klipper_Estimator output.
   - PA can be adjusted based on temperature only for Klipper firmware. For other firmwares you need to uncheck the Adjust PA option.  
   - Changing PA while printing can cause bubbles in the walls. The script is programmed to adjust PA only in sparse infill, internal solid infill, support, and internal bridges.  
   ![351913375-991fe2b8-3935-46ff-816e-5b0aee981b4d](https://github.com/user-attachments/assets/602b96a8-2666-44bd-b70f-aa5c06deadd4)  
