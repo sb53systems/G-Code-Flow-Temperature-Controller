@@ -152,8 +152,7 @@ If yes, the first execution:
   - `Klipper_Estimator` script requires a file containing the maximum limits of the printer `(config .json)`.
     - For Klipper, you can get this file by entering the printer's IP address or by selecting a local file.
     - For other firmware, you'll need to edit the file manually and input the equivalent values.  
-    Note that You have to set this file for each `Printer/Extruder` preset.  
-    Config.json file Example:  
+  Config.json file Example:  
     ```
     {
     "max_velocity": 400.0,
@@ -182,7 +181,8 @@ If yes, the first execution:
       }
     ]
     }
-    ```
+    ```  
+    Note that You have to set this file for each `Printer/Extruder` preset.  
   - After saving the `Extruder/Printer` preset, you need to select the `filament type`, then set the filament values (start with 1mm3/2) and save with a specific name. (for each Extruder)  
     ![image](https://github.com/user-attachments/assets/9b6c98a9-0847-4118-a9d6-f37696be13a9)  
     
