@@ -46,7 +46,7 @@ You can retain your old script configuration after an update by using the "/Conf
     ```  
     ![image](https://github.com/user-attachments/assets/722d57b1-6568-4317-ba3f-5873c66e221c)  
   
-2. Included a [Custom](https://github.com/sb53systems/klipper_estimator) version of [Klipper_Estimator V 3.7.3](https://github.com/Annex-Engineering/klipper_estimator). An accurate tool that uses `Klipper Look-Ahead kinematics` to estimate the time and average flow rate for each move in the G-Code. (+/- 1s total time for Klipper Firmware). The mechanism is very close to other Firmwares (+/- 10%).  
+2. Included a [Custom](https://github.com/sb53systems/klipper_estimator) version of [Klipper_Estimator V 3.7.3](https://github.com/Annex-Engineering/klipper_estimator). An accurate tool that uses `Klipper Look-Ahead kinematics` to estimate the time and average flow rate for each move in the G-Code. (+/- 1s total time for Klipper Firmware). The mechanism is very close to other Firmwares (+/- 5% if used correctly).  
    Note that the file `\Klipper_estimator.exe` (already included) is required and must be in the same Folder with this Script.  
    ![image](https://github.com/user-attachments/assets/30449359-fabd-4b3d-9593-523db606c0c1)  
   
