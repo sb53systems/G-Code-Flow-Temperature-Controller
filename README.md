@@ -103,7 +103,7 @@ You can retain your old script configuration after an update by using the "/Conf
   - This script doesn't support `Multi-Tool` or `Multi-Material` printing.
   - For `Bambu 3D Printers`, you need :
     - To save the G-Code generated in Orcaslicer to a `Memory Card` or `USB Drive`, and then print from there instead of starting the print directly from the slicer.
-    - Avoid Flow calibration before printing and first layer inspection.
+    - Avoid `Flow Calibration` and `First Layer Inspection` used at the beginning of the print.  
   - `Ironing` is not recommended with this script, as it can affect the desired results and increase printing time.  
   - `Adaptive Pressure Advance` is not recommended with this script.  
   - Delta printers kinematic limits are not supported with the current version of Klipper_Estimator.  
