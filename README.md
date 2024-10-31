@@ -117,14 +117,16 @@ The visual calibration method (effective for PETG, PLA, etc.) involves selecting
   1. For high flow rates (>3mm³/s), print a `Cylinder` in `Vase Mode` (You can use the maximum layer height and maximum line width), while limiting the maximum volumetric speed to the desired test flow rate. Start with the maximum recommended temperature, then manually and gradually reduce the temperature during printing. (This step should be done without the script)  
   2. For flow rates below 5 or 3 mm³/s, print small object like a 3DBenchy at 20% or 30% scale. (This step should be done with the script)  
   
-Note: This method is not suitable for non-shiny filaments or those that do not change color. To determine the ideal values, other advanced solutions will be necessary, particularly for assessing layer adhesion, dimensional accuracy, or the final temperature of the extruded filament.  
+### Note: 
+- This method is not suitable for non-shiny filaments or those that do not change color. To determine the ideal values, other advanced solutions will be necessary, particularly for assessing layer adhesion, dimensional accuracy, or the final temperature of the extruded filament.
+- This script allows to play with only three `Flow/Temperature` values, which means it will adjust them linearly. The ideal would be to get a curve closer to reality. This option could be possible with an automatic and more accurate solution!  
+### See my [Ideal Flow Vs Hotend Temperature Calibration](https://github.com/sb53systems/Flow_Temperature_Calibration) Project on Github.  
   
-The calibration process could be optimized with a more accurate automatic solution!  
 It would be ideal for filament vendors to provide just one ideal temperature!  
   
 I challenge makers to find a precise, cost-effective, and user-friendly solution for the majority of 3D printers. :)  
   
-### See my [Ideal Flow Vs Hotend Temperature Calibration](https://github.com/sb53systems/Flow_Temperature_Calibration) Project on Github.  
+
 Using a sensor, such as an infrared thermometer (`MLX90614ESF-DCI`), capable of accurately tracking the temperature of the extruded filament (in air or during printing), along with a real-time script that controls the flow and temperature.  
 Could start at the maximum flow rate and temperature, gradually reducing down to 1 mm³/s, while recording the values at which the filament is extruded at the desired temperature.  
   
