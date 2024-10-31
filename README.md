@@ -114,8 +114,8 @@ You can retain your old script configuration after an update by using the "/Conf
 # Ideal Flow/Temperature Calibration
 The visual calibration method (effective for PETG, PLA, etc.) involves selecting the desired appearance (closest to the original filament) over 3 to 5 prints:  
 
-  1. Print a `Cylinder` in `Vase Mode` (For a higher flow rate >3mm³/s). You can use the maximum layer height and maximum line width, while limiting the maximum volumetric speed to the desired test flow rate. Start with the maximum recommended temperature, then manually and gradually reduce the temperature during printing. (This step should be done without the script)  
-  2. Small prints for flow rates of (<3 mm³/s). For instance, print a 3DBenchy at 20% or 30% scale. (This step should be done with the script)  
+  1. For high flow rates (>3mm³/s), print a `Cylinder` in `Vase Mode` (You can use the maximum layer height and maximum line width), while limiting the maximum volumetric speed to the desired test flow rate. Start with the maximum recommended temperature, then manually and gradually reduce the temperature during printing. (This step should be done without the script)  
+  2. For flow rates below 5 or 3 mm³/s, print small object like a 3DBenchy at 20% or 30% scale. (This step should be done with the script)  
   
 Note: This method is not suitable for non-shiny filaments or those that do not change color. To determine the ideal values, other advanced solutions will be necessary, particularly for assessing layer adhesion, dimensional accuracy, or the final temperature of the extruded filament.  
   
