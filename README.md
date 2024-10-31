@@ -126,10 +126,6 @@ It would be ideal for filament vendors to provide just one ideal temperature!
   
 I challenge makers to find a precise, cost-effective, and user-friendly solution for the majority of 3D printers. :)  
   
-
-Using a sensor, such as an infrared thermometer (`MLX90614ESF-DCI`), capable of accurately tracking the temperature of the extruded filament (in air or during printing), along with a real-time script that controls the flow and temperature.  
-Could start at the maximum flow rate and temperature, gradually reducing down to 1 mm³/s, while recording the values at which the filament is extruded at the desired temperature.  
-  
 # Observations and Tips
   - I recommend that you calibrate your PID values ​​for a temperature between 70% and 90% of the maximum temperature.  
   - A printer with higher accelerations and lower hotend heating/cooling time, will have a better result with this approach because it allows for better flow stabilization (Quality) and Higher Max/Average Flow (Speed).  
