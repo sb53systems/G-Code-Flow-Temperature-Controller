@@ -101,8 +101,8 @@ You can retain your old script configuration after an update by using the "/Conf
   ![351913375-991fe2b8-3935-46ff-816e-5b0aee981b4d](https://github.com/user-attachments/assets/602b96a8-2666-44bd-b70f-aa5c06deadd4)  
   
   - This script doesn't support `Multi-Tool` or `Multi-Material` printing.
-  - For `Bambu 3D Printers`, you need :
-    - To save the G-Code generated in Orcaslicer to a `Memory Card` or `USB Drive`, and then print from there instead of starting the print directly from the slicer.
+  - For a `Bambu Lab` 3D printer, you need to:
+    - Save the G-Code generated in Orcaslicer to a `Memory Card` or `USB Drive`, and then print from there instead of starting the print directly from the slicer.
     - Avoid `Flow Calibration` and `First Layer Inspection` used at the beginning of the print.  
   - `Ironing` is not recommended with this script, as it can affect the desired results and increase printing time.  
   - `Adaptive Pressure Advance` is not recommended with this script.  
