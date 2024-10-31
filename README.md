@@ -67,9 +67,9 @@ You can retain your old script configuration after an update by using the "/Conf
       ```  
       ![image](https://github.com/user-attachments/assets/05d7ba2e-c3fc-43bc-971b-691dd6e5ff86)  
   
-5. The `Initial Temperature` estimated by the Script depends on the speed of the first moves of the G-Code, you can adjust it by fixing the speed of the `Purge line` or the speed of the `First layer perimeters`.  
+4. The `Initial Temperature` estimated by the Script depends on the speed of the first moves of the G-Code, you can adjust it by fixing the speed of the `Purge line` or the speed of the `First layer perimeters`.  
   
-6. To have a best `Speed/Quality Optemization`, the Slicer Profil must be set for Max Moves and Max Volumetric Speed. The Nozzle temperature is not important because it will be reset in the script, and the speed will be reduced (not increased) to the Recommended Flow.   
+5. To have a best `Speed/Quality Optemization`, the Slicer Profil must be set for Max Moves and Max Volumetric Speed. The Nozzle temperature is not important because it will be reset in the script, and the speed will be reduced (not increased) to the Recommended Flow.   
     Example below with my max 200mm/s Printer speed : (Same profil for `PLA, PETG and ABS`)  
     
     ![image](https://github.com/user-attachments/assets/c0a30aed-046a-48ad-b819-93def3b28de5)  
@@ -85,10 +85,11 @@ You can retain your old script configuration after an update by using the "/Conf
     ![image](https://github.com/user-attachments/assets/51f2cba4-d57d-4ea7-8ef7-d0c36dd61dc0)   
     ![image](https://github.com/user-attachments/assets/1cee9879-389b-4117-9048-b96c76e51891)  
   
-7. You have to set your filament settings:
+6. You have to set your filament settings:
     - The maximum recommended volumetric speed at the maximum temperature that your Hotend or Filament can handle.
     - The Fan Cooling perdiode and the Min print speed, according to the Filament and your cooling configuration.
   
+    You can reduce the speed of the `Cooling Fan` (Except for Bridges and Ovehangs), the `Min Print Speed`, and the `Min Layer Time`.  
     ![image](https://github.com/user-attachments/assets/5dc1f64d-48dc-4d39-8290-ad8251267990)  
     ![image](https://github.com/user-attachments/assets/c07c5e7c-b137-4af3-86b6-efeaecdc06cc)  
   
@@ -130,8 +131,7 @@ I challenge makers to find a precise, cost-effective, and user-friendly solution
 # Observations and Tips
   - I recommend that you calibrate your PID values ​​for a temperature between 70% and 90% of the maximum temperature.  
   - A printer with higher accelerations and lower hotend heating/cooling time, will have a better result with this approach because it allows for better flow stabilization (Quality) and Higher Max/Average Flow (Speed).  
-  - With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands without any changes in the script.  
-  - You can reduce the speed of the `cooling fan` and the `Min print speed`. (Except for Bridges and Ovehangs)  
+  - With a resonable Edeal Flow/Temperature calibration, the same good quality is achieved with the majority of filament brands without any changes in the script.    
   - With some prints, changing the `Max/Average Smoothing value` may affect the result and print time, you have to experiment yourself (I recommend values between 10 and 30).  
   - Aim for `Speed Optimization` as long as it doesn't affect the desired quality, usually the printing time will only vary by a few minutes.  
   - If your filament is very sensitive and you need to reduce the speed for overhangs or small features in between large features, aim for `Quality Optimization` to reduce flow variation.  
