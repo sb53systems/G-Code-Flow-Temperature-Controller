@@ -120,6 +120,7 @@ The visual calibration method (effective for PETG, PLA, etc.) involves selecting
 ### Note: 
 - This method is not suitable for non-shiny filaments or those that do not change color. To determine the ideal values, other advanced solutions will be necessary, particularly for assessing layer adhesion, dimensional accuracy, or the final temperature of the extruded filament.
 - This script allows to play with only three `Flow/Temperature` values, which means it will adjust them linearly. The ideal would be to get a curve closer to reality. This option could be possible with an automatic and more accurate solution!  
+This will also be useful with Filaments that cannot be visually calibrated.
 
 It would be ideal for filament vendors to provide just one ideal temperature!  
   
