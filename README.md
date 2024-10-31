@@ -26,7 +26,8 @@ See the `Print Samples` [Discussion](https://github.com/sb53systems/G-Code-Flow-
 ### `Happy Smart 3D Printing :)`  
   
 # Latest Release
-[SB53 G-Code Flow/Temperature Controller V1.1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1) (updated in October 29 2024)  
+### [SB53 G-Code Flow/Temperature Controller V1.1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1)  
+(Updated in October 29 2024)
 ### Addons:
 - Compatibility with all `Firmwares`.
 - `Arcs` moves support.
