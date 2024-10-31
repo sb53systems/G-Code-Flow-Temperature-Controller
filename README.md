@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/b5b84ecc-84e5-4583-97c8-efdcdf985504)  
 # G-Code Flow and Temperature Controller
-A free and open-source post-processing script for `Orca Slicer` that shows how automatically adjusting nozzle temperatures and flow rates can improve both `Quality` and `Speed` while simplifying the `Slicer settings`.  
+A free and open-source post-processing script for `OrcaSlicer` that demonstrates how automatically adjusting nozzle temperatures and flow rates can improve both `Quality` and `Speed` while simplifying the `Slicer settings`.  
   
 This concept is based on my personal approach and minimal `Delphi` programming skills.  
 Although it’s not a definitive solution, as I believe that integrating this concept into slicers would significantly enhance its efficiency and allow more advanced features.  
@@ -27,7 +27,7 @@ See the `Print Samples` [Discussion](https://github.com/sb53systems/G-Code-Flow-
 ### [SB53 G-Code Flow/Temperature Controller V1.1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1)  
 (Updated in October 29 2024)
 ### Addons:
-- Compatibility with all `Firmwares`.
+- Compatibility with `All Firmwares`.
 - `Arcs` moves support.
 - Improve GCode reading and generation time with a `Custom Klipper Estimator` script.
   
@@ -67,14 +67,14 @@ You can retain your old script configuration after an update by using the "/Conf
       ```  
       ![image](https://github.com/user-attachments/assets/05d7ba2e-c3fc-43bc-971b-691dd6e5ff86)  
   
-4. The `Initial Temperature` estimated by the Script depends on the speed of the first moves of the G-Code, you can adjust it by fixing the speed of the `Purge line` or the speed of the `First layer perimeters`.  
+4. The `Initial Temperature` estimated by the Script depends on the speed of the first moves of the G-Code, you can adjust it by fixing the speed of the `Purge Line` or the speed of the `First layer Perimeters`.  
   
 5. To have a best `Speed/Quality Optemization`, the Slicer Profil must be set for Max Moves and Max Volumetric Speed. The Nozzle temperature is not important because it will be reset in the script, and the speed will be reduced (not increased) to the Recommended Flow.   
     Example below with my max 200mm/s Printer speed : (Same profil for `PLA, PETG and ABS`)  
     
     ![image](https://github.com/user-attachments/assets/c0a30aed-046a-48ad-b819-93def3b28de5)  
   
-    The speed of `overhangs` and small `internal/external bridges` should be set to the maximum speed, this will ensure that the filament is extruded at the recommended flow rate and that it is not too hot and falls off, or too cold and shrinks, also avoiding sudden flow changes and unnecessary temperature drops caused by the average flow calculated by the script.  
+    The speed of `Overhangs` and small `Internal/External Bridges` should be set to the maximum speed, this will ensure that the filament is extruded at the recommended flow rate and that it is not too hot and falls off, or too cold and shrinks, also avoiding sudden flow changes and unnecessary temperature drops caused by the average flow calculated by the script.  
     ![image](https://github.com/user-attachments/assets/050be022-7cef-47ff-b1aa-15f8b5134dce)  
     [See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
   
@@ -106,9 +106,9 @@ You can retain your old script configuration after an update by using the "/Conf
     - Avoid `Flow Calibration` and `First Layer Inspection` used at the beginning of the print.  
   - `Ironing` is not recommended with this script, as it can affect the desired results and increase printing time.  
   - `Adaptive Pressure Advance` is not recommended with this script.  
-  - Delta printers kinematic limits are not supported with the current version of Klipper_Estimator.  
-  - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your CPU.
-  - Processing G-Code with `Arcs` moves will take longer, because the Klipper Estimator script will cut them into small segments based on the parameter `"mm_per_arc_segment": 0.1`.
+  - `Delta Printers` kinematic limits are not supported with the current version of Klipper Estimator.  
+  - Reading or generating large G-Code files with this Script can takes up to 2 minutes, depending in your `CPU`.
+  - Processing G-Code with `Arcs Moves` will take longer, because the Klipper Estimator script will cut them into small segments based on the parameter `"mm_per_arc_segment": 0.1`.
   - The generated G-Code is 10% to 30% larger than the original one due to Temp and Speed adjustment.
   - This script is currently only available for `Windows OS`. With `Delphi 12` and some changes to the source code, it can be compiled for other operating systems (I can help with this or do it later!).  
   
@@ -147,7 +147,7 @@ The script will popup once you Print or Export the G-Code from the Slicer, ask t
   
 If yes, the first execution:  
   - You have to set the appropriate `Extruder/Printer` values.
-  - `Klipper_Estimator` script requires a file containing the maximum limits of the printer `(config .json)`.
+  - Klipper Estimator script requires a file containing the maximum limits of the printer `(config .json)`.
     - For Klipper, you can get this file by entering the printer's IP address or by selecting a local file.
     - For other firmware, you'll need to edit the file manually and input the equivalent values.  
   Config.json file Example:  
@@ -181,7 +181,7 @@ If yes, the first execution:
     }
     ```  
     Note that You have to set this file for each `Printer/Extruder` preset.  
-  - After saving the `Extruder/Printer` preset, you need to select the `filament type`, then set the filament values (start with 1mm3/2) and save with a specific name. (for each Extruder)  
+  - After saving the `Extruder/Printer` preset, you need to select the `Filament Type`, then set the filament values (start with 1mm3/2) and save with a specific name. (for each Extruder)  
     ![image](https://github.com/user-attachments/assets/9b6c98a9-0847-4118-a9d6-f37696be13a9)  
     
   ### Note that:
