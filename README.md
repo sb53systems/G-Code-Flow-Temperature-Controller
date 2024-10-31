@@ -202,7 +202,8 @@ Below is the Generated G-Code
 ![IMG20240927023059](https://github.com/user-attachments/assets/c6c46ea2-3909-4eb6-8e2d-ce51e23e7ebf)  
   
 # Video that speak about the project on Youtube
-### - Variable Temperature 3D Printing – The FUTURE of 3D Printing? `By PRINTING PERSPECTIVE`  
+### By `PRINTING PERSPECTIVE` 
+### - Variable Temperature 3D Printing – The FUTURE of 3D Printing?   
   [![Sans titre](https://github.com/user-attachments/assets/b4fc2c73-4a1b-4467-8a5d-7326e216152d)](https://www.youtube.com/watch?v=P6Y8uUPd3yg)  
   
 # About this Repository
