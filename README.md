@@ -10,6 +10,9 @@ This script adjusts the temperature based on the average flow rate that can be r
 This will adapt the nozzle temperature for different sections and geometries of the print, while ensuring that the filament is extruded at an ideal speed.  
   
 With my printer setup, this script helps me achieve optimal speed and quality with the same slicer settings—even using an old Klipperized 3D printer and affordable filament. In fact, I’ve stopped printing without it.  
+I believe that 3D printing can be less complex than it seems. I encourage you to test, share, and further develop this concept, as I believe it/or a similar approach will shape the future of 3D printing. With a bit of `AI` 3D printing could become accessible to everyone.  
+  
+I welcome your feedback and am open to any new proposals `“Alone we go faster, together we go further”`  
   
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
@@ -17,11 +20,8 @@ See my `OrcaSlicer` [Settings](https://github.com/sb53systems/G-Code-Flow-Temper
   
 See the `Print Samples` [Discussion](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/discussions/8) :bulb:  Share yours.  
   
-I believe that 3D printing can be less complex than it seems. I encourage you to test, share, and further develop this concept, as I believe it/or a similar approach will shape the future of 3D printing. With a bit of `AI` 3D printing could become accessible to everyone.  
-  
 :warning: Please use this script responsibly and with caution, applying reasonable values and closely monitoring your printer's behavior.  
   
-I welcome your feedback and am open to any new proposals.  
 ### `Happy Smart 3D Printing :)`  
   
 ### If you find my work worthy, Bay me a [![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system) or give this project a :star:. Thank you :rose:  
