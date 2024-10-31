@@ -124,7 +124,7 @@ The visual calibration method (effective for PETG, PLA, etc.) involves selecting
   
 It would be ideal for filament vendors to provide just one ideal temperature!  
   
-I challenge makers to find a precise, cost-effective, and user-friendly solution for the majority of 3D printers. :)  
+I challenge makers to find a precise, cost-effective, and user-friendly solution for the majority of 3D printers :rocket:  
   
 # Observations and Tips
   - I recommend that you calibrate your PID values ​​for a temperature between 70% and 90% of the maximum temperature.  
