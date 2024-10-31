@@ -50,26 +50,26 @@ You can retain your old script configuration after an update by using the "/Conf
    ![image](https://github.com/user-attachments/assets/30449359-fabd-4b3d-9593-523db606c0c1)  
   
 3. Editing the `First Layer Temperature` is important, the script can :
-    ### - Using a `Start Print Macro` (Klipper):
-    Modify the specified print start macro. Example Below  
+    ### - Modify the specified `Start Print Macro` (Klipper).  
     ![image](https://github.com/user-attachments/assets/26b1e09e-0750-43f6-995f-8671da5838e0)  
-    ![image](https://github.com/user-attachments/assets/a3c814af-4522-4177-907c-7aab631505f7)  
-    ### - Using `M109 S` :
-    Edit the G-Code command "M109 S" provided that it is preceded by the comment "; Temp_To_Edit". Example Below  
+    ![image](https://github.com/user-attachments/assets/a3c814af-4522-4177-907c-7aab631505f7)
+      
+    ### - Modify the G-Code command "M109 S" provided that:
+      - It is preceded by the comment "; Temp_To_Edit"  
       ```
        ; Temp_To_Edit
       ```  
       ![image](https://github.com/user-attachments/assets/a51b55dc-831b-48e2-88e8-18b2c99c3222)  
     
-    You also need to add the comment "; PRINT_END" at the start of the `Machine End G-Code`, this will allow the script to avoid the print end Moves. Example Below
+      - And add the comment "; PRINT_END" at the start of the `Machine End G-Code`, this will allow the script to avoid the print end Moves.  
       ```
        ; PRINT_END
       ```  
       ![image](https://github.com/user-attachments/assets/05d7ba2e-c3fc-43bc-971b-691dd6e5ff86)  
   
-4. The `Initial Temperature` estimated by the Script depends on the speed of the first moves of the G-Code, you can adjust it by fixing the speed of the `Purge line` or the speed of the `First layer perimeters`.  
+5. The `Initial Temperature` estimated by the Script depends on the speed of the first moves of the G-Code, you can adjust it by fixing the speed of the `Purge line` or the speed of the `First layer perimeters`.  
   
-5. To have a best `Speed/Quality Optemization`, the Slicer Profil must be set for Max Moves and Max Volumetric Speed. The Nozzle temperature is not important because it will be reset in the script, and the speed will be reduced (not increased) to the Recommended Flow.   
+6. To have a best `Speed/Quality Optemization`, the Slicer Profil must be set for Max Moves and Max Volumetric Speed. The Nozzle temperature is not important because it will be reset in the script, and the speed will be reduced (not increased) to the Recommended Flow.   
     Example below with my max 200mm/s Printer speed : (Same profil for `PLA, PETG and ABS`)  
     
     ![image](https://github.com/user-attachments/assets/c0a30aed-046a-48ad-b819-93def3b28de5)  
@@ -85,7 +85,7 @@ You can retain your old script configuration after an update by using the "/Conf
     ![image](https://github.com/user-attachments/assets/51f2cba4-d57d-4ea7-8ef7-d0c36dd61dc0)   
     ![image](https://github.com/user-attachments/assets/1cee9879-389b-4117-9048-b96c76e51891)  
   
-6. You have to set your filament settings:
+7. You have to set your filament settings:
     - The maximum recommended volumetric speed at the maximum temperature that your Hotend or Filament can handle.
     - The Fan Cooling perdiode and the Min print speed, according to the Filament and your cooling configuration.
   
