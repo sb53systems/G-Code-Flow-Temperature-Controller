@@ -25,7 +25,7 @@ See the `Print Samples` [Discussion](https://github.com/sb53systems/G-Code-Flow-
   
 # Latest Release
 ### [SB53 G-Code Flow/Temperature Controller V1.1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1)  
-(Updated in October 29 2024)
+(Updated in November 03 2024)  
 ### Addons:
 - Compatibility with `All Firmwares`.
 - `Arcs` moves support.
