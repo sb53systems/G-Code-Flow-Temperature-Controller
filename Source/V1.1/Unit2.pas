@@ -4,24 +4,29 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ShellAPI, Buttons;
+  Dialogs, StdCtrls, ShellAPI, Buttons, Vcl.ExtCtrls;
 
 type
   TForm2 = class(TForm)
+    Bevel1: TBevel;
     BitBtn1: TBitBtn;
-    Edit1: TEdit;
-    Label1: TLabel;
-    BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
-    Label2: TLabel;
-    OpenDialog1: TOpenDialog;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Label1: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
+    OpenDialog1: TOpenDialog;
+    Bevel2: TBevel;
+    Label6: TLabel;
+    BitBtn2: TBitBtn;
+    CheckBox1: TCheckBox;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure Label5Click(Sender: TObject);
+    procedure CheckBox1Click(Sender: TObject);
   private
     { Déclarations privées }
   public
@@ -76,7 +81,9 @@ procedure TForm2.BitBtn1Click(Sender: TObject);
 var
   klipperEstCom: string;
 begin
-  klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+ExtractFileDir(Application.ExeName)+'\klipper_estimator.exe --config_moonraker_url http://'+edit1.Text+' dump-config > '+ExtractFileDir(Application.ExeName)+'\config.json';
+  if form2.CheckBox1.Checked then
+    klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+ExtractFileDir(Application.ExeName)+'\klipper_estimator.exe --config_moonraker_url '+edit1.Text+' --config_moonraker_api_key ' +edit2.Text+' dump-config > '+ExtractFileDir(Application.ExeName)+'\config.json'
+    else klipperEstCom:=GetEnvironmentVariable('WINDIR')+'\System32\cmd.exe /C '+ExtractFileDir(Application.ExeName)+'\klipper_estimator.exe --config_moonraker_url '+edit1.Text+' dump-config > '+ExtractFileDir(Application.ExeName)+'\config.json';
   ExecNewProcess(klipperEstCom,true);
   if FileExists(ExtractFileDir(Application.ExeName)+'\config.json')=true then
     if FileSize(ExtractFileDir(Application.ExeName)+'\config.json')>0 then showmessage('Printer File Saved !')
@@ -87,6 +94,12 @@ end;
 procedure TForm2.BitBtn3Click(Sender: TObject);
 begin
   Form2.Close;
+end;
+
+procedure TForm2.CheckBox1Click(Sender: TObject);
+begin
+  if Form2.CheckBox1.Checked then Form2.Edit2.Enabled:=true
+    else Form2.Edit2.Enabled:=False;
 end;
 
 procedure TForm2.BitBtn2Click(Sender: TObject);
