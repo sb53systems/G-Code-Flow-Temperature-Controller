@@ -192,13 +192,13 @@ If yes, the first execution:
     ![image](https://github.com/user-attachments/assets/50612330-e3c0-4bee-b368-66a5f3641955)  
   
 # 3DBenchy Example
-![image](https://github.com/user-attachments/assets/8df25619-d150-45b3-bf7f-3fa152b2f433)  
-![image](https://github.com/user-attachments/assets/2b55cdb2-9b2d-41b1-9267-ed09f8aefce4)  
+![image](https://github.com/user-attachments/assets/503d1f8b-22f4-4848-9ca2-123b641b2796)  
+![image](https://github.com/user-attachments/assets/d22e0e20-9e8e-4fad-93d0-8c0590770d70)  
   
 Below is the Generated G-Code 
   
-![image](https://github.com/user-attachments/assets/5e1f1f21-afda-491c-8213-7d0b82128bc2)  
-![IMG20240927023059](https://github.com/user-attachments/assets/c6c46ea2-3909-4eb6-8e2d-ce51e23e7ebf)  
+![image](https://github.com/user-attachments/assets/b070daba-f98d-4948-bc27-c19f7718c22b)  
+  
   
 # Video that speak about the project on Youtube
 ### By `PRINTING PERSPECTIVE` 
