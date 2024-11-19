@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/b5b84ecc-84e5-4583-97c8-efdcdf985504)  
 # G-Code Flow and Temperature Controller
-A free and open-source post-processing script for `OrcaSlicer` that demonstrates how automatically adjusting nozzle temperatures and flow rates can improve both `QUALITY` and `SPEED` while simplifying the `Slicer Settings`.  
+A free and open-source post-processing script for `OrcaSlicer` that demonstrates how automatically adjusting nozzle temperatures and flow rates can improve both `QUALITY` and `SPEED` while simplifying the `Complexity of slicer parameters`.  
   
 This concept is based on my `Personal approach` and minimal `Delphi` Programming Skills!.  
 Although it’s not a definitive solution, as I believe that integrating this concept into slicers would significantly enhance its efficiency and allow more advanced features.  
