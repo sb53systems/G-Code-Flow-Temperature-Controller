@@ -11,7 +11,7 @@ This script will adapt the nozzle temperature for different sections and geometr
 With my printer setup, this script helps me achieve optimal speed and quality with the same slicer settings—even using an old Klipperized 3D printer and affordable filament. In fact, I’ve stopped printing without it.  
 I believe that 3D printing can be less complex than it seems. I encourage you to test, share, and further develop this concept, as I believe it/or a similar approach will shape the future of 3D printing. With a bit of `AI` 3D printing could become accessible to everyone.  
   
-I welcome your feedback and am open to any new proposals `“Alone we go faster, together we go further”`  
+I welcome your feedback and am open to any new proposals `“Alone we go Faster, Together we go Further”`  
   
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
