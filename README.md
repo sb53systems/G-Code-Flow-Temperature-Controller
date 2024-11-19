@@ -17,10 +17,9 @@ I welcome your feedback and am open to any new proposals `“Alone we go Faster,
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
 :warning: Please use this script responsibly and with caution, applying reasonable values and closely monitoring your printer's behavior.  
-  
+### `Happy Smart 3D Printing :)`  
 `See my OrcaSlicer` [Settings](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/My_Config.md) :gear:  
 `See the Print Samples` [Discussion](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/discussions/8), Share yours :bulb:  
-### `Happy Smart 3D Printing :)`  
 ### If you find my work worthy, Bay me a [![image](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/a504ac44-082d-40f1-a9d0-4abc3da242d8)](https://ko-fi.com/sb53system) and give this project a :star:. Thank you :rose:  
   
 # About this Repository
