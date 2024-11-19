@@ -8,10 +8,11 @@ Although it’s not a definitive solution, as I believe that integrating this co
 I think that the filament gradually absorbs energy in the hotend and should be extruded at an ideal final temperature.  
 This script will adapt the nozzle temperature for different sections and geometries of the print while ensuring that the filament is extruded at an ideal speed.  Adjusting the temperature based on the average flow rate that can be reached during printing `(every 1 second)`, and then changes the G-code speed to align with the optimal flow rate for that temperature `(based on layer height and line width)`.  
   
-With my printer setup, this script helps me achieve optimal speed and quality with the same slicer settings—even using an old Klipperized 3D printer and affordable filament. In fact, I’ve stopped printing without it.  
 I believe that 3D printing can be less complex than it seems. I encourage you to test, share, and further develop this concept, as I believe it/or a similar approach will shape the future of 3D printing. With a bit of `AI` 3D printing could become accessible to everyone.  
   
 I welcome your feedback and am open to any new proposals `“Alone we go Faster, Together we go Further”`  
+  
+With my printer setup, this script helps me achieve optimal speed and quality with the same slicer settings—even using an old Klipperized 3D printer and affordable filament. In fact, I’ve stopped printing without it.  
   
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
