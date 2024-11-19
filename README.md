@@ -44,7 +44,13 @@ You can retain your old script configuration after an update by using your old "
   
 # Next Features
 - Allow more advanced optimization for different printing features (Overhangs, Outer wall, Bridges, ...more).  
-- ... Add an explainer video on youtube and instructions on how to use it.
+- ... Add an explainer video on youtube and instructions on how to use it.  
+  
+# Video that speak about the project on Youtube
+### By `PRINTING PERSPECTIVE` 
+- Variable Temperature 3D Printing – The FUTURE of 3D Printing?   
+  [![Sans titre](https://github.com/user-attachments/assets/b4fc2c73-4a1b-4467-8a5d-7326e216152d)](https://www.youtube.com/watch?v=P6Y8uUPd3yg)  
+- .................................`Three months later, nothing more!`  
   
 # Instructions and Prerequisites  
 1. The script can be used as a standard program by running the SB53-Systems.exe file and manually opening a G-Code file, or by integrating it into the slicer as a post-processing script.  
@@ -206,10 +212,4 @@ If yes, the first execution:
 Below is the Generated G-Code 
   
 ![image](https://github.com/user-attachments/assets/b070daba-f98d-4948-bc27-c19f7718c22b)  
-![a3204c69-90d5-42a7-bcb5-144e6ae8c590](https://github.com/user-attachments/assets/b948ca48-a4da-4d4b-9a8a-69ee79812703)  
-  
-# Video that speak about the project on Youtube
-### By `PRINTING PERSPECTIVE` 
-- Variable Temperature 3D Printing – The FUTURE of 3D Printing?   
-  [![Sans titre](https://github.com/user-attachments/assets/b4fc2c73-4a1b-4467-8a5d-7326e216152d)](https://www.youtube.com/watch?v=P6Y8uUPd3yg)  
-- .................................`Three months later, nothing more!`    
+![a3204c69-90d5-42a7-bcb5-144e6ae8c590](https://github.com/user-attachments/assets/b948ca48-a4da-4d4b-9a8a-69ee79812703)
