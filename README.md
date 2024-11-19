@@ -6,7 +6,7 @@ This concept is based on my `Personal Approach` and minimal Delphi Programming S
 Although it’s not a definitive solution, as I believe that integrating this concept into slicers would significantly enhance its efficiency and allow more advanced features.  
   
 I think that the filament gradually absorbs energy in the hotend and should be extruded at an ideal final temperature.  
-This script will adapt the nozzle temperature for different sections and geometries of the print while ensuring that the filament is extruded at an ideal speed.  Adjusting the temperature based on the average flow rate that can be reached during printing `(every 1 second)`, and then changes the G-code speed to align with the optimal flow rate for that temperature.  
+This script will adapt the nozzle temperature for different sections and geometries of the print while ensuring that the filament is extruded at an ideal speed.  Adjusting the temperature based on the average flow rate that can be reached during printing `(every 1 second)`, and then changes the G-code speed to align with the optimal flow rate for that temperature `(based on layer height and line width)`.  
   
 With my printer setup, this script helps me achieve optimal speed and quality with the same slicer settings—even using an old Klipperized 3D printer and affordable filament. In fact, I’ve stopped printing without it.  
 I believe that 3D printing can be less complex than it seems. I encourage you to test, share, and further develop this concept, as I believe it/or a similar approach will shape the future of 3D printing. With a bit of `AI` 3D printing could become accessible to everyone.  
@@ -102,7 +102,7 @@ You can retain your old script configuration after an update by using the "/Conf
     ![image](https://github.com/user-attachments/assets/c07c5e7c-b137-4af3-86b6-efeaecdc06cc)  
   
 ### Note that :  
-  - The script is specifically programmed to reduce speeds only when they exceed the recommended flow rate (based on layer height and line width), while lower speeds will remain as set in the G-Code (Slicer speed).
+  - The script is specifically programmed to reduce speeds only when they exceed the recommended flow rate, while lower speeds will remain as set in the G-Code (Slicer speed).
   - The script does not display the temperature curve in the generated G-Code Chart if Arcs moves are used. This is due to the integration and interpretation of the Klipper_Estimator output.
   - PA can be adjusted based on temperature only for Klipper firmware. For other firmwares you need to uncheck the Adjust PA option.  
   - Changing PA while printing can cause bubbles in the walls. The script is programmed to adjust PA only in sparse infill, internal solid infill, support, and internal bridges.  
