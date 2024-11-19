@@ -2,7 +2,7 @@
 # G-Code Flow and Temperature Controller
 A free and open-source post-processing script for `OrcaSlicer` that demonstrates how automatically adjusting `Nozzle Temperatures` and `Flow rate/Speed` can improve both `QUALITY` and `SPEED` while `Simplifying the slicer parameters`.  
   
-This concept is based on my `Personal approach` and minimal `Delphi` Programming Skills!.  
+This concept is based on my `Personal Approach` and minimal Delphi Programming Skills!.  
 Although it’s not a definitive solution, as I believe that integrating this concept into slicers would significantly enhance its efficiency and allow more advanced features.  
   
 I think that the filament gradually absorbs energy in the hotend and should be extruded at an ideal final temperature.  
