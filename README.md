@@ -1,18 +1,19 @@
 ![image](https://github.com/user-attachments/assets/b5b84ecc-84e5-4583-97c8-efdcdf985504)  
 # G-Code Flow and Temperature Controller
-A free and open-source post-processing script for `OrcaSlicer` that demonstrates how automatically adjusting `Nozzle Temperatures` and `Flow rate/Speed` can improve both `QUALITY` and `SPEED` while `Simplifying the slicer parameters`.  
-  
-This concept is based on my `Personal Approach` and minimal Delphi Programming Skills!.  
-Although it’s not a definitive solution, as I believe that integrating this concept into slicers would significantly enhance its efficiency and allow more advanced features.  
-  
-I think that the filament gradually absorbs energy in the hotend and should be extruded at an ideal final temperature.  
-This script will adapt the nozzle temperature for different sections and geometries of the print while ensuring that the filament is extruded at an ideal speed.  Adjusting the temperature based on the average flow rate that can be reached during printing `(every 1 second)`, and then changes the G-code speed to align with the optimal flow rate for that temperature `(based on layer height and line width)`.  
-  
-With my printer setup, this script helps me achieve optimal speed and quality with the same slicer settings—even using an old Klipperized 3D printer and affordable filament. In fact, I’ve stopped printing without it.  
-  
-I believe that 3D printing can be less complex than it seems. I encourage you to test, share, and further develop this concept, as I believe it/or a similar approach will shape the future of 3D printing. With a bit of `AI` 3D printing could become accessible to everyone.  
-  
-I welcome your feedback and am open to any new proposals `“Alone we go Faster, Together we go Further”`  
+### A Free and Open-Source Post-Processing Script for OrcaSlicer (Windows OS)
+
+This script demonstrates how automatically adjusting nozzle temperature, flow rate, and print speed can significantly improve both quality and speed, while also simplifying slicer settings.
+
+Inspired by my personal approach and developed with basic Delphi programming skills, this script is not a definitive solution. Instead, it’s a proof of concept showing the potential benefits of integrating such features directly into slicer software, where they could unlock even greater efficiency and advanced capabilities.
+
+The concept is based on the idea that filament gradually absorbs heat as it travels through the hotend, and should be extruded at an optimal final temperature. The script dynamically adjusts nozzle temperature for different sections and geometries of the print. It calculates these adjustments based on the average flow rate (updated every second) and modifies the G-code speed to match the ideal flow rate for the corresponding temperature (factoring in layer height and line width).
+
+With my printer setup, this approach has allowed me to achieve better speed and quality using the same slicer settings, even with an older Klipperized 3D printer and budget filament. In fact, I now rely on this script for all my prints—it’s that effective.
+
+I believe 3D printing can be much less complicated than it currently seems. I encourage you to test, share, and improve this concept. I’m convinced that this approach, or something similar, could shape the future of 3D printing. With advancements in AI, 3D printing could become truly accessible to everyone.
+
+I welcome your feedback and ideas—let’s innovate together.
+“Alone we go faster, together we go further.”  
   
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
