@@ -2,7 +2,7 @@
 # G-Code Flow and Temperature Controller
 ### A Free and Open-Source Post-Processing Script for OrcaSlicer (Windows OS)
 
-This script demonstrates how automatically adjusting Nozzle Temperature and Flow rate/Print Speed can significantly improve both quality and speed, while also simplifying slicer settings.
+This script demonstrates how automatically adjusting Nozzle Temperature and Flow rate (Print Speed) can significantly improve both quality and speed, while also simplifying slicer settings.
 
 Inspired by my personal approach and developed with basic Delphi programming skills, this script is not a definitive solution. Instead, it’s a proof of concept showing the potential benefits of integrating such features directly into slicer software, where they could unlock even greater efficiency and advanced capabilities.
 
