@@ -52,7 +52,8 @@ You can retain your old script configuration after an update by using your old "
 ### By `PRINTING PERSPECTIVE` 
 - Variable Temperature 3D Printing – The FUTURE of 3D Printing?   
   [![Sans titre](https://github.com/user-attachments/assets/b4fc2c73-4a1b-4467-8a5d-7326e216152d)](https://www.youtube.com/watch?v=P6Y8uUPd3yg)  
-- .................................`Three months later, nothing more!`  
+- World’s First INDUCTIVE Hotend – How Crazy IS IT?
+  [![image](https://github.com/user-attachments/assets/66f69d3a-33d9-46d2-a649-f34e2ff5ddce)](https://www.youtube.com/watch?v=XphpaHd8Q9s)  
   
 # Instructions and Prerequisites  
 1. The script can be used as a standard program by running the SB53-Systems.exe file and manually opening a G-Code file, or by integrating it into the slicer as a post-processing script.  
