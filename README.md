@@ -10,7 +10,7 @@ Inspired by my personal approach and developed with basic Delphi programming ski
   
 I now rely on this script for all my prints, and use 90% of the same slicer settings, even with my old Klipperized 3D printer and cheap filament. Tt’s that effective.  
   
-I believe 3D printing can be much less complicated than it currently seems. I encourage you to test, share, and improve this concept. I’m convinced that this approach, or something similar, could shape the future of 3D printing. With advancements in AI, 3D printing could become truly accessible to everyone.  
+I believe 3D printing can be much less complicated than it currently seems. I encourage you to test, share, and improve this concept. I’m convinced that this approach, or something similar, could shape the future of 3D printing. With advancements in AI, 3D Printing could become truly accessible to Everyone.  
   
 I welcome your feedback and ideas—let’s innovate together.
 “Alone we go faster, together we go further.”  
