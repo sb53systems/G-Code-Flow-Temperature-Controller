@@ -8,9 +8,9 @@ This script adjusts nozzle temperature for different sections and geometries of 
   
 Inspired by my personal approach and developed with basic Delphi programming skills, this script is not a definitive solution. Instead, it’s a proof of concept showing the potential benefits of integrating such features directly into slicer software, where they could unlock even greater efficiency and advanced capabilities.  
   
-I now rely on this script for all my prints, and use 90% of the same slicer settings, even with my old Klipperized 3D printer and cheap filament. Tt’s that effective.  
+I now rely on this script for all my prints, and use 90% of the same slicer settings, even with my old Klipperized 3D printer and cheap filament. I’m convinced that this approach, or something similar, could shape the future of 3D printing, and with AI, 3D Printing could become truly accessible to Everyone.  
   
-I believe 3D printing can be much less complicated than it currently seems. I encourage you to test, share, and improve this concept. I’m convinced that this approach, or something similar, could shape the future of 3D printing. With advancements in AI, 3D Printing could become truly accessible to Everyone.  
+I believe 3D printing can be much less complicated than it currently seems. I encourage you to test, share, and improve this concept with new features.  
   
 I welcome your feedback and ideas—let’s innovate together.
 “Alone we go faster, together we go further.”  
