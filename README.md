@@ -12,8 +12,7 @@ I now rely on this script for all my prints, and use 90% of the same slicer sett
   
 I believe 3D printing can be much less complicated than it currently seems. I encourage you to test, share, and improve this concept with new features.  
   
-I welcome your feedback and ideas—let’s innovate together.
-“Alone we go faster, together we go further.”  
+I welcome your feedback and ideas—let’s innovate together “Alone we go faster, together we go further”.  
   
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
