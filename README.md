@@ -27,10 +27,11 @@ Your feedback and ideas are welcome. Let’s innovate and push the boundaries of
   
 # About this Repository
 ### By Salim BELAYEL.  
+Discord: sb53systems  
+Email : sb53systems@gmail.com  
+  
 This project began in June 2024.  
 Compiled with `Delphi 12 Community Edition` (Free for windows, MacOS, and Android).  
-Email : sb53systems@gmail.com  
-Discord: sb53systems  
 I thank everyone who participated in this project even indirectly ❤️  
   
 ![SB53-Systems~1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/b94703a1-cf21-4109-bfa6-b9bcff438a1d)  
