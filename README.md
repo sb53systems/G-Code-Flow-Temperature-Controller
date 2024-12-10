@@ -8,7 +8,7 @@ This script adjusts nozzle temperature for different sections and geometries of 
   
 Inspired by my personal approach and developed with basic Delphi programming skills, this script is not a definitive solution. Instead, it’s a proof of concept showing the potential benefits of integrating such features directly into slicer software, where they could unlock even greater efficiency and advanced capabilities.  
   
-I now rely on this script for all my prints, and use the same slicer settings at 90%. Even with my older Klipperized 3D printer and budget filament. Tt’s that effective.  
+I now rely on this script for all my prints, and use 90% of the same slicer settings, even with my old Klipperized 3D printer and cheap filament. Tt’s that effective.  
   
 I believe 3D printing can be much less complicated than it currently seems. I encourage you to test, share, and improve this concept. I’m convinced that this approach, or something similar, could shape the future of 3D printing. With advancements in AI, 3D printing could become truly accessible to everyone.  
   
@@ -56,7 +56,7 @@ You can retain your old script configuration after an update by using your old "
   [![image](https://github.com/user-attachments/assets/66f69d3a-33d9-46d2-a649-f34e2ff5ddce)](https://www.youtube.com/watch?v=XphpaHd8Q9s)  
   
 # Instructions and Prerequisites  
-1. The script can be used as a standard program by running the SB53-Systems.exe file and manually opening a G-Code file, or by integrating it into the slicer as a post-processing script.  
+1. The script can be used as a standard program by running the `SB53-Systems.exe` file and manually opening a G-Code file, or by integrating it into the slicer as a post-processing script.  
     ```
     D:\SB53_G-Code_Flow_Temperature_Controller_V1.1\SB53-Systems.exe;
     ```  
