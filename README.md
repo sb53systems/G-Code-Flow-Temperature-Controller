@@ -1,17 +1,17 @@
 ![image](https://github.com/user-attachments/assets/b5b84ecc-84e5-4583-97c8-efdcdf985504)  
 # G-Code Flow and Temperature Controller
 ### A Free and Open-Source Post-Processing Script for OrcaSlicer
-Based on the idea that filament gradually absorbs heat as it travels through the hotend, and should be extruded at a desired final temperature.
 This script demonstrates how automatically adjusting Nozzle Temperature and Flow rate (Print Speed) can significantly improve both quality and print time, while also simplifying slicer settings.  
   
-It adjusts nozzle temperature for different sections and geometries of the print, It calculates these adjustments based on the average flow rate (updated every second). Then modifie the G-code speed to match the ideal flow rate for the corresponding temperature (factoring in layer height and line width).  
+Based on the idea that filament gradually absorbs heat as it travels through the hotend, and should be extruded at a desired final temperature.  
+This script adjusts nozzle temperature for different sections and geometries of the print, It calculates these adjustments based on the average flow rate (updated every second). Then modifie the G-code speed to match the ideal flow rate for the corresponding temperature (factoring in layer height and line width).  
   
 Inspired by my personal approach and developed with basic Delphi programming skills, this script is not a definitive solution. Instead, it’s a proof of concept showing the potential benefits of integrating such features directly into slicer software, where they could unlock even greater efficiency and advanced capabilities.  
   
 With my printer setup, this approach has allowed me to achieve better speed and quality using the same slicer settings, even with an older Klipperized 3D printer and budget filament. In fact, I now rely on this script for all my prints—it’s that effective.  
   
-I believe 3D printing can be much less complicated than it currently seems. I encourage you to test, share, and improve this concept. I’m convinced that this approach, or something similar, could shape the future of 3D printing. With advancements in AI, 3D printing could become truly accessible to everyone.
-
+I believe 3D printing can be much less complicated than it currently seems. I encourage you to test, share, and improve this concept. I’m convinced that this approach, or something similar, could shape the future of 3D printing. With advancements in AI, 3D printing could become truly accessible to everyone.  
+  
 I welcome your feedback and ideas—let’s innovate together.
 “Alone we go faster, together we go further.”  
   
