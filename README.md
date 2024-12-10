@@ -35,6 +35,7 @@ I thank everyone who participated in this project even indirectly ❤️
   
 # Latest Release (Download Link)
 ### [SB53 G-Code Flow/Temperature Controller V1.1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1)  
+![image](https://github.com/user-attachments/assets/26569437-a082-4f5b-9445-e0c736040278)  
 (Updated in November 03 2024)  
 ### Addons:
 - Compatibility with `All Firmwares`.
