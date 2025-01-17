@@ -11,9 +11,11 @@ Filament gradually absorbs heat as it travels through the hotend, requiring extr
 Inspired by my personal approach and developed with basic Delphi programming skills, this is a proof of concept demonstrating the potential of integrating such features into slicer software. Doing so could unlock even greater efficiency and advanced capabilities for 3D printing.  
 
 **What’s Next?**  
-I now rely on this script for all my prints, even with my old Klipper-based printer and low-cost filament. I keep 90% of my slicer settings unchanged, proving this method’s reliability and flexibility. I believe this approach—or something similar—could shape the future of 3D printing and make it truly accessible to everyone.  
-
-**Test, Share, Improve!**  
+My next goal is to create a software solution that automates hotend and filament temperature calibration with a simple add-on for any 3D printer.  
+I now rely on this script for all my prints, even with my old Klipper-based printer and low-cost filament. I keep 90% of my slicer settings unchanged, proving this method’s reliability and flexibility, and exploring its limits for advanced features.  
+Hoping that people will start experimenting and developing this new concept.  
+I believe this approach or something similar could shape the future of 3D printing and make it truly accessible to everyone.  
+  
 Your feedback and ideas are welcome. Let’s innovate and push the boundaries of 3D printing together:  
 *"Alone we go faster; together we go further."*  
   
