@@ -51,8 +51,10 @@ I thank everyone who participated in this project even indirectly ❤️
 You can retain your old script configuration after an update by using your old "/Config" folder from the previous version. Simply replace the files "SB53-Systems.exe" and "Klipper_estimator.exe.". Note that the final version 1.1 include a different Klipper_Estimator script.  
   
 # Next Features
-- Allow more advanced optimization for different printing features (Overhangs, Outer wall, Bridges, ...more).  
-- ... Add an explainer video on youtube and instructions on how to use it.  
+- Add automatic temperature calibration process.  
+- Add advanced optimization for different printing features (Overhangs, Outer wall, Bridges, ...more).  
+- Add Fan controll.  
+- Add an explainer video on youtube and instructions.  
   
 # Video that speak about the project on Youtube
 ### By `PRINTING PERSPECTIVE` 
