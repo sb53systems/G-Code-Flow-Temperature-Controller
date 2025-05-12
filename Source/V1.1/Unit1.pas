@@ -168,6 +168,8 @@ type
     TrackBar1: TTrackBar;
     StaticText11: TStaticText;
     StaticText12: TStaticText;
+    Button1: TButton;
+    Button2: TButton;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
@@ -220,6 +222,8 @@ type
     procedure Edit13Change(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Déclarations privées }
   public
@@ -237,7 +241,7 @@ var
 
 implementation
 
-uses Unit2, Unit3, Unit4, Unit5, Unit6, Unit7, Unit8;
+uses Unit2, Unit3, Unit4, Unit5, Unit6, Unit7, Unit8, Unit9;
 
 {$R *.dfm}
 
@@ -468,9 +472,11 @@ end;
 // Generate Temporary File                                              //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 procedure generateTempOutput;
 Var
-  totFilCount, gcodeFreq, getNextTemp, curFreq, recFreq, tempByPA, curPA, recPA, recFlow, tempByflow, moveFlowRate, maxTempCount, minTempCount, sectionArea, layerHeight, lineWidth, gcodeMovesCount : double;
+  totFilCount, gcodeFreq, getNextTemp, curFreq, recFreq, tempByPA, curPA, recPA, recFlow, tempByflow, moveFlowRate, maxTempCount, minTempCount, sectionArea, layerHeight, lineWidth, circleArea, rectangleArea, gcodeMovesCount : double;
   curTemp, getTemp, moveFilCount, lineType : string;
   retract, freqChanger : bool;
+const
+  Pi = 3.141592653589793;
 begin
   // Set Innitial Parameters
   Form1.BitBtn7.Enabled:=False;
@@ -592,7 +598,7 @@ begin
           WriteLn (tempOutputFile , 'SET_PRESSURE_ADVANCE ADVANCE='+StringReplace(floattostr(curPA), ',', '.', [rfReplaceAll]));
         end;
 
-        // Frequance change
+        // speed change
         if pos('E', Lines)<>0 then begin
           moveFilCount:=copy(Lines, pos('E',Lines)+1, length(Lines));
           if pos(' ', moveFilCount)<>0 then moveFilCount:=copy(moveFilCount,1,pos(' ', moveFilCount)-1);
@@ -605,7 +611,9 @@ begin
             try
               if ((moveFilCount[1]=',')or(moveFilCount[1]='.')) then  moveFilCount:='0'+moveFilCount;
               if (recFlow>0) then begin
-                sectionArea := layerHeight * lineWidth;
+                rectangleArea := layerHeight * (lineWidth - layerHeight);
+                circleArea := Pi * Sqr(layerHeight / 2);
+                sectionArea := rectangleArea + circleArea;
                 recFreq := round( 60 *(recFlow / sectionArea));
                 if ((curFreq<>recFreq)or freqChanger) then begin
                   freqChanger:=false;
@@ -1017,6 +1025,16 @@ begin
   end;
 end;
 
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  Form8.ShowModal;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  Form9.showmodal;
+end;
 
 // Refresh Filament list                                                //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 procedure refreshList();
