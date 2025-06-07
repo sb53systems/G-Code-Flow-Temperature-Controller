@@ -19,9 +19,10 @@ I believe this approach or something similar could shape the future of 3D printi
 Your feedback and ideas are welcome. Let’s innovate and push the boundaries of 3D printing together:  
 *"Alone we go faster; together we go further."*  
   
+:warning: Please use this script responsibly and with caution, applying reasonable values and closely monitoring your printer's behavior.  
+  
 ![IMG20240927152206](https://github.com/user-attachments/assets/5de13b9c-2930-4809-b027-79e65188029b)  
   
-:warning: Please use this script responsibly and with caution, applying reasonable values and closely monitoring your printer's behavior.  
 ### `Happy Smart 3D Printing :)`  
 `See my OrcaSlicer` [Settings](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/My_Config.md) :gear:  
 `See the Print Samples` [Discussion](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/discussions/8), Share yours :bulb:  
