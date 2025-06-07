@@ -151,7 +151,6 @@ The visual calibration method (effective for PETG, PLA, etc.) involves selecting
 The ideal would be to obtain the final temperature of the extruded filament using a more accurate and automated solution that gives a curve closer to reality!  
 This will also be useful with Filaments that cannot be visually calibrated.  
   
-### See my [Ideal Flow Vs Hotend Temperature Calibration](https://github.com/sb53systems/Flow_Temperature_Calibration) Project on Github.  
 I challenge makers to find a precise, cost-effective, and user-friendly solution for the majority of 3D printers :rocket:  
   
 # Observations and Tips
