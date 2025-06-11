@@ -58,6 +58,21 @@ You can retain your old script configuration after an update by using your old "
 - Add Fan controll.  
 - Add an explainer video on youtube and instructions.  
   
+# Similar Github projects
+I invite you to test similar Github projects that could offer other features like:  
+- Compatibility with multiple operating systems.
+- Compatibility with multiple Slicers.
+- Other or more Advanced approach.
+- Regular updates with new features.
+- Fast processing with large files.
+- ...etc.
+  
+Feel free to support and assist the contributors, either financially or through your feedback.  
+### - MZ Flow Temp Processor `Python`.  
+[See the Project on Github](https://github.com/Yury-MonZon/MZ_Flow_Temp_processor)  
+![graphs1](https://github.com/user-attachments/assets/2cbcd0f4-5488-4f96-a061-76cef2274b81)
+
+  
 # Video that speak about the project on Youtube
 ### By `PRINTING PERSPECTIVE` 
 - Variable Temperature 3D Printing – The FUTURE of 3D Printing?   
