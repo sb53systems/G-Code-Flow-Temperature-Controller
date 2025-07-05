@@ -58,6 +58,17 @@ You can retain your old script configuration after an update by using your old "
 - Add Fan controll.  
 - Add an explainer video on youtube and instructions.  
   
+# Video that speak about the project on Youtube
+### By `PRINTING PERSPECTIVE` 
+- Variable Temperature 3D Printing – The FUTURE of 3D Printing?   
+  [![Sans titre](https://github.com/user-attachments/assets/b4fc2c73-4a1b-4467-8a5d-7326e216152d)](https://www.youtube.com/watch?v=P6Y8uUPd3yg)  
+- World’s First INDUCTIVE Hotend – How Crazy IS IT?  
+  [![image](https://github.com/user-attachments/assets/66f69d3a-33d9-46d2-a649-f34e2ff5ddce)](https://www.youtube.com/watch?v=XphpaHd8Q9s)
+  
+### By `Roetz 4.0`
+- Every Speed-3DPrinter will use this method in 2026! (Minuteman Episode 16)  
+  [![image](https://github.com/user-attachments/assets/92f9bae8-7e22-408d-b8e6-8ba178a68ab8)](https://www.youtube.com/watch?v=EaORGjZbS-c)
+  
 # Similar Github projects
 I invite you to test similar Github projects that could offer other features like:  
 - Compatibility with multiple operating systems.
@@ -70,19 +81,7 @@ I invite you to test similar Github projects that could offer other features lik
 Feel free to support and assist the contributors, either financially or through your feedback.  
 ### - MZ Flow Temp Processor `Python`.  
 [See the Project on Github](https://github.com/Yury-MonZon/MZ_Flow_Temp_processor)  
-![graphs1](https://github.com/user-attachments/assets/2cbcd0f4-5488-4f96-a061-76cef2274b81)
-
-  
-# Video that speak about the project on Youtube
-### By `PRINTING PERSPECTIVE` 
-- Variable Temperature 3D Printing – The FUTURE of 3D Printing?   
-  [![Sans titre](https://github.com/user-attachments/assets/b4fc2c73-4a1b-4467-8a5d-7326e216152d)](https://www.youtube.com/watch?v=P6Y8uUPd3yg)  
-- World’s First INDUCTIVE Hotend – How Crazy IS IT?  
-  [![image](https://github.com/user-attachments/assets/66f69d3a-33d9-46d2-a649-f34e2ff5ddce)](https://www.youtube.com/watch?v=XphpaHd8Q9s)
-  
-### By `Roetz 4.0`
-- Every Speed-3DPrinter will use this method in 2026! (Minuteman Episode 16)  
-  [![image](https://github.com/user-attachments/assets/92f9bae8-7e22-408d-b8e6-8ba178a68ab8)](https://www.youtube.com/watch?v=EaORGjZbS-c)
+![graphs1](https://github.com/user-attachments/assets/2cbcd0f4-5488-4f96-a061-76cef2274b81)  
   
 # Instructions and Prerequisites  
 1. The script can be used as a standard program by running the `SB53-Systems.exe` file and manually opening a G-Code file, or by integrating it into the slicer as a post-processing script.  
