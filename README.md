@@ -5,7 +5,7 @@
 This script dynamically adjusts nozzle temperature and print speed (flow rate) to significantly improve print quality and reduce print time, all while simplifying slicer settings. By optimizing these parameters, it makes 3D printing more accessible, less complex and faster.  
 
 **How Does It Work?**  
-Filament gradually absorbs heat as it travels through the hotend, requiring extrusion at an optimal final temperature. This script calculates the average flow rate every second and dynamically adjusts the nozzle temperature accordingly. It also modifies print speed in the G-code to match the ideal flow rate, considering layer height and line width.  
+Filament gradually absorbs heat as it travels through the hotend, requiring extrusion at an optimal final temperature. Depending on the accelerations, Jerk/SCV, the print geometry,... this script calculates the average flow rate that can be reached every second, and dynamically adjusts the nozzle temperature accordingly. It also modifies print speed in the G-code to match the ideal flow rate, considering layer height and line width.  
 
 **Why This Script?**  
 Inspired by my personal approach and developed with basic Delphi programming skills, this is a proof of concept demonstrating the potential of integrating such features into slicer software. Doing so could unlock even greater efficiency and advanced capabilities for 3D printing.  
