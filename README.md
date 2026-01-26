@@ -67,6 +67,10 @@ You can retain your old script configuration after an update by using your old "
 - Every Speed-3DPrinter will use this method in 2026! (Minuteman Episode 16)  
   [![image](https://github.com/user-attachments/assets/92f9bae8-7e22-408d-b8e6-8ba178a68ab8)](https://www.youtube.com/watch?v=EaORGjZbS-c)
   
+# Reddit post  
+### By Akyariss for FDMminiatures
+- [Printing FDM Miniatures with a post-processing script](https://www.reddit.com/r/FDMminiatures/comments/1my1r2h/printing_fdm_miniatures_with_a_postprocessing/)
+  
 # Similar Github projects
 I invite you to test similar Github projects that could offer other features like:  
 - Compatibility with multiple operating systems.
