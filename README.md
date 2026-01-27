@@ -69,8 +69,8 @@ You can retain your old script configuration after an update by using your old "
   
 # Reddit post  
 ### By Akyariss for FDMminiatures
-- [Printing FDM Miniatures with a post-processing script](https://www.reddit.com/r/FDMminiatures/comments/1my1r2h/printing_fdm_miniatures_with_a_postprocessing/)  
-  <img width="277" height="195" alt="image" src="https://github.com/user-attachments/assets/7fe58823-286d-40b3-81eb-d0c177ffb0d5" />  
+- Printing FDM Miniatures with a post-processing script  
+  [<img width="277" height="195" alt="image" src="https://github.com/user-attachments/assets/7fe58823-286d-40b3-81eb-d0c177ffb0d5" />](https://www.reddit.com/r/FDMminiatures/comments/1my1r2h/printing_fdm_miniatures_with_a_postprocessing/)  
   
 # Similar Github projects
 I invite you to test similar Github projects that could offer other features like:  
