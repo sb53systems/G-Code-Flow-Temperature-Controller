@@ -11,7 +11,6 @@ Filament gradually absorbs heat as it travels through the hotend, requiring extr
 Inspired by my personal approach and developed with basic Delphi programming skills, this is a proof of concept demonstrating the potential of integrating such features into slicer software. Doing so could unlock even greater efficiency and advanced capabilities for 3D printing.  
 
 **What’s Next?**  
-My next goal is to create a software solution that automates hotend and filament temperature calibration with a simple add-on for any 3D printer.  
 I now rely on this script for all my prints, even with my old Klipper-based printer and low-cost filament. I keep 90% of my slicer settings unchanged, proving this method’s reliability and flexibility, and exploring its limits for advanced features.  
 Hoping that people will start experimenting and developing this new concept.  
 I believe this approach or something similar could shape the future of 3D printing and make it truly accessible to everyone.  
@@ -35,7 +34,6 @@ Email : sb53systems@gmail.com
   
 This project began in June 2024.  
 Compiled with `Delphi 12 Community Edition` (Free for windows, MacOS, and Android).  
-I thank everyone who participated in this project even indirectly ❤️  
   
 ![SB53-Systems~1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/b94703a1-cf21-4109-bfa6-b9bcff438a1d)  
   
@@ -46,17 +44,15 @@ I thank everyone who participated in this project even indirectly ❤️
 ### Addons:
 - Compatibility with `All Firmwares`.
 - `Arcs` moves support.
-- Improve GCode reading and generation time with a `Custom` Klipper Estimator script.
-- Use a circle edges during the section Area calculation.  
+- Improve GCode reading and generation time with a `Custom` Klipper Estimator script.  
   
 ### Note
-You can retain your old script configuration after an update by using your old "/Config" folder from the previous version. Simply replace the files "SB53-Systems.exe" and "Klipper_estimator.exe.". Note that the final version 1.1 include a different Klipper_Estimator script.  
+You can retain your old script configuration after an update (or backup) by using your old "/Config" folder from the previous version. Simply replace the files "SB53-Systems.exe" and "Klipper_estimator.exe.". Note that the final version 1.1 include a different Klipper_Estimator script.  
   
 # Next Features
 - Add automatic temperature calibration process.  
 - Add advanced optimization for different printing features (Overhangs, Outer wall, Bridges, ...more).  
 - Add Fan controll.  
-- Add an explainer video on youtube and instructions.  
   
 # Video that speak about the project on Youtube
 ### By `PRINTING PERSPECTIVE` 
@@ -122,7 +118,7 @@ Feel free to support and assist the contributors, either financially or through 
     
     ![image](https://github.com/user-attachments/assets/c0a30aed-046a-48ad-b819-93def3b28de5)  
   
-    The speed of `Overhangs` and small `Internal/External Bridges` should be set to the maximum speed, this will ensure that the filament is extruded at the recommended flow rate and that it is not too hot and falls off, or too cold and shrinks, also avoiding sudden flow changes and unnecessary temperature drops caused by the average flow calculated by the script.  
+    The speed of `Overhangs` and small `Internal/External Bridges` should be set to the maximum speed, this will ensure that the filament is extruded at the recommended flow rate and that it is not too hot and falls off, or too cold and shrinks, also avoiding sudden flow changes and unnecessary temperature drops caused by the average flow calculated in the script.  
     ![image](https://github.com/user-attachments/assets/050be022-7cef-47ff-b1aa-15f8b5134dce)  
     [See my overhangs test examples.](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/blob/main/Overhangs_Test.md)  
   
