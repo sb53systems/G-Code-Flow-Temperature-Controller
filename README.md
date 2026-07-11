@@ -5,7 +5,7 @@
 
 Most slicers use a fixed nozzle temperature throughout an entire print, even though the extrusion flow constantly changes. This means the filament is often printed either hotter or colder than necessary.
 
-**G-Code Flow & Temperature Controller** is an open-source post-processing tool that continuously analyzes the average volumetric flow of the G-code and dynamically adjusts both nozzle temperature and printing speed.
+**G-Code Flow & Temperature Controller** is an open-source post-processing tool that analyzes the average volumetric flow of the G-code and dynamically adjusts both nozzle temperature and printing speed.
 
 The goal is simple: maintain the optimal melting conditions throughout the print while reducing manual tuning.
 
@@ -24,7 +24,7 @@ However, traditional slicers use a single temperature for the entire print, forc
 - Printing speed
 - Layer adhesion
 - Stringing
-- Overheating
+- Over/less heating
 
 This project removes that compromise by adapting the printer to the current printing conditions.
 
@@ -34,14 +34,7 @@ This project removes that compromise by adapting the printer to the current prin
 
 After the slicer generates the G-code, the controller analyzes the file.
 
-Every second it:
 
-1. Calculates the average volumetric flow.
-2. Determines the optimal nozzle temperature.
-3. Inserts the required temperature commands.
-4. Adjusts printing speed to maintain the desired volumetric flow.
-
-Because filament needs time to absorb heat inside the hotend, temperature changes are applied in advance so the filament reaches the target temperature exactly when it leaves the nozzle.
 
 ---
 
