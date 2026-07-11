@@ -26,13 +26,11 @@ However, traditional slicers use a single temperature for the entire print, forc
 - Stringing
 - Over/less heating
 
-This project removes that compromise by adapting the printer to the current printing conditions.
-
 ---
 
-# How It Works
+# what this script does
 
-Filament gradually absorbs heat as it travels through the hotend, requiring extrusion at an optimal final temperature. Depending on your speeds, accelerations, Jerk/SCV, print geometry,... this script calculates the average flow rate that can be reached every second, and dynamically adjusts the nozzle temperature accordingly. It also modifies print speed in the G-code to match the ideal flow rate, considering layer height and line width.  
+Depending on your speeds, accelerations, Jerk/SCV, print geometry,... this script calculates the average flow rate that can be reached every second, and dynamically adjusts the nozzle temperature accordingly. It also modifies print speed in the G-code to match the ideal flow rate, considering layer height and line width.  
 
 
 ---
