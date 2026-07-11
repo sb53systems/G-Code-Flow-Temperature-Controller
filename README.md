@@ -95,7 +95,6 @@ By dynamically linking nozzle temperature with volumetric flow, the printer can 
 
 Planned improvements include:
 
-- Native OrcaSlicer integration
 - Support for additional slicers
 - Automatic filament calibration
 - Material-specific profiles
