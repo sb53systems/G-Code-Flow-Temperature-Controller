@@ -51,7 +51,7 @@ Depending on your speeds, accelerations, Jerk/SCV, print geometry,... this scrip
 - Compatible with all firmwares 
 - Designed for OrcaSlicer
 - No firmware modification required
-- Fully automatic
+- Fully automatic after first setup
 - Open Source
 
 ---
@@ -64,7 +64,6 @@ Depending on your speeds, accelerations, Jerk/SCV, print geometry,... this scrip
 - Reduced overheating on slow sections
 - Higher printing speed when possible
 - Less manual tuning
-- More consistent extrusion
 - Better use of the printer/filament's capabilities
 
 ---
