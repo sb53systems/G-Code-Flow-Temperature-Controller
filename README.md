@@ -32,8 +32,7 @@ This project removes that compromise by adapting the printer to the current prin
 
 # How It Works
 
-After the slicer generates the G-code, the controller analyzes the file.
-
+Filament gradually absorbs heat as it travels through the hotend, requiring extrusion at an optimal final temperature. Depending on your speeds, accelerations, Jerk/SCV, print geometry,... this script calculates the average flow rate that can be reached every second, and dynamically adjusts the nozzle temperature accordingly. It also modifies print speed in the G-code to match the ideal flow rate, considering layer height and line width.  
 
 
 ---
