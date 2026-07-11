@@ -95,6 +95,7 @@ By dynamically linking nozzle temperature with volumetric flow, the printer can 
 Planned improvements include:
 
 - Support for additional slicers
+- Intelligent Fan control
 - Automatic filament calibration
 - Material-specific profiles
 - Advanced flow calibration 
@@ -124,7 +125,7 @@ Discord: sb53systems
 Email : sb53systems@gmail.com  
   
 This project began in June 2024.  
-Compiled with `Delphi 12 Community Edition` (Free for windows, MacOS, and Android).  
+Compiled with `Delphi 12 Community Edition`.  
   
 ![SB53-Systems~1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/assets/33290411/b94703a1-cf21-4109-bfa6-b9bcff438a1d)  
   
@@ -132,18 +133,10 @@ Compiled with `Delphi 12 Community Edition` (Free for windows, MacOS, and Androi
 ### [SB53 G-Code Flow/Temperature Controller V1.1](https://github.com/sb53systems/G-Code-Flow-Temperature-Controller/releases/tag/V1.1)  
 ![image](https://github.com/user-attachments/assets/2c3bd5d9-b310-4103-b303-4ee84b73a78f)  
 (Updated in May 12 2025)  
-### Addons:
-- Compatibility with `All Firmwares`.
-- `Arcs` moves support.
-- Improve GCode reading and generation time with a `Custom` Klipper Estimator script.  
   
 ### Note
-You can retain your old script configuration after an update (or backup) by using your old "/Config" folder from the previous version. Simply replace the files "SB53-Systems.exe" and "Klipper_estimator.exe.". Note that the final version 1.1 include a different Klipper_Estimator script.  
+You can retain your old script configuration after an update (or backup/share) by using/save your old "/Config" folder from the previous version. Simply replace the files "SB53-Systems.exe" and "Klipper_estimator.exe.". Note that the final version 1.1 include a different Klipper_Estimator script.  
   
-# Next Features
-- Add automatic temperature calibration process.  
-- Add advanced optimization for different printing features (Overhangs, Outer wall, Bridges, ...more).  
-- Add Fan controll.  
   
 # Video that speak about the project on Youtube
 ### By `PRINTING PERSPECTIVE` 
