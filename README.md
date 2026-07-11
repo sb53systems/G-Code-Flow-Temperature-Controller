@@ -30,7 +30,7 @@ However, traditional slicers use a single temperature for the entire print, forc
   
 # Philosophy
 
-Traditional slicing assumes that extrusion must adapt to a fixed temperature, and the temperature must adapt to a few test simples!!!  
+Traditional slicing assumes that extrusion must adapt to a fixed temperature, and the temperature must adapt to a few test simples.  
 
 This project follows the opposite philosophy:
 
