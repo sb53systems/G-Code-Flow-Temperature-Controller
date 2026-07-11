@@ -44,7 +44,7 @@ After the slicer generates the G-code, the controller analyzes the file.
 - Dynamic print speed
 - Average volumetric flow calculation
 - Automatic G-code post-processing
-- Compatible with Klipper
+- Compatible with all firmwares 
 - Designed for OrcaSlicer
 - No firmware modification required
 - Fully automatic
@@ -61,7 +61,7 @@ After the slicer generates the G-code, the controller analyzes the file.
 - Higher printing speed when possible
 - Less manual tuning
 - More consistent extrusion
-- Better use of the filament's capabilities
+- Better use of the printer/filament's capabilities
 
 ---
 
