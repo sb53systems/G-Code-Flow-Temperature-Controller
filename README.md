@@ -117,7 +117,7 @@ Your feedback and ideas are welcome. Let’s innovate and push the boundaries of
   
 # License
 
-This project is open source and contributions are welcome.  
+This project is licensed under the MIT License.  
   
 # About this Repository
 ### By Salim BELAYEL.  
