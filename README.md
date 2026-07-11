@@ -1,19 +1,120 @@
 ![image](https://github.com/user-attachments/assets/b5b84ecc-84e5-4583-97c8-efdcdf985504)  
-# G-Code Flow and Temperature Controller
-### *A free and open-source post-processing script for OrcaSlicer to simplify 3D printing.*  
-  
-This script dynamically adjusts nozzle temperature and print speed (flow rate) to significantly improve print quality and reduce print time, all while simplifying slicer settings. By optimizing these parameters, it makes 3D printing more accessible, less complex and faster.  
+# G-Code Flow & Temperature Controller
 
-**How Does It Work?**  
-Filament gradually absorbs heat as it travels through the hotend, requiring extrusion at an optimal final temperature. Depending on your speeds, accelerations, Jerk/SCV, print geometry,... this script calculates the average flow rate that can be reached every second, and dynamically adjusts the nozzle temperature accordingly. It also modifies print speed in the G-code to match the ideal flow rate, considering layer height and line width.  
+> **Automatically optimize nozzle temperature and print speed based on the real extrusion flow.**
 
-**Why This Script?**  
-Inspired by my personal approach and developed with basic Delphi programming skills, this is a proof of concept demonstrating the potential of integrating such features into slicer software. Doing so could unlock even greater efficiency and advanced capabilities for 3D printing.  
+Most slicers use a fixed nozzle temperature throughout an entire print, even though the extrusion flow constantly changes. This means the filament is often printed either hotter or colder than necessary.
 
-**What’s Next?**  
-I now rely on this script for all my prints, even with my old Klipper-based printer and low-cost filament. I keep 90% of my slicer settings unchanged, proving this method’s reliability and flexibility, and exploring its limits for advanced features.  
-Hoping that people will start experimenting and developing this new concept.  
-I believe this approach or something similar could shape the future of 3D printing and make it truly accessible to everyone.  
+**G-Code Flow & Temperature Controller** is an open-source post-processing tool that continuously analyzes the average volumetric flow of the G-code and dynamically adjusts both nozzle temperature and printing speed.
+
+The goal is simple: maintain the optimal melting conditions throughout the print while reducing manual tuning.
+
+---
+
+# Why?
+
+The amount of heat required to properly melt filament depends primarily on the extrusion flow.
+
+- Low flow requires less heat.
+- High flow requires more heat.
+
+However, traditional slicers use a single temperature for the entire print, forcing users to compromise between:
+
+- Surface quality
+- Printing speed
+- Layer adhesion
+- Stringing
+- Overheating
+
+This project removes that compromise by adapting the printer to the current printing conditions.
+
+---
+
+# How It Works
+
+After the slicer generates the G-code, the controller analyzes the file.
+
+Every second it:
+
+1. Calculates the average volumetric flow.
+2. Determines the optimal nozzle temperature.
+3. Inserts the required temperature commands.
+4. Adjusts printing speed to maintain the desired volumetric flow.
+
+Because filament needs time to absorb heat inside the hotend, temperature changes are applied in advance so the filament reaches the target temperature exactly when it leaves the nozzle.
+
+---
+
+# Features
+
+- Dynamic nozzle temperature
+- Dynamic print speed
+- Average volumetric flow calculation
+- Automatic G-code post-processing
+- Compatible with Klipper
+- Designed for OrcaSlicer
+- No firmware modification required
+- Fully automatic
+- Open Source
+
+---
+
+# Benefits
+
+- Better surface quality
+- Better layer adhesion
+- Improved dimensional consistency
+- Reduced overheating on slow sections
+- Higher printing speed when possible
+- Less manual tuning
+- More consistent extrusion
+- Better use of the filament's capabilities
+
+---
+
+# Example
+
+Instead of printing the entire model at **220°C**, the controller may automatically apply:
+
+| Volumetric Flow | Temperature |
+|----------------:|------------:|
+| 4 mm³/s | 195°C |
+| 8 mm³/s | 205°C |
+| 15 mm³/s | 220°C |
+| 22 mm³/s | 235°C |
+
+Printing speed is then adjusted accordingly to maintain optimal extrusion conditions.
+
+---
+
+# Philosophy
+
+Traditional slicing assumes that extrusion must adapt to a fixed temperature.
+
+This project follows the opposite philosophy:
+
+> **Temperature should adapt to the extrusion flow.**
+
+By dynamically linking nozzle temperature with volumetric flow, the printer can maintain more consistent melting conditions throughout the entire print.
+
+---
+
+# Future Development
+
+Planned improvements include:
+
+- Native OrcaSlicer integration
+- Support for additional slicers
+- Automatic filament calibration
+- Material-specific profiles
+- Advanced flow calibration 
+- Community contributions
+
+---
+
+# License
+
+This project is open source and contributions are welcome.  
   
 Your feedback and ideas are welcome. Let’s innovate and push the boundaries of 3D printing together:  
 *"Alone we go faster; together we go further."*  
