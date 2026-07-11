@@ -1,7 +1,7 @@
 ![image](https://github.com/user-attachments/assets/b5b84ecc-84e5-4583-97c8-efdcdf985504)  
 # G-Code Flow & Temperature Controller
 
-> **Automatically optimize nozzle temperature and print speed based on the real extrusion flow.**
+> **This script dynamically adjusts nozzle temperature and print speed (flow rate) to significantly improve print quality and reduce print time, all while simplifying slicer settings. By optimizing these parameters, it makes 3D printing more accessible, less complex and faster.  **
 
 Most slicers use a fixed nozzle temperature throughout an entire print, even though the extrusion flow constantly changes. This means the filament is often printed either hotter or colder than necessary.
 
