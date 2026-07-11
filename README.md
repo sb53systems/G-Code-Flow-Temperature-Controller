@@ -27,20 +27,27 @@ However, traditional slicers use a single temperature for the entire print, forc
 - Over/less heating
 
 ---
+  
+# Philosophy
+
+Traditional slicing assumes that extrusion must adapt to a fixed temperature.
+
+This project follows the opposite philosophy:
+
+> **Temperature should adapt to the extrusion flow.**
+
+By dynamically linking nozzle temperature with volumetric flow, the printer can maintain more consistent melting conditions throughout the entire print.
+
+---
 
 # what this script does
 
 Depending on your speeds, accelerations, Jerk/SCV, print geometry,... this script calculates the average flow rate that can be reached every second, and dynamically adjusts the nozzle temperature accordingly. It also modifies print speed in the G-code to match the ideal flow rate, considering layer height and line width.  
-
-
+   
 ---
 
 # Features
 
-- Dynamic nozzle temperature
-- Dynamic print speed
-- Average volumetric flow calculation
-- Automatic G-code post-processing
 - Compatible with all firmwares 
 - Designed for OrcaSlicer
 - No firmware modification required
@@ -73,18 +80,6 @@ Instead of printing the entire model at **220°C**, the controller may automatic
 | 22 mm³/s | 235°C |
 
 Printing speed is then adjusted accordingly to maintain optimal extrusion conditions.
-
----
-
-# Philosophy
-
-Traditional slicing assumes that extrusion must adapt to a fixed temperature.
-
-This project follows the opposite philosophy:
-
-> **Temperature should adapt to the extrusion flow.**
-
-By dynamically linking nozzle temperature with volumetric flow, the printer can maintain more consistent melting conditions throughout the entire print.
 
 ---
 
