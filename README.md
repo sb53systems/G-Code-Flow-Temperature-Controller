@@ -71,8 +71,7 @@ Instead of printing the entire model at **220°C**, the controller may automatic
 
 | Volumetric Flow | Temperature |
 |----------------:|------------:|
-| 4 mm³/s | 195°C |
-| 8 mm³/s | 205°C |
+| 1 mm³/s | 190°C |
 | 15 mm³/s | 220°C |
 | 22 mm³/s | 235°C |
 
