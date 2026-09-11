@@ -15,7 +15,6 @@ However, traditional slicers use a single temperature for the entire print, forc
 - Printing speed
 - Layer adhesion
 - Stringing
-- Over/less heating
 
 ---
   
